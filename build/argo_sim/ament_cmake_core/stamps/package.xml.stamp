@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>argo_sim</name>
+  <version>0.0.0</version>
+  <description>The argo_sim package</description>
+
+  <maintainer email="ffl@aber.ac.uk">ffl</maintainer>
+  <license>GPLv3</license>
+  <author email="ffl@aber.ac.uk">Fred Labrosse</author>
+
+  <exec_depend>telemetry</exec_depend>
+  <exec_depend>gazebo_ros_skid_steer_drive_6w</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>realsense2_description</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+  </package>

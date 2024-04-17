@@ -1,0 +1,98 @@
+<!-- 
+  - @author Bilal Yousufzai [biy1]   
+  - @version 0.1 initial creation
+  - @version
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Robot Control Web GUI</title>
+     <!-- Link to CSS file -->
+     <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/gui_css.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/user_guide_style/user_guide.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ </head>
+ <body>
+     <div id="gui-container">
+         <header>
+             <div class="header-container">
+                 <h1>User Guide For Trail Tracer</h1>
+                 <button id="settings-button"><i class="fas fa-cog"></i></button>
+                 <!-- Settings popup menu -->
+                 <div id="settings-menu" class="settings-popup" style="display: none;"> <!-- Initially hidden -->
+                     <ul class="settings-list">
+                         <li><a href="/">Trail Tracer</a></li>
+                         <li><a href="#">Supported Sites</a></li>
+                     </ul>
+                 </div>
+             </div>
+             <div id="info">
+                <p style="font-size: 18; font-weight: bold;">
+                    Infomation on how to operate the Trail Tracer GUI can be found below.<br>
+                    Just click on any topic of question and you will hopefully find your answer.
+                </p>
+             </div>
+         </header>
+        </article>
+        <div>
+            <h2>Automatic Mode Guide</h2>
+            <article class="article-class">
+                <button class="dropdown-toggle">How To Plot A Trail</button>
+                <div class="dropdown-content" style="display: none;">
+                    <p>To plot a trail follow these steps:<br>
+                        <ol>
+                            <li>Click the "Plot Trail" button.</li>
+                            <li>Click the map to create new plots.</li>
+                            <li>When you are happy with your trail, click "Save".</li>
+                            <li>Enter a name for your trail in the popup prompt and click "save trail name" button</li>
+                        </ol>
+                    </p>
+                    <video width="896" height="964" controls>
+                        <source src="{{ url_for('static', filename='util/how_to_videos/how_to_plot_a_trail.mp4') }}" type="video/mp4">
+                    </video>
+                </div>
+            </article>
+            <article class="article-class">
+                <button class="dropdown-toggle">How To Load A Recorded Trail</button>
+                <div class="dropdown-content" style="display: none;">
+                    <p>To load and trace a stored trail dollow these steps:</p>
+
+                </div>
+            </article>
+        </div>
+        </article>
+        <h2>Manual Mode Guide</h2>
+        <article  class="article-class">
+            <button class="dropdown-toggle">How To Record A Trail</button>
+            <div class="dropdown-content" style="display: none;">
+                <p>To record a trail follow these steps: <br>
+                    <ol>
+                        <li>Click the "Switch to Manual Navigation" button.</li>
+                        <li>Click the "Record Trail" Button.</li>
+                        <li>Enter a name for the trail in the prompt and click "save trail name".</li>
+                        <li>Use the joystick to navigate and record a trail</li>
+                        <li>When happy you are happy with the trail, click the "End" button.</li>
+                    </ol> 
+                    The recorded trail can be found in the /trails folder.  
+                </p>
+                <video width="896" height="964" controls>
+                    <source src="{{ url_for('static', filename='util/how_to_videos/how_to_record_a_trail.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+        </article>  
+     </div>
+   
+     <!-- Link to JavaScript files -->
+     <script src="{{ url_for('static', filename='js/user_guide/user_guide.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/gui_script.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/event_listeners.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+     <!-- Include nipplejs for the joystick -->
+     <script src="https://cdn.jsdelivr.net/npm/nipplejs"></script>
+ </body>
+ </html>
+ 

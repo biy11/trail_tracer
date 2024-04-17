@@ -1,0 +1,6 @@
+source;share/web_gui/hook/pythonpath.ps1
+source;share/web_gui/hook/pythonpath.dsv
+source;share/web_gui/hook/pythonpath.sh
+source;share/web_gui/hook/ament_prefix_path.ps1
+source;share/web_gui/hook/ament_prefix_path.dsv
+source;share/web_gui/hook/ament_prefix_path.sh

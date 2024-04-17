@@ -1,0 +1,195 @@
+/* gui_css.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#gui-container {
+    margin: 2% auto;
+    max-width: 960px;
+}
+
+#manual-controls {
+    display: none; /* hidden by default, will be toggled by JavaScript */
+    /* Additional styling if necessary */
+}
+
+#dashboard-controls, #manual-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Unified styles for both telemetry data articles */
+#data-dashboard, #manual-data-dashboard {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+
+
+/* Style for the toggle button */
+#mode-toggle {
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 20px; /* Rounded edges for toggle switch appearance */
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Hover and active state styles */
+#mode-toggle:hover, #mode-toggle:focus {
+    background-color: #e8e8e8; /* Slightly darker on hover for feedback */
+    border-color: #ccc; /* Darker border on hover */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Slight shadow for depth */
+}
+
+/* Styles for when the button is active (manual mode) */
+#mode-toggle.active {
+    background-color: #5cb85c; /* Green background for active state */
+    color: #fff; /* White text when active */
+    border-color: #5cb85c; /* Same as background to blend in */
+}
+
+/* Styles for when the button is not active (automatic mode) */
+#mode-toggle:not(.active) {
+    background-color: #f4f4f4; /* Light background for inactive state */
+    color: #333; /* Dark text when inactive */
+    border-color: #ddd; /* Light border for inactive state */
+}
+/* #manual-dashboard {
+} */
+
+
+
+#joystick-container {
+    position: relative;
+    width: 100%; 
+    height: 200px; 
+    background: #eaeaea; 
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Style for the actual joystick element, assuming it is a div */
+#joystick {
+    width: 100px; /* Example size, adjust as needed */
+    height: 100px; /* Example size, adjust as needed */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #5cb85c; /* Example color, adjust as needed */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+header, section, footer {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #5cb85c;
+}
+
+#maps-section {
+    display: flex; /* Use flexbox to place children side by side */
+    height: 400px; /* Set a fixed height for the container */
+    position: relative; /* Keep relative for absolute positioning inside */
+}
+
+#maps, #camera-view {
+    flex: 1; /* Both take up equal space when active */
+    height: 100%; /* Full height of their container */
+    transition: flex 0.5s; /* Smooth transition for resizing */
+}
+
+#maps {
+    min-width: 0; /* Allows the map to shrink below content size, for flex items */
+}
+
+#camera-view {
+    background-color: #ddd; /* Placeholder color for the camera view */
+    display: none; /* Hidden by default, will be shown by JS */
+    min-width: 0; /* Allows the camera view to shrink below content size, for flex items */
+}
+
+#maps-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Position it to the top-left so it's always visible */
+    z-index: 1000;
+}
+
+#locate-me-button {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#locate-me-button:hover {
+    background-color: #e7e7e7;
+}
+
+#camera-view-button {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-top: 10px; /* Add some space between the buttons */
+}
+
+#camera-view-button:hover {
+    background-color: #e7e7e7;
+}
+
+#camera-view {
+    width: 100%;
+    height: 400px; /* Same as the map initially */
+    border-radius: 5px;
+    background-color: #ddd; /* Just a placeholder color */
+    display: none; /* Hidden by default */
+    position: relative;
+    display: none; /* Hide by default */
+    transition: flex 0.2s, display 0.2s; 
+}
+
+#camera-view.active {
+    display: block; /* Show when active */
+}
+
+@media (max-width: 768px) {
+    #maps-section {
+        flex-direction: column; /* Stack them on top of each other on smaller screens */
+    }
+
+    #maps, #camera-view {
+        flex: none; /* Do not allow flex-grow or flex-shrink */
+        width: 100%; /* Full width */
+        height: 200px; /* Half the original height */
+    }
+
+    #maps-controls {
+        position: absolute;
+        top: 10px;
+        right: 10px; /* Adjust to top-right for smaller screens */
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/bilal/learn_ros2_ws/install/web_gui/lib/python3.10/site-packages",
+        "/home/bilal/ros2_ws/install/web_gui/lib/python3.10/site-packages",
+        "/home/bilal/ros2_ws/install/velodyne_control_msgs/local/lib/python3.10/dist-packages",
+        "/home/bilal/ros2_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages",
+        "/home/bilal/ros2_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages",
+        "/home/bilal/ros2_ws/install/opencv_tools/lib/python3.10/site-packages",
+        "/home/bilal/ros2_ws/install/biy1_ros360_py/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/bilal/learn_ros2_ws/install/web_gui/lib/python3.10/site-packages",
+        "/home/bilal/ros2_ws/install/web_gui/lib/python3.10/site-packages",
+        "/home/bilal/ros2_ws/install/velodyne_control_msgs/local/lib/python3.10/dist-packages",
+        "/home/bilal/ros2_ws/install/turtlebot4_navigation/local/lib/python3.10/dist-packages",
+        "/home/bilal/ros2_ws/install/turtlebot4_msgs/local/lib/python3.10/dist-packages",
+        "/home/bilal/ros2_ws/install/opencv_tools/lib/python3.10/site-packages",
+        "/home/bilal/ros2_ws/install/biy1_ros360_py/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "files.associations": {
+        "MLTable": "yaml",
+        "fstream": "cpp"
+    }
+}

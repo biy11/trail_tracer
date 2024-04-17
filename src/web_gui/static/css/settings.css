@@ -1,0 +1,140 @@
+/* Settings.css 
+    This is s a .css file for styles for the settings button.
+*/
+
+/* 
+- @aouthor Bilal Yousufzai
+- @version 0.1 Initital creation.
+- @version 0.2 Added styles for settings menu.
+- @version 0.2 Added styles for sub-menu.
+*/
+
+#settings-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#settings-button i{
+    font-size: 24px;
+    color: #333;
+}
+
+.settings-popup{
+    position: absolute;
+    top: 10px;
+    right: 25%;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    z-index: 100;
+}
+
+.settings-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.settings-lis li{
+    position: relative;
+}
+
+.settings-list li a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.settings-list li:last-child a {
+    border-bottom: none;
+}
+
+.settings-list li a:hover{
+    background-color: #f9f9f9;
+}
+
+#settings-menu{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    position: absolute;
+    right: 55%;
+    top: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    z-index: 101;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    border-bottom: 1px solid #eee; 
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+.submenu li:last-child a {
+    border-bottom: none;
+}
+
+.sound-toggle{
+    right: 100%;
+}
+
+/* Style for toggle button container */
+.toggle-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style for the toggle button */
+.toggle {
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 20px; /* Rounded edges for toggle appearance */
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Hover and active state styles */
+.toggle:hover, .toggle:focus {
+    background-color: #e8e8e8; /* Slightly darker on hover for feedback */
+    border-color: #ccc; /* Darker border on hover */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Shadow for depth */
+}
+
+/* Styles for when the button is in manual mode */
+.toggle.active {
+    background-color: #5cb85c; /* Green background for active state */
+    color: #fff; /* White text when active */
+    border-color: #5cb85c; /* Same as background to blend in */
+}
+
+/* Styles for when the button is in automatic mode */
+.toggle:not(.active) {
+    background-color: #f4f4f4; /* Light background for inactive state */
+    color: #333; /* Dark text when inactive */
+    border-color: #ddd; /* Light border for inactive state */
+}

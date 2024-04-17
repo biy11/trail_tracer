@@ -1,0 +1,142 @@
+[0.044s] Invoking command in '/home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake /home/bilal/trail_tracer/src/gazebo_ros_skid_steer_drive_6w -DCMAKE_INSTALL_PREFIX=/home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w
+[0.176s] -- The C compiler identification is GNU 11.4.0
+[0.260s] -- The CXX compiler identification is GNU 11.4.0
+[0.270s] -- Detecting C compiler ABI info
+[0.364s] -- Detecting C compiler ABI info - done
+[0.372s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.372s] -- Detecting C compile features
+[0.373s] -- Detecting C compile features - done
+[0.376s] -- Detecting CXX compiler ABI info
+[0.487s] -- Detecting CXX compiler ABI info - done
+[0.496s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.496s] -- Detecting CXX compile features
+[0.496s] -- Detecting CXX compile features - done
+[0.508s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.702s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.904s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[1.042s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.059s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.080s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.109s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.155s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.314s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.328s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.511s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.556s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.631s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.662s] -- Looking for pthread.h
+[1.759s] -- Looking for pthread.h - found
+[1.759s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.857s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.858s] -- Found Threads: TRUE  
+[2.100s] -- Found tf2: 0.25.6 (/opt/ros/humble/share/tf2/cmake)
+[2.171s] -- Found tf2_ros: 0.25.6 (/opt/ros/humble/share/tf2_ros/cmake)
+[2.632s] -- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+[2.717s] -- Found gazebo_ros: 3.7.0 (/opt/ros/humble/share/gazebo_ros/cmake)
+[2.745s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[2.747s] -- Checking for module 'bullet>=2.82'
+[2.773s] --   Found bullet, version 3.05
+[2.997s] -- Found fcl: /usr/include (found suitable version "0.7.0", minimum required is "0.5.0") 
+[3.147s] -- Found assimp: /usr/include (found version "5.2.0") 
+[3.240s] -- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+[3.353s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.40.0") found components: thread system filesystem program_options regex iostreams date_time 
+[3.406s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[3.440s] -- Looking for ignition-math6 -- found version 6.15.1
+[3.463s] -- Searching for dependencies of ignition-math6
+[3.464s] -- Looking for OGRE...
+[3.465s] -- OGRE_PREFIX_WATCH changed.
+[3.494s] -- Checking for module 'OGRE'
+[3.642s] --   Found OGRE, version 1.9.0
+[3.870s] -- Found Ogre Ghadamon (1.9.0)
+[3.898s] -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+[3.913s] -- Looking for OGRE_Paging...
+[3.946s] -- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+[3.946s] -- Looking for OGRE_Terrain...
+[3.979s] -- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+[3.979s] -- Looking for OGRE_Property...
+[4.063s] -- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+[4.063s] -- Looking for OGRE_RTShaderSystem...
+[4.128s] -- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+[4.128s] -- Looking for OGRE_Volume...
+[4.230s] -- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+[4.230s] -- Looking for OGRE_Overlay...
+[4.296s] -- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+[5.591s] -- Looking for ignition-math6 -- found version 6.15.1
+[5.615s] -- Looking for ignition-transport8 -- found version 8.2.1
+[5.615s] -- Searching for dependencies of ignition-transport8
+[5.687s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[5.763s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[5.792s] -- Checking for module 'libzmq >= 4'
+[5.954s] --   Found libzmq , version 4.3.4
+[6.392s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[6.430s] -- Checking for module 'uuid'
+[6.567s] --   Found uuid, version 2.37.2
+[6.922s] -- Found UUID: TRUE  
+[6.937s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[6.937s] -- Searching for dependencies of ignition-msgs5
+[7.013s] -- Looking for ignition-math6 -- found version 6.15.1
+[7.035s] -- Checking for module 'tinyxml2'
+[7.097s] --   Found tinyxml2, version 9.0.0
+[7.327s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[7.343s] -- Looking for ignition-common3 -- found version 3.14.0
+[7.343s] -- Searching for dependencies of ignition-common3
+[7.344s] -- Looking for dlfcn.h - found
+[7.351s] -- Looking for libdl - found
+[7.352s] -- Found DL: TRUE  
+[7.384s] -- Found tinyobjloader: /usr/lib/x86_64-linux-gnu/cmake/tinyobjloader/tinyobjloader-config.cmake (found version "2.0.0") 
+[7.385s] -- Searching for <ignition-common3> component [graphics]
+[7.398s] -- Looking for ignition-common3-graphics -- found version 3.14.0
+[7.399s] -- Searching for dependencies of ignition-common3-graphics
+[7.399s] -- Looking for ignition-math6 -- found version 6.15.1
+[7.411s] -- Looking for ignition-fuel_tools4 -- found version 4.4.0
+[7.412s] -- Searching for dependencies of ignition-fuel_tools4
+[7.652s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[7.690s] -- Checking for module 'jsoncpp'
+[7.733s] --   Found jsoncpp, version 1.9.5
+[7.887s] -- Found JSONCPP: TRUE  
+[7.921s] -- Checking for module 'libzip'
+[7.975s] --   Found libzip, version 1.7.3
+[8.124s] -- Found ZIP: TRUE  
+[8.125s] -- Looking for ignition-common3 -- found version 3.14.0
+[8.125s] -- Looking for ignition-math6 -- found version 6.15.1
+[8.126s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[8.159s] -- Gazebo version: 11.10
+[8.160s] -- Checking for module 'tbb'
+[8.273s] --   Found tbb, version 2021.5.0
+[8.421s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread 
+[8.601s] -- Configuring done
+[8.664s] -- Generating done
+[8.668s] -- Build files have been written to: /home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w
+[8.750s] Invoked command in '/home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake /home/bilal/trail_tracer/src/gazebo_ros_skid_steer_drive_6w -DCMAKE_INSTALL_PREFIX=/home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w
+[8.750s] Invoking command in '/home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w -- -j12 -l12
+[8.933s] [ 50%] [32mBuilding CXX object CMakeFiles/gazebo_ros_skid_steer_drive_6w.dir/src/gazebo_ros_skid_steer_drive_6w.cpp.o[0m
+[37.789s] [100%] [32m[1mLinking CXX shared library libgazebo_ros_skid_steer_drive_6w.so[0m
+[38.307s] [100%] Built target gazebo_ros_skid_steer_drive_6w
+[38.321s] Invoked command in '/home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w -- -j12 -l12
+[38.368s] Invoking command in '/home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w
+[38.379s] -- Install configuration: ""
+[38.379s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/environment/library_path.sh
+[38.379s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/environment/library_path.dsv
+[38.379s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/include
+[38.379s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/include/gazebo_ros_skid_steer_drive_6w.h
+[38.380s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/lib/libgazebo_ros_skid_steer_drive_6w.so
+[38.389s] -- Set runtime path of "/home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/lib/libgazebo_ros_skid_steer_drive_6w.so" to ""
+[38.389s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/ament_index/resource_index/package_run_dependencies/gazebo_ros_skid_steer_drive_6w
+[38.389s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/ament_index/resource_index/parent_prefix_path/gazebo_ros_skid_steer_drive_6w
+[38.389s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/environment/ament_prefix_path.sh
+[38.389s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/environment/ament_prefix_path.dsv
+[38.389s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/environment/path.sh
+[38.390s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/environment/path.dsv
+[38.390s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/local_setup.bash
+[38.390s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/local_setup.sh
+[38.390s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/local_setup.zsh
+[38.390s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/local_setup.dsv
+[38.390s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/package.dsv
+[38.390s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/ament_index/resource_index/packages/gazebo_ros_skid_steer_drive_6w
+[38.390s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/cmake/ament_cmake_export_libraries-extras.cmake
+[38.391s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/cmake/ament_cmake_export_dependencies-extras.cmake
+[38.391s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/cmake/ament_cmake_export_include_directories-extras.cmake
+[38.391s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/cmake/gazebo_ros_skid_steer_drive_6wConfig.cmake
+[38.391s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/cmake/gazebo_ros_skid_steer_drive_6wConfig-version.cmake
+[38.391s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/share/gazebo_ros_skid_steer_drive_6w/package.xml
+[38.393s] Invoked command in '/home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/gazebo_ros_skid_steer_drive_6w

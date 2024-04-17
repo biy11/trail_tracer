@@ -1,0 +1,3 @@
+[console_scripts]
+ros2_communication = web_gui.ros2_communication:main
+

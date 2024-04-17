@@ -1,0 +1,4 @@
+source;share/traethlin_description/local_setup.bash
+source;share/traethlin_description/local_setup.dsv
+source;share/traethlin_description/local_setup.sh
+source;share/traethlin_description/local_setup.zsh

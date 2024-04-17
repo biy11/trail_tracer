@@ -1,0 +1,13 @@
+<launch>
+
+  <arg name="model" default="$(find argo_sim)/description/urdf/argo.urdf" />
+  <arg name="gui" default="false" />
+  <arg name="rvizconfig" default="$(find argo_sim)/launch/argo_sim.rviz" />
+
+  <param name="robot_description"
+     command="$(find xacro)/xacro $(arg model).xacro" />
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig) -f odom" required="true" />
+
+</launch>

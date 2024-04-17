@@ -1,0 +1,15 @@
+/home/bilal/trail_tracer/install/navigation2/share/ament_index/resource_index/package_run_dependencies/navigation2
+/home/bilal/trail_tracer/install/navigation2/share/ament_index/resource_index/parent_prefix_path/navigation2
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/environment/ament_prefix_path.sh
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/environment/ament_prefix_path.dsv
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/environment/path.sh
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/environment/path.dsv
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/local_setup.bash
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/local_setup.sh
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/local_setup.zsh
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/local_setup.dsv
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/package.dsv
+/home/bilal/trail_tracer/install/navigation2/share/ament_index/resource_index/packages/navigation2
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/cmake/navigation2Config.cmake
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/cmake/navigation2Config-version.cmake
+/home/bilal/trail_tracer/install/navigation2/share/navigation2/package.xml

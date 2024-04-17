@@ -1,0 +1,37 @@
+.dropdown-toggle {
+    background-color: #fff; /* Or any color that matches your design */
+    color: #5cb85c;
+    border: none;
+    outline: none;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #ddd; 
+}
+
+.dropdown-content {
+    display: none;
+    border-left: 3px solid #5cb85c; /* Color for the side border */
+    padding: 10px;
+    background-color: #f9f9f9; /* Light grey background */
+    margin-bottom: 10px;
+}
+
+.dropdown-content p {
+    margin: 0;
+}
+
+/* Animation for the dropdown */
+.dropdown-content.show {
+    display: block;
+    animation: fadeIn 0.3s;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,4 @@
+source;share/gazebo_ros_skid_steer_drive_6w/local_setup.bash
+source;share/gazebo_ros_skid_steer_drive_6w/local_setup.dsv
+source;share/gazebo_ros_skid_steer_drive_6w/local_setup.sh
+source;share/gazebo_ros_skid_steer_drive_6w/local_setup.zsh

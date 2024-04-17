@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Control Web GUI</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cam.css') }}">
+</head>
+<body>
+    <div id="gui-container">
+        <header>
+            <a href="/" class="button-like-link">Go to main Page</a>
+            <h1>Robot Control Web GUI</h1>
+            <!-- Toggle Button to switch between modes -->
+            <button id="mode-toggle">Switch to Manual Navigation</button>
+        </header>
+        <section id="maps-section" style="display: flex;">
+            <div id="maps" style="flex: 1; transition: flex 0.5s; min-width: 0;"></div>
+            <div id="camera-view" style="flex: 1; transition: flex 0.5s; min-width: 0; display: none; background-color: #ddd;">
+                <img id="live_feed" src="/image_feed" alt="Camera View" />
+            </div>
+            <div id="maps-controls" style="position: absolute; top: 10px; right: 10px; z-index: 1000;">
+                <button id="locate-me-button">Locate Me</button>
+                <button id="camera-view-button">Camera View</button>
+            </div>
+        </section>
+    </div>
+  
+    <!-- Link to JavaScript files -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine"></script>
+    <script src="https://cdn.jsdelivr.net/npm/roslib"></script>
+    <!-- <script src="{{ url_for('static', filename='gui_script.js') }}"></script>
+    <script src="{{ url_for('static', filename='map_ui.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='camera.js') }}"></script>
+    <!-- Include nipplejs for the joystick -->
+    <script src="https://cdn.jsdelivr.net/npm/nipplejs"></script>
+    <script src="roslib.min.js"></script>
+</body>
+</html>

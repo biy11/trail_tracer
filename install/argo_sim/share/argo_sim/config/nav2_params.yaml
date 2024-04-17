@@ -1,0 +1,52 @@
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      update_frequency: 5.0  # Adjust based on the desired update frequency
+      publish_frequency: 1.0  # Adjust based on how often you want the costmap to publish information
+      width: 10.0  # Specify the width of the costmap
+      height: 10.0  # Specify the height of the costmap
+      resolution: 0.5  # Resolution of the costmap in meters/cell
+      robot_radius: 0.5  # The radius of your robot, used for obstacle avoidance
+      transform_tolerance: 0.5  # Time in seconds
+      global_frame: map  # Use "map" if your GPS/UTM data is transformed into the "map" frame
+      robot_base_frame: base_link  # The name of the base frame of your robot
+      use_sim_time: true  # Set to true if using simulation time (e.g., Gazebo)
+      
+      gps_utm_plugin:
+        plugin: "your_custom_plugin_namespace::YourGPSUTMHandlingPlugin"
+        enabled: true
+        topic: "/argo_sim/utm_data"
+
+      # Plugins
+      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        enabled: false  # Disable the static layer as we're not using a pre-built map
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: true
+        observation_sources: scan
+        scan:
+          topic: /scan  # Adjust this to the topic your LiDAR or sonar publishes to
+          max_obstacle_height: 2.0  # Max height of obstacles to consider
+          clearing: true  # Enables clearing of obstacles in the costmap
+          marking: true  # Enables marking of obstacles in the costmap
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        enabled: true
+        inflation_radius: 0.55  # Adjust the inflation radius as needed
+
+  # External parameters if needed
+  map_server:
+    ros__parameters:
+      yaml_filename: "path/to/your/map.yaml"  # Provide path if you occasionally use a map
+      topic_name: "/map"  # Default map topic, change if you use a different topic
+      frame_id: "map"  # Frame ID for the map
+        # Add any additional configuration specific to your plugin
+  # GPS Plugin Configuration
+  # This section is a placeholder for GPS plugin configuration
+  # Depending on the GPS handling plugin you choose, you will need to add configuration here
+
+
+
+
