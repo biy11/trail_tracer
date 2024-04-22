@@ -705,8 +705,20 @@ CMakeFiles/helloWorld.dir/src/helloWorld.cpp.o: /home/bilal/trail_tracer/src/biy
   /usr/include/GeographicLib/UTMUPS.hpp \
   /usr/include/GeographicLib/Constants.hpp \
   /usr/include/GeographicLib/Config.h \
-  /usr/include/GeographicLib/Math.hpp
+  /usr/include/GeographicLib/Math.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp
 
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp:
 
@@ -916,6 +928,8 @@ CMakeFiles/helloWorld.dir/src/helloWorld.cpp.o: /home/bilal/trail_tracer/src/biy
 
 /opt/ros/humble/include/rclcpp/rclcpp/topic_statistics_state.hpp:
 
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp:
+
 /usr/include/c++/11/bits/fs_ops.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/create_service.hpp:
@@ -1061,6 +1075,8 @@ CMakeFiles/helloWorld.dir/src/helloWorld.cpp.o: /home/bilal/trail_tracer/src/biy
 /usr/include/c++/11/bits/basic_string.tcc:
 
 /opt/ros/humble/include/rcutils/rcutils/logging_macros.h:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
@@ -1779,6 +1795,8 @@ CMakeFiles/helloWorld.dir/src/helloWorld.cpp.o: /home/bilal/trail_tracer/src/biy
 /usr/include/c++/11/bits/ostream.tcc:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/ring_buffer_implementation.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp:
 
 /usr/include/c++/11/bits/list.tcc:
 

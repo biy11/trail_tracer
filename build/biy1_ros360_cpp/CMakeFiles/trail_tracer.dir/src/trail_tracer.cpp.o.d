@@ -634,4 +634,10 @@ CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o: \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
  /usr/include/GeographicLib/UTMUPS.hpp \
  /usr/include/GeographicLib/Constants.hpp \
- /usr/include/GeographicLib/Config.h /usr/include/GeographicLib/Math.hpp
+ /usr/include/GeographicLib/Config.h /usr/include/GeographicLib/Math.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp

@@ -1,0 +1,6 @@
+[ 16%] Built target examplePublisher
+[ 33%] Built target helloWorld
+[ 50%] Built target testCode
+[ 75%] [32mBuilding CXX object CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o[0m
+[ 75%] Built target exampleSubscriber
+[ 91%] Built target nav2

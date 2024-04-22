@@ -1,4 +1,17 @@
 /* gui_css.css */
+/* 
+* @version 0.1 - iniial creation 
+* @version 0.2 - Added dasboard styles
+* @version 0.3 - Added map, header and footer style
+* @version 0.4 - Added Joystick styles
+* @version 0.5 - Added prompt styles styles
+* @version 0.6 - Updated styles for system log.
+* @version 0.7 - Refactored.
+*/
+
+/*/////////////////////////////////////////////////*/
+/*////// GENERAL HTML FILE STRUCTURE STYLES ///////*/
+/*/////////////////////////////////////////////////*/
 body, html {
     height: 100%;
     margin: 0;
@@ -12,85 +25,11 @@ body, html {
     max-width: 960px;
 }
 
-#manual-controls {
-    display: none; /* hidden by default, will be toggled by JavaScript */
-    /* Additional styling if necessary */
-}
-
-#dashboard-controls, #manual-controls {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/* Unified styles for both telemetry data articles */
-#data-dashboard, #manual-data-dashboard {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-}
-
-
-
-/* Style for the toggle button */
-#mode-toggle {
-    padding: 10px 20px;
-    background-color: #f4f4f4;
-    color: #333;
-    border: 2px solid #ddd;
-    border-radius: 20px; /* Rounded edges for toggle switch appearance */
-    cursor: pointer;
-    outline: none;
-    font-size: 16px;
-    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
-
-/* Hover and active state styles */
-#mode-toggle:hover, #mode-toggle:focus {
-    background-color: #e8e8e8; /* Slightly darker on hover for feedback */
-    border-color: #ccc; /* Darker border on hover */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Slight shadow for depth */
-}
-
-/* Styles for when the button is active (manual mode) */
-#mode-toggle.active {
-    background-color: #5cb85c; /* Green background for active state */
-    color: #fff; /* White text when active */
-    border-color: #5cb85c; /* Same as background to blend in */
-}
-
-/* Styles for when the button is not active (automatic mode) */
-#mode-toggle:not(.active) {
-    background-color: #f4f4f4; /* Light background for inactive state */
-    color: #333; /* Dark text when inactive */
-    border-color: #ddd; /* Light border for inactive state */
-}
-/* #manual-dashboard {
-} */
-
-
-
-#joystick-container {
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    width: 100%; 
-    height: 200px; 
-    background: #eaeaea; 
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-}
-
-/* Style for the actual joystick element, assuming it is a div */
-#joystick {
-    width: 100px; /* Example size, adjust as needed */
-    height: 100px; /* Example size, adjust as needed */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: #5cb85c; /* Example color, adjust as needed */
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 header, section, footer {
@@ -101,36 +40,55 @@ header, section, footer {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: #5cb85c;
 }
 
-#maps-section {
-    display: flex; /* Use flexbox to place children side by side */
-    height: 400px; /* Set a fixed height for the container */
-    position: relative; /* Keep relative for absolute positioning inside */
+/* General button styles */
+button:focus {
+    outline: none;
+}
+/*////////////////////////////////////////*/
+/*////////////// TAB STYLES //////////////*/
+/*////////////////////////////////////////*/
+.tab-header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
-#maps, #camera-view {
-    flex: 1; /* Both take up equal space when active */
-    height: 100%; /* Full height of their container */
-    transition: flex 0.5s; /* Smooth transition for resizing */
+.tab-button{
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    transition: background-colour 0.3s;
 }
 
-#maps {
-    min-width: 0; /* Allows the map to shrink below content size, for flex items */
+.tab-button.active {
+    background-color: #e7e7e7;
+    font-weight: bold;
 }
 
-#camera-view {
-    background-color: #ddd; /* Placeholder color for the camera view */
-    display: none; /* Hidden by default, will be shown by JS */
-    min-width: 0; /* Allows the camera view to shrink below content size, for flex items */
+/*////////////////////////////////////////*/
+
+/*////////////////////////////////////////*/
+/*////////////// MAP STYELS //////////////*/
+/*////////////////////////////////////////*/
+#map-section {
+    position: relative;
+    height: 400px;
 }
 
-#maps-controls {
+#map {
+    height: 100%;
+    border-radius: 5px;
+}
+
+#map-controls {
     position: absolute;
     top: 10px;
-    right: 10px; /* Position it to the top-left so it's always visible */
+    right: 10px;
     z-index: 1000;
 }
 
@@ -147,49 +105,412 @@ h1, h2 {
     background-color: #e7e7e7;
 }
 
-#camera-view-button {
+/* syle for waypoint marker*/
+.waypoint-marker{
+    text-align: center;
+    line-height: 20px;
+}
+
+/*//////////////////////////////////////////////////////*/
+/*/////////////// DASHBOARD PANNEL STYLES //////////////*/
+/*//////////////////////////////////////////////////////*/
+#manual-controls {
+    display: none; /* hidden by default, will be toggled by JavaScript */
+}
+
+#dashboard-controls, #manual-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Same styles for both telemetry data articles */
+#data-dashboard, #control-panel, #manual-data-dashboard,#manual-control-panel {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+#control-panel button, #manual-control-panel button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #5cb85c;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+#control-panel, button:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+#control-panel button:hover {
+    background: #449d44;
+}
+
+#emergency-stop-button {
+    background: #d9534f;
+}
+
+#emergency-stop-button:hover {
+    background: #c9302c;
+}
+
+/* ////////////////////////////////////////////////// */
+/*//////////////// SYSTEM LOG STYLES ////////////////*/
+/* ////////////////////////////////////////////////// */
+#system-log {
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.log-header{
+    display: flex;
+    justify-content: space-between; /* sets items at oposite side of each other. */
+    align-items: center; 
+}
+
+#log-window {
+    width: 100%;
+    height: 150px;
+    border: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+}
+
+#clear-log{
     padding: 10px;
     background-color: #fff;
     border: 1px solid #ddd;
     cursor: pointer;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    margin-top: 10px; /* Add some space between the buttons */
 }
 
-#camera-view-button:hover {
-    background-color: #e7e7e7;
-}
-
-#camera-view {
-    width: 100%;
-    height: 400px; /* Same as the map initially */
-    border-radius: 5px;
-    background-color: #ddd; /* Just a placeholder color */
-    display: none; /* Hidden by default */
+/* ///////////////////////////////////////////////////*/
+/*////////////////// JOYSTICK STYLES /////////////////*/
+/* ///////////////////////////////////////////////////*/
+#joystick-container {
     position: relative;
-    display: none; /* Hide by default */
-    transition: flex 0.2s, display 0.2s; 
+    width: 100%; 
+    height: 200px; 
+    background: #eaeaea; 
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
 
-#camera-view.active {
-    display: block; /* Show when active */
+/* Style for the manual-control joystick */
+#joystick {
+    width: 100px; 
+    height: 100px; 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #5cb85c; 
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition:  all 0.2s ease-in-out;
 }
+/* ///////////////////////////////////////////////////*/
+
+/*///////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////////////////// PROMPT STYLES ////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////////////////*/
+#trail-prompt, #trail-name-prompt, #plot-name-prompt {
+    display: none;
+    position: absolute;
+    width: 40%; 
+    height: 15%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#prompt-header button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#prompt-header button:hover {
+    background-color: #d32f2f;
+}
+
+#prompt-body {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Dropdown Style */
+#trail-dropdown {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Start Button Style */
+#start-trail {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#start-trail:hover {
+    background-color: #45a049;
+}
+/*//////////////////////////////////////////////////////*/
 
 @media (max-width: 768px) {
-    #maps-section {
-        flex-direction: column; /* Stack them on top of each other on smaller screens */
+    #dashboard-controls {
+        grid-template-columns: 1fr;
     }
+    
 
-    #maps, #camera-view {
-        flex: none; /* Do not allow flex-grow or flex-shrink */
-        width: 100%; /* Full width */
-        height: 200px; /* Half the original height */
-    }
-
-    #maps-controls {
-        position: absolute;
-        top: 10px;
-        right: 10px; /* Adjust to top-right for smaller screens */
-    }
 }
+
+
+.button, .button:focus {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    font-size: large;
+    border-radius: 3px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    color: #333333;
+    border-color: #333333;
+    background: transparent;
+    margin: 0px 1em;
+    padding: 0.5em 0.1em;
+    width: 16em;
+    height: 6ex;
+    outline: 0;
+    margin-left: 20px;
+    margin-top: 0.5em;
+}
+
+.button:active {
+    background-color: #333333;
+    color: #fff;
+    border-color: #fff;
+}
+
+.justify {
+/*    width: 20em;*/
+    align-content: center;
+    justify-content: center;
+}
+
+.leftAligned {
+  align-content: left
+}
+
+.rightAligned {
+  align-content: right
+}
+
+#connectionOptions {
+    display: flex;
+    width: 100%;
+}
+
+#gearControl {
+    display: flex;
+    width: 100%;
+}
+
+#manualControl {
+    display: flex;
+    width: 100%;
+
+}
+
+/* Container for flexboxes */
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.row {
+/*  display: -webkit-flex;*/
+  display: flex;
+}
+
+/* Create equal columns that sit next to each other */
+.column {
+/*  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;*/
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The sliders */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.block-display  {
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+#joystick_wrapper{
+    background-color: #ddd;
+    position: absolute; 
+    top: 22em; 
+    margin: auto;
+    border-radius: 80%; 
+    width: 50em; 
+    height: 50em;
+    opacity: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+#traethlin-joystick{
+    padding: 10px;
+    margin-right: 5px;
+    background-color: #bbb; 
+    border-radius: 100%; 
+    height: 18em; 
+    width: 18em; 
+    transform: translate3d(0px, 0px, 0px); 
+    margin-left: 16em; 
+    margin-top: 16em; 
+    position: absolute; 
+    opacity: 1; 
+    transition: all 0.3s ease-in-out;
+
+}
+
+.tab-container {
+    display: flex;
+    background-color: #f4f4f4;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0px;
+    overflow: hidden;
+    border: none;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+    /* max-width: 960px; */
+}
+
+.tab {
+    background-color: inherit; /* Inherit the background color from the tab-container */
+    border: none; 
+    outline: none; 
+    cursor: pointer;
+    padding: 14px; /* Adjust padding to match the header's padding */
+    margin: 0; /* Reset margin to remove any unwanted space */
+    color: white; /* Tab text color */
+    font-size: 17px;
+    transition: background-color 0.3s;
+    border-radius: 5px 5px 0 0; /* Apply border-radius to the tabs as well */
+}
+
+/* Change background color of tabs on hover */
+.tab:hover {
+    background-color: #ddd;
+    color: #fff;
+}
+
+/* Create an active/current tablink class */
+.tab.active {
+    background-color: #4CAF50; /* or any color that indicates the active tab */
+    color: white;
+}
+
+

@@ -1,0 +1,24 @@
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:[m[K In constructor ‘[01m[KTestCode::TestCode()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:272:12:[m[K [01;35m[Kwarning: [m[K‘[01m[KTestCode::last_angular_vel_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  272 |     double [01;35m[Klast_angular_vel_[m[K;
+      |            [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:269:10:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kbool TestCode::first_coord_stored_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  269 |     bool [01;35m[Kfirst_coord_stored_[m[K;
+      |          [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:33:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   33 |     [01;35m[KTestCode[m[K()
+      |     [01;35m[K^~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:[m[K In member function ‘[01m[Kvoid TestCode::gps_fix_callback(sensor_msgs::msg::NavSatFix_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:109:9:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_gps_msg_[m[K’ was not declared in this scope
+  109 |         [01;31m[Klast_gps_msg_[m[K = msg; //Update last known location
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:[m[K In member function ‘[01m[Kvoid TestCode::imu_data_callback(sensor_msgs::msg::Imu_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:189:21:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangular_velocity_z_threshold[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  189 |         const float [01;35m[Kangular_velocity_z_threshold[m[K = 0.02; // Threshold for significant rotation around the z-axis
+      |                     [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:188:67:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  188 |     void imu_data_callback([01;35m[Kconst sensor_msgs::msg::Imu::SharedPtr msg[m[K) {
+      |                            [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+gmake[2]: *** [CMakeFiles/trail_tracer.dir/build.make:76: CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:279: CMakeFiles/trail_tracer.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -55,10 +55,10 @@ class ROS2WebConnector(Node):
 
         #Creation of subscibers for: ros_messages, /argo_sim/gps/fix and /argo_sim/cmd_vel.
         self.ros_messages_subscription = self.create_subscription(String, 'ros_messages', self.listener_callback, 10)
-        self.gps_subscription = self.create_subscription(NavSatFix, '/argo_sim/gps/fix', self.gps_callback, 10)
-        self.cmd_vel_subscription = self.create_subscription(Twist, '/argo_sim/cmd_vel', self.cmd_callback,10)
+        self.gps_subscription = self.create_subscription(NavSatFix, '/gps/fix', self.gps_callback, 10)
+        self.cmd_vel_subscription = self.create_subscription(Twist, '/cmd_vel', self.cmd_callback,10)
         self.trail_files = self.create_subscription(String, '/trail_files', self.trail_file_callback, 10)
-        self.imu_subscription = self.create_subscription(Imu, '/argo_sim/imu/data', self.imu_callback, 10)
+        self.imu_subscription = self.create_subscription(Imu, '/imu/data', self.imu_callback, 10)
         
 
         self.message_callback = message_callback # Callback function for recived message processing.

@@ -275,6 +275,19 @@ trail_tracer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trail_tracer.dir/build.make CMakeFiles/trail_tracer.dir/build
 .PHONY : trail_tracer/fast
 
+#=============================================================================
+# Target rules for targets named waypoint_navigator
+
+# Build rule for target.
+waypoint_navigator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 waypoint_navigator
+.PHONY : waypoint_navigator
+
+# fast build rule for target.
+waypoint_navigator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/build
+.PHONY : waypoint_navigator/fast
+
 src/examplePublisher.o: src/examplePublisher.cpp.o
 .PHONY : src/examplePublisher.o
 
@@ -419,6 +432,30 @@ src/trail_tracer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trail_tracer.dir/build.make CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.s
 .PHONY : src/trail_tracer.cpp.s
 
+src/waypoint_navigator.o: src/waypoint_navigator.cpp.o
+.PHONY : src/waypoint_navigator.o
+
+# target to build an object file
+src/waypoint_navigator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o
+.PHONY : src/waypoint_navigator.cpp.o
+
+src/waypoint_navigator.i: src/waypoint_navigator.cpp.i
+.PHONY : src/waypoint_navigator.i
+
+# target to preprocess a source file
+src/waypoint_navigator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.i
+.PHONY : src/waypoint_navigator.cpp.i
+
+src/waypoint_navigator.s: src/waypoint_navigator.cpp.s
+.PHONY : src/waypoint_navigator.s
+
+# target to generate assembly for a file
+src/waypoint_navigator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.s
+.PHONY : src/waypoint_navigator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -440,6 +477,7 @@ help:
 	@echo "... nav2"
 	@echo "... testCode"
 	@echo "... trail_tracer"
+	@echo "... waypoint_navigator"
 	@echo "... src/examplePublisher.o"
 	@echo "... src/examplePublisher.i"
 	@echo "... src/examplePublisher.s"
@@ -458,6 +496,9 @@ help:
 	@echo "... src/trail_tracer.o"
 	@echo "... src/trail_tracer.i"
 	@echo "... src/trail_tracer.s"
+	@echo "... src/waypoint_navigator.o"
+	@echo "... src/waypoint_navigator.i"
+	@echo "... src/waypoint_navigator.s"
 .PHONY : help
 
 

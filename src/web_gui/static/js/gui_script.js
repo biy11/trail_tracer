@@ -18,16 +18,8 @@ var file
 var socket = io.connect('http://' + document.domain + ':' + location.port);
 var linear_cmd_vel = null
 var loggCount = 1;
-let currentFiles = []; //temp stoarge for file names.
-
-
-// Event handlers for connecting/disconnecting.
-socket.on('connect', function() {
-    console.log("Connected to the WebSocket server");
-});
-socket.on('disconnect', function() {
-    console.log("Disconnected from the WebSocket server");
-});
+let currentFiles = []; // Temp stoarge for file names.
+var linear_cmd_vel = 0; // Default cmd_vel value.
 
 // Listen for GPS data from the server.
 socket.on('gps_data', function(data) {
@@ -95,7 +87,7 @@ document.getElementById('trail-dropdown').addEventListener('change', function(){
     console.log("File Selected: ", selectedFileOption);
 });
 
-var file;
+//var file;
 
 document.getElementById('start-trail').addEventListener('click', function() {
     socket.emit('load_file', {data: selectedFileOption})
@@ -160,7 +152,6 @@ function toggleMode() {
         manualControls.style.display = 'none';
         toggleButton.innerText = 'Switch to Manual Navigation';
         toggleButton.classList.remove('active');
-        // Consider destroying or otherwise handling the joystick when not in use
     }
 }
 
@@ -184,7 +175,29 @@ function saveTrail(plotName, coordinatesList) {
     .catch((error) => console.error('Error:', error));
 }
 
-//  This function should emit robot control commands to the server.
+// Function to check if a trail file exists on the server.
+function checkTrailExists(plotName) {
+    // Prepare data to send with the POST request.
+    const dataToSend = { plotName: plotName };
+    // Send a POST request and check if the file exists.
+    return fetch('/check-trail-exists', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(dataToSend),
+    })
+    .then(response => response.json()) // Process JSON reponse
+    .then(data => {
+            // Log if the file exists or not using a ternary operator
+            console.log(data.exists ? "File exitst" : "File does not exist");
+            return data.exists;
+        }).catch(error => {
+            // Log errors that occur during fetch operation.
+            console.error('Error:', error);
+            return false; // Assume file does not exists due to error.
+        });
+}
+
+//  This function to emit robot control commands to the server.
 function controlRobot(command) {
     // For debugging purposes
     //console.log(`${command} button clicked`);
@@ -219,7 +232,7 @@ function updateSpeedDashboard(linear_speed, angular_speed) {
 ////////////////////////////////////////////////////////////////////////////
 
 
-// Function to logg data uin logg footer.
+// Function to logg data in log footer.
 function loggerLog(message){
     //assign variable for element ID
     var logWindow = document.getElementById("log-window");
@@ -230,7 +243,7 @@ function loggerLog(message){
 
     loggCount++; //Increate log count
 }
-
+// Function to clear log
 function clearLog(){
     var logWindow = document.getElementById("log-window");
 

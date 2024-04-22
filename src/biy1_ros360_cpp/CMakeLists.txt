@@ -24,6 +24,8 @@ add_executable(exampleSubscriber src/exampleSubscriber.cpp)
 add_executable(testCode src/testCode.cpp)
 add_executable(nav2 src/nav2.cpp)
 add_executable(trail_tracer src/trail_tracer.cpp)
+add_executable(waypoint_navigator src/waypoint_navigator.cpp)
+
 target_include_directories(helloWorld PUBLIC
 
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -36,8 +38,9 @@ ament_target_dependencies(testCode rclcpp std_msgs geometry_msgs sensor_msgs)
 ament_target_dependencies(helloWorld rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
 ament_target_dependencies(nav2 rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
 ament_target_dependencies(trail_tracer rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
+ament_target_dependencies(waypoint_navigator rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
 
-install(TARGETS helloWorld examplePublisher exampleSubscriber testCode nav2 trail_tracer
+install(TARGETS helloWorld examplePublisher exampleSubscriber testCode nav2 trail_tracer waypoint_navigator
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

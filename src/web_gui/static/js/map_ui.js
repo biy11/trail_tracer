@@ -1,7 +1,7 @@
 /**
- * This is a JavaScript for handeling interactions, dasboard updates and robot controls.
- * This includes initilising the map, robot and user location markers, routing direction 
- * handeling, and updating telemetray data on the dashboard.
+ * This is a JavaScript for handeling map interactions. This includes 
+ * initilising the map, robot and location markers, routing direction 
+ * handeling.
  */
 
 // Map and UI Interactions
@@ -11,6 +11,7 @@
  * 0.2 Added map function from map_ui.js to here
  * 0.3 Renamed to map_ui.js
  * 0.4 Added Comments
+ * 0.5 Removed auto-marker centering when a plotting is active.
  */
 
 // Function to check internet connectivity more reliably
@@ -73,7 +74,10 @@ function locateRobot(){
 function updateRobotLocation(lat, lng) {
     var newLatLng = new L.LatLng(lat, lng);
     robotMarker.setLatLng(newLatLng);
-    map.setView(newLatLng, map.getZoom());
+    // Unly update map view (Center) if there is no plotting
+    if(!trailPlotting){
+        map.setView(newLatLng, map.getZoom()); 
+    }
 }
 
 // Handler function for map clicks

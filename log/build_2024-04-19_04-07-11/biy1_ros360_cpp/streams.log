@@ -1,0 +1,34 @@
+[0.067s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/trail_tracer/install/nav2_simple_commander:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.233s] [ 16%] Built target examplePublisher
+[0.259s] [ 25%] [32mBuilding CXX object CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o[0m
+[0.270s] [ 41%] Built target exampleSubscriber
+[0.271s] [ 58%] Built target nav2
+[0.273s] [ 75%] Built target helloWorld
+[0.284s] [ 91%] Built target testCode
+[2.937s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:[m[K In constructor ‘[01m[KTestCode::TestCode()[m[K’:
+[2.938s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:36:68:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsgs[m[K’ is not a member of ‘[01m[Kgeometry_msgs[m[K’; did you mean ‘[01m[Kmsg[m[K’?
+[2.938s]    36 |         goal_pose_publisher_=this->create_publisher<geometry_msgs::[01;31m[Kmsgs[m[K::msg::PoseStamped>("/goal_publisher", 10);
+[2.938s]       |                                                                    [01;31m[K^~~~[m[K
+[2.938s]       |                                                                    [32m[Kmsg[m[K
+[2.938s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:36:36:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+[2.938s]    36 |         goal_pose_publisher_=this->[01;31m[Kcreate_publisher<geometry_msgs::msgs::msg::PoseStamped>[m[K("/goal_publisher", 10);
+[2.938s]       |                                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.938s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:36:91:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KTestCode::create_publisher<<expression error> >(const char [16], int)[m[K’
+[2.938s]    36 |         goal_pose_publisher_=[01;31m[Kthis->create_publisher<geometry_msgs::msgs::msg::PoseStamped>("/goal_publisher", 10)[m[K;
+[2.938s]       |                              [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.938s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+[2.938s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[2.938s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[2.938s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.938s]                  from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:8[m[K:
+[2.938s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+[2.938s]    73 | [01;36m[KNode[m[K::create_publisher(
+[2.939s]       | [01;36m[K^~~~[m[K
+[2.939s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.939s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:36:91:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.939s]    36 |         goal_pose_publisher_=[01;31m[Kthis->create_publisher<geometry_msgs::msgs::msg::PoseStamped>("/goal_publisher", 10)[m[K;
+[2.939s]       |                              [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[9.654s] gmake[2]: *** [CMakeFiles/trail_tracer.dir/build.make:76: CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o] Error 1
+[9.654s] gmake[1]: *** [CMakeFiles/Makefile2:277: CMakeFiles/trail_tracer.dir/all] Error 2
+[9.654s] gmake: *** [Makefile:146: all] Error 2
+[9.657s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/trail_tracer/install/nav2_simple_commander:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12

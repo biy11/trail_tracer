@@ -3,13 +3,15 @@
 * @version 0.1 - iniial creation 
 * @version 0.2 - Added dasboard styles
 * @version 0.3 - Added map, header and footer style
-* @version 0.4 - Added 
-* @version --- - Refactored
-* @version - Added more styles for system log.
-*
-*
+* @version 0.4 - Added Joystick styles
+* @version 0.5 - Added prompt styles styles
+* @version 0.6 - Updated styles for system log.
+* @version 0.7 - Refactored.
 */
 
+/*/////////////////////////////////////////////////*/
+/*////// GENERAL HTML FILE STRUCTURE STYLES ///////*/
+/*/////////////////////////////////////////////////*/
 body, html {
     height: 100%;
     margin: 0;
@@ -21,47 +23,6 @@ body, html {
 #gui-container {
     margin: 2% auto;
     max-width: 960px;
-}
-
-#manual-controls {
-    display: none; /* hidden by default, will be toggled by JavaScript */
-}
-
-#dashboard-controls, #manual-controls {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/* Same styles for both telemetry data articles */
-#data-dashboard, #manual-data-dashboard {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-}
-
-
-#joystick-container {
-    position: relative;
-    width: 100%; 
-    height: 200px; 
-    background: #eaeaea; 
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-}
-
-/* Style for the actual joystick element, assuming it is a div */
-#joystick {
-    width: 100px; /* Example size, adjust as needed */
-    height: 100px; /* Example size, adjust as needed */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: #5cb85c; /* Example color, adjust as needed */
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .header-container{
@@ -83,6 +44,37 @@ h1, h2, h3 {
     color: #5cb85c;
 }
 
+/* General button styles */
+button:focus {
+    outline: none;
+}
+/*////////////////////////////////////////*/
+/*////////////// TAB STYLES //////////////*/
+/*////////////////////////////////////////*/
+.tab-header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.tab-button{
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    transition: background-colour 0.3s;
+}
+
+.tab-button.active {
+    background-color: #e7e7e7;
+    font-weight: bold;
+}
+
+/*////////////////////////////////////////*/
+
+/*////////////////////////////////////////*/
+/*////////////// MAP STYELS //////////////*/
+/*////////////////////////////////////////*/
 #map-section {
     position: relative;
     height: 400px;
@@ -113,34 +105,34 @@ h1, h2, h3 {
     background-color: #e7e7e7;
 }
 
-#dashboard-controls {
+/* syle for waypoint marker*/
+.waypoint-marker{
+    text-align: center;
+    line-height: 20px;
+}
+
+/*//////////////////////////////////////////////////////*/
+/*/////////////// DASHBOARD PANNEL STYLES //////////////*/
+/*//////////////////////////////////////////////////////*/
+#manual-controls {
+    display: none; /* hidden by default, will be toggled by JavaScript */
+}
+
+#dashboard-controls, #manual-controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-#data-dashboard, #control-panel, #manual-control-panel {
+/* Same styles for both telemetry data articles */
+#data-dashboard, #control-panel, #manual-data-dashboard,#manual-control-panel {
     background: #f9f9f9;
     padding: 15px;
     border-radius: 5px;
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
 
-#control-panel button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #5cb85c;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
-}
-
-#manual-control-panel button {
+#control-panel button, #manual-control-panel button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -170,6 +162,9 @@ h1, h2, h3 {
     background: #c9302c;
 }
 
+/* ////////////////////////////////////////////////// */
+/*//////////////// SYSTEM LOG STYLES ////////////////*/
+/* ////////////////////////////////////////////////// */
 #system-log {
     background: #f9f9f9;
     border-radius: 5px;
@@ -202,52 +197,40 @@ h1, h2, h3 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-
-
-#camera-feed-container {
-    width: 50%; /* Take up half of the width when visible */
-    float: left; /* Align to the left */
-    display: none; /* Initially hidden */
-    height: 50vh; /* Adjust height as necessary */
+/* ///////////////////////////////////////////////////*/
+/*////////////////// JOYSTICK STYLES /////////////////*/
+/* ///////////////////////////////////////////////////*/
+#joystick-container {
+    position: relative;
+    width: 100%; 
+    height: 200px; 
+    background: #eaeaea; 
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
 
-/*///////////////////////////////////////////*/
-#trail-prompt {
-    display: none;
+/* Style for the manual-control joystick */
+#joystick {
+    width: 100px; 
+    height: 100px; 
     position: absolute;
-    width: 40%; /* Adjust as needed */
-    height: 15%;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    z-index: 1000;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 15px;
-    box-sizing: border-box;
+    background: #5cb85c; 
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition:  all 0.2s ease-in-out;
 }
+/* ///////////////////////////////////////////////////*/
 
-#trail-name-prompt {
+/*///////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////////////////// PROMPT STYLES ////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////////////////*/
+#trail-prompt, #trail-name-prompt, #plot-name-prompt {
     display: none;
     position: absolute;
-    width: 40%; /* Adjust as needed */
-    height: 15%;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    z-index: 1000;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-#plot-name-prompt{
-    display: none;
-    position: absolute;
-    width: 40%; /* Adjust as needed */
+    width: 40%; 
     height: 15%;
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -303,19 +286,7 @@ h1, h2, h3 {
 #start-trail:hover {
     background-color: #45a049;
 }
-
-/* General button styles */
-button:focus {
-    outline: none;
-}
-
-
-/* code for waypoint marker*/
-.waypoint-marker{
-    text-align: center;
-    line-height: 20px;
-}
-
+/*//////////////////////////////////////////////////////*/
 
 @media (max-width: 768px) {
     #dashboard-controls {

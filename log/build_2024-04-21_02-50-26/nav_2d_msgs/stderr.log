@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/home/bilal/trail_tracer/build/nav_2d_msgs/ament_cmake_python/nav_2d_msgs/setup.py", line 1, in <module>
+    from setuptools import find_packages
+  File "/home/bilal/.local/lib/python3.10/site-packages/setuptools/__init__.py", line 16, in <module>
+gmake[1]: *** [CMakeFiles/Makefile2:187: CMakeFiles/nav_2d_msgs.dir/all] Interrupt
+    import setuptools.version
+  File "/home/bilal/.local/lib/python3.10/site-packages/setuptools/version.py", line 1, in <module>
+    import pkg_resources
+  File "/home/bilal/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 32, in <module>
+    import plistlib
+  File "/usr/lib/python3.10/plistlib.py", line 70, in <module>
+    from xml.parsers.expat import ParserCreate
+  File "/usr/lib/python3.10/xml/parsers/expat.py", line 4, in <module>
+    from pyexpat import *
+  File "<frozen importlib._bootstrap>", line 1024, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 170, in __enter__
+  File "<frozen importlib._bootstrap>", line 196, in _get_module_lock
+KeyboardInterrupt
+gmake[2]: *** [CMakeFiles/ament_cmake_python_build_nav_2d_msgs_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_nav_2d_msgs_egg] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_nav_2d_msgs_egg.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

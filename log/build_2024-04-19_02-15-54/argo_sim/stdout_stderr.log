@@ -1,0 +1,14 @@
+-- Install configuration: ""
+-- Up-to-date: /home/bilal/trail_tracer/install/argo_sim/share/argo_sim/description
+-- Up-to-date: /home/bilal/trail_tracer/install/argo_sim/share/argo_sim/description/urdf
+-- Installing: /home/bilal/trail_tracer/install/argo_sim/share/argo_sim/description/urdf/argo.urdf.xacro
+-- Up-to-date: /home/bilal/trail_tracer/install/argo_sim/share/argo_sim/launch
+-- Up-to-date: /home/bilal/trail_tracer/install/argo_sim/share/argo_sim/launch/argo.launch.py
+-- Up-to-date: /home/bilal/trail_tracer/install/argo_sim/share/argo_sim/launch/rtabmap.launch
+-- Installing: /home/bilal/trail_tracer/install/argo_sim/share/argo_sim/launch/gazebo.launch.py
+-- Up-to-date: /home/bilal/trail_tracer/install/argo_sim/share/argo_sim/launch/display.launch
+[31mCMake Error at cmake_install.cmake:46 (file):
+  file INSTALL cannot find "/home/bilal/trail_tracer/src/argo_sim/config": No
+  such file or directory.
+
+[0m

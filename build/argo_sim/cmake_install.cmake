@@ -46,8 +46,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/argo_sim" TYPE DIRECTORY FILES
     "/home/bilal/trail_tracer/src/argo_sim/description"
     "/home/bilal/trail_tracer/src/argo_sim/launch"
-    "/home/bilal/trail_tracer/src/argo_sim/config"
-    "/home/bilal/trail_tracer/src/argo_sim/maps"
     "/home/bilal/trail_tracer/src/argo_sim/gazebo"
     "/home/bilal/trail_tracer/src/argo_sim/gazebo/materials"
     "/home/bilal/trail_tracer/src/argo_sim/gazebo/worlds"

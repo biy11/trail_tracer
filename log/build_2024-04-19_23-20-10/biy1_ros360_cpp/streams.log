@@ -1,0 +1,51 @@
+[0.062s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/trail_tracer/install/nav2_simple_commander:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.124s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.337s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[0.382s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.386s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.395s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.416s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.443s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.533s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.544s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.836s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.025s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.066s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.146s] -- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[1.152s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.154s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.699s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.775s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.775s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/bilal/trail_tracer/src/biy1_ros360_cpp/include>
+[1.775s] -- Configured cppcheck exclude dirs and/or files: 
+[1.776s] -- Added test 'lint_cmake' to check CMake code style
+[1.778s] -- Added test 'uncrustify' to check C / C++ code style
+[1.778s] -- Configured uncrustify additional arguments: 
+[1.778s] -- Added test 'xmllint' to check XML markup files
+[1.780s] -- Configuring done
+[1.811s] -- Generating done
+[1.813s] -- Build files have been written to: /home/bilal/trail_tracer/build/biy1_ros360_cpp
+[1.874s] [35m[1mConsolidate compiler generated dependencies of target trail_tracer[0m
+[1.875s] [35m[1mConsolidate compiler generated dependencies of target helloWorld[0m
+[1.875s] [35m[1mConsolidate compiler generated dependencies of target examplePublisher[0m
+[1.876s] [35m[1mConsolidate compiler generated dependencies of target exampleSubscriber[0m
+[1.876s] [35m[1mConsolidate compiler generated dependencies of target nav2[0m
+[1.878s] [35m[1mConsolidate compiler generated dependencies of target testCode[0m
+[1.903s] [  7%] [32mBuilding CXX object CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o[0m
+[1.911s] [ 21%] Built target trail_tracer
+[1.914s] [ 42%] Built target examplePublisher
+[1.914s] [ 50%] [32mBuilding CXX object CMakeFiles/helloWorld.dir/src/helloWorld.cpp.o[0m
+[1.914s] [ 57%] Built target testCode
+[1.916s] [ 71%] Built target nav2
+[1.919s] [ 85%] Built target exampleSubscriber
+[2.159s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:3:10:[m[K [01;31m[Kfatal error: [m[Knav2_msgs/action/navigate_to_pose.hpp: No such file or directory
+[2.159s]     3 | #include [01;31m[K"nav2_msgs/action/navigate_to_pose.hpp"[m[K
+[2.159s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.159s] compilation terminated.
+[2.162s] gmake[2]: *** [CMakeFiles/waypoint_navigator.dir/build.make:76: CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o] Error 1
+[2.162s] gmake[1]: *** [CMakeFiles/Makefile2:305: CMakeFiles/waypoint_navigator.dir/all] Error 2
+[2.162s] gmake[1]: *** Waiting for unfinished jobs....
+[18.923s] [ 92%] [32m[1mLinking CXX executable helloWorld[0m
+[19.668s] [ 92%] Built target helloWorld
+[19.669s] gmake: *** [Makefile:146: all] Error 2
+[19.671s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/trail_tracer/install/nav2_simple_commander:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12

@@ -16,6 +16,7 @@
 #include <utility>
 #include <sstream>
 #include <GeographicLib/UTMUPS.hpp>
+#include <geometry_msgs/msg/pose_stamped.hpp>
 
 
 using namespace std::chrono_literals;
@@ -25,12 +26,14 @@ using namespace std::chrono_literals;
 //Added files publishe
 //timer for file publisher
 //load file sub
+// Added goal publisher 
 class TestCode : public rclcpp::Node {
 public:
     TestCode()
-    : Node("robot_movement_control"), is_moving_(false), is_turning_(false) {
-        publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/argo_sim/cmd_vel", 10);
+    : Node("robot_movement_control"), is_moving_(false), is_turning_(false), current_easting_(0.0), current_northing_(0.0) {
+        publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
         file_names_publisher_ = this->create_publisher<std_msgs::msg::String>("/trail_files", 10);
+        goal_pose_publisher_= this->create_publisher<geometry_msgs::msg::PoseStamped>("/goal_pose", 10);
 
         web_message_subscription_ = this->create_subscription<std_msgs::msg::String>(
             "/web_messages", 10,
@@ -45,16 +48,20 @@ public:
             std::bind(&TestCode::manual_control, this, std::placeholders::_1));
 
         gps_fix_subscription_ = this->create_subscription<sensor_msgs::msg::NavSatFix>(
-            "/argo_sim/gps/fix", 10,
+            "/gps/fix", 10,
             std::bind(&TestCode::gps_fix_callback, this, std::placeholders::_1));
 
         imu_data_subscription_ = this->create_subscription<sensor_msgs::msg::Imu>(
-            "/argo_sim/imu/data", 10,
+            "/imu/data", 10,
             std::bind(&TestCode::imu_data_callback, this, std::placeholders::_1));
         
         load_file_subscription_ = this->create_subscription<std_msgs::msg::String>(
             "/load_file_topic", 10,
             std::bind(&TestCode::file_loader_callback, this, std::placeholders::_1));
+
+        gps_to_utm_subscription_ = this->create_subscription<geometry_msgs::msg::PoseStamped>(
+            "/utm_data", 10,
+            std::bind(&TestCode::utm_data_callback, this, std::placeholders::_1));
 
         timer_update_movement_ = this->create_wall_timer(
             100ms, std::bind(&TestCode::update_movement, this));
@@ -108,19 +115,11 @@ private:
         last_received_cmd_ = msg;
     }
 
-    void gps_to_utm_converter(){
-        utm_coords.clear();
-        for(const auto& [lat, lon] : waypoints_){
-            int zone;
-            bool northp;
-            double easting, northing;
-            GeographicLib::UTMUPS::Forward(lat, lon, zone, northp, easting, northing);
-            utm_coords.push_back(std::make_tuple(zone,northp, easting, northing));
-
-            RCLCPP_INFO(this->get_logger(), "GPS (%f, %f) -> UTM Zone: %d%s, Easting: %f, Northing: %f",
-                lat, lon, zone, northp ? "N" : "S", easting, northing);
-        }
+    void utm_data_callback(const geometry_msgs::msg::PoseStamped::SharedPtr msg){
+        current_easting_ = msg->pose.position.x;
+        current_northing_ = msg->pose.position.y;
     }
+
 
     void update_movement() {
         if (is_moving_ && last_received_cmd_) {
@@ -132,11 +131,6 @@ private:
     void imu_data_callback(const sensor_msgs::msg::Imu::SharedPtr msg) {
         const float angular_velocity_z_threshold = 0.02; // Threshold for significant rotation around the z-axis
         is_turning_ = std::abs(msg->angular_velocity.z) > angular_velocity_z_threshold;
-        // if (is_turning_) {
-        // RCLCPP_INFO(this->get_logger(), "Non-linear (turning). Angular Velocity Z: '%f'", msg->angular_velocity.z);
-        // }else{ 
-        //  RCLCPP_INFO(this->get_logger(), "Angular Velocity Z: '%f'", msg->angular_velocity.z);
-        // }
     }
 
 
@@ -181,6 +175,39 @@ private:
         }
     }
 
+    void gps_to_utm_converter() {
+        utm_coords.clear();
+        for (const auto& [lat, lon] : waypoints_) {
+            int zone;
+            bool northp;
+            double easting, northing;
+            GeographicLib::UTMUPS::Forward(lat, lon, zone, northp, easting, northing);
+
+            // Calculate relative positions
+            double rel_easting =  current_easting_ - easting;
+            double rel_northing = current_northing_ - northing;
+
+            // Create and publish PoseStamped message with relative coordinates
+            geometry_msgs::msg::PoseStamped goal_pose;
+            goal_pose.header.stamp = this->get_clock()->now();
+            goal_pose.header.frame_id = "map";  // Use the correct frame_id for your application
+
+            goal_pose.pose.position.x = rel_easting;
+            goal_pose.pose.position.y = rel_northing;
+            goal_pose.pose.position.z = 0.0;
+
+            // No rotation - assuming all poses face forward; modify as necessary
+            goal_pose.pose.orientation.x = 0.0;
+            goal_pose.pose.orientation.y = 0.0;
+            goal_pose.pose.orientation.z = 0.0;
+            goal_pose.pose.orientation.w = 1.0;
+
+            goal_pose_publisher_->publish(goal_pose);
+
+            RCLCPP_INFO(this->get_logger(), "Published relative UTM goal pose: Easting %f, Northing %f", rel_easting, rel_northing);
+        }
+    }
+
 
     void file_loader_callback(const std_msgs::msg::String::SharedPtr msg){
         std::string file_path = "trails/" + msg->data; 
@@ -215,18 +242,22 @@ private:
 
     bool is_moving_;
     bool is_turning_;
+    double current_easting_;
+    double current_northing_;
     std::string trail_name_;
     std::vector<std::pair<float,float>> waypoints_;
     std::vector<std::tuple<int,bool,double,double>> utm_coords;
     geometry_msgs::msg::Twist::SharedPtr last_received_cmd_;
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr file_names_publisher_;
+    rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr goal_pose_publisher_;
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr web_message_subscription_;
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr trail_name_subscription_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr joystick_subscription_;
     rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_fix_subscription_;
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_data_subscription_;
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr load_file_subscription_;
+    rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr gps_to_utm_subscription_;
     rclcpp::TimerBase::SharedPtr timer_update_movement_;
     rclcpp::TimerBase::SharedPtr timer_publish_file_names_;
     std::ofstream gps_file_;

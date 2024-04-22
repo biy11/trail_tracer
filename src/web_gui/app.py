@@ -64,7 +64,7 @@ def save_trail():
     
     # Updated file path to save in the trails folder
     home_dir = os.path.expanduser('~')
-    trails_folder = os.path.join(home_dir,'learn_ros2_ws','trails')
+    trails_folder = os.path.join(home_dir,'trail_tracer','trails')
     file_path = os.path.join(trails_folder, f'{plot_name}.txt')
 
     # Ensure the trails folder exists, create if it doesn't
@@ -84,7 +84,7 @@ def check_trail_exists():
     data = request.json
     plot_name = data['plotName']
     home_dir = os.path.expanduser('~')
-    trails_folder = os.path.join(home_dir,'learn_ros2_ws','trails')
+    trails_folder = os.path.join(home_dir,'trail_tracer','trails')
     file_path = os.path.join(trails_folder, f'{plot_name}.txt')
     
     file_exists = os.path.exists(file_path)
@@ -103,16 +103,6 @@ def handle_ros_messages(message):
         socketio.emit('imu_data', message)
     else:
         socketio.emit('ros_message', {'data': message})  # Emit general ROS messages.
-
-# Method to log client connection for debuging purposes.
-@socketio.on('connect')
-def test_connect():
-    app.logger.info('Client connected')
-
-# Method to log client disconnection for debugging purposes. 
-@socketio.on('disconnect')
-def test_disconnect():
-    app.logger.info('Client disconnected')
 
 # Method for handeling messages sent from the web GUI to ROS2.
 @socketio.on('web_message')

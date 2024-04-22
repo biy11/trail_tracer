@@ -10,7 +10,7 @@ public:
     : Node("gps_to_utm_conerter"){
         //Subscriber to GPS data
         subscription_ = this->create_subscription<sensor_msgs::msg::NavSatFix>(
-            "/argo_sim/gps/fix", 10, std::bind(&GPS2UTMConverter::gps_callback, this, std::placeholders::_1)
+            "/gps/fix", 10, std::bind(&GPS2UTMConverter::gps_callback, this, std::placeholders::_1)
         );
 
         publisher_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("utm_data", 10);

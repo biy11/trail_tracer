@@ -1,0 +1,9 @@
+[ 11%] Built target nav_2d_msgs__rosidl_generator_c
+[ 12%] Built target nav_2d_msgs__cpp
+[ 12%] Built target ament_cmake_python_copy_nav_2d_msgs
+[ 23%] Built target nav_2d_msgs__rosidl_typesupport_fastrtps_c
+[ 35%] Built target nav_2d_msgs__rosidl_typesupport_introspection_c
+[ 46%] Built target nav_2d_msgs__rosidl_typesupport_c
+[ 57%] Built target nav_2d_msgs__rosidl_typesupport_introspection_cpp
+[ 69%] Built target nav_2d_msgs__rosidl_typesupport_cpp
+[ 80%] Built target nav_2d_msgs__rosidl_typesupport_fastrtps_cpp

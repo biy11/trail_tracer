@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function disableSettingsButton(){
         // Assuming isRecordingActive, trailPlotting, and manualMove are previously defined and their states managed elsewhere
-        return isRecordingActive || trailPlotting || manualMove;
+        return isRecordingActive || trailPlotting || manualMove || trailLoaded;
     }
 
     settingsButton.addEventListener('click', function(event) {
         clickSound(); // Play click sound
         if(disableSettingsButton()){
-            event.preventDefault(); // Corrected typo here
+            event.preventDefault();
             console.log('Settings cannot be used at the moment');
         } else {
             // Toggle the display of the settings menu

@@ -6,6 +6,7 @@
 /home/bilal/trail_tracer/build/biy1_ros360_cpp/CMakeFiles/testCode.dir
 /home/bilal/trail_tracer/build/biy1_ros360_cpp/CMakeFiles/nav2.dir
 /home/bilal/trail_tracer/build/biy1_ros360_cpp/CMakeFiles/trail_tracer.dir
+/home/bilal/trail_tracer/build/biy1_ros360_cpp/CMakeFiles/waypoint_navigator.dir
 /home/bilal/trail_tracer/build/biy1_ros360_cpp/CMakeFiles/test.dir
 /home/bilal/trail_tracer/build/biy1_ros360_cpp/CMakeFiles/edit_cache.dir
 /home/bilal/trail_tracer/build/biy1_ros360_cpp/CMakeFiles/rebuild_cache.dir

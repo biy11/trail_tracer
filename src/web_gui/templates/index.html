@@ -30,7 +30,7 @@
         <header>
             <div class="header-container">
                 <!-- <a href="/camera" class="button-like-link">Go to Record Page</a> -->
-                <h1>Robot Control Web GUI</h1>
+                <h1>Trail Tracer Web GUI</h1>
                 <button id="settings-button"><i class="fas fa-cog"></i></button>
                 <!-- Settings popup menu -->
                 <div id="settings-menu" class="settings-popup" style="display: none;">
@@ -39,6 +39,7 @@
                         <li class="has-submenu"><a href="/#">Supported Sites</a>
                             <ul class="submenu">
                                 <li><a href="/traethlin">Traethlin</a></li>
+                                <li><a href="/camera">Cam</a></li>
                                 <!-- More sites here for future additions-->
                             </ul>
                         </li>
@@ -65,8 +66,8 @@
                 <p>Longitude: <span id="longitude">N/A</span></p>
                 <p>Linear Speed: <span id="linearSpeed">0.0 m/s</span></p>
                 <p>Angular Speed: <span id="angularSpeed">0.0 rad/s</span></p>                
-                <p>Connection: <span id="connection-status">Connected</span></p>
-                <p>Battery Level: <span id="battery-level">High</span></p>
+                <!-- <p>Connection: <span id="connection-status">Connected</span></p>
+                <p>Battery Level: <span id="battery-level">High</span></p> -->
             </article>
             <aside id="control-panel">
                 <h2>Control Panel</h2>
@@ -84,8 +85,8 @@
                 <p>Longitude: <span id="manual-longitude">N/A</span></p>
                 <p>Linear Speed: <span id="manual-linearSpeed">0.0 m/s</span></p>
                 <p>Angular Speed: <span id="manual-angularSpeed">0.0 rad/s</span></p>                
-                <p>Connection: <span id="manual-connection-status">Connected</span></p>
-                <p>Battery Level: <span id="manual-battery-level">High</span></p>
+                <!-- <p>Connection: <span id="manual-connection-status">Connected</span></p>
+                <p>Battery Level: <span id="manual-battery-level">High</span></p> -->
             </article>
             <aside id="manual-control-panel">
                 <h2>Control Panel</h2>
@@ -154,12 +155,12 @@
     <!-- Link to JavaScript files -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine"></script>
-    <script src="https://cdn.jsdelivr.net/npm/roslib"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/roslib"></script> -->
     <script src="{{ url_for('static', filename='/js/gui_script.js') }}"></script>
     <script src="{{ url_for('static', filename='/js/map_ui.js') }}"></script>
-    <script src="{{ url_for('static', filename='/js/event_listeners.js') }}"></script>
+    <script src="{{ url_for('static', filename='/js/dashboard_event_listeners.js') }}"></script>
     <script src="{{ url_for('static', filename='/js/settings.js') }}"></script>
-    <script src="{{ url_for('static', filename='/js/refactor.js') }}"></script>
+    <script src="{{ url_for('static', filename='/js/prompt_event_listners.js') }}"></script>
     <!-- Include nipplejs for the joystick -->
     <script src="https://cdn.jsdelivr.net/npm/nipplejs"></script>
 </body>

@@ -1,0 +1,10 @@
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:[m[K In member function ‘[01m[Kvoid TestCode::web_messages_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:91:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct std_msgs::msg::String_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct std_msgs::msg::String_<std::allocator<void> >[m[K’} has no member named ‘[01m[Klatitude[m[K’
+   91 |                     gps_file_ << msg->[01;31m[Klatitude[m[K << ", " << msg->longitude << std::endl;
+      |                                       [01;31m[K^~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/trail_tracer.cpp:91:64:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct std_msgs::msg::String_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct std_msgs::msg::String_<std::allocator<void> >[m[K’} has no member named ‘[01m[Klongitude[m[K’
+   91 |                     gps_file_ << msg->latitude << ", " << msg->[01;31m[Klongitude[m[K << std::endl;
+      |                                                                [01;31m[K^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/trail_tracer.dir/build.make:76: CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:279: CMakeFiles/trail_tracer.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

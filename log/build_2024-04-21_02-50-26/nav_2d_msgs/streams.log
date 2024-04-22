@@ -1,0 +1,31 @@
+[0.086s] Invoking command in '/home/bilal/trail_tracer/build/nav_2d_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/trail_tracer/install/nav2_simple_commander:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/nav_2d_msgs -- -j12 -l12
+[0.234s] [ 11%] Built target nav_2d_msgs__rosidl_generator_c
+[0.240s] [ 12%] Built target nav_2d_msgs__cpp
+[0.261s] [ 12%] Built target ament_cmake_python_copy_nav_2d_msgs
+[0.312s] [ 23%] Built target nav_2d_msgs__rosidl_typesupport_fastrtps_c
+[0.315s] [ 35%] Built target nav_2d_msgs__rosidl_typesupport_introspection_c
+[0.327s] [ 46%] Built target nav_2d_msgs__rosidl_typesupport_c
+[0.331s] [ 57%] Built target nav_2d_msgs__rosidl_typesupport_introspection_cpp
+[0.335s] [ 69%] Built target nav_2d_msgs__rosidl_typesupport_cpp
+[0.340s] [ 80%] Built target nav_2d_msgs__rosidl_typesupport_fastrtps_cpp
+[0.367s] Traceback (most recent call last):
+[0.367s]   File "/home/bilal/trail_tracer/build/nav_2d_msgs/ament_cmake_python/nav_2d_msgs/setup.py", line 1, in <module>
+[0.367s]     from setuptools import find_packages
+[0.367s]   File "/home/bilal/.local/lib/python3.10/site-packages/setuptools/__init__.py", line 16, in <module>
+[0.367s] gmake[1]: *** [CMakeFiles/Makefile2:187: CMakeFiles/nav_2d_msgs.dir/all] Interrupt
+[0.372s]     import setuptools.version
+[0.372s]   File "/home/bilal/.local/lib/python3.10/site-packages/setuptools/version.py", line 1, in <module>
+[0.372s]     import pkg_resources
+[0.372s]   File "/home/bilal/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 32, in <module>
+[0.372s]     import plistlib
+[0.372s]   File "/usr/lib/python3.10/plistlib.py", line 70, in <module>
+[0.372s]     from xml.parsers.expat import ParserCreate
+[0.372s]   File "/usr/lib/python3.10/xml/parsers/expat.py", line 4, in <module>
+[0.373s]     from pyexpat import *
+[0.373s]   File "<frozen importlib._bootstrap>", line 1024, in _find_and_load
+[0.374s]   File "<frozen importlib._bootstrap>", line 170, in __enter__
+[0.374s]   File "<frozen importlib._bootstrap>", line 196, in _get_module_lock
+[0.374s] KeyboardInterrupt
+[0.377s] gmake[2]: *** [CMakeFiles/ament_cmake_python_build_nav_2d_msgs_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_nav_2d_msgs_egg] Interrupt
+[0.378s] gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_nav_2d_msgs_egg.dir/all] Interrupt
+[0.378s] gmake: *** [Makefile:146: all] Interrupt

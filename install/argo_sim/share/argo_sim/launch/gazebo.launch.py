@@ -15,7 +15,8 @@ def generate_launch_description():
   namespace_ = LaunchConfiguration('namespace')
   namespace_launch_arg = DeclareLaunchArgument(
     'namespace',
-    default_value='argo_sim',
+    default_value='',
+#    default_value='argo_sim',
     description='Name space of the simulated robot'
   )
 
@@ -31,6 +32,7 @@ def generate_launch_description():
                                                   'argo.urdf.xacro')])
 
   world_file_name = 'roadWorld.xml'
+#  world_file_name = 'bridge.world'
   world = os.path.join(pkg_argo_sim, 'gazebo/worlds', world_file_name)
 
   pkg_install_path = get_package_share_directory('argo_sim')
@@ -71,6 +73,15 @@ def generate_launch_description():
     respawn=True
   )
 
+  gps_to_utm_converter_node = Node(
+    package='gps_to_utm_converter_cpp',
+    executable='converter_node',
+    name='gps_to_utm_converter',
+    namespace=namespace_,
+    output='screen',
+    parameters=[{'use_sim_time': use_sim_time_}],
+  )
+
   return LaunchDescription([
     namespace_launch_arg,
     use_sim_time_arg,
@@ -97,7 +108,8 @@ def generate_launch_description():
         namespace=namespace_,
         output='screen',
         arguments=["-robot_namespace", namespace_,
-                   "-topic", ["/", namespace_, "/robot_description"],
+                   "-topic", [namespace_, "/robot_description"],
                    "-entity", "argo_sim"]
-    )
+    ),
+    gps_to_utm_converter_node,
   ])

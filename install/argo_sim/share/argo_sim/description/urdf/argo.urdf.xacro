@@ -154,7 +154,7 @@ xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
       <sensor type="ray" name="${prefix}_laser_sensor">
         <pose>0 0 0 0 0 0</pose>
         <visualize>true</visualize>
-        <update_rate>40</update_rate>
+        <update_rate>20</update_rate>
         <ray>
           <scan>
             <horizontal>

@@ -888,4 +888,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/testCode.dir/DependInfo.cmake"
   "CMakeFiles/nav2.dir/DependInfo.cmake"
   "CMakeFiles/trail_tracer.dir/DependInfo.cmake"
+  "CMakeFiles/waypoint_navigator.dir/DependInfo.cmake"
   )
