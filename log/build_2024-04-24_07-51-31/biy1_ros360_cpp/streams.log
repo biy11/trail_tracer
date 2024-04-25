@@ -1,0 +1,18 @@
+[0.044s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.138s] [35m[1mConsolidate compiler generated dependencies of target follower[0m
+[0.143s] [ 12%] Built target examplePublisher
+[0.145s] [ 25%] Built target exampleSubscriber
+[0.146s] [ 37%] Built target testCode
+[0.151s] [ 50%] Built target helloWorld
+[0.165s] [ 62%] Built target trail_tracer
+[0.170s] [ 75%] Built target nav2
+[0.173s] [ 87%] Built target waypoint_navigator
+[0.175s] [ 93%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[0.437s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:23:10:[m[K [01;31m[Kfatal error: [m[Knav2_msgs/msg/odemetry.hpp: No such file or directory
+[0.438s]    23 | #include [01;31m[K"nav2_msgs/msg/odemetry.hpp"[m[K
+[0.438s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.438s] compilation terminated.
+[0.441s] gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+[0.441s] gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+[0.442s] gmake: *** [Makefile:146: all] Error 2
+[0.444s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12

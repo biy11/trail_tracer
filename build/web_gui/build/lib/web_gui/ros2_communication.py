@@ -37,6 +37,7 @@ import threading
 # @version 1.4 - Adding subscriber for way-point coordinates.
 # @version 1.5 - Added publisher to tell which file to load from save trails
 # @version 1.6 - Added susbriber for Imu topic for velocity data.
+# @version 1.7 - Changed waypoint topic to subscription rather than a publisher.
  
 ros2_web_connector = None  # This will be initialized once to connect to web interface.
 latest_image = None
@@ -51,14 +52,14 @@ class ROS2WebConnector(Node):
         self.plotted_trail_name_publisher = self.create_publisher(String, 'plotted_trail_name_topic', 10)
         self.joystick_value_publisher = self.create_publisher(Twist, 'joystick_value', 10)
         self.load_file_publisher = self.create_publisher(String, 'load_file_topic', 10)
-        self.waypoint_publisher = self.create_publisher(Point, 'waypoints', 10)
 
         #Creation of subscibers for: ros_messages, /argo_sim/gps/fix and /argo_sim/cmd_vel.
         self.ros_messages_subscription = self.create_subscription(String, 'ros_messages', self.listener_callback, 10)
         self.gps_subscription = self.create_subscription(NavSatFix, '/gps/fix', self.gps_callback, 10)
         self.cmd_vel_subscription = self.create_subscription(Twist, '/cmd_vel', self.cmd_callback,10)
-        self.trail_files = self.create_subscription(String, '/trail_files', self.trail_file_callback, 10)
+        self.trail_files = self.create_subscription(String, '/trail_tracer/trail_files', self.trail_file_callback, 10)
         self.imu_subscription = self.create_subscription(Imu, '/imu/data', self.imu_callback, 10)
+        self.waypoint_subscriber = self.create_subscription(Point, '/trail_tracer/waypoints',self.waypoint_callback ,10)
         
 
         self.message_callback = message_callback # Callback function for recived message processing.
@@ -120,6 +121,7 @@ class ROS2WebConnector(Node):
         }
         self.message_callback(cmd_vel_data)
     
+    # Callback for IMU data for front-end use.
     def imu_callback(self, msg):
         velocity_data = {
             'orientation_x': msg.orientation.x,
@@ -134,6 +136,12 @@ class ROS2WebConnector(Node):
             'linear_acceleration_z':msg.linear_acceleration.z,
         }
         self.message_callback(velocity_data)
+
+    # Callback for waypoints to be plotted on map when re-tracing a trail.
+    def waypoint_callback(self, msg):
+        waypoint_data = {'waypoint':{'x': msg.x, 'y':msg.y}}
+        self.get_logger().info(f'Recieved waypoints: {waypoint_data}')
+        self.message_callback(waypoint_data)
 
 
 def publish_load_file(file_name):

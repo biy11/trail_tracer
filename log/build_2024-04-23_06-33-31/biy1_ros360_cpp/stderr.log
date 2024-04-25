@@ -1,0 +1,7 @@
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In constructor ‘[01m[KTestCode::TestCode()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:83:13:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""s[m[K’
+   83 |             [01;31m[K2s[m[K, std::bind(&TestCode::publish_file_name, this));
+      |             [01;31m[K^~[m[K
+gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

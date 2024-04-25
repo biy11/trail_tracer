@@ -288,6 +288,19 @@ waypoint_navigator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/build
 .PHONY : waypoint_navigator/fast
 
+#=============================================================================
+# Target rules for targets named follower
+
+# Build rule for target.
+follower: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 follower
+.PHONY : follower
+
+# fast build rule for target.
+follower/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/build
+.PHONY : follower/fast
+
 src/examplePublisher.o: src/examplePublisher.cpp.o
 .PHONY : src/examplePublisher.o
 
@@ -335,6 +348,30 @@ src/exampleSubscriber.s: src/exampleSubscriber.cpp.s
 src/exampleSubscriber.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleSubscriber.dir/build.make CMakeFiles/exampleSubscriber.dir/src/exampleSubscriber.cpp.s
 .PHONY : src/exampleSubscriber.cpp.s
+
+src/follower.o: src/follower.cpp.o
+.PHONY : src/follower.o
+
+# target to build an object file
+src/follower.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/src/follower.cpp.o
+.PHONY : src/follower.cpp.o
+
+src/follower.i: src/follower.cpp.i
+.PHONY : src/follower.i
+
+# target to preprocess a source file
+src/follower.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/src/follower.cpp.i
+.PHONY : src/follower.cpp.i
+
+src/follower.s: src/follower.cpp.s
+.PHONY : src/follower.s
+
+# target to generate assembly for a file
+src/follower.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/src/follower.cpp.s
+.PHONY : src/follower.cpp.s
 
 src/helloWorld.o: src/helloWorld.cpp.o
 .PHONY : src/helloWorld.o
@@ -473,6 +510,7 @@ help:
 	@echo "... uninstall"
 	@echo "... examplePublisher"
 	@echo "... exampleSubscriber"
+	@echo "... follower"
 	@echo "... helloWorld"
 	@echo "... nav2"
 	@echo "... testCode"
@@ -484,6 +522,9 @@ help:
 	@echo "... src/exampleSubscriber.o"
 	@echo "... src/exampleSubscriber.i"
 	@echo "... src/exampleSubscriber.s"
+	@echo "... src/follower.o"
+	@echo "... src/follower.i"
+	@echo "... src/follower.s"
 	@echo "... src/helloWorld.o"
 	@echo "... src/helloWorld.i"
 	@echo "... src/helloWorld.s"

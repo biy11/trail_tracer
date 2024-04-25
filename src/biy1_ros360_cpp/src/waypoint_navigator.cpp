@@ -29,11 +29,19 @@ using namespace std::chrono_literals;
 // Added goal publisher 
 class TestCode : public rclcpp::Node {
 public:
+
     TestCode()
-    : Node("robot_movement_control"), is_moving_(false), is_turning_(false), current_easting_(0.0), current_northing_(0.0) {
+    : Node("robot_movement_control"),
+      is_moving_(false),
+      is_turning_(false),
+      current_easting_(0.0),
+      current_northing_(0.0),
+      local_planner_x_(0.0), 
+      local_planner_y_(0.0)  // Corrected initialization list
+    {
         publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
         file_names_publisher_ = this->create_publisher<std_msgs::msg::String>("/trail_files", 10);
-        goal_pose_publisher_= this->create_publisher<geometry_msgs::msg::PoseStamped>("/goal_pose", 10);
+        goal_pose_publisher_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("/goal_pose", 10);
 
         gps_fix_subscription_ = this->create_subscription<sensor_msgs::msg::NavSatFix>(
             "/gps/fix", 10,
@@ -72,39 +80,6 @@ private:
     void utm_data_callback(const geometry_msgs::msg::PoseStamped::SharedPtr msg){
         current_easting_ = msg->pose.position.x;
         current_northing_ = msg->pose.position.y;
-    }
-
-    void gps_to_utm_converter() {
-        utm_coords.clear();
-        for (const auto& [lat, lon] : waypoints_) {
-            int zone;
-            bool northp;
-            double easting, northing;
-            GeographicLib::UTMUPS::Forward(lat, lon, zone, northp, easting, northing);
-
-            // Calculate relative positions
-            double rel_easting =  current_easting_ - easting;
-            double rel_northing = current_northing_ - northing;
-
-            // Create and publish PoseStamped message with relative coordinates
-            geometry_msgs::msg::PoseStamped goal_pose;
-            goal_pose.header.stamp = this->get_clock()->now();
-            goal_pose.header.frame_id = "map";  // Use the correct frame_id for your application
-
-            goal_pose.pose.position.x = rel_easting;
-            goal_pose.pose.position.y = rel_northing;
-            goal_pose.pose.position.z = 0.0;
-
-            // No rotation - assuming all poses face forward; modify as necessary
-            goal_pose.pose.orientation.x = 0.0;
-            goal_pose.pose.orientation.y = 0.0;
-            goal_pose.pose.orientation.z = 0.0;
-            goal_pose.pose.orientation.w = 1.0;
-
-            goal_pose_publisher_->publish(goal_pose);
-
-            RCLCPP_INFO(this->get_logger(), "Published relative UTM goal pose: Easting %f, Northing %f", rel_easting, rel_northing);
-        }
     }
 
     void open_gps_file() {
@@ -190,21 +165,28 @@ private:
         double relative_easting = current_easting_ - easting;
         double relative_northing = current_northing_ - northing;
 
+        local_planner_x_ = local_planner_x_ + relative_easting;
+        local_planner_y_ = local_planner_y_ + relative_northing;
+
         // Print current and destination UTM coordinates and their difference
         RCLCPP_INFO(this->get_logger(), "Current UTM Coordinates: Easting: %f, Northing: %f", current_easting_, current_northing_);
         RCLCPP_INFO(this->get_logger(), "Destination UTM Coordinates: Easting: %f, Northing: %f", easting, northing);
         RCLCPP_INFO(this->get_logger(), "Difference UTM Coordinates: Easting: %f, Northing: %f", relative_easting, relative_northing);
+        RCLCPP_INFO(this->get_logger(), "---------------------------------------------------------------------------------");
+
+        RCLCPP_INFO(this->get_logger(), "current local_plan: (Easting: %f, Northing: %f )", local_planner_x_, local_planner_y_);
+
 
         geometry_msgs::msg::PoseStamped goal_pose;
         goal_pose.header.stamp = this->get_clock()->now();
         goal_pose.header.frame_id = "map";
-        goal_pose.pose.position.x = relative_easting;
-        goal_pose.pose.position.y = relative_northing;
+        goal_pose.pose.position.x = local_planner_x_;
+        goal_pose.pose.position.y = local_planner_y_;
         goal_pose.pose.position.z = 0.0; // Assuming flat terrain
         goal_pose.pose.orientation.w = 1.0; // No rotation
         goal_pose_publisher_->publish(goal_pose);
 
-        RCLCPP_INFO(this->get_logger(), "Published UTM goal pose: Easting %f, Northing %f", relative_easting, relative_northing);
+        //RCLCPP_INFO(this->get_logger(), "Published UTM goal pose: Easting %f, Northing %f", relative_easting, relative_northing);
     }
 
 
@@ -212,6 +194,8 @@ private:
     bool is_turning_;
     double current_easting_;
     double current_northing_;
+    double local_planner_x_;
+    double local_planner_y_; 
     std::string trail_name_;
     std::vector<std::pair<float,float>> waypoints_;
     std::vector<std::tuple<int,bool,double,double>> utm_coords;

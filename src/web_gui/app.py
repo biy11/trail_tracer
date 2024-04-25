@@ -31,6 +31,7 @@ from web_gui.ros2_communication import start_ros_node, publish_message, publish_
 # @version 1.1 - Added cumunicaion handler for plotted trails.
 # @version 1.2 - Removed communication handler for plotted trails and chnaged it with a function to write the file stright from fornt-end rathe rthan back-end
 # @version 1.3 - Added route for user_guide
+# @version 1.4 - Added emiter for trail waypoints to be plotted on map. 
 
 
 app = Flask(__name__)
@@ -99,8 +100,10 @@ def handle_ros_messages(message):
         socketio.emit('cmd_vel_data', message)  # Emit cmd_vel data.
     elif 'trail_files' in message:
         socketio.emit('trail_files_data', {'data': message['trail_files']})
-    elif 'linear_acceleration_x' or 'angular_velocity_z' in message:
+    elif 'linear_acceleration_x' in message or 'angular_velocity_z' in message:
         socketio.emit('imu_data', message)
+    elif 'waypoint' in message:
+        socketio.emit('waypoint_data', {'data': message['waypoint']})
     else:
         socketio.emit('ros_message', {'data': message})  # Emit general ROS messages.
 

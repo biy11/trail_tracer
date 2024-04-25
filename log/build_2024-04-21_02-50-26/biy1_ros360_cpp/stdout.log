@@ -1,8 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target trail_tracer[0m
-[ 14%] Built target exampleSubscriber
-[ 28%] Built target examplePublisher
-[ 42%] Built target testCode
-[ 57%] Built target waypoint_navigator
-[ 71%] Built target helloWorld
-[ 85%] Built target nav2
-[100%] Built target trail_tracer

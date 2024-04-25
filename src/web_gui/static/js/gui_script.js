@@ -10,6 +10,7 @@
 // Added trail-file selecter logic
 //Added IMU Data socket listener
 //Added systemlog population button
+//Reduced overhead by only getting files from server when needed
 
 // WebSocket connection setup.
 var mode = 'automatic'
@@ -18,7 +19,8 @@ var file
 var socket = io.connect('http://' + document.domain + ':' + location.port);
 var linear_cmd_vel = null
 var loggCount = 1;
-let currentFiles = []; // Temp stoarge for file names.
+var currentFiles = []; // Temp stoarge for file names.
+var latestFiles = []; // Latest files for comparison reasons.
 var linear_cmd_vel = 0; // Default cmd_vel value.
 
 // Listen for GPS data from the server.
@@ -48,16 +50,16 @@ socket.on('imu_data', function(data) {
 socket.on('trail_files_data', function(message) {
     // For debugging purposes
     //console.log("Received trail files data: ", message.data);
+    latestFiles = message.data.split(", ");
+    //updateCurrentFiles(fileNames);
+});
 
-    var fileNames = message.data.split(", ");
+// Function to update the file names in dropdown menu
+function updateCurrentFiles(fileNames){
     currentFiles = fileNames;
+    //Update files in dropdown menu
     var trailDropdown = document.getElementById('trail-dropdown');
-    
-    // Save the currently selected option
-    var previousSelection = selectedFileOption;
-
-    trailDropdown.innerHTML = ''; // Clear existing options
-
+    trailDropdown.innerHTML = "";
     // Create and append the blank default option
     var defaultOption = document.createElement('option');
     defaultOption.value = "";
@@ -71,35 +73,28 @@ socket.on('trail_files_data', function(message) {
         option.textContent = fileName;
         trailDropdown.appendChild(option);
     });
-
     // Reapply the previously selected option if it still exists
     if (fileNames.includes(previousSelection)) {
         trailDropdown.value = previousSelection;
     } else {
-        // If the previous selection is no longer valid, reset or handle as needed
+        // If the previous selection is no longer valid, reset
         trailDropdown.value = "";
         selectedFileOption = null; // Reset selected option
     }
-});
+}
 
-document.getElementById('trail-dropdown').addEventListener('change', function(){
-    selectedFileOption = this.value;
-    console.log("File Selected: ", selectedFileOption);
-});
+// Function to compare two file arrays for updates
+function arraysEqual(arr1, arr2){
+    if(arr1.length !== arr2.length){
+        return false;
+    }
+    for (var index=0; index < arr1.length; index++){
+        if(arr1[index] != arr2[index])
+        return false;
+    }
+    return true;
+}
 
-//var file;
-
-document.getElementById('start-trail').addEventListener('click', function() {
-    socket.emit('load_file', {data: selectedFileOption})
-    loggerLog("FILE LOAD:" + selectedFileOption);
-    var runningTrail = true; // Ensure this is declared or managed appropriately in your scope
-    document.getElementById('load-trail-button').textContent = 'End';
-    document.getElementById('trail-prompt').style.display = 'none'; // Optionally hide the prompt after starting
-    document.getElementById('plot-trail-button').style.display = 'none'; // Optionally hide the prompt after starting
-    document.getElementById('emergency-stop-button').style.display = 'block'; 
-    document.getElementById('pause-button').style.display = 'block'; 
-
-});
 
 // Function to initialize the joystick and its event handlers.
 function createJoystick() {

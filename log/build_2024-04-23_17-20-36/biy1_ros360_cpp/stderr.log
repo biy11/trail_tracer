@@ -1,0 +1,7 @@
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::file_loader_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:189:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksend_collected_waypoints[m[K’ was not declared in this scope
+  189 |         [01;31m[Ksend_collected_waypoints[m[K();
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

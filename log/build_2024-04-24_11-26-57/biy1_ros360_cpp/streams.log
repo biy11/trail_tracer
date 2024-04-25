@@ -1,0 +1,21 @@
+[0.015s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.080s] [35m[1mConsolidate compiler generated dependencies of target follower[0m
+[0.099s] [ 25%] Built target testCode
+[0.099s] [ 25%] Built target examplePublisher
+[0.099s] [ 62%] Built target helloWorld
+[0.099s] [ 62%] Built target exampleSubscriber
+[0.099s] [ 62%] Built target trail_tracer
+[0.100s] [ 75%] Built target nav2
+[0.100s] [ 87%] Built target waypoint_navigator
+[0.107s] [ 93%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[1.989s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::process_all_waypoints()[m[K’:
+[1.989s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:184:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf2[m[K’ has not been declared
+[1.989s]   184 |             [01;31m[Ktf2[m[K::Quaternion quaternion;
+[1.989s]       |             [01;31m[K^~~[m[K
+[1.994s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:185:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kquaternion[m[K’ was not declared in this scope
+[1.994s]   185 |             [01;31m[Kquaternion[m[K.setRPY(0, 0, heading);  // Roll, pitch, yaw
+[1.994s]       |             [01;31m[K^~~~~~~~~~[m[K
+[5.562s] gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+[5.563s] gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+[5.563s] gmake: *** [Makefile:146: all] Error 2
+[5.565s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12

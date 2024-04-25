@@ -1,0 +1,18 @@
+[0.017s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.084s] [35m[1mConsolidate compiler generated dependencies of target follower[0m
+[0.103s] [ 37%] Built target trail_tracer
+[0.103s] [ 37%] Built target exampleSubscriber
+[0.103s] [ 37%] Built target nav2
+[0.103s] [ 50%] Built target helloWorld
+[0.104s] [ 62%] Built target testCode
+[0.105s] [ 75%] Built target waypoint_navigator
+[0.105s] [ 87%] Built target examplePublisher
+[0.115s] [ 93%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[2.123s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In constructor ‘[01m[KTestCode::TestCode()[m[K’:
+[2.124s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:92:37:[m[K [01;31m[Kerror: [m[K‘[01m[KOdomSubscriber[m[K’ has not been declared
+[2.124s]    92 |             "/odom", 10, std::bind(&[01;31m[KOdomSubscriber[m[K::odom_callback, this, std::placeholders::_1));
+[2.124s]       |                                     [01;31m[K^~~~~~~~~~~~~~[m[K
+[4.763s] gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+[4.763s] gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+[4.763s] gmake: *** [Makefile:146: all] Error 2
+[4.766s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12

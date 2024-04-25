@@ -152,6 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
             trailPlotting = true; // Set recording active flag
         } else {
+            if(coordinatesList.length == 0){
+                alert('No Points plotted! Minimun of 1 point to be plotted before being able to save!')
+                return;
+            }
             // Re-enable other buttons
             toggleModeBtn.disabled = false;
             pauseBtn.disabled = false;
@@ -169,6 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadTrailBtn.addEventListener('click', function() {
         clickSound(); //Play click sound as buton is clicked
+
+        // Check if there are any changes in number of trail files
+        if(latestFiles.length > 0 && !arraysEqual(currentFiles, latestFiles)){
+            updateCurrentFiles(latestFiles);
+            currentFiles = latestFiles; // Update current files 
+            latestFiles = []; //Empty lastest fiel list after update
+        }
         if (this.textContent === 'Cancel') {
             // If the button is in "Cancel" mode, revert the 'plot-trail-button' text and state
             plotTrailBtn.textContent = 'Plot Trail';
@@ -204,12 +215,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             trailLoaded = false;
             runingTrail = false;
+            clearWaypointMarkers();
         }
     });
 
+    // Function to remove waypoint markers from map.
+    function clearWaypointMarkers(){
+        waypointMarkers.forEach(function(marker){
+            map.removeLayer(marker);
+        });
+        waypointMarkers = [];
+    }    
+
     emergencyStopBtn.addEventListener('click', function(){
     clickSound(); //Play click sound as buton is clicked
-    controlRobot('emergency-stop')});
+    controlRobot('pause-trail')});
     
     clearLogBtn.addEventListener('click', ()=> clearLog());
 });

@@ -14,6 +14,9 @@ find_package(sensor_msgs REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 list(APPEND CMAKE_MODULE_PATH "/usr/share/cmake/geographiclib")
 find_package(GeographicLib REQUIRED)
+find_package(nav2_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -25,6 +28,8 @@ add_executable(testCode src/testCode.cpp)
 add_executable(nav2 src/nav2.cpp)
 add_executable(trail_tracer src/trail_tracer.cpp)
 add_executable(waypoint_navigator src/waypoint_navigator.cpp)
+add_executable(follower src/follower.cpp)
+
 
 target_include_directories(helloWorld PUBLIC
 
@@ -39,8 +44,9 @@ ament_target_dependencies(helloWorld rclcpp std_msgs geometry_msgs sensor_msgs G
 ament_target_dependencies(nav2 rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
 ament_target_dependencies(trail_tracer rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
 ament_target_dependencies(waypoint_navigator rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
+ament_target_dependencies(follower rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs nav2_msgs tf2 tf2_ros)
 
-install(TARGETS helloWorld examplePublisher exampleSubscriber testCode nav2 trail_tracer waypoint_navigator
+install(TARGETS helloWorld examplePublisher exampleSubscriber testCode nav2 trail_tracer waypoint_navigator follower
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

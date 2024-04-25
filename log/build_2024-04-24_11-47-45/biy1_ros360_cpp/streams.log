@@ -1,0 +1,21 @@
+[0.015s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.083s] [35m[1mConsolidate compiler generated dependencies of target follower[0m
+[0.102s] [ 25%] Built target testCode
+[0.102s] [ 31%] Built target examplePublisher
+[0.103s] [ 37%] Built target trail_tracer
+[0.104s] [ 50%] Built target exampleSubscriber
+[0.104s] [ 62%] Built target helloWorld
+[0.104s] [ 75%] Built target waypoint_navigator
+[0.105s] [ 87%] Built target nav2
+[0.109s] [ 93%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[2.054s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::process_all_waypoints()[m[K’:
+[2.054s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:182:49:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kdelta_x[m[K’ in ‘[01m[Kdelta_y[m[K’, which is of non-class type ‘[01m[Kdouble[m[K’
+[2.054s]   182 |             double heading = std::atan2(delta_y.[01;31m[Kdelta_x[m[K);
+[2.054s]       |                                                 [01;31m[K^~~~~~~[m[K
+[2.055s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:179:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdelta_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[2.055s]   179 |             double [01;35m[Kdelta_x[m[K = current_easting_ - easting;
+[2.055s]       |                    [01;35m[K^~~~~~~[m[K
+[5.901s] gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+[5.902s] gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+[5.902s] gmake: *** [Makefile:146: all] Error 2
+[5.904s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12

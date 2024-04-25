@@ -1,0 +1,88 @@
+[0.040s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.123s] [35m[1mConsolidate compiler generated dependencies of target follower[0m
+[0.138s] [ 12%] Built target testCode
+[0.138s] [ 25%] Built target examplePublisher
+[0.139s] [ 43%] Built target exampleSubscriber
+[0.139s] [ 50%] Built target waypoint_navigator
+[0.140s] [ 62%] Built target trail_tracer
+[0.140s] [ 75%] Built target helloWorld
+[0.143s] [ 87%] Built target nav2
+[0.154s] [ 93%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[2.036s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In constructor ‘[01m[KTestCode::TestCode()[m[K’:
+[2.036s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:75:49:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KTestCode[m[K’ does not have any field named ‘[01m[Kcurrent_northing_[m[K’
+[2.036s]    75 |     TestCode() : Node("robot_movement_control"),[01;31m[Kcurrent_northing_[m[K(0.0), current_easting_(0.0), waypoint_sender_(std::make_shared<WaypointSender>("waypoint_sender")) {
+[2.036s]       |                                                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.036s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:75:73:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KTestCode[m[K’ does not have any field named ‘[01m[Kcurrent_easting_[m[K’
+[2.036s]    75 |     TestCode() : Node("robot_movement_control"),current_northing_(0.0), [01;31m[Kcurrent_easting_[m[K(0.0), waypoint_sender_(std::make_shared<WaypointSender>("waypoint_sender")) {
+[2.036s]       |                                                                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.036s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:75:96:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KTestCode[m[K’ does not have any field named ‘[01m[Kwaypoint_sender_[m[K’
+[2.036s]    75 |     TestCode() : Node("robot_movement_control"),current_northing_(0.0), current_easting_(0.0), [01;31m[Kwaypoint_sender_[m[K(std::make_shared<WaypointSender>("waypoint_sender")) {
+[2.036s]       |                                                                                                [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.045s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:77:49:[m[K [01;31m[Kerror: [m[K‘[01m[Ktrails_directory_[m[K’ was not declared in this scope
+[2.045s]    77 |         this->get_parameter("trails_directory", [01;31m[Ktrails_directory_[m[K);
+[2.045s]       |                                                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.051s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:81:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kfile_names_publisher_[m[K’ was not declared in this scope
+[2.051s]    81 |         [01;31m[Kfile_names_publisher_[m[K = this->create_publisher<std_msgs::msg::String>("/trail_files", 10);
+[2.051s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[2.064s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:83:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kload_file_subscription_[m[K’ was not declared in this scope
+[2.064s]    83 |         [01;31m[Kload_file_subscription_[m[K = this->create_subscription<std_msgs::msg::String>(
+[2.064s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.100s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:87:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kgps_to_utm_subscription_[m[K’ was not declared in this scope
+[2.100s]    87 |         [01;31m[Kgps_to_utm_subscription_[m[K = this->create_subscription<geometry_msgs::msg::PoseStamped>(
+[2.100s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.132s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:91:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_publish_file_names_[m[K’ was not declared in this scope; did you mean ‘[01m[Kpublish_file_name[m[K’?
+[2.132s]    91 |         [01;31m[Ktimer_publish_file_names_[m[K = this->create_wall_timer(
+[2.132s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.132s]       |         [32m[Kpublish_file_name[m[K
+[2.141s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:94:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kwaypoints_[m[K’ was not declared in this scope
+[2.141s]    94 |         [01;31m[Kwaypoints_[m[K = std::vector<std::pair<float,float>>();
+[2.141s]       |         [01;31m[K^~~~~~~~~~[m[K
+[2.149s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::utm_data_callback(geometry_msgs::msg::PoseStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.149s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:139:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_easting_[m[K’ was not declared in this scope
+[2.149s]   139 |         [01;31m[Kcurrent_easting_[m[K = msg->pose.position.x;
+[2.150s]       |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.155s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:140:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_northing_[m[K’ was not declared in this scope
+[2.155s]   140 |         [01;31m[Kcurrent_northing_[m[K = msg->pose.position.y;
+[2.155s]       |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.162s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::publish_file_name()[m[K’:
+[2.162s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:157:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kfile_names_publisher_[m[K’ was not declared in this scope
+[2.162s]   157 |         [01;31m[Kfile_names_publisher_[m[K->publish(msg);
+[2.162s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[2.167s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::file_loader_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.167s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:173:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kwaypoints_[m[K’ was not declared in this scope
+[2.167s]   173 |         [01;31m[Kwaypoints_[m[K.clear(); // Clear any existing waypoints before loading new ones
+[2.167s]       |         [01;31m[K^~~~~~~~~~[m[K
+[2.172s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:189:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kwaypoint_sender_[m[K’ was not declared in this scope; did you mean ‘[01m[KWaypointSender[m[K’?
+[2.172s]   189 |         [01;31m[Kwaypoint_sender_[m[K->set_waypoints(pose_stamped_waypoints_);
+[2.172s]       |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.172s]       |         [32m[KWaypointSender[m[K
+[2.178s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:189:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kpose_stamped_waypoints_[m[K’ was not declared in this scope
+[2.178s]   189 |         waypoint_sender_->set_waypoints([01;31m[Kpose_stamped_waypoints_[m[K);
+[2.178s]       |                                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.182s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::process_next_waypoint()[m[K’:
+[2.182s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:193:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kwaypoints_[m[K’ was not declared in this scope
+[2.182s]   193 |         if ([01;31m[Kwaypoints_[m[K.empty()) {
+[2.182s]       |             [01;31m[K^~~~~~~~~~[m[K
+[2.185s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:198:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kwaypoints_[m[K’ was not declared in this scope
+[2.185s]   198 |         auto [lat, lon] = [01;31m[Kwaypoints_[m[K.front();
+[2.185s]       |                           [01;31m[K^~~~~~~~~~[m[K
+[2.191s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:206:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_easting_[m[K’ was not declared in this scope
+[2.191s]   206 |         double relative_easting = [01;31m[Kcurrent_easting_[m[K - easting;
+[2.191s]       |                                   [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.196s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:207:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_northing_[m[K’ was not declared in this scope
+[2.196s]   207 |         double relative_northing = [01;31m[Kcurrent_northing_[m[K - northing;
+[2.196s]       |                                    [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.202s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:221:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpose_stamped_waypoints_[m[K’ was not declared in this scope
+[2.202s]   221 |         [01;31m[Kpose_stamped_waypoints_[m[K.push_back(goal_pose);
+[2.202s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.203s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K At global scope:
+[2.203s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:229:37:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[Kcreate_waypoint[m[K’
+[2.203s]   229 |     geometry_msgs::msg::PoseStamped [01;31m[Kcreate_waypoint[m[K(double x, double y, double z, double w) {
+[2.203s]       |                                     [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.204s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:252:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.204s]   252 | [01;31m[K}[m[K;
+[2.204s]       | [01;31m[K^[m[K
+[4.351s] gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+[4.351s] gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+[4.351s] gmake: *** [Makefile:146: all] Error 2
+[4.353s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12

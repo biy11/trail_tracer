@@ -73,15 +73,6 @@ def generate_launch_description():
     respawn=True
   )
 
-  gps_to_utm_converter_node = Node(
-    package='gps_to_utm_converter_cpp',
-    executable='converter_node',
-    name='gps_to_utm_converter',
-    namespace=namespace_,
-    output='screen',
-    parameters=[{'use_sim_time': use_sim_time_}],
-  )
-
   return LaunchDescription([
     namespace_launch_arg,
     use_sim_time_arg,
@@ -110,6 +101,5 @@ def generate_launch_description():
         arguments=["-robot_namespace", namespace_,
                    "-topic", [namespace_, "/robot_description"],
                    "-entity", "argo_sim"]
-    ),
-    gps_to_utm_converter_node,
+    )
   ])

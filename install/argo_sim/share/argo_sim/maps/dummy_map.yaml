@@ -1,6 +1,0 @@
-image: blankMap.pgm               # Path to the map image file (PGM - Portable GrayMap format)
-resolution: 0.01                  # The resolution of the map in meters/pixel
-origin: [-2.5, -2.5, 0]           # The 2D pose of the lower-left corner of the map, with [x, y, yaw]
-occupied_thresh: 0.65             # The occupancy probability threshold above which cells are considered fully occupied
-free_thresh: 0.196                # The occupancy probability threshold below which cells are considered free
-negate: 0                         # Whether the black/white colors in the image should be negated (0 means no negation)

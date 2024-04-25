@@ -1,0 +1,15 @@
+[ 25%] Built target nav2
+[ 25%] Built target examplePublisher
+[ 43%] Built target exampleSubscriber
+[ 56%] Built target testCode
+[ 62%] Built target waypoint_navigator
+[ 68%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[ 87%] Built target helloWorld
+[ 93%] Built target trail_tracer
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::web_messages_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:115:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kelif[m[K’ was not declared in this scope
+  115 |         } [01;31m[Kelif[m[K (msg->data == "end-trail"){
+      |           [01;31m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

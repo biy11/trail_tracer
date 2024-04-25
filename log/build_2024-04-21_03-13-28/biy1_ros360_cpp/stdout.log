@@ -1,8 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target trail_tracer[0m
-[ 28%] Built target testCode
-[ 28%] Built target examplePublisher
-[ 50%] Built target helloWorld
-[ 57%] Built target nav2
-[ 71%] Built target exampleSubscriber
-[ 85%] Built target waypoint_navigator
-[ 92%] [32mBuilding CXX object CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o[0m

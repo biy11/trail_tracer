@@ -32,7 +32,7 @@ private:
         utm_msg.pose.position.y = y;
 
         publisher_->publish(utm_msg);
-        RCLCPP_INFO(this->get_logger(), "Published UTM coordinates: [%f, %f]", x, y);
+        //RCLCPP_INFO(this->get_logger(), "Published UTM coordinates: [%f, %f]", x, y);
     }
 
 

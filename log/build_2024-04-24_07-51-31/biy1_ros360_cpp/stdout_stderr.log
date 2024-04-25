@@ -1,0 +1,16 @@
+[35m[1mConsolidate compiler generated dependencies of target follower[0m
+[ 12%] Built target examplePublisher
+[ 25%] Built target exampleSubscriber
+[ 37%] Built target testCode
+[ 50%] Built target helloWorld
+[ 62%] Built target trail_tracer
+[ 75%] Built target nav2
+[ 87%] Built target waypoint_navigator
+[ 93%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:23:10:[m[K [01;31m[Kfatal error: [m[Knav2_msgs/msg/odemetry.hpp: No such file or directory
+   23 | #include [01;31m[K"nav2_msgs/msg/odemetry.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

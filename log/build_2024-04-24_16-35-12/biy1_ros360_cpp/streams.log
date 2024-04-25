@@ -1,0 +1,53 @@
+[0.016s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.083s] [35m[1mConsolidate compiler generated dependencies of target follower[0m
+[0.099s] [ 37%] Built target exampleSubscriber
+[0.099s] [ 37%] Built target nav2
+[0.100s] [ 37%] Built target testCode
+[0.100s] [ 50%] Built target helloWorld
+[0.102s] [ 62%] Built target examplePublisher
+[0.103s] [ 75%] Built target trail_tracer
+[0.104s] [ 87%] Built target waypoint_navigator
+[0.113s] [ 93%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[2.070s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:301:49:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[2.070s]   301 |     rclcpp::Publisher<geometry_msgs::msg::Point>[01;31m[KSharedPtr[m[K file_waypoint_publisher;
+[2.070s]       |                                                 [01;31m[K^~~~~~~~~[m[K
+[2.070s]       |                                                          [32m[K;[m[K
+[2.073s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:301:59:[m[K [01;31m[Kerror: [m[K‘[01m[Kfile_waypoint_publisher[m[K’ does not name a type
+[2.073s]   301 |     rclcpp::Publisher<geometry_msgs::msg::Point>SharedPtr [01;31m[Kfile_waypoint_publisher[m[K;
+[2.073s]       |                                                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.076s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In constructor ‘[01m[KTestCode::TestCode()[m[K’:
+[2.076s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:77:205:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Publisher<geometry_msgs::msg::Point_<std::allocator<void> > >::Publisher()[m[K’
+[2.076s]    77 |     TestCode() : Node("robot_movement_control"),current_northing_(0.0), current_easting_(0.0), current_pose_x(0.0), current_pose_y(0.0),waypoint_sender_(std::make_shared<WaypointSender>("waypoint_sender")[01;31m[K)[m[K {
+[2.077s]       |                                                                                                                                                                                                             [01;31m[K^[m[K
+[2.077s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:31[m[K,
+[2.077s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+[2.077s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+[2.077s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.077s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.077s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.077s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.077s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.077s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.077s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.077s]                  from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:9[m[K:
+[2.077s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<MessageT, AllocatorT>::Publisher(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&) [with MessageT = geometry_msgs::msg::Point_<std::allocator<void> >; AllocatorT = std::allocator<void>; std::string = std::__cxx11::basic_string<char>][m[K’
+[2.077s]   125 |   [01;36m[KPublisher[m[K(
+[2.077s]       |   [01;36m[K^~~~~~~~~[m[K
+[2.077s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:125:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 0 provided
+[2.078s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Publisher<geometry_msgs::msg::Point_<std::allocator<void> > >::Publisher(const rclcpp::Publisher<geometry_msgs::msg::Point_<std::allocator<void> > >&)[m[K’
+[2.078s]    77 | class [01;36m[KPublisher[m[K : public PublisherBase
+[2.078s]       |       [01;36m[K^~~~~~~~~[m[K
+[2.078s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:77:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[2.086s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:84:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kfile_waypoint_publisher[m[K’ was not declared in this scope; did you mean ‘[01m[Kfile_names_publisher_[m[K’?
+[2.086s]    84 |         [01;31m[Kfile_waypoint_publisher[m[K = this->create_publisher<geometry_msgs::msg::Point>("trail_tracer/waypoints", 10);
+[2.086s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.086s]       |         [32m[Kfile_names_publisher_[m[K
+[2.120s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::file_loader_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.120s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:160:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kfile_waypoint_publisher[m[K’ was not declared in this scope; did you mean ‘[01m[Kfile_names_publisher_[m[K’?
+[2.120s]   160 |         [01;31m[Kfile_waypoint_publisher[m[K->publish(waypoints_);
+[2.120s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.120s]       |         [32m[Kfile_names_publisher_[m[K
+[6.006s] gmake[2]: *** [CMakeFiles/follower.dir/build.make:76: CMakeFiles/follower.dir/src/follower.cpp.o] Error 1
+[6.007s] gmake[1]: *** [CMakeFiles/Makefile2:333: CMakeFiles/follower.dir/all] Error 2
+[6.007s] gmake: *** [Makefile:146: all] Error 2
+[6.009s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12

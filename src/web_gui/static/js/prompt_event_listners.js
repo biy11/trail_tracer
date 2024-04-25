@@ -21,6 +21,7 @@ const exitPlotNamePromptBtn = document.getElementById('exit-plot-name-prompt');
 const exitPromptBtn = document.getElementById('exit-prompt');
 const trailPrompt = document.getElementById('trail-prompt');
 
+var waypointMarkers = [];
 document.addEventListener('DOMContentLoaded', () => { 
     // Function to initialize event listeners for the custom name prompt
     function initializeTrailNamePrompt() {
@@ -123,9 +124,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }); 
     }
 
+    document.getElementById('trail-dropdown').addEventListener('change', function(){
+        selectedFileOption = this.value;
+        console.log("File Selected: ", selectedFileOption);
+    });
+    
+    //var file;
+    
+    document.getElementById('start-trail').addEventListener('click', function() {
+        if(selectedFileOption == null || selectedFileOption == "Select File"){
+            document.getElementById('no-entry-error').style.display = 'block';
+            return;
+        }
+        socket.emit('load_file', {data: selectedFileOption})
+        loggerLog("FILE LOAD:" + selectedFileOption);
+        var runningTrail = true;
+        document.getElementById('no-entry-error').style.display = 'none';
+        document.getElementById('load-trail-button').textContent = 'End';
+        document.getElementById('trail-prompt').style.display = 'none'; // Optionally hide the prompt after starting
+        document.getElementById('plot-trail-button').style.display = 'none'; // Optionally hide the prompt after starting
+        document.getElementById('emergency-stop-button').style.display = 'block'; 
+        document.getElementById('pause-button').style.display = 'block'; 
+
+        socket.on('waypoint_data', function(data) {
+            console.log('Received waypoint data:', data);
+            var waypointMarker = L.marker([data.data.x, data.data.y],{
+                icon: L.divIcon({
+                    className: 'waypoint-marker',
+                    html: '<div style="color: red; font-size: 24px; font-weight: bold;">×</div>',
+                    iconSize:[20,20]
+                })
+            }).addTo(map);
+            waypointMarkers.push(waypointMarker);
+        });
+    
+    });
+
     exitPromptBtn.addEventListener('click', function() {
         clickSound(); //Play click sound as buton is clicked
         trailPrompt.style.display = 'none';
+        document.getElementById('no-entry-error').style.display = 'none';
         toggleModeBtn.disabled = false;
         plotTrailBtn.disabled = false;
         trailLoaded = false;

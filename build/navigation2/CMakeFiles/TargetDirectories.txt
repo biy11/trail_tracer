@@ -1,9 +1,0 @@
-/home/bilal/trail_tracer/build/navigation2/CMakeFiles/uninstall.dir
-/home/bilal/trail_tracer/build/navigation2/CMakeFiles/navigation2_uninstall.dir
-/home/bilal/trail_tracer/build/navigation2/CMakeFiles/test.dir
-/home/bilal/trail_tracer/build/navigation2/CMakeFiles/edit_cache.dir
-/home/bilal/trail_tracer/build/navigation2/CMakeFiles/rebuild_cache.dir
-/home/bilal/trail_tracer/build/navigation2/CMakeFiles/list_install_components.dir
-/home/bilal/trail_tracer/build/navigation2/CMakeFiles/install.dir
-/home/bilal/trail_tracer/build/navigation2/CMakeFiles/install/local.dir
-/home/bilal/trail_tracer/build/navigation2/CMakeFiles/install/strip.dir

@@ -1,0 +1,9 @@
+[35m[1mConsolidate compiler generated dependencies of target follower[0m
+[ 18%] Built target exampleSubscriber
+[ 25%] Built target trail_tracer
+[ 43%] Built target examplePublisher
+[ 50%] Built target helloWorld
+[ 62%] Built target nav2
+[ 75%] Built target waypoint_navigator
+[ 87%] Built target testCode
+[ 93%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
