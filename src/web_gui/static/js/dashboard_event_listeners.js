@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Event listner for lot name button
+    // Event listner for plot name button
     plotTrailBtn.addEventListener('click', function() {
         clickSound(); //Play click sound as buton is clicked
         if (!trailPlotting) {
@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleModeBtn.disabled = true;
             pauseBtn.disabled = true;
             loadTrailBtn.textContent = 'Cancel' 
-            //.disabled = true;
 
             map.on('click', mapClickHandler); // Enable map clicking for coordinate collection, function mapClickHandler can be found in map_ui.js
     
@@ -160,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             plotNamePrompt.style.display = 'block';
             toggleModeBtn.disabled = true;
             //noPlotNameErrorBtn.style.display = 'none';
+            trailPlotting = false;
 
             map.off('click', mapClickHandler); // Disable map clicking for coordinate collection, function mapClickHandler can be found in map_ui.js
     
@@ -184,8 +184,9 @@ document.addEventListener('DOMContentLoaded', () => {
             wayPointMarkers.forEach(marker => marker.remove());
             wayPointMarkers = [];
             map.off('click', mapClickHandler); // Function mapClickHandler can be found in map_ui.js
-            trailPlotting = false;
+            //trailPlotting = false;
             coordinatesList = [];
+            clearWaypointMarkers();
             
             // Re-enable disabled buttons due to plotting
             toggleModeBtn.disabled = false;
@@ -194,6 +195,21 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Revert the 'load-trail-button' text back to its original
             this.textContent = 'Load Trail';
+        } else if(this.textContent == 'End'){
+            if(trailPaused){
+                clearWaypointMarkers();
+                this.textContent = 'Load Trail';
+                plotTrailBtn.style.display = 'block';
+                pauseBtn.style.display = 'none';
+                trailPaused = false;
+                trailLoaded = false;
+                controlRobot('pause-trail');
+                emergencyMsg.style.display = 'none';
+                resetPlottingUI();
+            }else{
+                alert('Trail Tracing is active, please stop it before exiting');
+                return;
+            }
         } else if(!trailLoaded){
             document.getElementById('trail-prompt').style.display = 'block';
             toggleModeBtn.disabled = true;
@@ -223,6 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         waypointMarkers = [];
     }
 
+    // Event listner to pause/stop trail tracing
     pauseBtn.addEventListener('click', function() {
         clickSound(); //Play click sound as buton is clicked
         if(!trailPaused){
@@ -230,19 +247,26 @@ document.addEventListener('DOMContentLoaded', () => {
             controlRobot('pause-trail')
             this.textContent = "Resume";
             trailPaused = true;
+            emergencyMsg.style.display = 'none';
         } else{
             console.log("trail resumed")          
             controlRobot('resume-trail');
+            emergencyMsg.style.display = 'block';
             this.textContent = "Pause";
             trailPaused = false;
         }
-
     });
 
-    // emergencyStopBtn.addEventListener('click', function(){
-    // clickSound(); //Play click sound as buton is clicked
-    // controlRobot('resume-trail')
-    // });
+    document.addEventListener('keydown', function(event){
+        if(event.code === "Space" && trailLoaded && !trailPaused){
+            event.preventDefault(); // Default is usually a scoll action, this prevents this.
+            console.log("Paused trail");
+            controlRobot('pause-trail')
+            emergencyMsg.style.display = 'none';
+            pauseBtn.textContent = "Resume";
+            trailPaused = true;
+        }   
+    });
     
     clearLogBtn.addEventListener('click', ()=> clearLog());
 });

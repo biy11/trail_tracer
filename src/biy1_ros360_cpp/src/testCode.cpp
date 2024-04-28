@@ -225,38 +225,6 @@ private:
         current_northing_ = msg->pose.position.y;
     }
 
-    // void gps_to_utm_converter() {
-    //     utm_coords.clear();
-    //     for (const auto& [lat, lon] : waypoints_) {
-    //         int zone;
-    //         bool northp;
-    //         double easting, northing;
-    //         GeographicLib::UTMUPS::Forward(lat, lon, zone, northp, easting, northing);
-
-    //         // Calculate relative positions
-    //         double rel_easting =  current_easting_ - easting;
-    //         double rel_northing = current_northing_ - northing;
-
-    //         // Create and publish PoseStamped message with relative coordinates
-    //         geometry_msgs::msg::PoseStamped goal_pose;
-    //         goal_pose.header.stamp = this->get_clock()->now();
-    //         goal_pose.header.frame_id = "map";  // Use the correct frame_id for your application
-
-    //         goal_pose.pose.position.x = rel_easting;
-    //         goal_pose.pose.position.y = rel_northing;
-    //         goal_pose.pose.position.z = 0.0;
-
-    //         // No rotation - assuming all poses face forward; modify as necessary
-    //         goal_pose.pose.orientation.x = 0.0;
-    //         goal_pose.pose.orientation.y = 0.0;
-    //         goal_pose.pose.orientation.z = 0.0;
-    //         goal_pose.pose.orientation.w = 1.0;
-
-    //         goal_pose_publisher_->publish(goal_pose);
-
-    //         RCLCPP_INFO(this->get_logger(), "Published relative UTM goal pose: Easting %f, Northing %f", rel_easting, rel_northing);
-    //     }
-    // }
 
     void update_movement() {
         if (is_moving_ && last_received_cmd_) {

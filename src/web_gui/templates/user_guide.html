@@ -87,10 +87,13 @@
      </div>
    
      <!-- Link to JavaScript files -->
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
      <script src="{{ url_for('static', filename='js/user_guide/user_guide.js') }}"></script>
-     <script src="{{ url_for('static', filename='js/gui_script.js') }}"></script>
-     <script src="{{ url_for('static', filename='js/event_listeners.js') }}"></script>
+     <!-- <script src="{{ url_for('static', filename='js/gui_script.js') }}"></script> -->
+     <script src="{{ url_for('static', filename='js/dashboard_event_listeners.js') }}"></script>
+     <!-- <script src="{{ url_for('static', filename='js/prompt_event_listners.js') }}"></script> -->
      <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+     <!-- <script src="{{ url_for('static', filename='js/map_ui.js') }}"></script> -->
      <!-- Include nipplejs for the joystick -->
      <script src="https://cdn.jsdelivr.net/npm/nipplejs"></script>
  </body>

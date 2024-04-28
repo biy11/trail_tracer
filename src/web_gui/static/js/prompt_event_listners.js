@@ -20,6 +20,8 @@ const existingFileError = document.getElementById('file-exist');
 const exitPlotNamePromptBtn = document.getElementById('exit-plot-name-prompt');
 const exitPromptBtn = document.getElementById('exit-prompt');
 const trailPrompt = document.getElementById('trail-prompt');
+const startTrailTrace = document.getElementById('start-trail');
+const emergencyMsg = document.getElementById('emergency-msg');
 
 var waypointMarkers = [];
 document.addEventListener('DOMContentLoaded', () => { 
@@ -65,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trailNamePrompt.style.display = 'none';
             noEntryError.style.display = 'none';
             fileExistError.style.display = 'none';
+            isRecordingActive = false;
             toggleModeBtn.disabled = false;
             manualMoveBtn.disabled = false;
             trailNameInput.value = '';
@@ -131,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //var file;
     
-    document.getElementById('start-trail').addEventListener('click', function() {
+    startTrailTrace.addEventListener('click', function() {
         if(selectedFileOption == null || selectedFileOption == "Select File"){
             document.getElementById('no-entry-error').style.display = 'block';
             return;
@@ -145,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('plot-trail-button').style.display = 'none'; // Optionally hide the prompt after starting
         //document.getElementById('emergency-stop-button').style.display = 'block'; 
         document.getElementById('pause-button').style.display = 'block'; 
+        emergencyMsg.style.display = 'block';
 
         socket.on('waypoint_data', function(data) {
             console.log('Received waypoint data:', data);
@@ -169,24 +173,23 @@ document.addEventListener('DOMContentLoaded', () => {
         trailLoaded = false;
     });
 
-    function resetPlottingUI() {
-        // Reset the "Plot Trail" button text
-        plotTrailBtn.textContent = 'Plot Trail';
-        // Reset the "Load Trail" button text back from "Cancel" to its original text
-        loadTrailBtn.textContent = 'Load Trail';
-        // Re-enable buttons that were disabled during plotting
-        toggleModeBtn.disabled = false;
-        pauseBtn.disabled = false;
-        emergencyStopBtn.disabled = false;
-        // Remove any plotted waypoints from the map and clear the waypoints array
-        wayPointMarkers.forEach(marker => marker.remove());
-        wayPointMarkers = [];
-        coordinatesList = []; // Clear the coordinates list
-        map.off('click', mapClickHandler); // Disable the map click event handler for plotting new waypoints. Function mapClickHandler can be found in map_ui.js
-        trailPlotting = false; // Flag for trail plotting is no longer being active
-    }
     // Function for when page loads to set up the plot-name saving event listeners
     handlePlotNameSaving();
     initializeTrailNamePrompt();
     
 });
+function resetPlottingUI() {
+    // Reset the "Plot Trail" button text
+    plotTrailBtn.textContent = 'Plot Trail';
+    // Reset the "Load Trail" button text back from "Cancel" to its original text
+    loadTrailBtn.textContent = 'Load Trail';
+    // Re-enable buttons that were disabled during plotting
+    toggleModeBtn.disabled = false;
+    pauseBtn.disabled = false;
+    // Remove any plotted waypoints from the map and clear the waypoints array
+    wayPointMarkers.forEach(marker => marker.remove());
+    wayPointMarkers = [];
+    coordinatesList = []; // Clear the coordinates list
+    map.off('click', mapClickHandler); // Disable the map click event handler for plotting new waypoints. Function mapClickHandler can be found in map_ui.js
+    trailPlotting = false; // Flag for trail plotting is no longer being active
+}

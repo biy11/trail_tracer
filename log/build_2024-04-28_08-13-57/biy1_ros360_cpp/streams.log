@@ -1,0 +1,47 @@
+[0.046s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.157s] [35m[1mConsolidate compiler generated dependencies of target polishedCode[0m
+[0.165s] [35m[1mConsolidate compiler generated dependencies of target sparse[0m
+[0.184s] [  4%] [32mBuilding CXX object CMakeFiles/testCode.dir/src/testCode.cpp.o[0m
+[0.209s] [ 13%] Built target helloWorld
+[0.210s] [ 22%] Built target trail_tracer
+[0.214s] [ 31%] Built target nav2
+[0.216s] [ 40%] Built target examplePublisher
+[0.218s] [ 50%] Built target code_test
+[0.218s] [ 59%] Built target waypoint_navigator
+[0.220s] [ 68%] Built target exampleSubscriber
+[0.225s] [ 77%] Built target follower
+[0.228s] [ 86%] Built target polishedCode
+[0.232s] [ 95%] Built target sparse
+[14.958s] [100%] [32m[1mLinking CXX executable testCode[0m
+[15.675s] [100%] Built target testCode
+[15.690s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[15.803s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/biy1_ros360_cpp
+[15.815s] -- Install configuration: ""
+[15.815s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/helloWorld
+[15.816s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/examplePublisher
+[15.816s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/exampleSubscriber
+[15.816s] -- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/testCode
+[15.829s] -- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/testCode" to ""
+[15.829s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/nav2
+[15.830s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/trail_tracer
+[15.830s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/waypoint_navigator
+[15.830s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/follower
+[15.831s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/code_test
+[15.831s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/polishedCode
+[15.831s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/sparse
+[15.831s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/package_run_dependencies/biy1_ros360_cpp
+[15.831s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/parent_prefix_path/biy1_ros360_cpp
+[15.831s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/ament_prefix_path.sh
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/ament_prefix_path.dsv
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/path.sh
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/path.dsv
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.bash
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.sh
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.zsh
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.dsv
+[15.832s] -- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/package.dsv
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/packages/biy1_ros360_cpp
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/cmake/biy1_ros360_cppConfig.cmake
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/cmake/biy1_ros360_cppConfig-version.cmake
+[15.832s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/package.xml
+[15.834s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/biy1_ros360_cpp

@@ -17,11 +17,11 @@ var mode = 'automatic'
 var selectedFileOption = null;
 var file
 var socket = io.connect('http://' + document.domain + ':' + location.port);
-var linear_cmd_vel = null
 var loggCount = 1;
 var currentFiles = []; // Temp stoarge for file names.
 var latestFiles = []; // Latest files for comparison reasons.
 var linear_cmd_vel = 0; // Default cmd_vel value.
+let previousSelection = null; // Null seclection for trail names
 
 // Listen for GPS data from the server.
 socket.on('gps_data', function(data) {
@@ -31,19 +31,13 @@ socket.on('gps_data', function(data) {
     updateDashboard(data.latitude, data.longitude);
 });
 
-// Listen for cmd_vel data from the server. USED FOR DE-BUGGING PURPOSES
-socket.on('cmd_vel_data', function(data) {
-    // For debugging purposes
-    //console.log("Received cmd_vel data: ", data);
-    linear_cmd_vel = data.linear_x;
-    //updateSpeedDashboard(data.linear_x, data.angular_z);
-});
-
 // Listen for cmd_vel data from the server.
-socket.on('imu_data', function(data) {
+socket.on('odom_data', function(data) {
     // For debugging purposes
-    //console.log("Received cmd_vel data: ", data);
-    updateSpeedDashboard(linear_cmd_vel, data.angular_velocity_z);
+    //console.log("Received _odometry data: ", data);
+    let odom_linear_velocity = data.linear_velocity;
+    let odom_angular_velocity_z = data.angular_velocity_z;
+    updateSpeedDashboard(odom_linear_velocity, odom_angular_velocity_z);
 });
 
 
@@ -56,9 +50,10 @@ socket.on('trail_files_data', function(message) {
 
 // Function to update the file names in dropdown menu
 function updateCurrentFiles(fileNames){
-    currentFiles = fileNames;
-    //Update files in dropdown menu
     var trailDropdown = document.getElementById('trail-dropdown');
+    // Store current selection for clearing dropdown menu 
+    previousSelection = trailDropdown.value; 
+    //Update files in dropdown menu
     trailDropdown.innerHTML = "";
     // Create and append the blank default option
     var defaultOption = document.createElement('option');

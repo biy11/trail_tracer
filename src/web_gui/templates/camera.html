@@ -74,15 +74,13 @@
                     <p>Longitude: <span id="longitude">N/A</span></p>
                     <p>Linear Speed: <span id="linearSpeed">0.0 m/s</span></p>
                     <p>Angular Speed: <span id="angularSpeed">0.0 rad/s</span></p>                
-                    <!-- <p>Connection: <span id="connection-status">Connected</span></p>
-                    <p>Battery Level: <span id="battery-level">High</span></p> -->
                 </article>
                 <aside id="control-panel">
                     <h2>Control Panel</h2>
                     <button id="plot-trail-button">Plot Trail</button>
                     <button id="pause-button" style="display: none;">Pause</button>
                     <button id="load-trail-button">Load Trail</button>
-                    <button id="emergency-stop-button" style="display: none;">Emergency Stop</button>
+                    <span id="emergency-msg" style="color: red; align-items:center; padding-left: 60px; display: none;">HIT SPACE FOR EMERGENCY STOP!</span>
                 </aside>
             </section>
             <!-- Manual Navigation for Path Tracking -->
@@ -93,14 +91,11 @@
                     <p>Longitude: <span id="manual-longitude">N/A</span></p>
                     <p>Linear Speed: <span id="manual-linearSpeed">0.0 m/s</span></p>
                     <p>Angular Speed: <span id="manual-angularSpeed">0.0 rad/s</span></p>                
-                    <!-- <p>Connection: <span id="manual-connection-status">Connected</span></p>
-                    <p>Battery Level: <span id="manual-battery-level">High</span></p> -->
                 </article>
                 <aside id="manual-control-panel">
                     <h2>Control Panel</h2>
                     <button id="manual-start">Record Trail</button>
                     <button id="manual-move">Manualy Move Robot</button>
-                    <!-- <button id="manual-stop">Stop</button> -->
                     <div id="joystick-container">
                         <div id="joystick"></div> <!-- Placeholder for the joystick -->
                     </div>

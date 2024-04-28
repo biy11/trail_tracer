@@ -1,0 +1,24 @@
+[1.078s] Invoking command in '/home/bilal/trail_tracer/src/web_gui': PYTHONPATH=/home/bilal/trail_tracer/build/web_gui/prefix_override:/home/bilal/trail_tracer/install/web_gui/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/web_gui build --build-base /home/bilal/trail_tracer/build/web_gui/build install --record /home/bilal/trail_tracer/build/web_gui/install.log --single-version-externally-managed install_data
+[1.398s] running egg_info
+[1.398s] writing ../../build/web_gui/web_gui.egg-info/PKG-INFO
+[1.398s] writing dependency_links to ../../build/web_gui/web_gui.egg-info/dependency_links.txt
+[1.399s] writing entry points to ../../build/web_gui/web_gui.egg-info/entry_points.txt
+[1.399s] writing requirements to ../../build/web_gui/web_gui.egg-info/requires.txt
+[1.399s] writing top-level names to ../../build/web_gui/web_gui.egg-info/top_level.txt
+[1.401s] reading manifest file '../../build/web_gui/web_gui.egg-info/SOURCES.txt'
+[1.402s] writing manifest file '../../build/web_gui/web_gui.egg-info/SOURCES.txt'
+[1.402s] running build
+[1.402s] running build_py
+[1.402s] copying web_gui/ros2_communication.py -> /home/bilal/trail_tracer/build/web_gui/build/lib/web_gui
+[1.403s] running install
+[1.403s] running install_lib
+[1.404s] copying /home/bilal/trail_tracer/build/web_gui/build/lib/web_gui/ros2_communication.py -> /home/bilal/trail_tracer/install/web_gui/lib/python3.10/site-packages/web_gui
+[1.404s] byte-compiling /home/bilal/trail_tracer/install/web_gui/lib/python3.10/site-packages/web_gui/ros2_communication.py to ros2_communication.cpython-310.pyc
+[1.405s] running install_data
+[1.406s] running install_egg_info
+[1.407s] removing '/home/bilal/trail_tracer/install/web_gui/lib/python3.10/site-packages/web_gui-0.0.0-py3.10.egg-info' (and everything under it)
+[1.407s] Copying ../../build/web_gui/web_gui.egg-info to /home/bilal/trail_tracer/install/web_gui/lib/python3.10/site-packages/web_gui-0.0.0-py3.10.egg-info
+[1.408s] running install_scripts
+[1.426s] Installing ros2_communication script to /home/bilal/trail_tracer/install/web_gui/lib/web_gui
+[1.426s] writing list of installed files to '/home/bilal/trail_tracer/build/web_gui/install.log'
+[1.449s] Invoked command in '/home/bilal/trail_tracer/src/web_gui' returned '0': PYTHONPATH=/home/bilal/trail_tracer/build/web_gui/prefix_override:/home/bilal/trail_tracer/install/web_gui/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/web_gui build --build-base /home/bilal/trail_tracer/build/web_gui/build install --record /home/bilal/trail_tracer/build/web_gui/install.log --single-version-externally-managed install_data

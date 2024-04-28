@@ -97,11 +97,11 @@ def handle_ros_messages(message):
     if 'latitude' in message and 'longitude' in message:
         socketio.emit('gps_data', message)  # Emit GPS data specifically.
     elif 'linear_x' in message or 'angular_z' in message:
-        socketio.emit('cmd_vel_data', message)  # Emit cmd_vel data.
+        socketio.emit('cmd_vel_data', message)  # Emit cmd_vel data. #No longer in use, but in case needed in future
     elif 'trail_files' in message:
         socketio.emit('trail_files_data', {'data': message['trail_files']})
-    elif 'linear_acceleration_x' in message or 'angular_velocity_z' in message:
-        socketio.emit('imu_data', message)
+    elif 'linear_velocity' in message or 'angular_velocity_z' in message:
+        socketio.emit('odom_data', message)
     elif 'waypoint' in message:
         socketio.emit('waypoint_data', {'data': message['waypoint']})
     else:

@@ -7,8 +7,9 @@
 import rclpy # ROS2 client lib for Python.
 from rclpy.node import Node # Base class for ROS2 nodes.
 from std_msgs.msg import String # Standard message type for strings.
-from sensor_msgs.msg import NavSatFix, Imu  # Import the GPS and Imu message type.
+from sensor_msgs.msg import NavSatFix  # Import the GPS message type.
 from geometry_msgs.msg  import Twist # Message type for velocities.
+from nav_msgs.msg import Odometry # Message type for Odometry data.
 import threading # For running thr ROS2 nodes in sperate thread.
 import os
 from pathlib import Path
@@ -38,6 +39,8 @@ import threading
 # @version 1.5 - Added publisher to tell which file to load from save trails
 # @version 1.6 - Added susbriber for Imu topic for velocity data.
 # @version 1.7 - Changed waypoint topic to subscription rather than a publisher.
+# @version 1.8 - Added odom topic for velocity data and removed imu.
+
  
 ros2_web_connector = None  # This will be initialized once to connect to web interface.
 latest_image = None
@@ -47,19 +50,18 @@ class ROS2WebConnector(Node):
     def __init__(self, message_callback):
         super().__init__('ros2_web_connector')
         #Creation of publishers for: web_messages, trail_name_topic and joystick_value.
-        self.web_message_publisher = self.create_publisher(String, 'web_messages', 10)
-        self.trail_name_publisher = self.create_publisher(String, 'trail_name_topic', 10)
-        self.plotted_trail_name_publisher = self.create_publisher(String, 'plotted_trail_name_topic', 10)
-        self.joystick_value_publisher = self.create_publisher(Twist, 'joystick_value', 10)
-        self.load_file_publisher = self.create_publisher(String, 'load_file_topic', 10)
+        self.web_message_publisher = self.create_publisher(String, '/web_gui/web_messages', 10)
+        self.trail_name_publisher = self.create_publisher(String, '/web_gui/trail_name_topic', 10)
+        self.joystick_value_publisher = self.create_publisher(Twist, '/web_gui/joystick_value', 10)
+        self.load_file_publisher = self.create_publisher(String, '/web_gui/load_file_topic', 10)
 
         #Creation of subscibers for: ros_messages, /argo_sim/gps/fix and /argo_sim/cmd_vel.
         self.ros_messages_subscription = self.create_subscription(String, 'ros_messages', self.listener_callback, 10)
         self.gps_subscription = self.create_subscription(NavSatFix, '/gps/fix', self.gps_callback, 10)
         self.cmd_vel_subscription = self.create_subscription(Twist, '/cmd_vel', self.cmd_callback,10)
         self.trail_files = self.create_subscription(String, '/trail_tracer/trail_files', self.trail_file_callback, 10)
-        self.imu_subscription = self.create_subscription(Imu, '/imu/data', self.imu_callback, 10)
         self.waypoint_subscriber = self.create_subscription(Point, '/trail_tracer/waypoints',self.waypoint_callback ,10)
+        self.odom_subscriber = self.create_subscription(Odometry, '/odom',self.odom_callback ,10)
         
 
         self.message_callback = message_callback # Callback function for recived message processing.
@@ -120,22 +122,17 @@ class ROS2WebConnector(Node):
             'angular_z': msg.angular.z,
         }
         self.message_callback(cmd_vel_data)
-    
-    # Callback for IMU data for front-end use.
-    def imu_callback(self, msg):
-        velocity_data = {
-            'orientation_x': msg.orientation.x,
-            'orientation_x': msg.orientation.y,
-            'orientation_x': msg.orientation.z,
-            'orientation_x': msg.orientation.w,
-            'angular_velocity_x':msg.angular_velocity.x,
-            'angular_velocity_y':msg.angular_velocity.y,
-            'angular_velocity_z':msg.angular_velocity.z,
-            'linear_acceleration_x': msg.linear_acceleration.x,
-            'linear_acceleration_y': msg.linear_acceleration.y,
-            'linear_acceleration_z':msg.linear_acceleration.z,
+
+    # Callback for odom data for front--end display
+    def odom_callback(self, msg):
+        linear_velocity = msg.twist.twist.linear.x
+        angular_velocity_z = msg.twist.twist.angular.z
+        odom_data = {
+            'linear_velocity': linear_velocity,
+            'angular_velocity_z': angular_velocity_z
         }
-        self.message_callback(velocity_data)
+        self.message_callback(odom_data)
+
 
     # Callback for waypoints to be plotted on map when re-tracing a trail.
     def waypoint_callback(self, msg):
