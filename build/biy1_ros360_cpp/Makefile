@@ -301,6 +301,69 @@ follower/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/build
 .PHONY : follower/fast
 
+#=============================================================================
+# Target rules for targets named code_test
+
+# Build rule for target.
+code_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 code_test
+.PHONY : code_test
+
+# fast build rule for target.
+code_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/build
+.PHONY : code_test/fast
+
+#=============================================================================
+# Target rules for targets named polishedCode
+
+# Build rule for target.
+polishedCode: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 polishedCode
+.PHONY : polishedCode
+
+# fast build rule for target.
+polishedCode/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/build
+.PHONY : polishedCode/fast
+
+#=============================================================================
+# Target rules for targets named sparse
+
+# Build rule for target.
+sparse: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sparse
+.PHONY : sparse
+
+# fast build rule for target.
+sparse/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/build
+.PHONY : sparse/fast
+
+src/code_test.o: src/code_test.cpp.o
+.PHONY : src/code_test.o
+
+# target to build an object file
+src/code_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/src/code_test.cpp.o
+.PHONY : src/code_test.cpp.o
+
+src/code_test.i: src/code_test.cpp.i
+.PHONY : src/code_test.i
+
+# target to preprocess a source file
+src/code_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/src/code_test.cpp.i
+.PHONY : src/code_test.cpp.i
+
+src/code_test.s: src/code_test.cpp.s
+.PHONY : src/code_test.s
+
+# target to generate assembly for a file
+src/code_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/src/code_test.cpp.s
+.PHONY : src/code_test.cpp.s
+
 src/examplePublisher.o: src/examplePublisher.cpp.o
 .PHONY : src/examplePublisher.o
 
@@ -421,6 +484,33 @@ src/nav2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2.dir/build.make CMakeFiles/nav2.dir/src/nav2.cpp.s
 .PHONY : src/nav2.cpp.s
 
+src/polishedCode.o: src/polishedCode.cpp.o
+.PHONY : src/polishedCode.o
+
+# target to build an object file
+src/polishedCode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/src/polishedCode.cpp.o
+.PHONY : src/polishedCode.cpp.o
+
+src/polishedCode.i: src/polishedCode.cpp.i
+.PHONY : src/polishedCode.i
+
+# target to preprocess a source file
+src/polishedCode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/src/polishedCode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/src/polishedCode.cpp.i
+.PHONY : src/polishedCode.cpp.i
+
+src/polishedCode.s: src/polishedCode.cpp.s
+.PHONY : src/polishedCode.s
+
+# target to generate assembly for a file
+src/polishedCode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/src/polishedCode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/src/polishedCode.cpp.s
+.PHONY : src/polishedCode.cpp.s
+
 src/testCode.o: src/testCode.cpp.o
 .PHONY : src/testCode.o
 
@@ -508,14 +598,20 @@ help:
 	@echo "... test"
 	@echo "... biy1_ros360_cpp_uninstall"
 	@echo "... uninstall"
+	@echo "... code_test"
 	@echo "... examplePublisher"
 	@echo "... exampleSubscriber"
 	@echo "... follower"
 	@echo "... helloWorld"
 	@echo "... nav2"
+	@echo "... polishedCode"
+	@echo "... sparse"
 	@echo "... testCode"
 	@echo "... trail_tracer"
 	@echo "... waypoint_navigator"
+	@echo "... src/code_test.o"
+	@echo "... src/code_test.i"
+	@echo "... src/code_test.s"
 	@echo "... src/examplePublisher.o"
 	@echo "... src/examplePublisher.i"
 	@echo "... src/examplePublisher.s"
@@ -531,6 +627,9 @@ help:
 	@echo "... src/nav2.o"
 	@echo "... src/nav2.i"
 	@echo "... src/nav2.s"
+	@echo "... src/polishedCode.o"
+	@echo "... src/polishedCode.i"
+	@echo "... src/polishedCode.s"
 	@echo "... src/testCode.o"
 	@echo "... src/testCode.i"
 	@echo "... src/testCode.s"

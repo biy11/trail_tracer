@@ -29,6 +29,10 @@ add_executable(nav2 src/nav2.cpp)
 add_executable(trail_tracer src/trail_tracer.cpp)
 add_executable(waypoint_navigator src/waypoint_navigator.cpp)
 add_executable(follower src/follower.cpp)
+add_executable(code_test src/code_test.cpp)
+add_executable(polishedCode src/polishedCode.cpp)
+add_executable(sparse src/polishedCode.cpp)
+
 
 
 target_include_directories(helloWorld PUBLIC
@@ -45,8 +49,12 @@ ament_target_dependencies(nav2 rclcpp std_msgs geometry_msgs sensor_msgs Geograp
 ament_target_dependencies(trail_tracer rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
 ament_target_dependencies(waypoint_navigator rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
 ament_target_dependencies(follower rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs nav2_msgs tf2 tf2_ros)
+ament_target_dependencies(code_test rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs nav2_msgs tf2 tf2_ros)
+ament_target_dependencies(polishedCode rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs nav2_msgs tf2 tf2_ros)
+ament_target_dependencies(sparse rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs nav2_msgs tf2 tf2_ros)
 
-install(TARGETS helloWorld examplePublisher exampleSubscriber testCode nav2 trail_tracer waypoint_navigator follower
+
+install(TARGETS helloWorld examplePublisher exampleSubscriber testCode nav2 trail_tracer waypoint_navigator follower code_test polishedCode sparse
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

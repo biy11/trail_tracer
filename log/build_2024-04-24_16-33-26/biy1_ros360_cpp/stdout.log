@@ -1,8 +1,0 @@
-[ 12%] Built target nav2
-[ 18%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
-[ 31%] Built target examplePublisher
-[ 56%] Built target trail_tracer
-[ 56%] Built target helloWorld
-[ 68%] Built target exampleSubscriber
-[ 81%] Built target testCode
-[ 93%] Built target waypoint_navigator

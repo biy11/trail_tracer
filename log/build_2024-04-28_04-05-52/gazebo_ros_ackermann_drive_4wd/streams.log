@@ -1,0 +1,28 @@
+[0.039s] Invoking command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd -- -j12 -l12
+[0.178s] [100%] Built target gazebo_ros_ackermann_drive_4wd
+[0.395s] Invoked command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd -- -j12 -l12
+[0.456s] Invoking command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd
+[0.477s] -- Install configuration: ""
+[0.477s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/library_path.sh
+[0.477s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/library_path.dsv
+[0.477s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/include
+[0.478s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/lib/libgazebo_ros_ackermann_drive_4wd.so
+[0.479s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/ament_index/resource_index/package_run_dependencies/gazebo_ros_ackermann_drive_4wd
+[0.479s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/ament_index/resource_index/parent_prefix_path/gazebo_ros_ackermann_drive_4wd
+[0.479s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/ament_prefix_path.sh
+[0.480s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/ament_prefix_path.dsv
+[0.480s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/path.sh
+[0.480s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/path.dsv
+[0.480s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/local_setup.bash
+[0.480s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/local_setup.sh
+[0.480s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/local_setup.zsh
+[0.480s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/local_setup.dsv
+[0.481s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/package.dsv
+[0.481s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/ament_index/resource_index/packages/gazebo_ros_ackermann_drive_4wd
+[0.481s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/ament_cmake_export_libraries-extras.cmake
+[0.481s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.481s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.481s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/gazebo_ros_ackermann_drive_4wdConfig.cmake
+[0.481s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/gazebo_ros_ackermann_drive_4wdConfig-version.cmake
+[0.481s] -- Up-to-date: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/package.xml
+[0.499s] Invoked command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd

@@ -60,6 +60,10 @@ public:
             "/utm_data", 10,
             std::bind(&TestCode::utm_data_callback, this, std::placeholders::_1));
 
+        imu_data_subscription_ = this->create_subscription<sensor_msgs::msg::Imu>(
+            "/imu/data", 10,
+            std::bind(&TestCode::imu_data_callback, this, std::placeholders::_1));
+
         timer_update_movement_ = this->create_wall_timer(
             100ms, std::bind(&TestCode::update_movement, this));
         timer_publish_file_names_ = this->create_wall_timer(
@@ -88,7 +92,9 @@ private:
             if(gps_file_.is_open()){
                 if(last_gps_msg_){
                     gps_file_ << std::fixed << std::setprecision(8);
-                    gps_file_ << last_gps_msg_->latitude << ", " << last_gps_msg_->longitude << std::endl;
+                    gps_file_ << last_gps_msg_->latitude << ", " << last_gps_msg_->longitude;
+                    gps_file_ << ", " << orientation_x_ << ", " << orientation_y_;
+                    gps_file_ << ", " << orientation_z_ << ", " << orientation_w_ << std::endl;
                 }
                 gps_file_.close(); //close and store last position
             }
@@ -104,19 +110,31 @@ private:
         }
     }
 
+            // IMU data callback function
+    void imu_data_callback(const sensor_msgs::msg::Imu::SharedPtr msg) {
+        orientation_x_ = msg->orientation.x;
+        orientation_y_ = msg->orientation.y;
+        orientation_z_ = msg->orientation.z;
+        orientation_w_ = msg->orientation.w;
+    }
+
     void gps_fix_callback(const sensor_msgs::msg::NavSatFix::SharedPtr msg) {
         last_gps_msg_ = msg; //Update last known location
 
         if(is_moving_ && gps_file_.is_open()){
             if(!first_coord_stored_){
                 gps_file_ << std::fixed << std::setprecision(8);
-                gps_file_ << msg->latitude << ", " << msg->longitude << std::endl;
+                gps_file_ << msg->latitude << ", " << msg->longitude;
+                gps_file_ << ", " << orientation_x_ << ", " << orientation_y_;
+                gps_file_ << ", " << orientation_z_ << ", " << orientation_w_ << std::endl;
                 first_coord_stored_ = true;
             }
         
             if(is_turning_){
                 gps_file_ << std::fixed << std::setprecision(8);
-                gps_file_ << msg->latitude << ", " << msg->longitude << std::endl;
+                gps_file_ << msg->latitude << ", " << msg->longitude;
+                gps_file_ << ", " << orientation_x_ << ", " << orientation_y_;
+                gps_file_ << ", " << orientation_z_ << ", " << orientation_w_ << std::endl;
             }
         }
     }
@@ -130,7 +148,7 @@ private:
         constexpr double ANGULAR_VEL_THRESHOLD = 0.001;
 
         if(std::abs(current_angualr_vel - last_angular_vel_) > ANGULAR_VEL_THRESHOLD){
-            //RCLCPP_INFO(this->get_logger(), "Recording turn: %f, %f", current_angualr_vel, last_angular_vel_);
+            //RCLCPP_INFO(this->get_logger(), "Recording turn: %f, %f", current_angualr_vel, last_angular_vel_);  
             is_turning_ = true;
         } else{
             //RCLCPP_INFO(this->get_logger(), "STRIGHT: %f, %f", current_angualr_vel, last_angular_vel_);
@@ -264,6 +282,10 @@ private:
     double current_easting_; // Variable to store the current easting UTM coordinate
     double current_northing_; // Variable to store the current northing UTM coordinate
     double last_angular_vel_; // Variable to store the last known angualr.z value from cmd_vel
+    double orientation_x_;
+    double orientation_y_;
+    double orientation_z_;
+    double orientation_w_;
     std::string trail_name_; // Variable to store trail name 
     std::vector<std::pair<float,float>> waypoints_;
     std::vector<std::tuple<int,bool,double,double>> utm_coords;
@@ -277,6 +299,7 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_fix_subscription_;
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr load_file_subscription_;
     rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr gps_to_utm_subscription_;
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_data_subscription_;
     sensor_msgs::msg::NavSatFix::SharedPtr last_gps_msg_; 
     rclcpp::TimerBase::SharedPtr timer_update_movement_;
     rclcpp::TimerBase::SharedPtr timer_publish_file_names_;

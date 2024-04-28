@@ -1,0 +1,70 @@
+[0.041s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.126s] [35m[1mConsolidate compiler generated dependencies of target testCode[0m
+[0.157s] [ 18%] Built target examplePublisher
+[0.157s] [ 18%] Built target helloWorld
+[0.157s] [ 27%] Built target nav2
+[0.158s] [ 36%] Built target exampleSubscriber
+[0.170s] [ 40%] [32mBuilding CXX object CMakeFiles/testCode.dir/src/testCode.cpp.o[0m
+[0.171s] [ 50%] Built target trail_tracer
+[0.176s] [ 59%] Built target code_test
+[0.176s] [ 68%] Built target waypoint_navigator
+[0.177s] [ 77%] Built target polishedCode
+[0.179s] [ 86%] Built target follower
+[0.179s] [ 95%] Built target sparse
+[2.166s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.166s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.166s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.166s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.166s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.167s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.167s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.167s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.167s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.167s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.167s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.167s]                  from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/testCode.cpp:8[m[K:
+[2.167s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/testCode.cpp:[m[K In member function ‘[01m[Kstd::vector<std::tuple<float, float, float, float, float, float> > TestCode::rdp(const std::vector<std::tuple<float, float, float, float, float, float> >&, float)[m[K’:
+[2.167s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/testCode.cpp:143:41:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 5 has type ‘[01m[Kdouble[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[2.167s]   143 |         RCLCPP_INFO(this->get_logger(), [01;35m[K"Simplified number of waypoints: %d"[m[K, [32m[Kepsilon[m[K);
+[2.167s]       |                                         [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K  [32m[K~~~~~~~[m[K
+[2.167s]       |                                                                               [32m[K|[m[K
+[2.167s]       |                                                                               [32m[Kdouble[m[K
+[2.167s] [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/testCode.cpp:143:75:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[2.167s]   143 |         RCLCPP_INFO(this->get_logger(), "Simplified number of waypoints: [01;36m[K%d[m[K", epsilon);
+[2.167s]       |                                                                          [01;36m[K~^[m[K
+[2.167s]       |                                                                           [01;36m[K|[m[K
+[2.168s]       |                                                                           [01;36m[Kint[m[K
+[2.168s]       |                                                                          [32m[K%f[m[K
+[13.653s] [100%] [32m[1mLinking CXX executable testCode[0m
+[14.289s] [100%] Built target testCode
+[14.304s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[14.415s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/biy1_ros360_cpp
+[14.426s] -- Install configuration: ""
+[14.427s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/helloWorld
+[14.427s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/examplePublisher
+[14.427s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/exampleSubscriber
+[14.427s] -- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/testCode
+[14.441s] -- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/testCode" to ""
+[14.441s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/nav2
+[14.441s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/trail_tracer
+[14.441s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/waypoint_navigator
+[14.442s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/follower
+[14.442s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/code_test
+[14.442s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/polishedCode
+[14.442s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/sparse
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/package_run_dependencies/biy1_ros360_cpp
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/parent_prefix_path/biy1_ros360_cpp
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/ament_prefix_path.sh
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/ament_prefix_path.dsv
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/path.sh
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/path.dsv
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.bash
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.sh
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.zsh
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.dsv
+[14.443s] -- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/package.dsv
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/packages/biy1_ros360_cpp
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/cmake/biy1_ros360_cppConfig.cmake
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/cmake/biy1_ros360_cppConfig-version.cmake
+[14.443s] -- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/package.xml
+[14.445s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/biy1_ros360_cpp

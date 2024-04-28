@@ -1,0 +1,131 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found GeographicLib: /usr/lib/x86_64-linux-gnu  
+-- Found nav2_msgs: 1.1.13 (/home/bilal/learn_ros2_ws/install/nav2_msgs/share/nav2_msgs/cmake)
+-- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/bilal/trail_tracer/src/biy1_ros360_cpp/include>
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/bilal/trail_tracer/build/biy1_ros360_cpp
+[  9%] [32mBuilding CXX object CMakeFiles/exampleSubscriber.dir/src/exampleSubscriber.cpp.o[0m
+[  9%] [32mBuilding CXX object CMakeFiles/nav2.dir/src/nav2.cpp.o[0m
+[ 13%] [32mBuilding CXX object CMakeFiles/helloWorld.dir/src/helloWorld.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/testCode.dir/src/testCode.cpp.o[0m
+[ 22%] [32mBuilding CXX object CMakeFiles/examplePublisher.dir/src/examplePublisher.cpp.o[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/code_test.dir/src/code_test.cpp.o[0m
+[ 31%] [32mBuilding CXX object CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/sparse.dir/src/polishedCode.cpp.o[0m
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::file_loader_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:253:18:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcomma[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  253 |             char [01;35m[Kcomma[m[K;
+      |                  [01;35m[K^~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:[m[K In member function ‘[01m[Kvoid TestCode::process_all_waypoints()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:297:16:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Klast_easting[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  297 |         double [01;35m[Klast_easting[m[K = 0.0, last_northing = 0.0;
+      |                [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/follower.cpp:297:36:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Klast_northing[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  297 |         double last_easting = 0.0, [01;35m[Klast_northing[m[K = 0.0;
+      |                                    [01;35m[K^~~~~~~~~~~~~[m[K
+[ 54%] [32m[1mLinking CXX executable examplePublisher[0m
+[ 59%] [32m[1mLinking CXX executable nav2[0m
+[ 59%] Built target nav2
+[ 59%] Built target examplePublisher
+[ 63%] [32m[1mLinking CXX executable exampleSubscriber[0m
+[ 63%] Built target exampleSubscriber
+[ 68%] [32m[1mLinking CXX executable code_test[0m
+[ 68%] Built target code_test
+[ 72%] [32m[1mLinking CXX executable waypoint_navigator[0m
+[ 72%] Built target waypoint_navigator
+[ 77%] [32m[1mLinking CXX executable testCode[0m
+[ 81%] [32m[1mLinking CXX executable trail_tracer[0m
+[ 81%] Built target testCode
+[ 86%] [32m[1mLinking CXX executable follower[0m
+[ 86%] Built target trail_tracer
+[ 86%] Built target follower
+[ 90%] [32m[1mLinking CXX executable helloWorld[0m
+[ 90%] Built target helloWorld
+[ 95%] [32m[1mLinking CXX executable polishedCode[0m
+[100%] [32m[1mLinking CXX executable sparse[0m
+[100%] Built target polishedCode
+[100%] Built target sparse
+-- Install configuration: ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/helloWorld
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/helloWorld" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/examplePublisher
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/examplePublisher" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/exampleSubscriber
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/exampleSubscriber" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/testCode
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/testCode" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/nav2
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/nav2" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/trail_tracer
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/trail_tracer" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/waypoint_navigator
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/waypoint_navigator" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/follower
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/follower" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/code_test
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/code_test" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/polishedCode
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/polishedCode" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/sparse
+-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/sparse" to ""
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/package_run_dependencies/biy1_ros360_cpp
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/parent_prefix_path/biy1_ros360_cpp
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/ament_prefix_path.sh
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/ament_prefix_path.dsv
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/path.sh
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/path.dsv
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.bash
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.sh
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.zsh
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.dsv
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/package.dsv
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/packages/biy1_ros360_cpp
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/cmake/biy1_ros360_cppConfig.cmake
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/cmake/biy1_ros360_cppConfig-version.cmake
+-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/package.xml

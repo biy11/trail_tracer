@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('load-trail-button').textContent = 'End';
         document.getElementById('trail-prompt').style.display = 'none'; // Optionally hide the prompt after starting
         document.getElementById('plot-trail-button').style.display = 'none'; // Optionally hide the prompt after starting
-        document.getElementById('emergency-stop-button').style.display = 'block'; 
+        //document.getElementById('emergency-stop-button').style.display = 'block'; 
         document.getElementById('pause-button').style.display = 'block'; 
 
         socket.on('waypoint_data', function(data) {

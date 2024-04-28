@@ -1,0 +1,20 @@
+[0.015s] Invoking command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12
+[0.076s] [35m[1mConsolidate compiler generated dependencies of target testCode[0m
+[0.098s] [ 31%] Built target waypoint_navigator
+[0.099s] [ 31%] Built target polishedCode
+[0.099s] [ 31%] Built target exampleSubscriber
+[0.099s] [ 40%] Built target helloWorld
+[0.099s] [ 45%] Built target nav2
+[0.099s] [ 54%] Built target examplePublisher
+[0.099s] [ 63%] Built target sparse
+[0.100s] [ 81%] Built target code_test
+[0.100s] [ 81%] Built target follower
+[0.100s] [ 90%] Built target trail_tracer
+[0.102s] [ 95%] [32m[1mLinking CXX executable testCode[0m
+[0.597s] /usr/bin/ld: CMakeFiles/testCode.dir/src/testCode.cpp.o: in function `GeographicLib::UTMUPS::Forward(double, double, int&, bool&, double&, double&, int, bool)':
+[0.597s] testCode.cpp:(.text._ZN13GeographicLib6UTMUPS7ForwardEddRiRbRdS3_ib[_ZN13GeographicLib6UTMUPS7ForwardEddRiRbRdS3_ib]+0x7a): undefined reference to `GeographicLib::UTMUPS::Forward(double, double, int&, bool&, double&, double&, double&, double&, int, bool)'
+[0.676s] collect2: error: ld returned 1 exit status
+[0.678s] gmake[2]: *** [CMakeFiles/testCode.dir/build.make:175: testCode] Error 1
+[0.678s] gmake[1]: *** [CMakeFiles/Makefile2:235: CMakeFiles/testCode.dir/all] Error 2
+[0.678s] gmake: *** [Makefile:146: all] Error 2
+[0.680s] Invoked command in '/home/bilal/trail_tracer/build/biy1_ros360_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/biy1_ros360_cpp -- -j12 -l12

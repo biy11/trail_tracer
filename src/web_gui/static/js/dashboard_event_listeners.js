@@ -39,12 +39,13 @@ var trailPlotting = false; //Flag to track ewather a trail is being plotted or n
 var coordinatesList = []; // To hold the coordinates clicked on the map
 var wayPointMarkers = []; // Array to hold markers for plotted points.
 var manualMove = false; // Flag to tell if the robot is being moved without a recording.
+var trailPaused = false;
 
 // Constants for DOM elemets
 const plotTrailBtn = document.getElementById('plot-trail-button');
 const pauseBtn = document.getElementById('pause-button');
 const loadTrailBtn = document.getElementById('load-trail-button');
-const emergencyStopBtn = document.getElementById('emergency-stop-button');
+//const emergencyStopBtn = document.getElementById('emergency-stop-button');
 const toggleModeBtn = document.getElementById('mode-toggle');
 const locateMeBtn = document.getElementById('locate-me-button');
 const manualStartBtn = document.getElementById('manual-start');
@@ -127,11 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    pauseBtn.addEventListener('click', function() {
-        clickSound(); //Play click sound as buton is clicked
-        controlRobot('pause')
-
-        });
 
     // Event listner for lot name button
     plotTrailBtn.addEventListener('click', function() {
@@ -146,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleModeBtn.disabled = true;
             pauseBtn.disabled = true;
             loadTrailBtn.textContent = 'Cancel' 
-            emergencyStopBtn.disabled = true;
+            //.disabled = true;
 
             map.on('click', mapClickHandler); // Enable map clicking for coordinate collection, function mapClickHandler can be found in map_ui.js
     
@@ -160,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleModeBtn.disabled = false;
             pauseBtn.disabled = false;
             loadTrailBtn.disabled = false;
-            emergencyStopBtn.disabled = false;
+            //emergencyStopBtn.disabled = false;
             plotNamePrompt.style.display = 'block';
             toggleModeBtn.disabled = true;
             //noPlotNameErrorBtn.style.display = 'none';
@@ -194,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Re-enable disabled buttons due to plotting
             toggleModeBtn.disabled = false;
             pauseBtn.disabled = false;
-            emergencyStopBtn.disabled = false;
+            //emergencyStopBtn.disabled = false;
             
             // Revert the 'load-trail-button' text back to its original
             this.textContent = 'Load Trail';
@@ -210,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleModeBtn.disabled = false;
             plotTrailBtn.disabled = false;
             plotTrailBtn.style.display = 'block';
-            emergencyStopBtn.style.display = 'none'; 
+            //emergencyStopBtn.style.display = 'none'; 
             pauseBtn.style.display = 'none'; 
 
             trailLoaded = false;
@@ -225,11 +221,28 @@ document.addEventListener('DOMContentLoaded', () => {
             map.removeLayer(marker);
         });
         waypointMarkers = [];
-    }    
+    }
 
-    emergencyStopBtn.addEventListener('click', function(){
-    clickSound(); //Play click sound as buton is clicked
-    controlRobot('pause-trail')});
+    pauseBtn.addEventListener('click', function() {
+        clickSound(); //Play click sound as buton is clicked
+        if(!trailPaused){
+            console.log("Paused trail");
+            controlRobot('pause-trail')
+            this.textContent = "Resume";
+            trailPaused = true;
+        } else{
+            console.log("trail resumed")          
+            controlRobot('resume-trail');
+            this.textContent = "Pause";
+            trailPaused = false;
+        }
+
+    });
+
+    // emergencyStopBtn.addEventListener('click', function(){
+    // clickSound(); //Play click sound as buton is clicked
+    // controlRobot('resume-trail')
+    // });
     
     clearLogBtn.addEventListener('click', ()=> clearLog());
 });

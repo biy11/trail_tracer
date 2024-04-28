@@ -1,0 +1,11 @@
+[  9%] [32m[1mLinking CXX executable testCode[0m
+[ 13%] Built target examplePublisher
+[ 22%] Built target exampleSubscriber
+[ 40%] Built target trail_tracer
+[ 40%] Built target nav2
+[ 50%] Built target helloWorld
+[ 59%] Built target waypoint_navigator
+[ 68%] Built target code_test
+[ 77%] Built target sparse
+[ 86%] Built target polishedCode
+[ 95%] Built target follower
