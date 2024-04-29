@@ -1,0 +1,25 @@
+[35m[1mConsolidate compiler generated dependencies of target polishedCode[0m
+[35m[1mConsolidate compiler generated dependencies of target sparse[0m
+[ 13%] Built target exampleSubscriber
+[ 18%] Built target examplePublisher
+[ 31%] [32mBuilding CXX object CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o[0m
+[ 36%] Built target helloWorld
+[ 40%] Built target trail_tracer
+[ 50%] Built target testCode
+[ 59%] Built target follower
+[ 68%] Built target code_test
+[ 77%] Built target nav2
+[ 81%] [32mBuilding CXX object CMakeFiles/sparse.dir/src/polishedCode.cpp.o[0m
+[ 86%] [32mBuilding CXX object CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o[0m
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:29:10:[m[K [01;31m[Kfatal error: [m[Knav_msgs/msg/odometry.hpp: No such file or directory
+   29 | #include [01;31m[K<nav_msgs/msg/odometry.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/waypoint_navigator.dir/build.make:76: CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:313: CMakeFiles/waypoint_navigator.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 90%] [32m[1mLinking CXX executable polishedCode[0m
+[ 95%] [32m[1mLinking CXX executable sparse[0m
+[ 95%] Built target polishedCode
+[ 95%] Built target sparse
+gmake: *** [Makefile:146: all] Error 2

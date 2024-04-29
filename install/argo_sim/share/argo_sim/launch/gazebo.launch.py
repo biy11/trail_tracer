@@ -1,7 +1,7 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription, conditions
-from launch.substitutions import Command, LaunchConfiguration, PythonExpression
+from launch.substitutions import Command, LaunchConfiguration, PythonExpression, PathJoinSubstitution
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, SetEnvironmentVariable, IncludeLaunchDescription
 from launch_ros.actions import Node
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -31,9 +31,14 @@ def generate_launch_description():
                                                   'description/urdf',
                                                   'argo.urdf.xacro')])
 
-  world_file_name = 'roadWorld.xml'
-#  world_file_name = 'bridge.world'
-  world = os.path.join(pkg_argo_sim, 'gazebo/worlds', world_file_name)
+  world_ = LaunchConfiguration('world', default="roadWorld.xml")
+  world_arg = DeclareLaunchArgument(
+    'world',
+    default_value='roadWorld.xml',
+    description="Name of the world to use, can be 'roadWorld.xml' or 'bridge.world'"
+  )
+
+  world = PathJoinSubstitution([pkg_argo_sim, 'gazebo/worlds', world_])
 
   pkg_install_path = get_package_share_directory('argo_sim')
   if 'GAZEBO_MODEL_PATH' in os.environ:
@@ -76,6 +81,7 @@ def generate_launch_description():
   return LaunchDescription([
     namespace_launch_arg,
     use_sim_time_arg,
+    world_arg,
 
     SetEnvironmentVariable(name='GAZEBO_MODEL_PATH', value=model_path),
     SetEnvironmentVariable(name='GAZEBO_RESOURCE_PATH', value=resource_path),
@@ -103,3 +109,4 @@ def generate_launch_description():
                    "-entity", "argo_sim"]
     )
   ])
+

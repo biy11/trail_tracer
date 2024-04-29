@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resetPlottingUI(); // Reset UI and related states
             // Reset the recording active flag and coordinates list
             trailPlotting = false; // Flag to inidacte no acvtive plotting.
+            loadTrailBtn.disabled = false; // Re-enable load-trail-button.
             coordinatesList = []; // Clear list of coordinates collected.
             });
         
@@ -119,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entryError.style.display = 'none';
             existingFileError.style.display = 'none';
             plotNamePrompt.style.display = 'none';
+            loadTrailBtn.disabled = false;
             plotNameInput.value = ''; // Clear input filed.
             // Reset the plotting UI if plotting is active.
             if (trailPlotting) {

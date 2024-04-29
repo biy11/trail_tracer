@@ -1,0 +1,7 @@
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:30:10:[m[K [01;31m[Kfatal error: [m[Knav2_msgs/action/travel_through_poses.hpp: No such file or directory
+   30 | #include [01;31m[K<nav2_msgs/action/travel_through_poses.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/waypoint_navigator.dir/build.make:76: CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:313: CMakeFiles/waypoint_navigator.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

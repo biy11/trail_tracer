@@ -1,0 +1,295 @@
+[0.000000] (-) TimerEvent: {}
+[0.000267] (-) JobUnselected: {'identifier': 'argo_nav'}
+[0.000454] (-) JobUnselected: {'identifier': 'argo_sim'}
+[0.000479] (-) JobUnselected: {'identifier': 'gazebo_ros_ackermann_drive_4wd'}
+[0.000587] (-) JobUnselected: {'identifier': 'gazebo_ros_skid_steer_drive_6w'}
+[0.000692] (-) JobUnselected: {'identifier': 'gps_to_utm_converter_cpp'}
+[0.000708] (-) JobUnselected: {'identifier': 'traethlin_description'}
+[0.000723] (-) JobUnselected: {'identifier': 'web_gui'}
+[0.000739] (biy1_ros360_cpp) JobQueued: {'identifier': 'biy1_ros360_cpp', 'dependencies': OrderedDict()}
+[0.000757] (biy1_ros360_cpp) JobStarted: {'identifier': 'biy1_ros360_cpp'}
+[0.013924] (biy1_ros360_cpp) JobProgress: {'identifier': 'biy1_ros360_cpp', 'progress': 'cmake'}
+[0.014325] (biy1_ros360_cpp) JobProgress: {'identifier': 'biy1_ros360_cpp', 'progress': 'build'}
+[0.014895] (biy1_ros360_cpp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/bilal/trail_tracer/build/biy1_ros360_cpp', '--', '-j12', '-l12'], 'cwd': '/home/bilal/trail_tracer/build/biy1_ros360_cpp', 'env': OrderedDict([('LANGUAGE', 'en_GB:en'), ('USER', 'bilal'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/lib:/home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/lib:/home/bilal/learn_ros2_ws/install/nav2_smoother/lib:/home/bilal/learn_ros2_ws/install/nav2_graceful_controller/lib:/home/bilal/learn_ros2_ws/install/nav2_controller/lib:/home/bilal/learn_ros2_ws/install/dwb_plugins/lib:/home/bilal/learn_ros2_ws/install/dwb_critics/lib:/home/bilal/learn_ros2_ws/install/dwb_core/lib:/home/bilal/learn_ros2_ws/install/nav_2d_utils/lib:/home/bilal/learn_ros2_ws/install/dwb_msgs/lib:/home/bilal/learn_ros2_ws/install/nav_2d_msgs/lib:/home/bilal/learn_ros2_ws/install/nav2_waypoint_follower/lib:/home/bilal/learn_ros2_ws/install/nav2_theta_star_planner/lib:/home/bilal/learn_ros2_ws/install/nav2_smac_planner/lib:/home/bilal/learn_ros2_ws/install/nav2_rotation_shim_controller/lib:/home/bilal/learn_ros2_ws/install/nav2_regulated_pure_pursuit_controller/lib:/home/bilal/learn_ros2_ws/install/nav2_planner/lib:/home/bilal/learn_ros2_ws/install/nav2_navfn_planner/lib:/home/bilal/learn_ros2_ws/install/nav2_mppi_controller/lib:/home/bilal/learn_ros2_ws/install/nav2_constrained_smoother/lib:/home/bilal/learn_ros2_ws/install/nav2_bt_navigator/lib:/home/bilal/learn_ros2_ws/install/nav2_behaviors/lib:/home/bilal/learn_ros2_ws/install/nav2_collision_monitor/lib:/home/bilal/learn_ros2_ws/install/costmap_queue/lib:/home/bilal/learn_ros2_ws/install/nav2_costmap_2d/lib:/home/bilal/learn_ros2_ws/install/nav2_voxel_grid/lib:/home/bilal/learn_ros2_ws/install/nav2_velocity_smoother/lib:/home/bilal/learn_ros2_ws/install/nav2_rviz_plugins/lib:/home/bilal/learn_ros2_ws/install/nav2_map_server/lib:/home/bilal/learn_ros2_ws/install/nav2_lifecycle_manager/lib:/home/bilal/learn_ros2_ws/install/nav2_behavior_tree/lib:/home/bilal/learn_ros2_ws/install/nav2_amcl/lib:/home/bilal/learn_ros2_ws/install/nav2_util/lib:/home/bilal/learn_ros2_ws/install/nav2_msgs/lib:/home/bilal/learn_ros2_ws/install/gazebo_ros_skid_steer_drive_6w/lib:/home/bilal/learn_ros2_ws/install/gazebo_ros_ackermann_drive_4wd/lib:/home/bilal/ros2_ws/install/velodyne_simulation/lib:/home/bilal/ros2_ws/install/velodyne_control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins::/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/bilal'), ('OLDPWD', '/home/bilal/trail_tracer/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2219'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/opt/ros/humble/'), ('COLCON_PREFIX_PATH', '/home/bilal/trail_tracer/install:/home/bilal/learn_ros2_ws/install:/home/bilal/mp/mp_ws/install:/home/bilal/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'bilal'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'bilal'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/home/bilal/trail_tracer/install/argo_sim/share/argo_sim/models:/home/bilal/learn_ros2_ws/install/argo_sim/share/argo_sim/models:/usr/share/gazebo/../../share/gazebo-11/models:/home/bilal/trail_tracer/install/argo_sim/share/argo_sim/models:/home/bilal/learn_ros2_ws/install/argo_sim/share/argo_sim/models:/usr/share/gazebo/../../share/gazebo-11/models::/opt/ros/humble/share/turtlebot3_gazebo/models:/opt/ros/humble/share/turtlebot3_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '1'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/home/bilal/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/bilal-yousufzai:@/tmp/.ICE-unix/2190,unix/bilal-yousufzai:/tmp/.ICE-unix/2190'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d0de9292_9711_4766_be4b_f7c510f833f2'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('GNOME_TERMINAL_SERVICE', ':1.100'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/bilal/trail_tracer/install/web_gui:/home/bilal/trail_tracer/install/traethlin_description:/home/bilal/trail_tracer/install/gps_to_utm_converter_cpp:/home/bilal/trail_tracer/install/argo_sim:/home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w:/home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd:/home/bilal/trail_tracer/install/biy1_ros360_cpp:/home/bilal/trail_tracer/install/argo_nav:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/traethlin_description:/home/bilal/learn_ros2_ws/install/nav2_system_tests:/home/bilal/learn_ros2_ws/install/nav2_bringup:/home/bilal/learn_ros2_ws/install/navigation2:/home/bilal/learn_ros2_ws/install/nav2_smoother:/home/bilal/learn_ros2_ws/install/nav2_graceful_controller:/home/bilal/learn_ros2_ws/install/nav2_dwb_controller:/home/bilal/learn_ros2_ws/install/nav2_controller:/home/bilal/learn_ros2_ws/install/dwb_plugins:/home/bilal/learn_ros2_ws/install/dwb_critics:/home/bilal/learn_ros2_ws/install/dwb_core:/home/bilal/learn_ros2_ws/install/nav_2d_utils:/home/bilal/learn_ros2_ws/install/dwb_msgs:/home/bilal/learn_ros2_ws/install/nav_2d_msgs:/home/bilal/learn_ros2_ws/install/nav2_waypoint_follower:/home/bilal/learn_ros2_ws/install/nav2_theta_star_planner:/home/bilal/learn_ros2_ws/install/nav2_smac_planner:/home/bilal/learn_ros2_ws/install/nav2_rotation_shim_controller:/home/bilal/learn_ros2_ws/install/nav2_regulated_pure_pursuit_controller:/home/bilal/learn_ros2_ws/install/nav2_planner:/home/bilal/learn_ros2_ws/install/nav2_navfn_planner:/home/bilal/learn_ros2_ws/install/nav2_mppi_controller:/home/bilal/learn_ros2_ws/install/nav2_constrained_smoother:/home/bilal/learn_ros2_ws/install/nav2_bt_navigator:/home/bilal/learn_ros2_ws/install/nav2_behaviors:/home/bilal/learn_ros2_ws/install/nav2_core:/home/bilal/learn_ros2_ws/install/nav2_collision_monitor:/home/bilal/learn_ros2_ws/install/costmap_queue:/home/bilal/learn_ros2_ws/install/nav2_costmap_2d:/home/bilal/learn_ros2_ws/install/nav2_voxel_grid:/home/bilal/learn_ros2_ws/install/nav2_velocity_smoother:/home/bilal/learn_ros2_ws/install/nav2_rviz_plugins:/home/bilal/learn_ros2_ws/install/nav2_map_server:/home/bilal/learn_ros2_ws/install/nav2_lifecycle_manager:/home/bilal/learn_ros2_ws/install/nav2_behavior_tree:/home/bilal/learn_ros2_ws/install/nav2_amcl:/home/bilal/learn_ros2_ws/install/nav2_util:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/learn_ros2_ws/install/nav2_msgs:/home/bilal/learn_ros2_ws/install/nav2_common:/home/bilal/learn_ros2_ws/install/gps_to_utm_converter_cpp:/home/bilal/learn_ros2_ws/install/argo_sim:/home/bilal/learn_ros2_ws/install/gazebo_ros_skid_steer_drive_6w:/home/bilal/learn_ros2_ws/install/gazebo_ros_ackermann_drive_4wd:/home/bilal/learn_ros2_ws/install/biy1_ros360_cpp:/home/bilal/learn_ros2_ws/install/articubot_one:/home/bilal/mp/mp_ws/install/biy1_ros360_cpp:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/velodyne_simulation:/home/bilal/ros2_ws/install/velodyne_control_msgs:/home/bilal/ros2_ws/install/track_envs:/home/bilal/ros2_ws/install/ros360_moveit:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/home/bilal/ros2_ws/install/biy1_ros360_cpp:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/bilal/trail_tracer/build/biy1_ros360_cpp'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/bilal/trail_tracer/install/web_gui/lib/python3.10/site-packages:/home/bilal/learn_ros2_ws/install/web_gui/lib/python3.10/site-packages:/home/bilal/learn_ros2_ws/install/dwb_msgs/local/lib/python3.10/dist-packages:/home/bilal/learn_ros2_ws/install/nav_2d_msgs/local/lib/python3.10/dist-packages:/home/bilal/learn_ros2_ws/install/nav2_simple_commander/lib/python3.10/site-packages:/home/bilal/learn_ros2_ws/install/nav2_msgs/local/lib/python3.10/dist-packages:/home/bilal/learn_ros2_ws/install/nav2_common/local/lib/python3.10/dist-packages:/home/bilal/ros2_ws/install/web_gui/lib/python3.10/site-packages:/home/bilal/ros2_ws/install/velodyne_control_msgs/local/lib/python3.10/dist-packages:/home/bilal/ros2_ws/install/opencv_tools/lib/python3.10/site-packages:/home/bilal/ros2_ws/install/biy1_ros360_py/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/bilal/trail_tracer/install/traethlin_description:/home/bilal/trail_tracer/install/gps_to_utm_converter_cpp:/home/bilal/trail_tracer/install/argo_sim:/home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w:/home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd:/home/bilal/trail_tracer/install/biy1_ros360_cpp:/home/bilal/trail_tracer/install/argo_nav:/home/bilal/learn_ros2_ws/install/traethlin_description:/home/bilal/learn_ros2_ws/install/nav2_system_tests:/home/bilal/learn_ros2_ws/install/nav2_bringup:/home/bilal/learn_ros2_ws/install/navigation2:/home/bilal/learn_ros2_ws/install/nav2_smoother:/home/bilal/learn_ros2_ws/install/nav2_graceful_controller:/home/bilal/learn_ros2_ws/install/nav2_dwb_controller:/home/bilal/learn_ros2_ws/install/nav2_controller:/home/bilal/learn_ros2_ws/install/dwb_plugins:/home/bilal/learn_ros2_ws/install/dwb_critics:/home/bilal/learn_ros2_ws/install/dwb_core:/home/bilal/learn_ros2_ws/install/nav_2d_utils:/home/bilal/learn_ros2_ws/install/dwb_msgs:/home/bilal/learn_ros2_ws/install/nav_2d_msgs:/home/bilal/learn_ros2_ws/install/nav2_waypoint_follower:/home/bilal/learn_ros2_ws/install/nav2_theta_star_planner:/home/bilal/learn_ros2_ws/install/nav2_smac_planner:/home/bilal/learn_ros2_ws/install/nav2_rotation_shim_controller:/home/bilal/learn_ros2_ws/install/nav2_regulated_pure_pursuit_controller:/home/bilal/learn_ros2_ws/install/nav2_planner:/home/bilal/learn_ros2_ws/install/nav2_navfn_planner:/home/bilal/learn_ros2_ws/install/nav2_mppi_controller:/home/bilal/learn_ros2_ws/install/nav2_constrained_smoother:/home/bilal/learn_ros2_ws/install/nav2_bt_navigator:/home/bilal/learn_ros2_ws/install/nav2_behaviors:/home/bilal/learn_ros2_ws/install/nav2_core:/home/bilal/learn_ros2_ws/install/nav2_collision_monitor:/home/bilal/learn_ros2_ws/install/costmap_queue:/home/bilal/learn_ros2_ws/install/nav2_costmap_2d:/home/bilal/learn_ros2_ws/install/nav2_voxel_grid:/home/bilal/learn_ros2_ws/install/nav2_velocity_smoother:/home/bilal/learn_ros2_ws/install/nav2_rviz_plugins:/home/bilal/learn_ros2_ws/install/nav2_map_server:/home/bilal/learn_ros2_ws/install/nav2_lifecycle_manager:/home/bilal/learn_ros2_ws/install/nav2_behavior_tree:/home/bilal/learn_ros2_ws/install/nav2_amcl:/home/bilal/learn_ros2_ws/install/nav2_util:/home/bilal/learn_ros2_ws/install/nav2_msgs:/home/bilal/learn_ros2_ws/install/nav2_common:/home/bilal/learn_ros2_ws/install/gps_to_utm_converter_cpp:/home/bilal/learn_ros2_ws/install/argo_sim:/home/bilal/learn_ros2_ws/install/gazebo_ros_skid_steer_drive_6w:/home/bilal/learn_ros2_ws/install/gazebo_ros_ackermann_drive_4wd:/home/bilal/learn_ros2_ws/install/biy1_ros360_cpp:/home/bilal/learn_ros2_ws/install/articubot_one:/home/bilal/mp/mp_ws/install/biy1_ros360_cpp:/home/bilal/ros2_ws/install/velodyne_simulation:/home/bilal/ros2_ws/install/velodyne_control_msgs:/home/bilal/ros2_ws/install/track_envs:/home/bilal/ros2_ws/install/ros360_moveit:/home/bilal/ros2_ws/install/biy1_ros360_cpp:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble')]), 'shell': False}
+[0.085531] (biy1_ros360_cpp) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target polishedCode\x1b[0m\n'}
+[0.086273] (biy1_ros360_cpp) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sparse\x1b[0m\n'}
+[0.099801] (-) TimerEvent: {}
+[0.111444] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 18%] Built target exampleSubscriber\n'}
+[0.111712] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 18%] Built target examplePublisher\n'}
+[0.111960] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 27%] Built target nav2\n'}
+[0.113164] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 40%] Built target waypoint_navigator\n'}
+[0.113300] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 45%] Built target trail_tracer\n'}
+[0.113850] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 54%] Built target helloWorld\n'}
+[0.114417] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 63%] Built target code_test\n'}
+[0.115920] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 72%] Built target testCode\n'}
+[0.116628] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 81%] Built target follower\n'}
+[0.121131] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding CXX object CMakeFiles/sparse.dir/src/polishedCode.cpp.o\x1b[0m\n'}
+[0.122306] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding CXX object CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o\x1b[0m\n'}
+[0.199888] (-) TimerEvent: {}
+[0.300145] (-) TimerEvent: {}
+[0.400408] (-) TimerEvent: {}
+[0.500700] (-) TimerEvent: {}
+[0.600950] (-) TimerEvent: {}
+[0.701248] (-) TimerEvent: {}
+[0.801561] (-) TimerEvent: {}
+[0.901841] (-) TimerEvent: {}
+[1.002105] (-) TimerEvent: {}
+[1.102381] (-) TimerEvent: {}
+[1.202660] (-) TimerEvent: {}
+[1.302930] (-) TimerEvent: {}
+[1.403197] (-) TimerEvent: {}
+[1.503489] (-) TimerEvent: {}
+[1.603787] (-) TimerEvent: {}
+[1.704089] (-) TimerEvent: {}
+[1.804352] (-) TimerEvent: {}
+[1.904619] (-) TimerEvent: {}
+[2.004911] (-) TimerEvent: {}
+[2.105210] (-) TimerEvent: {}
+[2.205501] (-) TimerEvent: {}
+[2.305791] (-) TimerEvent: {}
+[2.406034] (-) TimerEvent: {}
+[2.506332] (-) TimerEvent: {}
+[2.606648] (-) TimerEvent: {}
+[2.706934] (-) TimerEvent: {}
+[2.807227] (-) TimerEvent: {}
+[2.907513] (-) TimerEvent: {}
+[3.007794] (-) TimerEvent: {}
+[3.108077] (-) TimerEvent: {}
+[3.208360] (-) TimerEvent: {}
+[3.308640] (-) TimerEvent: {}
+[3.408939] (-) TimerEvent: {}
+[3.509254] (-) TimerEvent: {}
+[3.609531] (-) TimerEvent: {}
+[3.709821] (-) TimerEvent: {}
+[3.810133] (-) TimerEvent: {}
+[3.910410] (-) TimerEvent: {}
+[4.010693] (-) TimerEvent: {}
+[4.110981] (-) TimerEvent: {}
+[4.211270] (-) TimerEvent: {}
+[4.311533] (-) TimerEvent: {}
+[4.411808] (-) TimerEvent: {}
+[4.512086] (-) TimerEvent: {}
+[4.612365] (-) TimerEvent: {}
+[4.712627] (-) TimerEvent: {}
+[4.812909] (-) TimerEvent: {}
+[4.913180] (-) TimerEvent: {}
+[5.013443] (-) TimerEvent: {}
+[5.113704] (-) TimerEvent: {}
+[5.213964] (-) TimerEvent: {}
+[5.314241] (-) TimerEvent: {}
+[5.414498] (-) TimerEvent: {}
+[5.514757] (-) TimerEvent: {}
+[5.615003] (-) TimerEvent: {}
+[5.715289] (-) TimerEvent: {}
+[5.815556] (-) TimerEvent: {}
+[5.915825] (-) TimerEvent: {}
+[6.016100] (-) TimerEvent: {}
+[6.116380] (-) TimerEvent: {}
+[6.216629] (-) TimerEvent: {}
+[6.316915] (-) TimerEvent: {}
+[6.417200] (-) TimerEvent: {}
+[6.517480] (-) TimerEvent: {}
+[6.617761] (-) TimerEvent: {}
+[6.718049] (-) TimerEvent: {}
+[6.818333] (-) TimerEvent: {}
+[6.918611] (-) TimerEvent: {}
+[7.018934] (-) TimerEvent: {}
+[7.119294] (-) TimerEvent: {}
+[7.219578] (-) TimerEvent: {}
+[7.319847] (-) TimerEvent: {}
+[7.420146] (-) TimerEvent: {}
+[7.520457] (-) TimerEvent: {}
+[7.620747] (-) TimerEvent: {}
+[7.721018] (-) TimerEvent: {}
+[7.821296] (-) TimerEvent: {}
+[7.921586] (-) TimerEvent: {}
+[8.021869] (-) TimerEvent: {}
+[8.122147] (-) TimerEvent: {}
+[8.222414] (-) TimerEvent: {}
+[8.322696] (-) TimerEvent: {}
+[8.422964] (-) TimerEvent: {}
+[8.523253] (-) TimerEvent: {}
+[8.623534] (-) TimerEvent: {}
+[8.723805] (-) TimerEvent: {}
+[8.824095] (-) TimerEvent: {}
+[8.924385] (-) TimerEvent: {}
+[9.024702] (-) TimerEvent: {}
+[9.124988] (-) TimerEvent: {}
+[9.225280] (-) TimerEvent: {}
+[9.325556] (-) TimerEvent: {}
+[9.425826] (-) TimerEvent: {}
+[9.526130] (-) TimerEvent: {}
+[9.626408] (-) TimerEvent: {}
+[9.726691] (-) TimerEvent: {}
+[9.826976] (-) TimerEvent: {}
+[9.927279] (-) TimerEvent: {}
+[10.027575] (-) TimerEvent: {}
+[10.127872] (-) TimerEvent: {}
+[10.228190] (-) TimerEvent: {}
+[10.328489] (-) TimerEvent: {}
+[10.428798] (-) TimerEvent: {}
+[10.529039] (-) TimerEvent: {}
+[10.629384] (-) TimerEvent: {}
+[10.729698] (-) TimerEvent: {}
+[10.829976] (-) TimerEvent: {}
+[10.930271] (-) TimerEvent: {}
+[11.030549] (-) TimerEvent: {}
+[11.130859] (-) TimerEvent: {}
+[11.231155] (-) TimerEvent: {}
+[11.331460] (-) TimerEvent: {}
+[11.431786] (-) TimerEvent: {}
+[11.532116] (-) TimerEvent: {}
+[11.632433] (-) TimerEvent: {}
+[11.732758] (-) TimerEvent: {}
+[11.833077] (-) TimerEvent: {}
+[11.933427] (-) TimerEvent: {}
+[12.033717] (-) TimerEvent: {}
+[12.133968] (-) TimerEvent: {}
+[12.234245] (-) TimerEvent: {}
+[12.334519] (-) TimerEvent: {}
+[12.434815] (-) TimerEvent: {}
+[12.535069] (-) TimerEvent: {}
+[12.635326] (-) TimerEvent: {}
+[12.735572] (-) TimerEvent: {}
+[12.835840] (-) TimerEvent: {}
+[12.936092] (-) TimerEvent: {}
+[13.036342] (-) TimerEvent: {}
+[13.136602] (-) TimerEvent: {}
+[13.236864] (-) TimerEvent: {}
+[13.337107] (-) TimerEvent: {}
+[13.437363] (-) TimerEvent: {}
+[13.537649] (-) TimerEvent: {}
+[13.637841] (-) TimerEvent: {}
+[13.738094] (-) TimerEvent: {}
+[13.838350] (-) TimerEvent: {}
+[13.938604] (-) TimerEvent: {}
+[14.038852] (-) TimerEvent: {}
+[14.139097] (-) TimerEvent: {}
+[14.239355] (-) TimerEvent: {}
+[14.339616] (-) TimerEvent: {}
+[14.439875] (-) TimerEvent: {}
+[14.540131] (-) TimerEvent: {}
+[14.640364] (-) TimerEvent: {}
+[14.740614] (-) TimerEvent: {}
+[14.840859] (-) TimerEvent: {}
+[14.941117] (-) TimerEvent: {}
+[15.041381] (-) TimerEvent: {}
+[15.141633] (-) TimerEvent: {}
+[15.241877] (-) TimerEvent: {}
+[15.342134] (-) TimerEvent: {}
+[15.442398] (-) TimerEvent: {}
+[15.542656] (-) TimerEvent: {}
+[15.642909] (-) TimerEvent: {}
+[15.743216] (-) TimerEvent: {}
+[15.843483] (-) TimerEvent: {}
+[15.943743] (-) TimerEvent: {}
+[16.044000] (-) TimerEvent: {}
+[16.144256] (-) TimerEvent: {}
+[16.244530] (-) TimerEvent: {}
+[16.344817] (-) TimerEvent: {}
+[16.445072] (-) TimerEvent: {}
+[16.545341] (-) TimerEvent: {}
+[16.645584] (-) TimerEvent: {}
+[16.745844] (-) TimerEvent: {}
+[16.846106] (-) TimerEvent: {}
+[16.946352] (-) TimerEvent: {}
+[17.046604] (-) TimerEvent: {}
+[17.146858] (-) TimerEvent: {}
+[17.247152] (-) TimerEvent: {}
+[17.347456] (-) TimerEvent: {}
+[17.447718] (-) TimerEvent: {}
+[17.547964] (-) TimerEvent: {}
+[17.648238] (-) TimerEvent: {}
+[17.748506] (-) TimerEvent: {}
+[17.848746] (-) TimerEvent: {}
+[17.948982] (-) TimerEvent: {}
+[18.049247] (-) TimerEvent: {}
+[18.149525] (-) TimerEvent: {}
+[18.249970] (-) TimerEvent: {}
+[18.350247] (-) TimerEvent: {}
+[18.450490] (-) TimerEvent: {}
+[18.550748] (-) TimerEvent: {}
+[18.651004] (-) TimerEvent: {}
+[18.751268] (-) TimerEvent: {}
+[18.851519] (-) TimerEvent: {}
+[18.951762] (-) TimerEvent: {}
+[19.052026] (-) TimerEvent: {}
+[19.152328] (-) TimerEvent: {}
+[19.252633] (-) TimerEvent: {}
+[19.352934] (-) TimerEvent: {}
+[19.453218] (-) TimerEvent: {}
+[19.553478] (-) TimerEvent: {}
+[19.653779] (-) TimerEvent: {}
+[19.754069] (-) TimerEvent: {}
+[19.854402] (-) TimerEvent: {}
+[19.954683] (-) TimerEvent: {}
+[20.054994] (-) TimerEvent: {}
+[20.155301] (-) TimerEvent: {}
+[20.255578] (-) TimerEvent: {}
+[20.355840] (-) TimerEvent: {}
+[20.456198] (-) TimerEvent: {}
+[20.556542] (-) TimerEvent: {}
+[20.656934] (-) TimerEvent: {}
+[20.757267] (-) TimerEvent: {}
+[20.857572] (-) TimerEvent: {}
+[20.957921] (-) TimerEvent: {}
+[21.058302] (-) TimerEvent: {}
+[21.158621] (-) TimerEvent: {}
+[21.258922] (-) TimerEvent: {}
+[21.359264] (-) TimerEvent: {}
+[21.392739] (biy1_ros360_cpp) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking CXX executable polishedCode\x1b[0m\n'}
+[21.400196] (biy1_ros360_cpp) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable sparse\x1b[0m\n'}
+[21.459406] (-) TimerEvent: {}
+[21.559721] (-) TimerEvent: {}
+[21.660093] (-) TimerEvent: {}
+[21.760490] (-) TimerEvent: {}
+[21.860915] (-) TimerEvent: {}
+[21.961328] (-) TimerEvent: {}
+[22.061657] (-) TimerEvent: {}
+[22.161954] (-) TimerEvent: {}
+[22.262221] (-) TimerEvent: {}
+[22.362499] (-) TimerEvent: {}
+[22.462739] (-) TimerEvent: {}
+[22.562996] (-) TimerEvent: {}
+[22.663277] (-) TimerEvent: {}
+[22.763586] (-) TimerEvent: {}
+[22.790278] (biy1_ros360_cpp) StdoutLine: {'line': b'[100%] Built target sparse\n'}
+[22.826310] (biy1_ros360_cpp) StdoutLine: {'line': b'[100%] Built target polishedCode\n'}
+[22.841608] (biy1_ros360_cpp) CommandEnded: {'returncode': 0}
+[22.863652] (-) TimerEvent: {}
+[22.954103] (biy1_ros360_cpp) JobProgress: {'identifier': 'biy1_ros360_cpp', 'progress': 'install'}
+[22.963728] (-) TimerEvent: {}
+[22.967414] (biy1_ros360_cpp) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/bilal/trail_tracer/build/biy1_ros360_cpp'], 'cwd': '/home/bilal/trail_tracer/build/biy1_ros360_cpp', 'env': OrderedDict([('LANGUAGE', 'en_GB:en'), ('USER', 'bilal'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w/lib:/home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/lib:/home/bilal/learn_ros2_ws/install/nav2_smoother/lib:/home/bilal/learn_ros2_ws/install/nav2_graceful_controller/lib:/home/bilal/learn_ros2_ws/install/nav2_controller/lib:/home/bilal/learn_ros2_ws/install/dwb_plugins/lib:/home/bilal/learn_ros2_ws/install/dwb_critics/lib:/home/bilal/learn_ros2_ws/install/dwb_core/lib:/home/bilal/learn_ros2_ws/install/nav_2d_utils/lib:/home/bilal/learn_ros2_ws/install/dwb_msgs/lib:/home/bilal/learn_ros2_ws/install/nav_2d_msgs/lib:/home/bilal/learn_ros2_ws/install/nav2_waypoint_follower/lib:/home/bilal/learn_ros2_ws/install/nav2_theta_star_planner/lib:/home/bilal/learn_ros2_ws/install/nav2_smac_planner/lib:/home/bilal/learn_ros2_ws/install/nav2_rotation_shim_controller/lib:/home/bilal/learn_ros2_ws/install/nav2_regulated_pure_pursuit_controller/lib:/home/bilal/learn_ros2_ws/install/nav2_planner/lib:/home/bilal/learn_ros2_ws/install/nav2_navfn_planner/lib:/home/bilal/learn_ros2_ws/install/nav2_mppi_controller/lib:/home/bilal/learn_ros2_ws/install/nav2_constrained_smoother/lib:/home/bilal/learn_ros2_ws/install/nav2_bt_navigator/lib:/home/bilal/learn_ros2_ws/install/nav2_behaviors/lib:/home/bilal/learn_ros2_ws/install/nav2_collision_monitor/lib:/home/bilal/learn_ros2_ws/install/costmap_queue/lib:/home/bilal/learn_ros2_ws/install/nav2_costmap_2d/lib:/home/bilal/learn_ros2_ws/install/nav2_voxel_grid/lib:/home/bilal/learn_ros2_ws/install/nav2_velocity_smoother/lib:/home/bilal/learn_ros2_ws/install/nav2_rviz_plugins/lib:/home/bilal/learn_ros2_ws/install/nav2_map_server/lib:/home/bilal/learn_ros2_ws/install/nav2_lifecycle_manager/lib:/home/bilal/learn_ros2_ws/install/nav2_behavior_tree/lib:/home/bilal/learn_ros2_ws/install/nav2_amcl/lib:/home/bilal/learn_ros2_ws/install/nav2_util/lib:/home/bilal/learn_ros2_ws/install/nav2_msgs/lib:/home/bilal/learn_ros2_ws/install/gazebo_ros_skid_steer_drive_6w/lib:/home/bilal/learn_ros2_ws/install/gazebo_ros_ackermann_drive_4wd/lib:/home/bilal/ros2_ws/install/velodyne_simulation/lib:/home/bilal/ros2_ws/install/velodyne_control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins::/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/bilal'), ('OLDPWD', '/home/bilal/trail_tracer/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2219'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/opt/ros/humble/'), ('COLCON_PREFIX_PATH', '/home/bilal/trail_tracer/install:/home/bilal/learn_ros2_ws/install:/home/bilal/mp/mp_ws/install:/home/bilal/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'bilal'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'bilal'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/home/bilal/trail_tracer/install/argo_sim/share/argo_sim/models:/home/bilal/learn_ros2_ws/install/argo_sim/share/argo_sim/models:/usr/share/gazebo/../../share/gazebo-11/models:/home/bilal/trail_tracer/install/argo_sim/share/argo_sim/models:/home/bilal/learn_ros2_ws/install/argo_sim/share/argo_sim/models:/usr/share/gazebo/../../share/gazebo-11/models::/opt/ros/humble/share/turtlebot3_gazebo/models:/opt/ros/humble/share/turtlebot3_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '1'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/home/bilal/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/bilal-yousufzai:@/tmp/.ICE-unix/2190,unix/bilal-yousufzai:/tmp/.ICE-unix/2190'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d0de9292_9711_4766_be4b_f7c510f833f2'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('GNOME_TERMINAL_SERVICE', ':1.100'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/bilal/trail_tracer/install/web_gui:/home/bilal/trail_tracer/install/traethlin_description:/home/bilal/trail_tracer/install/gps_to_utm_converter_cpp:/home/bilal/trail_tracer/install/argo_sim:/home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w:/home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd:/home/bilal/trail_tracer/install/biy1_ros360_cpp:/home/bilal/trail_tracer/install/argo_nav:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/traethlin_description:/home/bilal/learn_ros2_ws/install/nav2_system_tests:/home/bilal/learn_ros2_ws/install/nav2_bringup:/home/bilal/learn_ros2_ws/install/navigation2:/home/bilal/learn_ros2_ws/install/nav2_smoother:/home/bilal/learn_ros2_ws/install/nav2_graceful_controller:/home/bilal/learn_ros2_ws/install/nav2_dwb_controller:/home/bilal/learn_ros2_ws/install/nav2_controller:/home/bilal/learn_ros2_ws/install/dwb_plugins:/home/bilal/learn_ros2_ws/install/dwb_critics:/home/bilal/learn_ros2_ws/install/dwb_core:/home/bilal/learn_ros2_ws/install/nav_2d_utils:/home/bilal/learn_ros2_ws/install/dwb_msgs:/home/bilal/learn_ros2_ws/install/nav_2d_msgs:/home/bilal/learn_ros2_ws/install/nav2_waypoint_follower:/home/bilal/learn_ros2_ws/install/nav2_theta_star_planner:/home/bilal/learn_ros2_ws/install/nav2_smac_planner:/home/bilal/learn_ros2_ws/install/nav2_rotation_shim_controller:/home/bilal/learn_ros2_ws/install/nav2_regulated_pure_pursuit_controller:/home/bilal/learn_ros2_ws/install/nav2_planner:/home/bilal/learn_ros2_ws/install/nav2_navfn_planner:/home/bilal/learn_ros2_ws/install/nav2_mppi_controller:/home/bilal/learn_ros2_ws/install/nav2_constrained_smoother:/home/bilal/learn_ros2_ws/install/nav2_bt_navigator:/home/bilal/learn_ros2_ws/install/nav2_behaviors:/home/bilal/learn_ros2_ws/install/nav2_core:/home/bilal/learn_ros2_ws/install/nav2_collision_monitor:/home/bilal/learn_ros2_ws/install/costmap_queue:/home/bilal/learn_ros2_ws/install/nav2_costmap_2d:/home/bilal/learn_ros2_ws/install/nav2_voxel_grid:/home/bilal/learn_ros2_ws/install/nav2_velocity_smoother:/home/bilal/learn_ros2_ws/install/nav2_rviz_plugins:/home/bilal/learn_ros2_ws/install/nav2_map_server:/home/bilal/learn_ros2_ws/install/nav2_lifecycle_manager:/home/bilal/learn_ros2_ws/install/nav2_behavior_tree:/home/bilal/learn_ros2_ws/install/nav2_amcl:/home/bilal/learn_ros2_ws/install/nav2_util:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/learn_ros2_ws/install/nav2_msgs:/home/bilal/learn_ros2_ws/install/nav2_common:/home/bilal/learn_ros2_ws/install/gps_to_utm_converter_cpp:/home/bilal/learn_ros2_ws/install/argo_sim:/home/bilal/learn_ros2_ws/install/gazebo_ros_skid_steer_drive_6w:/home/bilal/learn_ros2_ws/install/gazebo_ros_ackermann_drive_4wd:/home/bilal/learn_ros2_ws/install/biy1_ros360_cpp:/home/bilal/learn_ros2_ws/install/articubot_one:/home/bilal/mp/mp_ws/install/biy1_ros360_cpp:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/velodyne_simulation:/home/bilal/ros2_ws/install/velodyne_control_msgs:/home/bilal/ros2_ws/install/track_envs:/home/bilal/ros2_ws/install/ros360_moveit:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/home/bilal/ros2_ws/install/biy1_ros360_cpp:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo/../../share/gazebo-11:/usr/share/gazebo/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/bilal/trail_tracer/build/biy1_ros360_cpp'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/bilal/trail_tracer/install/web_gui/lib/python3.10/site-packages:/home/bilal/learn_ros2_ws/install/web_gui/lib/python3.10/site-packages:/home/bilal/learn_ros2_ws/install/dwb_msgs/local/lib/python3.10/dist-packages:/home/bilal/learn_ros2_ws/install/nav_2d_msgs/local/lib/python3.10/dist-packages:/home/bilal/learn_ros2_ws/install/nav2_simple_commander/lib/python3.10/site-packages:/home/bilal/learn_ros2_ws/install/nav2_msgs/local/lib/python3.10/dist-packages:/home/bilal/learn_ros2_ws/install/nav2_common/local/lib/python3.10/dist-packages:/home/bilal/ros2_ws/install/web_gui/lib/python3.10/site-packages:/home/bilal/ros2_ws/install/velodyne_control_msgs/local/lib/python3.10/dist-packages:/home/bilal/ros2_ws/install/opencv_tools/lib/python3.10/site-packages:/home/bilal/ros2_ws/install/biy1_ros360_py/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/bilal/trail_tracer/install/traethlin_description:/home/bilal/trail_tracer/install/gps_to_utm_converter_cpp:/home/bilal/trail_tracer/install/argo_sim:/home/bilal/trail_tracer/install/gazebo_ros_skid_steer_drive_6w:/home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd:/home/bilal/trail_tracer/install/biy1_ros360_cpp:/home/bilal/trail_tracer/install/argo_nav:/home/bilal/learn_ros2_ws/install/traethlin_description:/home/bilal/learn_ros2_ws/install/nav2_system_tests:/home/bilal/learn_ros2_ws/install/nav2_bringup:/home/bilal/learn_ros2_ws/install/navigation2:/home/bilal/learn_ros2_ws/install/nav2_smoother:/home/bilal/learn_ros2_ws/install/nav2_graceful_controller:/home/bilal/learn_ros2_ws/install/nav2_dwb_controller:/home/bilal/learn_ros2_ws/install/nav2_controller:/home/bilal/learn_ros2_ws/install/dwb_plugins:/home/bilal/learn_ros2_ws/install/dwb_critics:/home/bilal/learn_ros2_ws/install/dwb_core:/home/bilal/learn_ros2_ws/install/nav_2d_utils:/home/bilal/learn_ros2_ws/install/dwb_msgs:/home/bilal/learn_ros2_ws/install/nav_2d_msgs:/home/bilal/learn_ros2_ws/install/nav2_waypoint_follower:/home/bilal/learn_ros2_ws/install/nav2_theta_star_planner:/home/bilal/learn_ros2_ws/install/nav2_smac_planner:/home/bilal/learn_ros2_ws/install/nav2_rotation_shim_controller:/home/bilal/learn_ros2_ws/install/nav2_regulated_pure_pursuit_controller:/home/bilal/learn_ros2_ws/install/nav2_planner:/home/bilal/learn_ros2_ws/install/nav2_navfn_planner:/home/bilal/learn_ros2_ws/install/nav2_mppi_controller:/home/bilal/learn_ros2_ws/install/nav2_constrained_smoother:/home/bilal/learn_ros2_ws/install/nav2_bt_navigator:/home/bilal/learn_ros2_ws/install/nav2_behaviors:/home/bilal/learn_ros2_ws/install/nav2_core:/home/bilal/learn_ros2_ws/install/nav2_collision_monitor:/home/bilal/learn_ros2_ws/install/costmap_queue:/home/bilal/learn_ros2_ws/install/nav2_costmap_2d:/home/bilal/learn_ros2_ws/install/nav2_voxel_grid:/home/bilal/learn_ros2_ws/install/nav2_velocity_smoother:/home/bilal/learn_ros2_ws/install/nav2_rviz_plugins:/home/bilal/learn_ros2_ws/install/nav2_map_server:/home/bilal/learn_ros2_ws/install/nav2_lifecycle_manager:/home/bilal/learn_ros2_ws/install/nav2_behavior_tree:/home/bilal/learn_ros2_ws/install/nav2_amcl:/home/bilal/learn_ros2_ws/install/nav2_util:/home/bilal/learn_ros2_ws/install/nav2_msgs:/home/bilal/learn_ros2_ws/install/nav2_common:/home/bilal/learn_ros2_ws/install/gps_to_utm_converter_cpp:/home/bilal/learn_ros2_ws/install/argo_sim:/home/bilal/learn_ros2_ws/install/gazebo_ros_skid_steer_drive_6w:/home/bilal/learn_ros2_ws/install/gazebo_ros_ackermann_drive_4wd:/home/bilal/learn_ros2_ws/install/biy1_ros360_cpp:/home/bilal/learn_ros2_ws/install/articubot_one:/home/bilal/mp/mp_ws/install/biy1_ros360_cpp:/home/bilal/ros2_ws/install/velodyne_simulation:/home/bilal/ros2_ws/install/velodyne_control_msgs:/home/bilal/ros2_ws/install/track_envs:/home/bilal/ros2_ws/install/ros360_moveit:/home/bilal/ros2_ws/install/biy1_ros360_cpp:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble')]), 'shell': False}
+[22.978830] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[22.978990] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/helloWorld\n'}
+[22.979226] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/examplePublisher\n'}
+[22.979477] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/exampleSubscriber\n'}
+[22.979698] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/testCode\n'}
+[22.979931] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/nav2\n'}
+[22.980153] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/trail_tracer\n'}
+[22.980362] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/waypoint_navigator\n'}
+[22.980600] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/follower\n'}
+[22.980825] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/code_test\n'}
+[22.981046] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/polishedCode\n'}
+[23.000478] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/polishedCode" to ""\n'}
+[23.000935] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/sparse\n'}
+[23.020360] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Set runtime path of "/home/bilal/trail_tracer/install/biy1_ros360_cpp/lib/biy1_ros360_cpp/sparse" to ""\n'}
+[23.020526] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/package_run_dependencies/biy1_ros360_cpp\n'}
+[23.020689] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/parent_prefix_path/biy1_ros360_cpp\n'}
+[23.020797] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/ament_prefix_path.sh\n'}
+[23.020875] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/ament_prefix_path.dsv\n'}
+[23.020982] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/path.sh\n'}
+[23.021058] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/environment/path.dsv\n'}
+[23.021129] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.bash\n'}
+[23.021201] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.sh\n'}
+[23.021272] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.zsh\n'}
+[23.021342] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/local_setup.dsv\n'}
+[23.021415] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Installing: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/package.dsv\n'}
+[23.021489] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/ament_index/resource_index/packages/biy1_ros360_cpp\n'}
+[23.021547] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/cmake/biy1_ros360_cppConfig.cmake\n'}
+[23.021613] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/cmake/biy1_ros360_cppConfig-version.cmake\n'}
+[23.021707] (biy1_ros360_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/bilal/trail_tracer/install/biy1_ros360_cpp/share/biy1_ros360_cpp/package.xml\n'}
+[23.022913] (biy1_ros360_cpp) CommandEnded: {'returncode': 0}
+[23.063804] (-) TimerEvent: {}
+[23.148360] (biy1_ros360_cpp) JobEnded: {'identifier': 'biy1_ros360_cpp', 'rc': 0}
+[23.148893] (-) EventReactorShutdown: {}

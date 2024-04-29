@@ -26,7 +26,12 @@
                  <div id="settings-menu" class="settings-popup" style="display: none;"> <!-- Initially hidden -->
                      <ul class="settings-list">
                          <li><a href="/">Trail Tracer</a></li>
-                         <li><a href="#">Supported Sites</a></li>
+                         <li class="has-submenu"><a href="/#">Supported Sites</a>
+                            <ul class="submenu">
+                                <li><a href="/traethlin">old Traethlin</a></li>
+                                <!-- More sites here for future additions-->
+                            </ul>
+                        </li>
                      </ul>
                  </div>
              </div>
@@ -59,8 +64,17 @@
             <article class="article-class">
                 <button class="dropdown-toggle">How To Load A Recorded Trail</button>
                 <div class="dropdown-content" style="display: none;">
-                    <p>To load and trace a stored trail dollow these steps:</p>
-
+                    <p>To load and trace a stored trail follow these steps:</p>
+                    <ol>
+                        <li>Click the "Load Trail" button.</li>
+                        <li>Choose a file a file and click start.</li>
+                        <li>To pause trrail trace, click pause or hit the space bar to emergency stop.</li>
+                        <li>To quit the trail tracing, clik "End" button and then the "Quit" button in the prompt</li>
+                    </ol>
+                    <p> NOTE: If trail tracing is completed, GUI will bring you back to either choose a new file or plot a new one. 
+                        If a file with coordinates spaced over 100m, trail within file will not be traced unless nav2_no_map_params.yaml
+                        parameters global_costmap: height and width are increased.
+                    </p>
                 </div>
             </article>
         </div>

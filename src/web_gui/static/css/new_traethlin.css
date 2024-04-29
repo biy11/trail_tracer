@@ -1,0 +1,231 @@
+/* gui_css.css */
+/* 
+* @version 0.1 - iniial creation 
+* @version 0.2 - Added dasboard styles
+* @version 0.3 - Added map, header and footer style
+* @version 0.4 - Added Joystick styles
+* @version 0.5 - Added prompt styles styles
+* @version 0.6 - Updated styles for system log.
+* @version 0.7 - Refactored.
+*/
+
+/*/////////////////////////////////////////////////*/
+/*///////////// STYLES TRAETHLIN TAB //////////////*/
+/*/////////////////////////////////////////////////*/
+.button, .button:focus {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    font-size: large;
+    border-radius: 3px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    color: #333333;
+    border-color: #333333;
+    background: transparent;
+    margin: 0px 1em;
+    padding: 0.5em 0.1em;
+    width: 16em;
+    height: 6ex;
+    outline: 0;
+    margin-left: 20px;
+    margin-top: 0.5em;
+}
+
+.button:active {
+    background-color: #333333;
+    color: #fff;
+    border-color: #fff;
+}
+
+.justify {
+/*    width: 20em;*/
+    align-content: center;
+    justify-content: center;
+}
+
+.leftAligned {
+  align-content: left
+}
+
+.rightAligned {
+  align-content: right
+}
+
+#connectionOptions {
+    display: flex;
+    width: 100%;
+}
+
+#gearControl {
+    display: flex;
+    width: 100%;
+}
+
+#manualControl {
+    display: flex;
+    width: 100%;
+
+}
+
+/* Container for flexboxes */
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.row {
+/*  display: -webkit-flex;*/
+  display: flex;
+}
+
+/* Create equal columns that sit next to each other */
+.column {
+/*  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;*/
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The sliders */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.block-display  {
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+#joystick_wrapper{
+    background-color: #ddd;
+    position: absolute; 
+    top: 22em; 
+    margin: auto;
+    border-radius: 80%; 
+    width: 50em; 
+    height: 50em;
+    opacity: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+#traethlin-joystick{
+    padding: 10px;
+    margin-right: 5px;
+    background-color: #bbb; 
+    border-radius: 100%; 
+    height: 18em; 
+    width: 18em; 
+    transform: translate3d(0px, 0px, 0px); 
+    margin-left: 16em; 
+    margin-top: 16em; 
+    position: absolute; 
+    opacity: 1; 
+    transition: all 0.3s ease-in-out;
+
+}
+
+.tab-container {
+    display: flex;
+    background-color: #f4f4f4;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0px;
+    overflow: hidden;
+    border: none;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+    /* max-width: 960px; */
+}
+
+.tab {
+    background-color: inherit; /* Inherit the background color from the tab-container */
+    border: none; 
+    outline: none; 
+    cursor: pointer;
+    padding: 14px; /* Adjust padding to match the header's padding */
+    margin: 0; /* Reset margin to remove any unwanted space */
+    color: white; /* Tab text color */
+    font-size: 17px;
+    transition: background-color 0.3s;
+    border-radius: 5px 5px 0 0; /* Apply border-radius to the tabs as well */
+}
+
+/* Change background color of tabs on hover */
+.tab:hover {
+    background-color: #ddd;
+    color: #fff;
+}
+
+/* Create an active/current tablink class */
+.tab.active {
+    background-color: #4CAF50; /* or any color that indicates the active tab */
+    color: white;
+}
+
+

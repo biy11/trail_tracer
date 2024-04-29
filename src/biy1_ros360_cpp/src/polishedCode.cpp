@@ -1,3 +1,11 @@
+/*
+ * @(#) trail_tracer.cpp 1.7 29/04/2021 
+ * 
+ * Copyright (c) 2024 Aberystwth University
+ * All rights reserved.
+*/
+
+// Include necessary libraries for the node
 #include <chrono>
 #include <iostream>
 #include <thread>
@@ -24,64 +32,89 @@
 #include <rcl_interfaces/msg/log.hpp>
 #include <regex>
 
-//Added abaility to move robot
-//Added file storing capabailities
-//Added IMU data
-//Added files publishe
-//timer for file publisher
-//load file sub
-// Added goal publisher 
-// added sparse coordinate storing via rbd algo
+/**
+ * This node is responsible for recording trails by storing GPS data to a file, loading trails from files, 
+ * and sending waypoints to the WaypointFollower node. It also handles manual control of the robot's movement and
+ * allows for pausing and resuming trail following. Processes log messages from the system and communicates with 
+ * the front-end.
+ * 
+ * @author Bilal [biy1]
+ * @version 0.1 - Initial creation of the file.
+ * @version 0.2 - Added ability to move robot.
+ * @version 0.3 - Added file storing capabilities.
+ * @version 0.4 - Added IMU and GPS data handlers.
+ * @version 0.5 - Added files publisher.
+ * @version 0.6 - Added timer for file publisher.
+ * @version 0.7 - Added load file sub.
+ * @version 0.8 - Added utm data for conversion.
+ * @version 0.9 - Added file loading handeling for creating waypoints.
+ * @version 1.0 - Added goal publisher for waypoints (WaypointSender).
+ * @version 1.1 - Added orientation values from IMU.
+ * @version 1.2 - Added odom data for tracking position.
+ * @version 1.3 - Added remainingDestinationPoseList.
+ * @version 1.4 - Added sparse coordinate storing via rbd algorithm.
+ * @version 1.5 - Added log reader callback for log messages.
+ * @version 1.6 - Added logger function for log messages.
+ * @version 1.7 - Added comments and cleaned up code.
+ * 
+*/
 
-
+// using namespace for easier access to message types assigning Alises for message types.
 using namespace std::chrono_literals;
 using PoseStamped = geometry_msgs::msg::PoseStamped;
+using FullPoseVector = std::vector<std::tuple<float, float, float, float, float, float>>;
+using Tuple = std::tuple<float, float>;
 
 
 
+// Class for sending waypoints to the action server
 class WaypointSender : public rclcpp::Node
 {
 public:
+    // Setting variables for message types for easier acess and use
     using FollowWaypoints = nav2_msgs::action::FollowWaypoints;
     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<FollowWaypoints>;
 
+    // Constructor for node and creating an action client
     explicit WaypointSender(const std::string & name) : Node(name) {
         this->client_ptr_ = rclcpp_action::create_client<FollowWaypoints>(
             this, "/follow_waypoints");
     }
 
-    void set_waypoints(const std::vector<geometry_msgs::msg::PoseStamped>& waypoints) {
+    // Method to set and snd waypoints to the action server
+    void set_waypoints(const std::vector<PoseStamped>& waypoints) {
         auto goal_msg = FollowWaypoints::Goal();
         goal_msg.poses = waypoints;
-
+        // Check to see if action server is availaible before sending waypoints.
         if (!client_ptr_->wait_for_action_server()) {
             RCLCPP_ERROR(this->get_logger(), "Action server not available after waiting");
             return;
         }
-
+        // Configure goal options.
         auto send_goal_options = rclcpp_action::Client<FollowWaypoints>::SendGoalOptions();
         send_goal_options.result_callback = std::bind(&WaypointSender::goal_result_callback, this, std::placeholders::_1);
         client_ptr_->async_send_goal(goal_msg, send_goal_options);
     }
-
+    // Method to pause waypoint following, by canceling current goals.
     void pause() {
         client_ptr_->async_cancel_all_goals();
-        RCLCPP_INFO(this->get_logger(), "Waypoint follower paused.");
+        //RCLCPP_INFO(this->get_logger(), "Waypoint follower paused."); // for debugging purposes.
     }
 
-void resume(const std::vector<geometry_msgs::msg::PoseStamped>& waypoints) {
-
-    RCLCPP_INFO(this->get_logger(), "Resuming waypoint follower.");
-    // Resend the waypoints to resume following
-    if (!waypoints.empty()) {
-        set_waypoints(waypoints);
+    // Method to resume waypoint followign be re-sending remainig waypoints.
+    void resume(const std::vector<PoseStamped>& waypoints) {
+        //RCLCPP_INFO(this->get_logger(), "Resuming waypoint follower."); // For debugging purposes.
+        // Resend the waypoints to resume following.
+        if (!waypoints.empty()) {
+            set_waypoints(waypoints);
+        }
     }
-}
 
 private:
-    rclcpp_action::Client<FollowWaypoints>::SharedPtr client_ptr_;
-    bool is_paused_;
+    // Pointer to action client handeling FollowWaypoints actions.
+    rclcpp_action::Client<FollowWaypoints>::SharedPtr client_ptr_; 
 
+    // Callback function for waypoint following toprocess results
     void goal_result_callback(const GoalHandleFollowWaypoints::WrappedResult & result) {
         switch (result.code) {
             case rclcpp_action::ResultCode::SUCCEEDED:
@@ -97,11 +130,12 @@ private:
     }
 };
 
+// Class for trail tracing and manual control
 class TrailTracer : public rclcpp::Node {
 public:
     TrailTracer()
     : Node("robot_movement_control"), is_moving_(false), current_easting_(0.0), current_northing_(0.0), 
-    current_pose_x(0.0), current_pose_y(0.0),waypoint_sender_(std::make_shared<WaypointSender>("waypoint_sender"))
+    current_pose_x(0.0), current_pose_y(0.0), waypoint_sender_(std::make_shared<WaypointSender>("waypoint_sender"))
     {
         ////////////////// PUBLISHERS FOR CMD_VEL, FILE NAMES AND WAYPOINTS //////////////////
         cmd_vel_publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
@@ -110,48 +144,51 @@ public:
         log_publisher_ = this->create_publisher<std_msgs::msg::String>("/trail_tracer/log_messages", 10);
 
         //////////////////////////////// SUBSCRIPTIONS ////////////////////////////////
+        // Subscription for web_messages to recive commands from fornt-end.
         web_message_subscription_ = this->create_subscription<std_msgs::msg::String>(
-            "/web_gui/web_messages", 10,                                             // Subscription for web_messages
+            "/web_gui/web_messages", 10,                                             
             std::bind(&TrailTracer::web_messages_callback, this, std::placeholders::_1));
-
+        // Subscription for trail name  input in front-end for file making.
         trail_name_subscription_ = this->create_subscription<std_msgs::msg::String>(
             "/web_gui/trail_name_topic", 10,
             std::bind(&TrailTracer::trail_name_callback, this, std::placeholders::_1));
-
+        // Subscription for joystick values from front-end joystick.
         joystick_subscription_ = this->create_subscription<geometry_msgs::msg::Twist>(
             "/web_gui/joystick_value", 10,
-            std::bind(&TrailTracer::manual_control, this, std::placeholders::_1));
-
+            std::bind(&TrailTracer::manual_control_callback, this, std::placeholders::_1));
+        // Subscription for which file to be loaded fro trail tracing.
         load_file_subscription_ = this->create_subscription<std_msgs::msg::String>(
             "/web_gui/load_file_topic", 10,
             std::bind(&TrailTracer::file_loader_callback, this, std::placeholders::_1));
-
+        // Subscription for gps data for recording trails.
         gps_fix_subscription_ = this->create_subscription<sensor_msgs::msg::NavSatFix>(
             "/gps/fix", 10,
             std::bind(&TrailTracer::gps_fix_callback, this, std::placeholders::_1));
-
-        gps_to_utm_subscription_ = this->create_subscription<geometry_msgs::msg::PoseStamped>(
+        // Subscription for utm data to convert from gps to UTM data to pass to WaypointFollower.
+        gps_to_utm_subscription_ = this->create_subscription<PoseStamped>(
             "/utm_data", 10,
             std::bind(&TrailTracer::utm_data_callback, this, std::placeholders::_1));
-
+        // Subscription for obtaining orientation values from IMU.
         imu_data_subscription_ = this->create_subscription<sensor_msgs::msg::Imu>(
             "/imu/data", 10,
             std::bind(&TrailTracer::imu_data_callback, this, std::placeholders::_1));
-
+        // Subscription for odometry data for tacking positioning in local/global
         odom_subscription_ = this->create_subscription<nav_msgs::msg::Odometry>(
             "/odom", 10, std::bind(&TrailTracer::odom_callback, this, std::placeholders::_1));
-        
+        // Subscription for reading log data for display in front-end system log.
         log_reader_subscription_ = this->create_subscription<rcl_interfaces::msg::Log>(
             "/rosout", 10, std::bind(&TrailTracer::log_reader_callback, this, std::placeholders::_1));
-
+        // Timer update for publishing joystick values to cmd_vel topic.
         timer_update_movement_ = this->create_wall_timer(
             100ms, std::bind(&TrailTracer::update_movement, this));
-
+        // Timer for publsihing avaliable trail files for front-end.
         timer_publish_file_names_ = this->create_wall_timer(
-            1s, std::bind(&TrailTracer::publish_file_name, this));
+            500ms, std::bind(&TrailTracer::publish_file_name, this));
+
+        
         
     }
-
+    // Destructor for closing file if open.
     ~TrailTracer(){
         if(gps_file_.is_open()){
             gps_file_.close();
@@ -164,10 +201,17 @@ private:
     ///////////////////////////////// CALLBACK FUNCTIONS //////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////
 
+    /**
+     * @brief Callback function web_messages.
+     * 
+     * This function is called when a new web_message is received. It performs an operation depending
+     * on the type of message recives. messages can be manual-start, manual-move, manual-stop, pause-trail, resume-trail.
+     * 
+     * @param msg The trail name message.
+     */
     void web_messages_callback(const std_msgs::msg::String::SharedPtr msg) {
         if (msg->data == "manual-start") {
             is_moving_ = true;
-            //open_gps_file(); // Call to a function to handle file opening
         } else if (msg->data == "manual-move"){
             is_moving_ = true;
         }else if (msg->data == "manual-stop") {
@@ -190,6 +234,14 @@ private:
         //RCLCPP_INFO(this->get_logger(), "Received command: '%s'", msg->data.c_str()); // Logging for debugging purposes
     }
 
+    /**
+     * @brief Callback function for the trail name message.
+     * 
+     * This function is called when a new trail name message is received. It updates the trail name
+     * variable and re-opens the GPS file with the new trail name if the robot is already moving.
+     * 
+     * @param msg The trail name message.
+     */
     void trail_name_callback(const std_msgs::msg::String::SharedPtr msg){
         trail_name_ = msg->data;
         //RCLCPP_INFO(this->get_logger(), "Trail name set to: '%s'", trail_name_.c_str()); // Logging for debugging purposes
@@ -197,22 +249,44 @@ private:
             open_gps_file(); // Re-open the file with the new trail name if already moving
         }
     }
-
-    // IMU data callback function
+    
+    /**
+     * @brief Callback function for IMU data.
+     * 
+     * This function is called when new IMU data is received. It extracts the orientation data
+     * from the message and stores it in the corresponding variables.
+     * 
+     * @param msg The IMU data message.
+     */
     void imu_data_callback(const sensor_msgs::msg::Imu::SharedPtr msg) {
+        // Extract orientation data from the message
         orientation_x_ = msg->orientation.x;
         orientation_y_ = msg->orientation.y;
         orientation_z_ = msg->orientation.z;
         orientation_w_ = msg->orientation.w;
     }
 
-    // Odom Callback
+    /**
+     * @brief Callback function for the odometry message.
+     * 
+     * This function is called whenever a new odometry message is received.
+     * It extracts the current position from the message and updates the
+     * 'current_pose_x' and 'current_pose_y' variables accordingly.
+     * 
+     * @param msg The odometry message containing the current position.
+     */
     void odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg){
         current_pose_x = msg->pose.pose.position.x;
         current_pose_y = msg->pose.pose.position.y;
     }
     
-    // Gps callback
+    /**
+     * @brief Callback function for GPS fix messages.
+     * 
+     * This function is called whenever a new GPS fix message is received. It updates the last known location and, if the system is moving, records the current waypoint.
+     * 
+     * @param msg A shared pointer to the received NavSatFix message.
+     */
     void gps_fix_callback(const sensor_msgs::msg::NavSatFix::SharedPtr msg) {
         last_gps_msg_ = msg; //Update last known location
 
@@ -220,27 +294,45 @@ private:
             recorded_waypoints_.emplace_back(msg->latitude,msg->longitude, orientation_x_, orientation_y_, orientation_z_, orientation_w_);
         }
     }
-    // Callback for ros log reader
+    
+    /**
+     * @brief callback function for joystick values.
+     * 
+     * This function is called when a new joystick value message is received. It updates the last received command.
+    */
+    void manual_control_callback(const geometry_msgs::msg::Twist::SharedPtr msg) {
+        last_received_cmd_ = msg;
+    }
+    
+    /**
+     * @brief Callback function for reading log messages.
+     * 
+     * This function is called when a log message is received. It checks the message source and content
+     * to perform specific actions based on the log message. Allowing for fornt-end log information display from nav2 operations.
+     * 
+     * @param msg The log message received.
+     */
     void log_reader_callback(const rcl_interfaces::msg::Log::SharedPtr msg){
         // Check if the message is from bt_navigator and contains the navigation text
         if (msg->name == "bt_navigator" && msg->msg.find("Begin navigating") != std::string::npos) {
+            // Extract the destination coordinates from the message
             std::regex coord_regex("\\((-?\\d+\\.\\d+),\\s*(-?\\d+\\.\\d+)\\)"); 
             std::smatch matches;
             std::string::const_iterator searchStart(msg->msg.cbegin());
             std::vector<std::pair<float, float>> coordinates;
 
             // Find all matches of message type
-        for (std::sregex_iterator it(msg->msg.begin(), msg->msg.end(), coord_regex), end_it; it != end_it; ++it) {
-            matches = *it;
-            float x = std::stof(matches[1].str());
-            float y = std::stof(matches[2].str());
-            coordinates.push_back(std::make_pair(x, y));
-        }
+            for (std::sregex_iterator it(msg->msg.begin(), msg->msg.end(), coord_regex), end_it; it != end_it; ++it) {
+                matches = *it;
+                float x = std::stof(matches[1].str());
+                float y = std::stof(matches[2].str());
+                coordinates.push_back(std::make_pair(x, y));
+            }
 
             // Check for at least two coordinate pairs
             if (coordinates.size() >= 2) {
                 destination_coords_ = coordinates[1]; // Select the second pair
-                //RCLCPP_INFO(this->get_logger(), "Destination coordinates: (%f, %f)", destination_coords_.first, destination_coords_.second);
+                //RCLCPP_INFO(this->get_logger(), "Destination coordinates: (%f, %f)", destination_coords_.first, destination_coords_.second); // Logging for debugging purposes.
             }
         }
         // check for messages for trail completion, trail cancel/pause, trail start, and log result
@@ -249,7 +341,7 @@ private:
         } else if(msg->name == "waypoint_follower" && msg->msg.find("Received follow waypoint request with") != std::string::npos){
             logger("[waypoint_follower] [INFO]: Received follow waypoint request");
         } 
-        
+        // Check for messages from behavior_server and controller_server.
         if(msg->name == "behavior_server" && msg->msg.find("Running backup") != std::string::npos){
             logger("[behavior_server] [INFO]: Running backup");
         } else if(msg->name == "behavior_server" && msg->msg.find("backup completed successfully") != std::string::npos){
@@ -259,7 +351,7 @@ private:
         }else if(msg->name == "behavior_server" && msg->msg.find("spin completed successfully") != std::string::npos){
             logger("[behavior_server] [INFO]: spin completed successfully");
         }
-
+        // Check for messages from controller_server and local_costmap.local_costmap
         else if(msg->name == "controller_server" && msg->msg.find("Failed to make progress") != std::string::npos){
             logger("[Controll_server] [ERROR] Failed to make progress");
         } else if(msg->name == "controller_server" && msg->msg.find("Aborting handle") != std::string::npos){
@@ -272,12 +364,10 @@ private:
             logger("[Controll_server] [WARN] Client requested to stop goal");
         }else if(msg->name == "controller_server" && msg->msg.find("Client requested to cancel the goal") != std::string::npos){
             logger("[Controll_server] [WARN] Client requested to stop goal");
-        }
-
-        else if(msg->name == "local_costmap.local_costmap" && msg->msg.find("Received request to clear entirely the local_costmap") != std::string::npos){
+        }else if(msg->name == "local_costmap.local_costmap" && msg->msg.find("Received request to clear entirely the local_costmap") != std::string::npos){
             logger("[local_costmap.local_costmap] [INFO]: Received request to clear entirely the local_costmap");
         }
-
+        // check for message from planner server regarding eather goal pose is computable.
         else if(msg->name == "planner_server" && msg->msg.find("The goal sent to the planner is off the global costmap.") != std::string::npos){
             logger("[planner_server [WARN]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.");
             logger("[trail_tracer] [INFO]: ENDING CURRENT OPERATION!");
@@ -285,13 +375,27 @@ private:
         }
     }
 
-    // Cllabck for UTM coordinate publsiher
-    void utm_data_callback(const geometry_msgs::msg::PoseStamped::SharedPtr msg){
+    /**
+     * @brief Callback function for UTM data.
+     * 
+     * This function is called when new UTM data is received. It updates the current easting and northing values.
+     * 
+     * @param msg The UTM data message.
+     */
+    void utm_data_callback(const PoseStamped::SharedPtr msg){
         current_easting_ = msg->pose.position.x;
         current_northing_ = msg->pose.position.y;
     }
 
-    // Callback for loading files
+    /**
+     * @brief Callback function for file loader messages.
+     * 
+     * This function is called when a new file loader message is received. It opens the file with the provided name
+     * and processes the waypoints stored in the file. The waypoints are then sent to the WaypointSender object.
+     * Processing is done based on the file format, with the new format (with orientation) containing full pose information.
+     * 
+     * @param msg The file loader message containing the file name.
+     */
     void file_loader_callback(const std_msgs::msg::String::SharedPtr msg) {
         std::string file_path = "trails/" + msg->data;
         std::ifstream file(file_path);
@@ -300,10 +404,12 @@ private:
             logger("[trail_tracer] [ERROR] Failed to open file");
             return;
         }
+        // Clear the current waypoints and poses before processing new data.
         waypoints_.clear();
         poses_.clear();
         bool full_pose_format = false;
         std::string line;
+        // Read each line in the file and process the data
         while (std::getline(file, line)) {
             std::istringstream iss(line);
             float lat, lon, qx, qy, qz, qw;
@@ -312,6 +418,7 @@ private:
             while (std::getline(iss, value, ',')){
                 values.push_back(std::stof(value));
             }
+            // Check the number of values in the line to determine the format.
             if(values.size() ==2){
                 lat = values[0];
                 lon = values[1];
@@ -334,7 +441,7 @@ private:
             point_msg.y = lon; // Assign longitude to y
             point_msg.z = 0.0; // Set z to 0.0 if not used
             file_waypoint_publisher_->publish(point_msg);
-
+            // Check if the full pose format is used and store the full pose.
             if(values.size() == 6){
                 createAndStoreFullPose(lat,lon,qx,qy,qz,qw);
             }
@@ -348,19 +455,26 @@ private:
             }
     }
 
-    ////////////////////////////////////////////////////////////////////////////   
-    ////////////////////////////////////////////////////////////////////////////
+    
+    /**
+     * @brief Function for logging information.
+     * 
+     * This function is used to log information to the front-end. It publishes the message to the log_messages topic.
+     * 
+     */
     void logger(const std::string &message){
         auto msg = std_msgs::msg::String();
         msg.data = message;
         log_publisher_->publish(msg);
     } 
-
-    void manual_control(const geometry_msgs::msg::Twist::SharedPtr msg) {
-        last_received_cmd_ = msg;
-    }
     
-
+    
+    /**
+     * @brief Update the movement of the robot.
+     * 
+     * This function updates the movement of the robot based on the last received command.
+     * If the robot is moving, the last received command is published to the cmd_vel topic.
+     */
     void update_movement() {
         if (is_moving_ && last_received_cmd_) {
             cmd_vel_publisher_->publish(*last_received_cmd_);
@@ -369,8 +483,16 @@ private:
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////// FILE OPERATION FUNCTIONS ////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    void save_to_file(const std::vector<std::tuple<float, float, float, float, float, float>>& points) {
+    /**
+     * @brief Save the recorded waypoints to a file.
+     * 
+     * This function saves the recorded waypoints to a file. The file is stored in the 'trails' directory with the trail name as the file name.
+     * If the file is already open, it is closed before opening a new file. If the trail name is empty, a warning message is logged.
+     * The waypoints are simplified using the Ramer-Douglas-Peucker algorithm before saving.
+     */
+    void save_to_file(const FullPoseVector& points) {
         if (gps_file_.is_open()) {
+            // Records gps data to file to 8 decimal places
             gps_file_ << std::fixed << std::setprecision(8);
             for (const auto& [lat, lon, x, y, z, w] : points) {
                 gps_file_ << lat << ", " << lon << ", " << x << ", " << y << ", " << z << ", " << w << std::endl;
@@ -379,6 +501,12 @@ private:
         }
     }
 
+    /**
+     * @brief Open the GPS file for writing.
+     * 
+     * This function opens the GPS file for writing. The file is stored in the 'trails' directory with the trail name as the file name.
+     * If the file is already open, it is closed before opening a new file. If the trail name is empty, a warning message is logged.
+     */
     void open_gps_file() {
         std::string directory_path = "trails";
         std::filesystem::create_directory(directory_path); // Ensure directory exists
@@ -398,6 +526,12 @@ private:
         }
     }
 
+    /**
+     * @brief Publish the names of all files in the 'trails' directory.
+     * 
+     * This function publishes the names of all files in the 'trails' directory as a string message.
+     * If no files are found, a warning message is logged. Used for front-end file selection.
+     */
    void publish_file_name(){
        std::string directory_path = "trails";
        if(std::filesystem::exists(directory_path)) {
@@ -425,8 +559,19 @@ private:
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////// RAMER-DOUGLAS-PEAUCKER ALGORITHM ///////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    float perpendicularDistance(const std::tuple<float, float>& point, const std::tuple<float, float>& lineStart, const std::tuple<float, float>& lineEnd) {
+    /**
+     * @brief Calculate the perpendicular distance between a point and a line.
+     * 
+     * This function calculates the perpendicular distance between a point and a line defined by two points.
+     * It takes the point coordinates and the line start and end coordinates as input and returns the perpendicular distance.
+     * Code inspired by: https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification#C++, adapted for this project.
+     * 
+     * @param point The coordinates of the point.
+     * @param lineStart The coordinates of the line start point.
+     * @param lineEnd The coordinates of the line end point.
+     * @return The perpendicular distance between the point and the line.
+     */
+    float perpendicularDistance(const Tuple& point, const Tuple& lineStart, const Tuple& lineEnd) {
         float x = std::get<0>(point);
         float y = std::get<1>(point);
         float x1 = std::get<0>(lineStart);
@@ -462,14 +607,25 @@ private:
         return distance;
     }
 
-    std::vector<std::tuple<float, float, float, float, float, float>> rdp(const std::vector<std::tuple<float, float, float, float, float, float>>& points, float epsilon) {
+    /**
+     * @brief Ramer-Douglas-Peucker algorithm.
+     * 
+     * This function implements the Ramer-Douglas-Peucker algorithm for simplifying a polyline.
+     * It takes a list of points and an epsilon value as input and returns a simplified list of points.
+     * code inspired by: https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification#C++, adapted for this project.
+     * 
+     * @param points The list of points to simplify.
+     * @param epsilon The epsilon value for simplification.
+     * @return The simplified list of points.
+     */
+    FullPoseVector rdp(const FullPoseVector& points, float epsilon) {
         // RCLCPP_INFO(this->get_logger(), "RDP called with %zu points, epsilon: %f", points.size(), epsilon);      // Logging for debugging purposes  
         if (points.size() < 3) {
             return points;
         }
-
         int maxIndex = 0;
         float maxDistance = 0;
+        // Find the point with the maximum distance
         for (std::size_t i = 1; i < points.size() - 1; i++) {
             float distance = perpendicularDistance({std::get<0>(points[i]), std::get<1>(points[i])},
                                                 {std::get<0>(points[0]), std::get<1>(points[0])},
@@ -480,10 +636,11 @@ private:
             }
         }
         //RCLCPP_INFO(this->get_logger(), "Max distance: %f, Max index: %d", maxDistance, maxIndex); //  Logging for debuging purposes
-
+        // Check if the maximum distance is greater than epsilon
         if (maxDistance > epsilon) {
-            std::vector<std::tuple<float, float, float, float, float, float>> recResults1 = rdp(std::vector<std::tuple<float, float, float, float, float, float>>(points.begin(), points.begin() + maxIndex + 1), epsilon);
-            std::vector<std::tuple<float, float, float, float, float, float>> recResults2 = rdp(std::vector<std::tuple<float, float, float, float, float, float>>(points.begin() + maxIndex, points.end()), epsilon);
+            // Recursively simplify the two subparts
+            FullPoseVector recResults1 = rdp(FullPoseVector(points.begin(), points.begin() + maxIndex + 1), epsilon);
+            FullPoseVector recResults2 = rdp(FullPoseVector(points.begin() + maxIndex, points.end()), epsilon);
 
             recResults1.pop_back(); // Avoid duplicate point
             recResults1.insert(recResults1.end(), recResults2.begin(), recResults2.end());
@@ -496,40 +653,47 @@ private:
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////// WAYPOINT CLACULATION AND MANIPLUTAION ///////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    void remainingDestinationPoseList(const std::vector<geometry_msgs::msg::PoseStamped> poseList, const std::pair<double, double>& destinationCoords) {
-        std::vector<geometry_msgs::msg::PoseStamped> trimmedList;
+    /**
+     * @brief Function to remove remaining destination poses.
+     * 
+     * This function removes all remaining destination poses from the provided pose list. It starts from the first pose that matches the destination coordinates and removes all subsequent poses.
+     * These will be the remaining coordinates to pass after a trail is canceled or paused.
+     * 
+     * @param poseList The list of poses to remove the remaining destination poses from.
+     * @param destinationCoords The destination coordinates to match and start removing from.
+     */
+    void remainingDestinationPoseList(const std::vector<PoseStamped> poseList, const std::pair<double, double>& destinationCoords) {
+        std::vector<PoseStamped> trimmedList;
          bool addToNewList;
+         // Iterate through all poses and check if the current pose matches the destination coordinates.
         for (const auto& pose : poseList) {
             double x = pose.pose.position.x;
             double y = pose.pose.position.y;
-
+            // Check if the current pose matches the destination coordinates.
             if (addToNewList || (std::abs(x - destinationCoords.first) < 0.01 && std::abs(y - destinationCoords.second) < 0.01)) {
-                // Start adding from this pose if it matches the destination coordinates
                 addToNewList = true;
                 trimmedList.push_back(pose);
             }
         }
-        // Print the trimmed list
-        std::cout << "Trimmed List:" << std::endl;
-        for (const auto& pose : trimmedList) {
-            std::cout << "Pose at (" << pose.pose.position.x << ", " << pose.pose.position.y << ")" << std::endl;
-        }
-
         waypoint_sender_->set_waypoints(trimmedList);
     }
 
+    /**
+     * @brief Function to process all waypoints.
+     * 
+     * This function processes all waypoints stored in the 'waypoints_' vector. It calculates the UTM coordinates for each waypoint
+     * and stores the poses in the 'poses_' vector. The poses are then sent to the WaypointSender object.
+     */
     void process_all_waypoints() {
         poses_.clear();
-
         bool first_point = true;
-
+        // Process all waypoints by converting them to UTM coordinates and storing the poses.
         for (const auto& [lat, lon] : waypoints_) {
             int zone;
             bool northp;
             double easting, northing;
             GeographicLib::UTMUPS::Forward(lat, lon, zone, northp, easting, northing);
-
+            // Check if this is the first point, if so, there is no previous point to calculate heading from.
             if (first_point) {
                 // Initialize last coordinates with the first waypoint's UTM coordinates
                 first_point = false;
@@ -537,7 +701,6 @@ private:
                 continue;
             }
             createAndStorePose(easting, northing);
-            // Update the last known UTM coordinates to current for the next iteration
         }
 
         // Logging the number of poses saved for debugging purposes
@@ -545,6 +708,15 @@ private:
         waypoint_sender_->set_waypoints(poses_);
     }
 
+    /**
+     * @brief Create and store a full pose.
+     * 
+     * This function creates a full pose using the provided latitude, longitude, quaternion values, and current position.
+     * Used when a trail is plotted on map in front-end and orientation is not provided.
+     * 
+     * @param easting The easting value.
+     * @param northing The northing value.
+     */
     void createAndStorePose(double easting, double northing){
         // Calculate deltas relative to the last known position
         double delta_x = current_easting_ - easting;
@@ -560,7 +732,8 @@ private:
         double relative_x = current_pose_x + (current_easting_ - easting);
         double relative_y = current_pose_y + (current_northing_- northing);
 
-        geometry_msgs::msg::PoseStamped pose;
+        // Create a new pose
+        PoseStamped pose;
         pose.header.stamp = this->get_clock()->now();
         pose.header.frame_id = "map";
         pose.pose.position.x = relative_x;
@@ -570,25 +743,33 @@ private:
         pose.pose.orientation.y = 0.0;
         pose.pose.orientation.z = quaternion.z();
         pose.pose.orientation.w = quaternion.w();
-
+        // Store the pose in the vector
         poses_.push_back(pose);
-        // Logging coordinates for debugging purpuses
-        // RCLCPP_INFO(this->get_logger(),
-        //     "Pose: Position (x: %f, y: %f, z: %f), Orientation (x: %f, y: %f, z: %f, w: %f)",
-        //     pose.pose.position.x, pose.pose.position.y, pose.pose.position.z,
-        //     pose.pose.orientation.x, pose.pose.orientation.y, pose.pose.orientation.z, pose.pose.orientation.w);
     }
 
+    /**
+     * @brief Create and store a full pose.
+     * 
+     * This function creates a full pose using the provided latitude, longitude, quaternion values, and current position.
+     * It then stores the pose in the 'poses_' vector. This is used when a trail is recorded and orientation is provided.
+     * 
+     * @param lat The latitude value.
+     * @param lon The longitude value.
+     * @param qx The x component of the quaternion.
+     * @param qy The y component of the quaternion.
+     * @param qz The z component of the quaternion.
+     * @param qw The w component of the quaternion.
+     */
     void createAndStoreFullPose(double lat, double lon, float qx, float qy, float qz, float qw){
         int zone;
         bool northp;
         double easting, northing;
         GeographicLib::UTMUPS::Forward(lat, lon, zone, northp, easting, northing);
-
+        // Calculate deltas relative to the last known position
         double relative_x = current_pose_x + (current_easting_ - easting);
         double relative_y = current_pose_y + (current_northing_- northing);
-
-        geometry_msgs::msg::PoseStamped pose;
+        // Create and store the pose
+        PoseStamped pose;   
         pose.header.stamp = this->get_clock()->now();
         pose.header.frame_id = "map";
         pose.pose.position.x = relative_x;
@@ -598,17 +779,9 @@ private:
         pose.pose.orientation.y = qy;
         pose.pose.orientation.z = qz;
         pose.pose.orientation.w = qw;
-
+        // Store the pose in the vector.
         poses_.push_back(pose);
-        // Logging remianig cooridnates for debugging purposes
-        // RCLCPP_INFO(this->get_logger(),
-        //     "Pose with orientation: Position (x: %f, y: %f, z: %f), Orientation (x: %f, y: %f, z: %f, w: %f)",
-        //     pose.pose.position.x, pose.pose.position.y, pose.pose.position.z,
-        //     pose.pose.orientation.x, pose.pose.orientation.y, pose.pose.orientation.z, pose.pose.orientation.w);
     }
-
-
-
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////  VARIABLES  //////////////////////////////////////////////// 
@@ -616,41 +789,44 @@ private:
     bool is_moving_; // Flag for detecting weather robot is in manual drive or not
     double current_easting_; // Variable to store the current easting UTM coordinate
     double current_northing_; // Variable to store the current northing UTM coordinate
+    // Current pose variables
     double current_pose_x;
     double current_pose_y;
-    std::shared_ptr<WaypointSender> waypoint_sender_;
+    // Orientation variables
     double orientation_x_;
     double orientation_y_;
     double orientation_z_;
     double orientation_w_;
-    std::string trail_name_; // Variable to store trail name 
-    std::pair<double,double> destination_coords_; 
-    std::vector<std::pair<float,float>> waypoints_;
-    geometry_msgs::msg::Twist::SharedPtr last_received_cmd_;  // Last cmd_vel value recived
-    std::vector<geometry_msgs::msg::PoseStamped> poses_;
-    std::vector<std::tuple<float,float,float,float,float,float>> recorded_waypoints_;
+    std::shared_ptr<WaypointSender> waypoint_sender_; // Waypoint sender object
+    std::string trail_name_; // Trail name variable
+    std::pair<double,double> destination_coords_; // Destination coordinates for the robot to reach after cnaceling a trail.
+    std::vector<std::pair<float,float>> waypoints_; // Vector to store waypoints for trail tracing.
+    geometry_msgs::msg::Twist::SharedPtr last_received_cmd_;  // Last cmd_vel value recived.
+    std::vector<PoseStamped> poses_; // Vector to store poses for trail tracing.
+    std::vector<std::tuple<float,float,float,float,float,float>> recorded_waypoints_; // Vector to store recorded waypoints for trail tracing.
 
+    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_publisher_; // Publisher for cmd_vel topic.
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr file_names_publisher_; // Publisher for file names.
+    rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr file_waypoint_publisher_; // Publisher for waypoints.
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr log_publisher_; // Publisher for log messages.
 
-    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_publisher_;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr file_names_publisher_;
-    rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr file_waypoint_publisher_;
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr log_publisher_;
-
-    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr web_message_subscription_;
-    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr trail_name_subscription_;
-    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr joystick_subscription_;
-    rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_fix_subscription_;
-    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr load_file_subscription_;
-    rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr gps_to_utm_subscription_;
-    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_data_subscription_;
-    rclcpp::Subscription<rcl_interfaces::msg::Log>::SharedPtr log_reader_subscription_;
-    rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_subscription_; 
-    sensor_msgs::msg::NavSatFix::SharedPtr last_gps_msg_; 
-    rclcpp::TimerBase::SharedPtr timer_update_movement_;
-    rclcpp::TimerBase::SharedPtr timer_publish_file_names_;
-    std::ofstream gps_file_;
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr web_message_subscription_; // Subscription for web messages.
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr trail_name_subscription_; // Subscription for trail name.
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr joystick_subscription_; // Subscription for joystick values.
+    rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr gps_fix_subscription_; // Subscription for GPS fix messages.
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr load_file_subscription_; // Subscription for loading files.
+    rclcpp::Subscription<PoseStamped>::SharedPtr gps_to_utm_subscription_; // Subscription for UTM data.
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_data_subscription_; // Subscription for IMU data.
+    rclcpp::Subscription<rcl_interfaces::msg::Log>::SharedPtr log_reader_subscription_; // Subscription for log messages.
+    rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_subscription_; // Subscription for odometry data.
+    
+    sensor_msgs::msg::NavSatFix::SharedPtr last_gps_msg_; // Last GPS message received.
+    rclcpp::TimerBase::SharedPtr timer_update_movement_; // Timer for updating movement.
+    rclcpp::TimerBase::SharedPtr timer_publish_file_names_; // Timer for publishing file names.
+    std::ofstream gps_file_; // File stream for storing GPS data.
 };
 
+// Main function to run the node
 int main(int argc, char* argv[]) {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<TrailTracer>();

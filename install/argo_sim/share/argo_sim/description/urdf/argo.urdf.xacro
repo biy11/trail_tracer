@@ -180,6 +180,7 @@ xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
           <ros>
             <remapping>~/out:=${prefix}_laser/scan</remapping>
           </ros>
+          <frame_name>${prefix}_laser_link</frame_name>
           <frameName>${prefix}_laser_link</frameName>
           <output_type>sensor_msgs/LaserScan</output_type>
         </plugin>
@@ -284,7 +285,7 @@ xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
 
     <joint name="IMU_joint" type="fixed">
       <axis xyz="0 0 1" />
-      <origin xyz="0 0 ${top_platform}" rpy="0 0 ${pi/2}"/>
+      <origin xyz="0 0 ${top_platform}" rpy="0 0 0"/>
       <parent link="base_link"/>
       <child link="imu_link"/>
     </joint>
@@ -456,3 +457,4 @@ xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
   </gazebo>
 
 </robot>
+

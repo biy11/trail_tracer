@@ -1,0 +1,434 @@
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:112:37:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleTravelThroughPoses[m[K’ does not name a type
+  112 |     void goal_result_callback(const [01;31m[KGoalHandleTravelThroughPoses[m[K::WrappedResult & result) {
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:112:81:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  112 |     void goal_result_callback(const GoalHandleTravelThroughPoses::WrappedResult [01;31m[K&[m[K result) {
+      |                                                                                 [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:112:80:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+  112 |     void goal_result_callback[34m[K([m[Kconst GoalHandleTravelThroughPoses::WrappedResult[01;31m[K [m[K[32m[K&[m[K result) {
+      |                              [34m[K~[m[K                                                 [01;31m[K^[m[K[32m[K~[m[K
+      |                                                                                [32m[K)[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:112:81:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+  112 |     void goal_result_callback(const GoalHandleTravelThroughPoses::WrappedResult [01;31m[K&[m[K result) {
+      |                                                                                 [01;31m[K^[m[K
+      |                                                                                  [32m[K;[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:112:83:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult[m[K’ does not name a type
+  112 |     void goal_result_callback(const GoalHandleTravelThroughPoses::WrappedResult & [01;31m[Kresult[m[K) {
+      |                                                                                   [01;31m[K^~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid NavigationClient::set_waypoints(const std::vector<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, std::allocator<geometry_msgs::msg::PoseStamped_<std::allocator<void> > > >&)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:83:25:[m[K [01;31m[Kerror: [m[K‘[01m[KTravelThroughPoses[m[K’ has not been declared
+   83 |         auto goal_msg = [01;31m[KTravelThroughPoses[m[K::Goal();
+      |                         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:91:56:[m[K [01;31m[Kerror: [m[K‘[01m[KTravelThroughPoses[m[K’ was not declared in this scope
+   91 |         auto send_goal_options = rclcpp_action::Client<[01;31m[KTravelThroughPoses[m[K>::SendGoalOptions();
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:91:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   91 |         auto send_goal_options = rclcpp_action::Client<TravelThroughPoses[01;31m[K>[m[K::SendGoalOptions();
+      |                                                                          [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:92:56:[m[K [01;31m[Kerror: [m[K‘[01m[KPoseSender[m[K’ has not been declared
+   92 |         send_goal_options.result_callback = std::bind(&[01;31m[KPoseSender[m[K::goal_result_callback, this, std::placeholders::_1);
+      |                                                        [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K At global scope:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:2456:21:[m[K [01;31m[Kerror: [m[K‘[01m[KWaypointSender[m[K’ was not declared in this scope
+ 2456 |     std::shared_ptr<[01;31m[KWaypointSender[m[K> waypoint_sender_; // Waypoint sender object
+      |                     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:2456:35:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 2456 |     std::shared_ptr<WaypointSender[01;31m[K>[m[K waypoint_sender_; // Waypoint sender object
+      |                                   [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In constructor ‘[01m[KTrailTracer::TrailTracer()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:132:81:[m[K [01;31m[Kerror: [m[K‘[01m[KWaypointSender[m[K’ was not declared in this scope; did you mean ‘[01m[Kwaypoint_sender_[m[K’?
+  132 |     current_pose_x(0.0), current_pose_y(0.0), waypoint_sender_(std::make_shared<[01;31m[KWaypointSender[m[K>("waypoint_sender"))
+      |                                                                                 [01;31m[K^~~~~~~~~~~~~~[m[K
+      |                                                                                 [32m[Kwaypoint_sender_[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:132:96:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_shared<<expression error> >(const char [16])[m[K’
+  132 |     current_pose_x(0.0), current_pose_y(0.0), waypoint_sender_([01;31m[Kstd::make_shared<WaypointSender>("waypoint_sender")[m[K)
+      |                                                                [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:12[m[K:
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)[m[K’
+  875 |     [01;36m[Kmake_shared[m[K(_Args&&... __args)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:132:96:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  132 |     current_pose_x(0.0), current_pose_y(0.0), waypoint_sender_([01;31m[Kstd::make_shared<WaypointSender>("waypoint_sender")[m[K)
+      |                                                                [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::web_messages_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:224:29:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+  224 |             waypoint_sender_[01;31m[K->[m[Kpause();
+      |                             [01;31m[K^~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::file_loader_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:445:29:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+  445 |             waypoint_sender_[01;31m[K->[m[Kset_waypoints(poses_);
+      |                             [01;31m[K^~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::remainingDestinationPoseList(std::vector<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, std::allocator<geometry_msgs::msg::PoseStamped_<std::allocator<void> > > >, const std::pair<double, double>&)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:672:25:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+  672 |         waypoint_sender_[01;31m[K->[m[Kset_waypoints(trimmedList);
+      |                         [01;31m[K^~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::process_all_waypoints()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:702:25:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+  702 |         waypoint_sender_[01;31m[K->[m[Kset_waypoints(poses_);
+      |                         [01;31m[K^~[m[K
+In file included from [01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp:7[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:770[m[K:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:[m[K In member function ‘[01m[Kvoid TrailTracer::createAndStorePose(double, double)[m[K’:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:28:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+   28 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp:7[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:770[m[K:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:134:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  134 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:240:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  240 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp:7[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:770[m[K:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:360:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  360 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp:7[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:770[m[K:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:485:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  485 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:605:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  605 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:633:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  633 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:745:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  745 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:865:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  865 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:896:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  896 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp:1014:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+ 1014 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp:8[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:770[m[K:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__builder.hpp:15:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+   15 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__builder.hpp:57:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+   57 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp:8[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:770[m[K:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__builder.hpp:99:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+   99 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__builder.hpp:141:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  141 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__builder.hpp:199:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  199 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__builder.hpp:257:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  257 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__builder.hpp:299:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  299 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__builder.hpp:357:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  357 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp:9[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:770[m[K:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:21:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+   21 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:90:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+   90 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:133:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  133 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:203:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  203 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:246:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  246 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:295:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  295 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp:9[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:770[m[K:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:344:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  344 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:408:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  408 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp:9[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:770[m[K:
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:455:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  455 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:520:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  520 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:563:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  563 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:623:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  623 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:671:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  671 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:719:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  719 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:784:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  784 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:827:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  827 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:890:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  890 | [01;31m[Knamespace[m[K nav2_msgs
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:954:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  954 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp:998:1:[m[K [01;31m[Kerror: [m[K‘[01m[Knamespace[m[K’ definition is not allowed here
+  998 | [01;31m[Knamespace[m[K rosidl_generator_traits
+      | [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:815:48:[m[K [01;31m[Kerror: [m[K‘[01m[KFollowWaypoints[m[K’ in namespace ‘[01m[Knav2_msgs::action[m[K’ does not name a type
+  815 |     using FollowWaypoints = nav2_msgs::action::[01;31m[KFollowWaypoints[m[K;
+      |                                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:816:71:[m[K [01;31m[Kerror: [m[K‘[01m[KFollowWaypoints[m[K’ was not declared in this scope
+  816 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<[01;31m[KFollowWaypoints[m[K>;
+      |                                                                       [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:816:86:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  816 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<FollowWaypoints[01;31m[K>[m[K;
+      |                                                                                      [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:855:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+  855 |     rclcpp_action::Client<FollowWaypoints>::[01;31m[KSharedPtr[m[K client_ptr_;
+      |                                             [01;31m[K^~~~~~~~~[m[K
+      |                                                      [32m[K;[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:855:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_ptr_[m[K’ does not name a type
+  855 |     rclcpp_action::Client<FollowWaypoints>::SharedPtr [01;31m[Kclient_ptr_[m[K;
+      |                                                       [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:858:37:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleFollowWaypoints[m[K’ does not name a type
+  858 |     void goal_result_callback(const [01;31m[KGoalHandleFollowWaypoints[m[K::WrappedResult & result) {
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:858:78:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  858 |     void goal_result_callback(const GoalHandleFollowWaypoints::WrappedResult [01;31m[K&[m[K result) {
+      |                                                                              [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:858:78:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:858:30:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+  858 |     void goal_result_callback[01;36m[K([m[Kconst GoalHandleFollowWaypoints::WrappedResult & result) {
+      |                              [01;36m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:858:78:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+  858 |     void goal_result_callback(const GoalHandleFollowWaypoints::WrappedResult [01;31m[K&[m[K result) {
+      |                                                                              [01;31m[K^[m[K
+      |                                                                               [32m[K;[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:858:80:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult[m[K’ does not name a type
+  858 |     void goal_result_callback(const GoalHandleFollowWaypoints::WrappedResult & [01;31m[Kresult[m[K) {
+      |                                                                                [01;31m[K^~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In constructor ‘[01m[KTrailTracer::createAndStorePose(double, double)::WaypointSender::WaypointSender(const string&)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:820:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass TrailTracer::createAndStorePose(double, double)::WaypointSender[m[K’ has no member named ‘[01m[Kclient_ptr_[m[K’
+  820 |         this->[01;31m[Kclient_ptr_[m[K = rclcpp_action::create_client<FollowWaypoints>(
+      |               [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:820:58:[m[K [01;31m[Kerror: [m[Kuse of local variable with automatic storage from containing function
+  820 |         this->client_ptr_ = rclcpp_action::create_client<[01;31m[KFollowWaypoints[m[K>(
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:816:71:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>FollowWaypoints[m[K’ declared here
+  816 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<[01;36m[KFollowWaypoints[m[K>;
+      |                                                                       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:820:74:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcreate_client<<expression error> >(TrailTracer::createAndStorePose(double, double)::WaypointSender*, const char [18])[m[K’
+  820 |         this->client_ptr_ = [01;31m[Krclcpp_action::create_client<FollowWaypoints>([m[K
+      |                             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+  821 | [01;31m[K            this, "/follow_waypoints")[m[K;
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                    
+In file included from [01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/rclcpp_action.hpp:38[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:28[m[K:
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:44:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ActionT> typename rclcpp_action::Client<ActionT>::SharedPtr rclcpp_action::create_client(rclcpp::node_interfaces::NodeBaseInterface::SharedPtr, rclcpp::node_interfaces::NodeGraphInterface::SharedPtr, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr, rclcpp::node_interfaces::NodeWaitablesInterface::SharedPtr, const string&, rclcpp::CallbackGroup::SharedPtr, const rcl_action_client_options_t&)[m[K’
+   44 | [01;36m[Kcreate_client[m[K(
+      | [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:44:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:820:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  820 |         this->client_ptr_ = [01;31m[Krclcpp_action::create_client<FollowWaypoints>([m[K
+      |                             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+  821 | [01;31m[K            this, "/follow_waypoints")[m[K;
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                    
+In file included from [01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/rclcpp_action.hpp:38[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:28[m[K:
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:105:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ActionT, class NodeT> typename rclcpp_action::Client<ActionT>::SharedPtr rclcpp_action::create_client(NodeT, const string&, rclcpp::CallbackGroup::SharedPtr, const rcl_action_client_options_t&)[m[K’
+  105 | [01;36m[Kcreate_client[m[K(
+      | [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:105:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:820:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  820 |         this->client_ptr_ = [01;31m[Krclcpp_action::create_client<FollowWaypoints>([m[K
+      |                             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+  821 | [01;31m[K            this, "/follow_waypoints")[m[K;
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                    
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::createAndStorePose(double, double)::WaypointSender::set_waypoints(const std::vector<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, std::allocator<geometry_msgs::msg::PoseStamped_<std::allocator<void> > > >&)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:826:25:[m[K [01;31m[Kerror: [m[K‘[01m[KFollowWaypoints[m[K’ is not a class, namespace, or enumeration
+  826 |         auto goal_msg = [01;31m[KFollowWaypoints[m[K::Goal();
+      |                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:829:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_ptr_[m[K’ was not declared in this scope
+  829 |         if (![01;31m[Kclient_ptr_[m[K->wait_for_action_server()) {
+      |              [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:834:56:[m[K [01;31m[Kerror: [m[Kuse of local variable with automatic storage from containing function
+  834 |         auto send_goal_options = rclcpp_action::Client<[01;31m[KFollowWaypoints[m[K>::SendGoalOptions();
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:816:71:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>FollowWaypoints[m[K’ declared here
+  816 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<[01;36m[KFollowWaypoints[m[K>;
+      |                                                                       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:834:71:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  834 |         auto send_goal_options = rclcpp_action::Client<FollowWaypoints[01;31m[K>[m[K::SendGoalOptions();
+      |                                                                       [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:836:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_ptr_[m[K’ was not declared in this scope
+  836 |         [01;31m[Kclient_ptr_[m[K->async_send_goal(goal_msg, send_goal_options);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::createAndStorePose(double, double)::WaypointSender::pause()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:840:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_ptr_[m[K’ was not declared in this scope
+  840 |         [01;31m[Kclient_ptr_[m[K->async_cancel_all_goals();
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::createAndStorePose(double, double)::TrailTracer::process_all_waypoints()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1506:48:[m[K [01;31m[Kerror: [m[K‘[01m[KFollowWaypoints[m[K’ in namespace ‘[01m[Knav2_msgs::action[m[K’ does not name a type
+ 1506 |     using FollowWaypoints = nav2_msgs::action::[01;31m[KFollowWaypoints[m[K;
+      |                                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1507:71:[m[K [01;31m[Kerror: [m[Kuse of local variable with automatic storage from containing function
+ 1507 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<[01;31m[KFollowWaypoints[m[K>;
+      |                                                                       [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:816:71:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>FollowWaypoints[m[K’ declared here
+  816 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<[01;36m[KFollowWaypoints[m[K>;
+      |                                                                       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1507:86:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1507 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<FollowWaypoints[01;31m[K>[m[K;
+      |                                                                                      [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1546:27:[m[K [01;31m[Kerror: [m[Kuse of local variable with automatic storage from containing function
+ 1546 |     rclcpp_action::Client<[01;31m[KFollowWaypoints[m[K>::SharedPtr client_ptr_;
+      |                           [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:816:71:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>FollowWaypoints[m[K’ declared here
+  816 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<[01;36m[KFollowWaypoints[m[K>;
+      |                                                                       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1546:42:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1546 |     rclcpp_action::Client<FollowWaypoints[01;31m[K>[m[K::SharedPtr client_ptr_;
+      |                                          [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1546:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+ 1546 |     rclcpp_action::Client<FollowWaypoints>::[01;31m[KSharedPtr[m[K client_ptr_;
+      |                                             [01;31m[K^~~~~~~~~[m[K
+      |                                                      [32m[K;[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1546:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_ptr_[m[K’ does not name a type
+ 1546 |     rclcpp_action::Client<FollowWaypoints>::SharedPtr [01;31m[Kclient_ptr_[m[K;
+      |                                                       [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1549:37:[m[K [01;31m[Kerror: [m[K‘[01m[KGoalHandleFollowWaypoints[m[K’ does not name a type
+ 1549 |     void goal_result_callback(const [01;31m[KGoalHandleFollowWaypoints[m[K::WrappedResult & result) {
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1549:78:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+ 1549 |     void goal_result_callback(const GoalHandleFollowWaypoints::WrappedResult [01;31m[K&[m[K result) {
+      |                                                                              [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1549:78:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1549:30:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+ 1549 |     void goal_result_callback[01;36m[K([m[Kconst GoalHandleFollowWaypoints::WrappedResult & result) {
+      |                              [01;36m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1549:78:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+ 1549 |     void goal_result_callback(const GoalHandleFollowWaypoints::WrappedResult [01;31m[K&[m[K result) {
+      |                                                                              [01;31m[K^[m[K
+      |                                                                               [32m[K;[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1549:80:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult[m[K’ does not name a type
+ 1549 |     void goal_result_callback(const GoalHandleFollowWaypoints::WrappedResult & [01;31m[Kresult[m[K) {
+      |                                                                                [01;31m[K^~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In constructor ‘[01m[KTrailTracer::createAndStorePose(double, double)::TrailTracer::process_all_waypoints()::WaypointSender::WaypointSender(const string&)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1511:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass TrailTracer::createAndStorePose(double, double)::TrailTracer::process_all_waypoints()::WaypointSender[m[K’ has no member named ‘[01m[Kclient_ptr_[m[K’
+ 1511 |         this->[01;31m[Kclient_ptr_[m[K = rclcpp_action::create_client<FollowWaypoints>(
+      |               [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1511:58:[m[K [01;31m[Kerror: [m[Kuse of local variable with automatic storage from containing function
+ 1511 |         this->client_ptr_ = rclcpp_action::create_client<[01;31m[KFollowWaypoints[m[K>(
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:816:71:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>FollowWaypoints[m[K’ declared here
+  816 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<[01;36m[KFollowWaypoints[m[K>;
+      |                                                                       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1511:74:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcreate_client<<expression error> >(TrailTracer::createAndStorePose(double, double)::TrailTracer::process_all_waypoints()::WaypointSender*, const char [18])[m[K’
+ 1511 |         this->client_ptr_ = [01;31m[Krclcpp_action::create_client<FollowWaypoints>([m[K
+      |                             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+ 1512 | [01;31m[K            this, "/follow_waypoints")[m[K;
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                    
+In file included from [01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/rclcpp_action.hpp:38[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:28[m[K:
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:44:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ActionT> typename rclcpp_action::Client<ActionT>::SharedPtr rclcpp_action::create_client(rclcpp::node_interfaces::NodeBaseInterface::SharedPtr, rclcpp::node_interfaces::NodeGraphInterface::SharedPtr, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr, rclcpp::node_interfaces::NodeWaitablesInterface::SharedPtr, const string&, rclcpp::CallbackGroup::SharedPtr, const rcl_action_client_options_t&)[m[K’
+   44 | [01;36m[Kcreate_client[m[K(
+      | [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:44:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1511:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1511 |         this->client_ptr_ = [01;31m[Krclcpp_action::create_client<FollowWaypoints>([m[K
+      |                             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+ 1512 | [01;31m[K            this, "/follow_waypoints")[m[K;
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                    
+In file included from [01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/rclcpp_action.hpp:38[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:28[m[K:
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:105:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ActionT, class NodeT> typename rclcpp_action::Client<ActionT>::SharedPtr rclcpp_action::create_client(NodeT, const string&, rclcpp::CallbackGroup::SharedPtr, const rcl_action_client_options_t&)[m[K’
+  105 | [01;36m[Kcreate_client[m[K(
+      | [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:105:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1511:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1511 |         this->client_ptr_ = [01;31m[Krclcpp_action::create_client<FollowWaypoints>([m[K
+      |                             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+ 1512 | [01;31m[K            this, "/follow_waypoints")[m[K;
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K                                    
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::createAndStorePose(double, double)::TrailTracer::process_all_waypoints()::WaypointSender::set_waypoints(const std::vector<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, std::allocator<geometry_msgs::msg::PoseStamped_<std::allocator<void> > > >&)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1517:25:[m[K [01;31m[Kerror: [m[K‘[01m[KFollowWaypoints[m[K’ is not a class, namespace, or enumeration
+ 1517 |         auto goal_msg = [01;31m[KFollowWaypoints[m[K::Goal();
+      |                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1520:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_ptr_[m[K’ was not declared in this scope
+ 1520 |         if (![01;31m[Kclient_ptr_[m[K->wait_for_action_server()) {
+      |              [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1525:56:[m[K [01;31m[Kerror: [m[Kuse of local variable with automatic storage from containing function
+ 1525 |         auto send_goal_options = rclcpp_action::Client<[01;31m[KFollowWaypoints[m[K>::SendGoalOptions();
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:816:71:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>FollowWaypoints[m[K’ declared here
+  816 |     using GoalHandleFollowWaypoints = rclcpp_action::ClientGoalHandle<[01;36m[KFollowWaypoints[m[K>;
+      |                                                                       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1525:71:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1525 |         auto send_goal_options = rclcpp_action::Client<FollowWaypoints[01;31m[K>[m[K::SendGoalOptions();
+      |                                                                       [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1527:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_ptr_[m[K’ was not declared in this scope
+ 1527 |         [01;31m[Kclient_ptr_[m[K->async_send_goal(goal_msg, send_goal_options);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::createAndStorePose(double, double)::TrailTracer::process_all_waypoints()::WaypointSender::pause()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1531:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_ptr_[m[K’ was not declared in this scope
+ 1531 |         [01;31m[Kclient_ptr_[m[K->async_cancel_all_goals();
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::createAndStorePose(double, double)::TrailTracer::process_all_waypoints()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:2261:34:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+ 2261 | int main(int argc, char* argv[]) [01;31m[K{[m[K
+      |                                  [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:2269:32:[m[K [01;31m[Kerror: [m[Kuse of parameter from containing function
+ 2269 |             createAndStorePose([01;31m[Keasting[m[K, northing);
+      |                                [01;31m[K^~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:714:36:[m[K [01;36m[Knote: [m[K‘[01m[Kdouble easting[m[K’ declared here
+  714 |     void createAndStorePose([01;36m[Kdouble easting[m[K, double northing){
+      |                             [01;36m[K~~~~~~~^~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:2269:41:[m[K [01;31m[Kerror: [m[Kuse of parameter from containing function
+ 2269 |             createAndStorePose(easting, [01;31m[Knorthing[m[K);
+      |                                         [01;31m[K^~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:714:52:[m[K [01;36m[Knote: [m[K‘[01m[Kdouble northing[m[K’ declared here
+  714 |     void createAndStorePose(double easting, [01;36m[Kdouble northing[m[K){
+      |                                             [01;36m[K~~~~~~~^~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1432:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kzone[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+ 1432 |             int [01;35m[Kzone[m[K;/*
+      |                 [01;35m[K^~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1431:26:[m[K [01;35m[Kwarning: [m[Kunused structured binding declaration [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+ 1431 |         for (const auto& [01;35m[K[lat, lon][m[K : waypoints_) {
+      |                          [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:1429:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kfirst_point[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+ 1429 |         bool [01;35m[Kfirst_point[m[K = true;
+      |              [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::createAndStorePose(double, double)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/waypoint_navigator.cpp:2396:34:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+ 2396 | int main(int argc, char* argv[]) [01;31m[K{[m[K
+      |                                  [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/waypoint_navigator.dir/build.make:76: CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:313: CMakeFiles/waypoint_navigator.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

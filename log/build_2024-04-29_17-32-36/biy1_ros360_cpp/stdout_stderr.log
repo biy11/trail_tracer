@@ -1,0 +1,117 @@
+[35m[1mConsolidate compiler generated dependencies of target polishedCode[0m
+[35m[1mConsolidate compiler generated dependencies of target sparse[0m
+[ 18%] Built target nav2
+[ 27%] Built target trail_tracer
+[ 36%] Built target examplePublisher
+[ 18%] Built target helloWorld
+[ 40%] [32mBuilding CXX object CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o[0m
+[ 50%] Built target waypoint_navigator
+[ 59%] Built target follower
+[ 63%] [32mBuilding CXX object CMakeFiles/sparse.dir/src/polishedCode.cpp.o[0m
+[ 72%] Built target code_test
+[ 81%] Built target exampleSubscriber
+[ 90%] Built target testCode
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:491:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kfull_pose_vector_[m[K’ does not name a type
+  491 |     void save_to_file(const [01;31m[Kfull_pose_vector_[m[K& points) {
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:619:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kfull_pose_vector_[m[K’ does not name a type
+  619 |     [01;31m[Kfull_pose_vector_[m[K rdp(const full_pose_vector_& points, float epsilon) {
+      |     [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:491:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kfull_pose_vector_[m[K’ does not name a type
+  491 |     void save_to_file(const [01;31m[Kfull_pose_vector_[m[K& points) {
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:619:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kfull_pose_vector_[m[K’ does not name a type
+  619 |     [01;31m[Kfull_pose_vector_[m[K rdp(const full_pose_vector_& points, float epsilon) {
+      |     [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::web_messages_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:219:42:[m[K [01;31m[Kerror: [m[K‘[01m[Krdp[m[K’ was not declared in this scope
+  219 |                 auto simplified_points = [01;31m[Krdp[m[K(recorded_waypoints_, 0.000036);
+      |                                          [01;31m[K^~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::save_to_file(const int&)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:495:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kbegin[m[K’ was not declared in this scope
+  495 |             for (const auto& [lat, lon, x, y, z, w] : [01;31m[Kpoints[m[K) {
+      |                                                       [01;31m[K^~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:495:55:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/usr/include/c++/11/string:54[m[K,
+                 from [01m[K/usr/include/c++/11/bits/locale_classes.h:40[m[K,
+                 from [01m[K/usr/include/c++/11/bits/ios_base.h:41[m[K,
+                 from [01m[K/usr/include/c++/11/ios:42[m[K,
+                 from [01m[K/usr/include/c++/11/ostream:38[m[K,
+                 from [01m[K/usr/include/c++/11/iostream:39[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:10[m[K:
+[01m[K/usr/include/c++/11/bits/range_access.h:108:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::begin[m[K’
+  108 |   template<typename _Tp> const _Tp* [01;36m[Kbegin[m[K(const valarray<_Tp>&) noexcept;
+      |                                     [01;36m[K^~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/filesystem:46[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/fs_dir.h:549:3:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::filesystem::__cxx11::begin[m[K’
+  549 |   [01;36m[Kbegin[m[K(recursive_directory_iterator __iter) noexcept
+      |   [01;36m[K^~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:495:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kend[m[K’ was not declared in this scope
+  495 |             for (const auto& [lat, lon, x, y, z, w] : [01;31m[Kpoints[m[K) {
+      |                                                       [01;31m[K^~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:495:55:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/usr/include/c++/11/string:54[m[K,
+                 from [01m[K/usr/include/c++/11/bits/locale_classes.h:40[m[K,
+                 from [01m[K/usr/include/c++/11/bits/ios_base.h:41[m[K,
+                 from [01m[K/usr/include/c++/11/ios:42[m[K,
+                 from [01m[K/usr/include/c++/11/ostream:38[m[K,
+                 from [01m[K/usr/include/c++/11/iostream:39[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:10[m[K:
+[01m[K/usr/include/c++/11/bits/range_access.h:110:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::end[m[K’
+  110 |   template<typename _Tp> const _Tp* [01;36m[Kend[m[K(const valarray<_Tp>&) noexcept;
+      |                                     [01;36m[K^~~[m[K
+In file included from [01m[K/usr/include/c++/11/filesystem:46[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/fs_dir.h:554:3:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::filesystem::__cxx11::end[m[K’
+  554 |   [01;36m[Kend[m[K(recursive_directory_iterator) noexcept
+      |   [01;36m[K^~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::web_messages_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:219:42:[m[K [01;31m[Kerror: [m[K‘[01m[Krdp[m[K’ was not declared in this scope
+  219 |                 auto simplified_points = [01;31m[Krdp[m[K(recorded_waypoints_, 0.000036);
+      |                                          [01;31m[K^~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::save_to_file(const int&)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:495:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kbegin[m[K’ was not declared in this scope
+  495 |             for (const auto& [lat, lon, x, y, z, w] : [01;31m[Kpoints[m[K) {
+      |                                                       [01;31m[K^~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:495:55:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/usr/include/c++/11/string:54[m[K,
+                 from [01m[K/usr/include/c++/11/bits/locale_classes.h:40[m[K,
+                 from [01m[K/usr/include/c++/11/bits/ios_base.h:41[m[K,
+                 from [01m[K/usr/include/c++/11/ios:42[m[K,
+                 from [01m[K/usr/include/c++/11/ostream:38[m[K,
+                 from [01m[K/usr/include/c++/11/iostream:39[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:10[m[K:
+[01m[K/usr/include/c++/11/bits/range_access.h:108:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::begin[m[K’
+  108 |   template<typename _Tp> const _Tp* [01;36m[Kbegin[m[K(const valarray<_Tp>&) noexcept;
+      |                                     [01;36m[K^~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/filesystem:46[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/fs_dir.h:549:3:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::filesystem::__cxx11::begin[m[K’
+  549 |   [01;36m[Kbegin[m[K(recursive_directory_iterator __iter) noexcept
+      |   [01;36m[K^~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:495:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kend[m[K’ was not declared in this scope
+  495 |             for (const auto& [lat, lon, x, y, z, w] : [01;31m[Kpoints[m[K) {
+      |                                                       [01;31m[K^~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:495:55:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/usr/include/c++/11/string:54[m[K,
+                 from [01m[K/usr/include/c++/11/bits/locale_classes.h:40[m[K,
+                 from [01m[K/usr/include/c++/11/bits/ios_base.h:41[m[K,
+                 from [01m[K/usr/include/c++/11/ios:42[m[K,
+                 from [01m[K/usr/include/c++/11/ostream:38[m[K,
+                 from [01m[K/usr/include/c++/11/iostream:39[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:10[m[K:
+[01m[K/usr/include/c++/11/bits/range_access.h:110:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::end[m[K’
+  110 |   template<typename _Tp> const _Tp* [01;36m[Kend[m[K(const valarray<_Tp>&) noexcept;
+      |                                     [01;36m[K^~~[m[K
+In file included from [01m[K/usr/include/c++/11/filesystem:46[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/fs_dir.h:554:3:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::filesystem::__cxx11::end[m[K’
+  554 |   [01;36m[Kend[m[K(recursive_directory_iterator) noexcept
+      |   [01;36m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/sparse.dir/build.make:76: CMakeFiles/sparse.dir/src/polishedCode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:417: CMakeFiles/sparse.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/polishedCode.dir/build.make:76: CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:391: CMakeFiles/polishedCode.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

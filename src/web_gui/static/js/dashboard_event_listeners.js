@@ -154,12 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Re-enable other buttons
             toggleModeBtn.disabled = false;
             pauseBtn.disabled = false;
-            loadTrailBtn.disabled = false;
-            //emergencyStopBtn.disabled = false;
+            loadTrailBtn.disabled = true;
             plotNamePrompt.style.display = 'block';
             toggleModeBtn.disabled = true;
             //noPlotNameErrorBtn.style.display = 'none';
-            trailPlotting = false;
 
             map.off('click', mapClickHandler); // Disable map clicking for coordinate collection, function mapClickHandler can be found in map_ui.js
     
@@ -191,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Re-enable disabled buttons due to plotting
             toggleModeBtn.disabled = false;
             pauseBtn.disabled = false;
+            trailPlotting = false;
             //emergencyStopBtn.disabled = false;
             
             // Revert the 'load-trail-button' text back to its original
@@ -198,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if(this.textContent == 'End'){
             if(trailPaused){
                 loadTrailBtn.textContent = 'Load Trail';
-                document.getElementById('trail-prompt').style.display = 'none';
+                //document.getElementById('trail-prompt').style.display = 'none';
                 toggleModeBtn.disabled = false;
                 plotTrailBtn.disabled = false;
                 emergencyMsg.style.display = 'none';
@@ -207,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 pauseBtn.style.display = 'none'; 
                 trailLoaded = false;
                 runingTrail = false;
+                trailPaused = false;
                 clearWaypointMarkers();
             }else{
                 document.getElementById("end-trace-prompt").style.display = 'block';

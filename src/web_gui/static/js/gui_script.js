@@ -6,15 +6,23 @@
 * like map-based navigation, joystick control, and telemetry display on the dashboard.
 */ 
 
-//Added deadzones to joystick
+/**
+ * @author Bilal [biy1]
+ * @version 0.1 - Initail creation.
+ * @version 0.2 - Added sockets for temetry data such as GPS
+ * @version 0.3 - Created and added joytsick logic
+ * @version 0.4
+ * @version 0.5
+ * @version 0.6
+ *   Added deadzones to joystick
 // Added trail-file selecter logic
-//Added IMU Data socket listener
-//Added systemlog population button
-//Reduced overhead by only getting files from server when needed
+// Added IMU Data socket listener
+// Added systemlog population button
+// Reduced overhead by only getting files from server when needed
 // Added odom socket to update speed and velocity
 // Added soket for logger
 // Updated logger function
-
+*/
 // WebSocket connection setup.
 var mode = 'automatic'
 var selectedFileOption = null;
@@ -23,7 +31,6 @@ var socket = io.connect('http://' + document.domain + ':' + location.port);
 var loggCount = 1;
 var currentFiles = []; // Temp stoarge for file names.
 var latestFiles = []; // Latest files for comparison reasons.
-var linear_cmd_vel = 0; // Default cmd_vel value.
 let previousSelection = null; // Null seclection for trail names
 
 // Listen for GPS data from the server.
@@ -106,7 +113,7 @@ function createJoystick() {
         color: 'green'
     });
 
-    joystick.on('move', function(evt, data) {
+    joystick.on('move', function(data) {
         var forwardBackward = data.vector.y; // Negative is forward, positive is backward
         var leftRight = data.vector.x; // Negative is left, positive is right
 
@@ -264,3 +271,38 @@ function clearLog(){
     // Reset counter
     loggCount = 1;
 }
+
+/**
+ * Function to change the page content based on the tab clicked.
+ * @param {string} pageName The name of the page to display.
+ 
+ */
+function openPage(pageName) {
+    if(isRecordingActive || trailPlotting || manualMove || trailLoaded){
+        return;
+    }
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tab");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(pageName).style.display = "block";
+    document.querySelector("[data-page='" + pageName + "']").className += " active";
+
+    var header = document.querySelector('header');
+    if(pageName === 'traethlin'){
+        header.style.display = 'none';
+    } else{
+        header.style.display = 'block';
+    }
+}
+
+
+// Initial tab setup
+document.addEventListener('DOMContentLoaded', function() {
+    openPage('trailTracer'); // Default page
+});
