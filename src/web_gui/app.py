@@ -45,10 +45,6 @@ def index():
     # Serve the main page if the web GUI.
     return render_template('index.html')
 
-@app.route('/camera')
-def camera():
-    return render_template('camera.html')
-
 @app.route('/user_guide')
 def user_guide():
     return render_template('user_guide.html')
@@ -57,8 +53,11 @@ def user_guide():
 def traethlin():
     return render_template('traethlin.html')
 
+# Route to save the trail to a file.
 @app.route('/save-trail', methods=['POST'])
+# Method to save the trail to a file.
 def save_trail():
+    # Get the plot name and coordinates from the request.
     data = request.json
     plot_name = data['plotName']
     coordinates = data['coordinates']
@@ -80,16 +79,19 @@ def save_trail():
             file.write(f'{lat},{lng}\n')    
     return jsonify({'message': f'Trail {plot_name} saved successfully!'})
 
+# Route to check if a trail file exists.
 @app.route('/check-trail-exists', methods=['POST'])
 def check_trail_exists():
+    # Get the plot name from the request.
     data = request.json
     plot_name = data['plotName']
     home_dir = os.path.expanduser('~')
+    # Updated file path to save in the trails folder
     trails_folder = os.path.join(home_dir,'trail_tracer','trails')
     file_path = os.path.join(trails_folder, f'{plot_name}.txt')
-    
+    # Check if the file exists.
     file_exists = os.path.exists(file_path)
-    return jsonify({'exists': file_exists})
+    return jsonify({'exists': file_exists}) # Return the result as a JSON object.
 
 # Method to handel messages recived from ROS2 and emit them to teh web GUI through WebSocket.
 def handle_ros_messages(message):
@@ -99,14 +101,14 @@ def handle_ros_messages(message):
     elif 'linear_x' in message or 'angular_z' in message:
         socketio.emit('cmd_vel_data', message)  # Emit cmd_vel data. #No longer in use, but in case needed in future
     elif 'trail_files' in message:
-        socketio.emit('trail_files_data', {'data': message['trail_files']})
+        socketio.emit('trail_files_data', {'data': message['trail_files']}) # Emit trail files data.
     elif 'linear_velocity' in message or 'angular_velocity_z' in message:
-        socketio.emit('odom_data', message)
-    elif 'waypoint' in message:
-        socketio.emit('waypoint_data', {'data': message['waypoint']})
+        socketio.emit('odom_data', message) # Emit odom data.
+    elif 'waypoint' in message: 
+        socketio.emit('waypoint_data', {'data': message['waypoint']}) # Emit waypoint data.
     elif 'log_message' in message:
         log_info = message['log_message']
-        socketio.emit('log_info',{'data': log_info})
+        socketio.emit('log_info',{'data': log_info}) # Emit log messages.
     else:
         socketio.emit('ros_message', {'data': message})  # Emit general ROS messages.
 

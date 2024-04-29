@@ -22,13 +22,20 @@ const exitPromptBtn = document.getElementById('exit-prompt');
 const trailPrompt = document.getElementById('trail-prompt');
 const startTrailTrace = document.getElementById('start-trail');
 const emergencyMsg = document.getElementById('emergency-msg');
+const trailNameInput = document.getElementById('trailNameInput');
+const plotNameInput = document.getElementById('plotNameInput');
+const trailDropdown = document.getElementById('trail-dropdown');
+const exitTracePrompt =  document.getElementById("exit-trace-prompt");
+const endTracePrompt = document.getElementById("end-trace-prompt");
+const quitTraceBtn = document.getElementById("quit-trace-button");
 
-var waypointMarkers = [];
+
+var waypointMarkers = []; // Array to store waypoint markers
+
 document.addEventListener('DOMContentLoaded', () => { 
     // Function to initialize event listeners for the custom name prompt
     function initializeTrailNamePrompt() {
         saveTrailNameBtn.addEventListener('click', async function() { // SaveTrail function can be found in gui_script.js
-            const trailNameInput = document.getElementById('trailNameInput');
             //console.log(currentFiles); //For debuigging puposes
             const trailName = trailNameInput.value.trim();
 
@@ -80,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
             checkSound(); // Play check sound as buton is clicked.
 
             // Trim and retrive plot name input from the 'plotNameInput' text filed.
-            const plotNameInput = document.getElementById('plotNameInput');
             const plotName = plotNameInput.value.trim();
 
             // Initially hide error messages
@@ -128,28 +134,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }); 
     }
-
-    document.getElementById('trail-dropdown').addEventListener('change', function(){
+    // Event listener for the 'Load Trail' button
+    trailDropdown.addEventListener('change', function(){
         selectedFileOption = this.value;
         //console.log("File Selected: ", selectedFileOption); //For debugging purposes
     });
-        
+    
+    // Event listener for the 'Start Trail' button
     startTrailTrace.addEventListener('click', function() {
+        clickSound(); //Play click sound as buton is clicked
+        // If no file is selected, show error message
         if(selectedFileOption == null || selectedFileOption == "Select File"){
-            document.getElementById('no-entry-error').style.display = 'block';
+            noEntryError.style.display = 'block';
             return;
         }
+        // Load the selected file and start the trail trace
         socket.emit('load_file', {data: selectedFileOption})
         loggerLog("FILE LOAD:" + selectedFileOption);
         var runningTrail = true;
-        document.getElementById('no-entry-error').style.display = 'none';
-        document.getElementById('load-trail-button').textContent = 'End';
-        document.getElementById('trail-prompt').style.display = 'none'; // Optionally hide the prompt after starting
-        document.getElementById('plot-trail-button').style.display = 'none'; // Optionally hide the prompt after starting
-        //document.getElementById('emergency-stop-button').style.display = 'block'; 
-        document.getElementById('pause-button').style.display = 'block'; 
+        noEntryError.style.display = 'none';
+        loadTrailBtn.textContent = 'End';
+        trailPrompt.style.display = 'none'; // Optionally hide the prompt after starting
+        plotTrailBtn.style.display = 'none'; // Optionally hide the prompt after starting
+        pauseBtn.style.display = 'block'; 
         emergencyMsg.style.display = 'block';
-
+        // Add waypoints to the map as they are received
         socket.on('waypoint_data', function(data) {
             //console.log('Received waypoint data:', data); // For debugging purposes
             var waypointMarker = L.marker([data.data.x, data.data.y],{
@@ -164,25 +173,28 @@ document.addEventListener('DOMContentLoaded', () => {
     
     });
 
+    // Event listener for the 'exit-prompt' button
     exitPromptBtn.addEventListener('click', function() {
         clickSound(); //Play click sound as buton is clicked
         trailPrompt.style.display = 'none';
-        document.getElementById('no-entry-error').style.display = 'none';
+        noEntryError.style.display = 'none';
         toggleModeBtn.disabled = false;
         plotTrailBtn.disabled = false;
         trailLoaded = false;
     });
 
-
-    document.getElementById("exit-trace-prompt").addEventListener('click', function(){
+    // Event listener for the 'exit-trace-prompt' button
+   exitTracePrompt.addEventListener('click', function(){
         clickSound();
-        document.getElementById("end-trace-prompt").style.display = 'none';
+        endTracePrompt.style.display = 'none';
     });
 
-    document.getElementById("quit-trace-button").addEventListener('click', function(){
-        clickSound();
+    // Event listener for the 'quit-trace-button' button
+    quitTraceBtn.addEventListener('click', function(){
+        clickSound(); //Play click sound as buton is clicked
+        // Reset the trail trace UI and flags
         loadTrailBtn.textContent = 'Load Trail';
-        document.getElementById('end-trace-prompt').style.display = 'none';
+        endTracePrompt.style.display = 'none';
         emergencyMsg.style.display = 'none';
         toggleModeBtn.disabled = false;
         plotTrailBtn.disabled = false;
@@ -199,6 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeTrailNamePrompt();
     
 });
+
+// Function to reset the plotting UI after plotting is done
 function resetPlottingUI() {
     // Reset the "Plot Trail" button text
     plotTrailBtn.textContent = 'Plot Trail';

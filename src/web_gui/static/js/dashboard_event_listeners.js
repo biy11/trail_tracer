@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleMode() // Function can be found in gui_script.js
     });
 
-    
+    // Event listener for manual start button, to start and stop recording trail manually.
     manualStartBtn.addEventListener('click', function() {
         clickSound(); //Play click sound as buton is clicked
 
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-
+    // Event listener for manual move button, to move the robot manually.
     manualMoveBtn.addEventListener('click', function(){
         clickSound(); //Play click sound as buton is clicked
         if(!manualMove){
@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }); 
 
+    // Event listner for load trail button, to load a trail file to trace.
     loadTrailBtn.addEventListener('click', function() {
         clickSound(); //Play click sound as buton is clicked
 
@@ -174,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentFiles = latestFiles; // Update current files 
             latestFiles = []; //Empty lastest fiel list after update
         }
+        // Check if the button on "Cancel" mode
         if (this.textContent === 'Cancel') {
             // If the button is in "Cancel" mode, revert the 'plot-trail-button' text and state
             plotTrailBtn.textContent = 'Plot Trail';
@@ -194,32 +196,34 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Revert the 'load-trail-button' text back to its original
             this.textContent = 'Load Trail';
-        } else if(this.textContent == 'End'){
+        } else if(this.textContent == 'End'){ // Check if the button is in "End" mode
+            // If the button is in "End" mode and trail is not running, revert the 'plot-trail-button' text and state
             if(trailPaused){
                 loadTrailBtn.textContent = 'Load Trail';
-                //document.getElementById('trail-prompt').style.display = 'none';
                 toggleModeBtn.disabled = false;
                 plotTrailBtn.disabled = false;
                 emergencyMsg.style.display = 'none';
                 plotTrailBtn.style.display = 'block';
-                document.getElementById('end-trace-prompt').style.display = 'none';
+                endTracePrompt.style.display = 'none';
                 pauseBtn.style.display = 'none'; 
                 trailLoaded = false;
                 runingTrail = false;
                 trailPaused = false;
                 clearWaypointMarkers();
             }else{
-                document.getElementById("end-trace-prompt").style.display = 'block';
+                endTracePrompt.style.display = 'block'; // Display prompt to either confirm or ending the trail or cancel.
             }
-        } else if(!trailLoaded){
-            document.getElementById('trail-prompt').style.display = 'block';
+        } else if(!trailLoaded){ // Check if the trail is not loaded
+            // If the trail is not loaded, display the prompt to load the trail
+            trailPrompt.style.display = 'block';
             toggleModeBtn.disabled = true;
             plotTrailBtn.disabled = true;
             this.textContent = 'Load Trail';
             trailLoaded = true;
         } else{
+            // If the trail is loaded, revert the 'plot-trail-button' text and state
             loadTrailBtn.textContent = 'Load Trail';
-            document.getElementById('trail-prompt').style.display = 'none';
+            trailPrompt.style.display = 'none';
             toggleModeBtn.disabled = false;
             plotTrailBtn.disabled = false;
             plotTrailBtn.style.display = 'block';
@@ -250,6 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Event listener for emergency stop featurem which stops the robot and clears the trail.
     document.addEventListener('keydown', function(event){
         if(event.code === "Space" && trailLoaded && !trailPaused){
             event.preventDefault(); // Default is usually a scoll action, this prevents this.
@@ -260,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trailPaused = true;
         }   
     });
-    
+    // Event listener for the clear-log button.
     clearLogBtn.addEventListener('click', ()=> clearLog());
 });
 

@@ -32,6 +32,11 @@ var loggCount = 1;
 var currentFiles = []; // Temp stoarge for file names.
 var latestFiles = []; // Latest files for comparison reasons.
 let previousSelection = null; // Null seclection for trail names
+const toggleButton = document.getElementById('mode-toggle');
+const automaticControls = document.getElementById('dashboard-controls');
+const manualControls = document.getElementById('manual-controls');
+const logWindow = document.getElementById("log-window");
+
 
 // Listen for GPS data from the server.
 socket.on('gps_data', function(data) {
@@ -63,7 +68,7 @@ socket.on('trail_files_data', function(message) {
 
 // Function to update the file names in dropdown menu
 function updateCurrentFiles(fileNames){
-    var trailDropdown = document.getElementById('trail-dropdown');
+    var trailDropdown = trailPrompt;
     // Store current selection for clearing dropdown menu 
     previousSelection = trailDropdown.value; 
     //Update files in dropdown menu
@@ -93,9 +98,11 @@ function updateCurrentFiles(fileNames){
 
 // Function to compare two file arrays for updates
 function arraysEqual(arr1, arr2){
+    // Check if the arrays are the same length
     if(arr1.length !== arr2.length){
         return false;
     }
+    // Check if all elements are the same
     for (var index=0; index < arr1.length; index++){
         if(arr1[index] != arr2[index])
         return false;
@@ -137,10 +144,6 @@ function createJoystick() {
 
 // Function to toggle between automatic and manual navigation modes.
 function toggleMode() {
-    var toggleButton = document.getElementById('mode-toggle');
-    var automaticControls = document.getElementById('dashboard-controls');
-    var manualControls = document.getElementById('manual-controls');
-
     // Toggle the display of the control panels
     if (mode === 'automatic') {
         mode = 'manual';
@@ -173,6 +176,7 @@ function saveTrail(plotName, coordinatesList) {
         },
         body: JSON.stringify(dataToSend),
     })
+    // Process the response as JSON
     .then(response => response.json())
     .then(data => console.log('Success:', data))
     .catch((error) => console.error('Error:', error));
@@ -188,6 +192,7 @@ function checkTrailExists(plotName) {
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(dataToSend),
     })
+    // Process the response as JSON
     .then(response => response.json()) // Process JSON reponse
     .then(data => {
             // Log if the file exists or not using a ternary operator
@@ -243,11 +248,11 @@ function loggerLog(message){
     //Add message to the logg window
     logWindow.value += loggCount + ". "+ message + '\n';
     logWindow.scrollTop = logWindow.scrollHeight; // Scoll down as messages are added 
-
+    // Check if the message is a trail completion message
     if(message === "[waypoint_follower] [INFO]: SUCCESS ALL WAYPOINTS REACHED" || message === "[trail_tracer] [INFO]: ENDING CURRENT OPERATION!"){
         loadTrailBtn.textContent = 'Load Trail';
-        document.getElementById('trail-prompt').style.display = 'none';
-        document.getElementById('end-trace-prompt').style.display = 'none';
+        trailPrompt.style.display = 'none';
+        endTracePrompt.style.display = 'none';
         emergencyMsg.style.display = 'none';
         toggleModeBtn.disabled = false;
         plotTrailBtn.disabled = false;
@@ -261,14 +266,10 @@ function loggerLog(message){
     }
     loggCount++; //Increate log count
 }
-// Function to clear log
+
+// Function to clear log and reset counter
 function clearLog(){
-    var logWindow = document.getElementById("log-window");
-
-    //Clear content
     logWindow.value = "";
-
-    // Reset counter
     loggCount = 1;
 }
 
@@ -278,21 +279,26 @@ function clearLog(){
  
  */
 function openPage(pageName) {
+    // Prevent page change if recording, plotting, or manual move is active
     if(isRecordingActive || trailPlotting || manualMove || trailLoaded){
         return;
     }
+    // Declare variables for tab content and tab links
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
+    // Hide all tab content
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
+    // Get all tab links and remove the 'active' class
     tablinks = document.getElementsByClassName("tab");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
+    // Display the selected tab content and add an 'active' class to the tab link
     document.getElementById(pageName).style.display = "block";
     document.querySelector("[data-page='" + pageName + "']").className += " active";
-
+    // Hide header for traethlin page
     var header = document.querySelector('header');
     if(pageName === 'traethlin'){
         header.style.display = 'none';

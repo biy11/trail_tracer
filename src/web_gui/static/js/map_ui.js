@@ -25,14 +25,12 @@ function checkInternet(callback) {
         callback(false); // Internet not available or blocked by CORS
     });
 }
-
+// initialize the map
 initializeMap();
 
-
+// Function to initialize the map
 function initializeMap() {
-    map = L.map('map').setView([52.416333, -4.0651128], 19); // Initial map setup with a default location
-
-
+    map = L.map('map').setView([52.416333, -4.0651128], 19); // Initial map setup with a default location and zoom level
     // Check internet connectivity before setting tile layer
     checkInternet(function(isConnected) {
         if (isConnected) {
@@ -102,11 +100,10 @@ function mapClickHandler(e) {
 // Function to calculate and display routing information on the map.
 function calculateAndDisplayRoute(clickedLatLng) {
     var robotLatLng = robotMarker.getLatLng();
-    
     if (currentRoutingControl != null) {
         map.removeControl(currentRoutingControl);
     }
-
+    // Create a new routing control with the robot's location as the starting point and the clicked location as the destination.
     currentRoutingControl = L.Routing.control({
         waypoints: [
             L.latLng(robotLatLng.lat, robotLatLng.lng),
@@ -131,7 +128,7 @@ function calculateAndDisplayRoute(clickedLatLng) {
     });
 
     directionsSet = true;
-    document.getElementById('locate-me-button').textContent = 'Cancel Directions';
+    loadTrailBtn.textContent = 'Cancel Directions';
 }
 
 // Function to cancel any set directions and resets the map state.
@@ -141,7 +138,7 @@ function cancelDirections() {
         currentRoutingControl = null;
     }
     directionsSet = false;
-    document.getElementById('locate-me-button').textContent = 'Locate Me';
+    locateMeBtn.textContent = 'Locate Me';
 }
 
 // Function to remove waypoint markers from map.

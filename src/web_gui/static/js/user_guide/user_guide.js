@@ -1,3 +1,4 @@
+// Initiate the dropdown menu for the user guide
 document.addEventListener('DOMContentLoaded', function() {
     var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 

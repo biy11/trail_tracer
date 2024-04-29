@@ -6,16 +6,20 @@
 
 
 var soundOnOff = false;
+const settingsButton = document.getElementById('settings-button');
+const settingsMenu = document.getElementById('settings-menu');
+const soundToggle = document.getElementById('sound-toggle');
+const audio = document.getElementById('click');
+const toggle_audio = document.getElementById('toggle_sound');
+const check_audio = document.getElementById('check_sound');
 
+// Function to disable the settings button when certain conditions are met
 document.addEventListener('DOMContentLoaded', function() {
-    var settingsButton = document.getElementById('settings-button');
-    var settingsMenu = document.getElementById('settings-menu');
-
     function disableSettingsButton(){
         // Assuming isRecordingActive, trailPlotting, and manualMove are previously defined and their states managed elsewhere
         return isRecordingActive || trailPlotting || manualMove || trailLoaded;
     }
-
+    // Event listener for the settings button
     settingsButton.addEventListener('click', function(event) {
         clickSound(); // Play click sound
         if(disableSettingsButton()){
@@ -35,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Sound-toggle event listener
-    var soundToggle = document.getElementById('sound-toggle');
     soundToggle.addEventListener('click', function() {
         soundOnOff = !soundOnOff;
 
@@ -50,29 +53,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
+// Function to play click sound
 function clickSound(){
     if(soundOnOff){
-        var audio = document.getElementById('click');
         if(audio){
             audio.play();
         }
     }
 }
-
+// Function to play toggle sound
 function toggleSound(){
     if(soundOnOff){
-        var audio = document.getElementById('toggle_sound');
-        if(audio){
+        if(toggle_audio){
             audio.play();
         }
     }   
 }
-
+// Function to play check sound
 function checkSound(){
     if(soundOnOff){
-        var audio = document.getElementById('check_sound');
-        if(audio){
+        if(check_audio){
             audio.play();
         }
     }
