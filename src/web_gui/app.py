@@ -104,6 +104,9 @@ def handle_ros_messages(message):
         socketio.emit('odom_data', message)
     elif 'waypoint' in message:
         socketio.emit('waypoint_data', {'data': message['waypoint']})
+    elif 'log_message' in message:
+        log_info = message['log_message']
+        socketio.emit('log_info',{'data': log_info})
     else:
         socketio.emit('ros_message', {'data': message})  # Emit general ROS messages.
 

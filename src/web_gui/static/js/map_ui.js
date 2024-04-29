@@ -84,7 +84,7 @@ function updateRobotLocation(lat, lng) {
 function mapClickHandler(e) {
     var clickedCoordinate = e.latlng;
     coordinatesList.push(clickedCoordinate);
-    console.log('Coordinate added:', clickedCoordinate);
+    //console.log('Coordinate added:', clickedCoordinate); For debugging prposes
 
     // Create a marker for the clicked point
     var wayPointMarker = L.marker(clickedCoordinate, {
@@ -119,12 +119,12 @@ function calculateAndDisplayRoute(clickedLatLng) {
     currentRoutingControl.on('routesfound', function(e) {
         var routes = e.routes;
         var summary = routes[0].summary; // Getting the first found route
-        console.log("Total distance: " + summary.totalDistance + " meters");
-        console.log("Estimated travel time: " + summary.totalTime + " seconds");
+        //console.log("Total distance: " + summary.totalDistance + " meters");
+        //console.log("Estimated travel time: " + summary.totalTime + " seconds");
 
         // Log all the coordinates for the route
         var routeCoordinates = routes[0].coordinates;
-        console.log("Route coordinates:");
+        //console.log("Route coordinates:");
         routeCoordinates.forEach(function(coord, index) {
             console.log("Point " + (index + 1) + ": Lat =", coord.lat, "Lng =", coord.lng);
         });
@@ -142,4 +142,12 @@ function cancelDirections() {
     }
     directionsSet = false;
     document.getElementById('locate-me-button').textContent = 'Locate Me';
+}
+
+// Function to remove waypoint markers from map.
+function clearWaypointMarkers(){
+    waypointMarkers.forEach(function(marker){
+        map.removeLayer(marker);
+    });
+    waypointMarkers = [];
 }

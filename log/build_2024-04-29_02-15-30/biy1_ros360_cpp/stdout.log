@@ -1,0 +1,13 @@
+[35m[1mConsolidate compiler generated dependencies of target polishedCode[0m
+[35m[1mConsolidate compiler generated dependencies of target sparse[0m
+[  9%] Built target exampleSubscriber
+[ 18%] Built target helloWorld
+[ 27%] Built target trail_tracer
+[ 36%] Built target code_test
+[ 45%] Built target nav2
+[ 54%] Built target testCode
+[ 63%] Built target follower
+[ 72%] Built target examplePublisher
+[ 81%] Built target waypoint_navigator
+[ 86%] [32mBuilding CXX object CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/sparse.dir/src/polishedCode.cpp.o[0m

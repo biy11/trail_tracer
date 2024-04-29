@@ -107,10 +107,11 @@ public:
         cmd_vel_publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
         file_names_publisher_ = this->create_publisher<std_msgs::msg::String>("trail_tracer/trail_files", 10);
         file_waypoint_publisher_ = this->create_publisher<geometry_msgs::msg::Point>("/trail_tracer/waypoints", 10);
+        log_publisher_ = this->create_publisher<std_msgs::msg::String>("/trail_tracer/log_messages", 10);
 
         //////////////////////////////// SUBSCRIPTIONS ////////////////////////////////
         web_message_subscription_ = this->create_subscription<std_msgs::msg::String>(
-            "/web_gui/web_messages", 10,
+            "/web_gui/web_messages", 10,                                             // Subscription for web_messages
             std::bind(&TrailTracer::web_messages_callback, this, std::placeholders::_1));
 
         trail_name_subscription_ = this->create_subscription<std_msgs::msg::String>(
@@ -174,7 +175,7 @@ private:
             is_moving_ = false;
             if(!recorded_waypoints_.empty()){
                 auto simplified_points = rdp(recorded_waypoints_, 0.000036);
-                RCLCPP_INFO(this->get_logger(), "Simplified number of waypoints: %zu", simplified_points.size());
+                //RCLCPP_INFO(this->get_logger(), "Simplified number of waypoints: %zu", simplified_points.size()); //Logging for debugging purposes
                 save_to_file(simplified_points);
             }
             recorded_waypoints_.clear();
@@ -186,12 +187,12 @@ private:
         }else if(msg->data == "resume-trail"){
             remainingDestinationPoseList(poses_,destination_coords_);
         }
-        RCLCPP_INFO(this->get_logger(), "Received command: '%s'", msg->data.c_str()); // Logging for debugging purposes
+        //RCLCPP_INFO(this->get_logger(), "Received command: '%s'", msg->data.c_str()); // Logging for debugging purposes
     }
 
     void trail_name_callback(const std_msgs::msg::String::SharedPtr msg){
         trail_name_ = msg->data;
-        RCLCPP_INFO(this->get_logger(), "Trail name set to: '%s'", trail_name_.c_str()); // Logging for debugging purposes
+        //RCLCPP_INFO(this->get_logger(), "Trail name set to: '%s'", trail_name_.c_str()); // Logging for debugging purposes
         if (is_moving_) {
             open_gps_file(); // Re-open the file with the new trail name if already moving
         }
@@ -223,25 +224,64 @@ private:
     void log_reader_callback(const rcl_interfaces::msg::Log::SharedPtr msg){
         // Check if the message is from bt_navigator and contains the navigation text
         if (msg->name == "bt_navigator" && msg->msg.find("Begin navigating") != std::string::npos) {
-            std::regex coord_regex("\\((-?\\d+\\.\\d+),\\s*(-?\\d+\\.\\d+)\\)");
+            std::regex coord_regex("\\((-?\\d+\\.\\d+),\\s*(-?\\d+\\.\\d+)\\)"); 
             std::smatch matches;
             std::string::const_iterator searchStart(msg->msg.cbegin());
             std::vector<std::pair<float, float>> coordinates;
 
-            // Find all matches
-            while (std::regex_search(searchStart, msg->msg.cend(), matches, coord_regex)) {
-                float x = std::stof(matches[1].str());
-                float y = std::stof(matches[2].str());
-                coordinates.push_back(std::make_pair(x, y));
-                searchStart = matches.suffix().first;
-            }
+            // Find all matches of message type
+        for (std::sregex_iterator it(msg->msg.begin(), msg->msg.end(), coord_regex), end_it; it != end_it; ++it) {
+            matches = *it;
+            float x = std::stof(matches[1].str());
+            float y = std::stof(matches[2].str());
+            coordinates.push_back(std::make_pair(x, y));
+        }
 
-            // Check if we have at least two coordinate pairs
+            // Check for at least two coordinate pairs
             if (coordinates.size() >= 2) {
                 destination_coords_ = coordinates[1]; // Select the second pair
-                RCLCPP_INFO(this->get_logger(), "Destination coordinates: (%f, %f)", destination_coords_.first, destination_coords_.second);
-                // Here you can store or use the destination coordinates as needed
+                //RCLCPP_INFO(this->get_logger(), "Destination coordinates: (%f, %f)", destination_coords_.first, destination_coords_.second);
             }
+        }
+        // check for messages for trail completion, trail cancel/pause, trail start, and log result
+        if(msg->name == "waypoint_follower" && msg->msg.find("Completed all") != std::string::npos){
+            logger("[waypoint_follower] [INFO]: SUCCESS ALL WAYPOINTS REACHED");
+        } else if(msg->name == "waypoint_follower" && msg->msg.find("Received follow waypoint request with") != std::string::npos){
+            logger("[waypoint_follower] [INFO]: Received follow waypoint request");
+        } 
+        
+        if(msg->name == "behavior_server" && msg->msg.find("Running backup") != std::string::npos){
+            logger("[behavior_server] [INFO]: Running backup");
+        } else if(msg->name == "behavior_server" && msg->msg.find("backup completed successfully") != std::string::npos){
+            logger("[behavior_server] [INFO]: backup completed successfully");
+        }else if(msg->name == "behavior_server" && msg->msg.find("Running spin") != std::string::npos){
+            logger("[behavior_server] [INFO]: Running spin");
+        }else if(msg->name == "behavior_server" && msg->msg.find("spin completed successfully") != std::string::npos){
+            logger("[behavior_server] [INFO]: spin completed successfully");
+        }
+
+        else if(msg->name == "controller_server" && msg->msg.find("Failed to make progress") != std::string::npos){
+            logger("[Controll_server] [ERROR] Failed to make progress");
+        } else if(msg->name == "controller_server" && msg->msg.find("Aborting handle") != std::string::npos){
+            logger("[controller_server] [WARN]: [follow_path] [ActionServer] Aborting handle.");
+        } else if(msg->name == "controller_server" && msg->msg.find("Received a goal, begin computing control effort.") != std::string::npos){
+            logger("[controller_server] [INFO]: Received a goal, begin computing control effort.");
+        } else if(msg->name == "controller_server" && msg->msg.find("[controller_server]: Passing new path to controller.") != std::string::npos){
+            logger("[controller_server] [INFO]: Passing new path to controller.");
+        } else if(msg->name == "controller_server" && msg->msg.find("Client requested to cancel the goal") != std::string::npos){
+            logger("[Controll_server] [WARN] Client requested to stop goal");
+        }else if(msg->name == "controller_server" && msg->msg.find("Client requested to cancel the goal") != std::string::npos){
+            logger("[Controll_server] [WARN] Client requested to stop goal");
+        }
+
+        else if(msg->name == "local_costmap.local_costmap" && msg->msg.find("Received request to clear entirely the local_costmap") != std::string::npos){
+            logger("[local_costmap.local_costmap] [INFO]: Received request to clear entirely the local_costmap");
+        }
+
+        else if(msg->name == "planner_server" && msg->msg.find("The goal sent to the planner is off the global costmap.") != std::string::npos){
+            logger("[planner_server [WARN]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.");
+            logger("[trail_tracer] [INFO]: ENDING CURRENT OPERATION!");
+            logger("Please choose another file or increase the map height/width in ~/argo_nav/config/nav2_no_map_params.yaml.");
         }
     }
 
@@ -256,7 +296,8 @@ private:
         std::string file_path = "trails/" + msg->data;
         std::ifstream file(file_path);
         if (!file.is_open()) {
-            RCLCPP_ERROR(this->get_logger(), "Failed to open file: %s", file_path.c_str());
+            //RCLCPP_ERROR(this->get_logger(), "Failed to open file: %s", file_path.c_str()); // For debugging purposes
+            logger("[trail_tracer] [ERROR] Failed to open file");
             return;
         }
         waypoints_.clear();
@@ -283,7 +324,8 @@ private:
                 qw = values[5];
                 full_pose_format = true;
             } else{
-                RCLCPP_ERROR(this->get_logger(), "Error parsing line: %s", line.c_str());
+                //RCLCPP_ERROR(this->get_logger(), "Error parsing line: %s", line.c_str()); // For debugging purposes
+                logger("[trail_tracer] [ERROR] Failed to parse line in file");
                 continue;
             }
             waypoints_.emplace_back(lat, lon);
@@ -304,6 +346,25 @@ private:
         } else{
             process_all_waypoints(); 
             }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////   
+    ////////////////////////////////////////////////////////////////////////////
+    void logger(const std::string &message){
+        auto msg = std_msgs::msg::String();
+        msg.data = message;
+        log_publisher_->publish(msg);
+    } 
+
+    void manual_control(const geometry_msgs::msg::Twist::SharedPtr msg) {
+        last_received_cmd_ = msg;
+    }
+    
+
+    void update_movement() {
+        if (is_moving_ && last_received_cmd_) {
+            cmd_vel_publisher_->publish(*last_received_cmd_);
+        }
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////// FILE OPERATION FUNCTIONS ////////////////////////////////////////////
@@ -328,10 +389,12 @@ private:
             }
             gps_file_.open(file_path, std::ios::out); // Open new file
             if (!gps_file_.is_open()) {
-                RCLCPP_ERROR(this->get_logger(), "Failed to open file: %s", file_path.c_str());
+                //RCLCPP_ERROR(this->get_logger(), "Failed to open file: %s", file_path.c_str()); // Logging for debugging purposes
+                logger("[trail_tracer] [ERROR] Failed to parse line in file (trail_tracer function: void open_gps_file())");
             }
         } else {
-            RCLCPP_WARN(this->get_logger(), "Trail name is empty. Cannot open GPS file.");
+            //RCLCPP_WARN(this->get_logger(), "Trail name is empty. Cannot open GPS file.");  // Logging for debugging purposes
+            logger("[trail_tracer] [WARN] Failed to open file, trail name is empty");
         }
     }
 
@@ -350,10 +413,12 @@ private:
                 msg.data = file_list;
                 file_names_publisher_->publish(msg);
                 } else {
-                    RCLCPP_WARN(this->get_logger(), "No files found in directory '%s'.", directory_path.c_str());
+                    //RCLCPP_WARN(this->get_logger(), "No files found in directory '%s'.", directory_path.c_str());// Logging for debugging purposes
+                    logger("[trail_tracer] [WARN] No files found in directory");
                 }
         } else{
-            RCLCPP_WARN(this->get_logger(), "Directory '%s' does not exist.", directory_path.c_str());
+            //RCLCPP_WARN(this->get_logger(), "Directory '%s' does not exist.", directory_path.c_str()); // Logging for debugging purposes
+            logger("[trail_tracer] [WARN] Directory does not exist");
             }
     }
 
@@ -425,19 +490,6 @@ private:
             return recResults1;
         } else {
             return {points.front(), points.back()};
-        }
-    }
-
-
-
-    void manual_control(const geometry_msgs::msg::Twist::SharedPtr msg) {
-        last_received_cmd_ = msg;
-    }
-    
-
-    void update_movement() {
-        if (is_moving_ && last_received_cmd_) {
-            cmd_vel_publisher_->publish(*last_received_cmd_);
         }
     }
 
@@ -581,6 +633,9 @@ private:
 
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_publisher_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr file_names_publisher_;
+    rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr file_waypoint_publisher_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr log_publisher_;
+
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr web_message_subscription_;
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr trail_name_subscription_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr joystick_subscription_;
@@ -588,7 +643,6 @@ private:
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr load_file_subscription_;
     rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr gps_to_utm_subscription_;
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_data_subscription_;
-    rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr file_waypoint_publisher_;
     rclcpp::Subscription<rcl_interfaces::msg::Log>::SharedPtr log_reader_subscription_;
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_subscription_; 
     sensor_msgs::msg::NavSatFix::SharedPtr last_gps_msg_; 

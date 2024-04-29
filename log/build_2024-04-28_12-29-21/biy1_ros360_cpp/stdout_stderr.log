@@ -1,0 +1,61 @@
+[35m[1mConsolidate compiler generated dependencies of target polishedCode[0m
+[35m[1mConsolidate compiler generated dependencies of target sparse[0m
+[ 27%] Built target exampleSubscriber
+[ 27%] Built target testCode
+[ 27%] Built target trail_tracer
+[ 36%] Built target waypoint_navigator
+[ 45%] Built target helloWorld
+[ 54%] Built target follower
+[ 63%] Built target nav2
+[ 72%] Built target examplePublisher
+[ 77%] [32mBuilding CXX object CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/sparse.dir/src/polishedCode.cpp.o[0m
+[ 90%] Built target code_test
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In constructor ‘[01m[KTrailTracer::TrailTracer()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:110:71:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KTrailTracer::create_publisher<std_msgs::msg::String>(const char [27])[m[K’
+  110 |         log_publisher_ = [01;31m[Kthis->create_publisher<std_msgs::msg::String>("/trail_tracer/log_messages")[m[K;
+      |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:8[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+   73 | [01;36m[KNode[m[K::create_publisher(
+      | [01;36m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:110:71:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+  110 |         log_publisher_ = [01;36m[Kthis->create_publisher<std_msgs::msg::String>("/trail_tracer/log_messages")[m[K;
+      |                          [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In constructor ‘[01m[KTrailTracer::TrailTracer()[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:110:71:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KTrailTracer::create_publisher<std_msgs::msg::String>(const char [27])[m[K’
+  110 |         log_publisher_ = [01;31m[Kthis->create_publisher<std_msgs::msg::String>("/trail_tracer/log_messages")[m[K;
+      |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:8[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+   73 | [01;36m[KNode[m[K::create_publisher(
+      | [01;36m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:110:71:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 1 provided
+  110 |         log_publisher_ = [01;36m[Kthis->create_publisher<std_msgs::msg::String>("/trail_tracer/log_messages")[m[K;
+      |                          [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::log_reader_callback(rcl_interfaces::msg::Log_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:247:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing _msg_type = class std::__cxx11::basic_string<char>[m[K’ {aka ‘[01m[Kclass std::__cxx11::basic_string<char>[m[K’} has no member named ‘[01m[Kfin[m[K’; did you mean ‘[01m[Kfind[m[K’?
+  247 |         if(msg->name == "waypoint_follower" && msg->msg.[01;31m[Kfin[m[K("Completed all") != std::string::npos){
+      |                                                         [01;31m[K^~~[m[K
+      |                                                         [32m[Kfind[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::log_reader_callback(rcl_interfaces::msg::Log_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:247:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing _msg_type = class std::__cxx11::basic_string<char>[m[K’ {aka ‘[01m[Kclass std::__cxx11::basic_string<char>[m[K’} has no member named ‘[01m[Kfin[m[K’; did you mean ‘[01m[Kfind[m[K’?
+  247 |         if(msg->name == "waypoint_follower" && msg->msg.[01;31m[Kfin[m[K("Completed all") != std::string::npos){
+      |                                                         [01;31m[K^~~[m[K
+      |                                                         [32m[Kfind[m[K
+gmake[2]: *** [CMakeFiles/sparse.dir/build.make:76: CMakeFiles/sparse.dir/src/polishedCode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:417: CMakeFiles/sparse.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/polishedCode.dir/build.make:76: CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:391: CMakeFiles/polishedCode.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

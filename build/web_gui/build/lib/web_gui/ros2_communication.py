@@ -40,6 +40,7 @@ import threading
 # @version 1.6 - Added susbriber for Imu topic for velocity data.
 # @version 1.7 - Changed waypoint topic to subscription rather than a publisher.
 # @version 1.8 - Added odom topic for velocity data and removed imu.
+# @version 1.8 - Added loger subscription for displaying and acting upon errors and other information.
 
  
 ros2_web_connector = None  # This will be initialized once to connect to web interface.
@@ -56,12 +57,12 @@ class ROS2WebConnector(Node):
         self.load_file_publisher = self.create_publisher(String, '/web_gui/load_file_topic', 10)
 
         #Creation of subscibers for: ros_messages, /argo_sim/gps/fix and /argo_sim/cmd_vel.
-        self.ros_messages_subscription = self.create_subscription(String, 'ros_messages', self.listener_callback, 10)
         self.gps_subscription = self.create_subscription(NavSatFix, '/gps/fix', self.gps_callback, 10)
         self.cmd_vel_subscription = self.create_subscription(Twist, '/cmd_vel', self.cmd_callback,10)
         self.trail_files = self.create_subscription(String, '/trail_tracer/trail_files', self.trail_file_callback, 10)
         self.waypoint_subscriber = self.create_subscription(Point, '/trail_tracer/waypoints',self.waypoint_callback ,10)
         self.odom_subscriber = self.create_subscription(Odometry, '/odom',self.odom_callback ,10)
+        self.log_subscriber = self.create_subscription(String, '/trail_tracer/log_messages', self.log_message_callback,10)
         
 
         self.message_callback = message_callback # Callback function for recived message processing.
@@ -71,14 +72,14 @@ class ROS2WebConnector(Node):
         msg = String()
         msg.data = message
         self.web_message_publisher.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % message)
+        #self.get_logger().info('Publishing: "%s"' % message) # For debugging purposes
 
     # Method to publish a trail name to the 'trail_name_topic'.
     def publish_trail_name(self, trail_name):
         msg = String()
         msg.data = trail_name
         self.trail_name_publisher.publish(msg)
-        self.get_logger().info(f'Publishing trail name: {trail_name}') 
+        #self.get_logger().info(f'Publishing trail name: {trail_name}')  # For debugging purposes
 
     # Method to publish joystick values (linear and argular vel) to the 'joystick_value' topic.
     def publish_joystick_value(self, linear_vel, angular_vel):
@@ -93,11 +94,7 @@ class ROS2WebConnector(Node):
         msg.angular.z = angular_vel
 
         self.joystick_value_publisher.publish(msg)
-        self.get_logger().info(f'Publishing joystick value: linear_vel={linear_vel}, angular_vel={angular_vel}')
-
-    # Callback function for 'ros_messages' subscription.
-    def listener_callback(self, msg):
-        self.get_logger().info('I heard: "%s"' % msg.data)
+        #self.get_logger().info(f'Publishing joystick value: linear_vel={linear_vel}, angular_vel={angular_vel}') # For debugging purposes
 
     # Callback function for 'argo_sim/gps/fix' subscription.
     def gps_callback(self, msg):
@@ -108,7 +105,7 @@ class ROS2WebConnector(Node):
     # Callback for '/trail_files' subscription
     def trail_file_callback(self, msg):
         # Log the received trail files data
-        #self.get_logger().info(f'Received trail files data: {msg.data}')
+        #self.get_logger().info(f'Received trail files data: {msg.data}') # For debugging purposes
         self.message_callback({'trail_files': msg.data})
 
     # Callback function for 'argo_sim/cmd_vel' subscription.
@@ -137,8 +134,12 @@ class ROS2WebConnector(Node):
     # Callback for waypoints to be plotted on map when re-tracing a trail.
     def waypoint_callback(self, msg):
         waypoint_data = {'waypoint':{'x': msg.x, 'y':msg.y}}
-        self.get_logger().info(f'Recieved waypoints: {waypoint_data}')
+        #self.get_logger().info(f'Recieved waypoints: {waypoint_data}') # For debugging purposes
         self.message_callback(waypoint_data)
+
+    # Callback function for logger subscription for info tarnsfer to web-gui system log
+    def log_message_callback(self, msg):
+        self.message_callback({'log_message': msg.data})
 
 
 def publish_load_file(file_name):

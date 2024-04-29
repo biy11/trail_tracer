@@ -11,6 +11,9 @@
 //Added IMU Data socket listener
 //Added systemlog population button
 //Reduced overhead by only getting files from server when needed
+// Added odom socket to update speed and velocity
+// Added soket for logger
+// Updated logger function
 
 // WebSocket connection setup.
 var mode = 'automatic'
@@ -40,6 +43,9 @@ socket.on('odom_data', function(data) {
     updateSpeedDashboard(odom_linear_velocity, odom_angular_velocity_z);
 });
 
+socket.on('log_info', function(data){
+    loggerLog(data.data);
+});
 
 socket.on('trail_files_data', function(message) {
     // For debugging purposes
@@ -231,6 +237,21 @@ function loggerLog(message){
     logWindow.value += loggCount + ". "+ message + '\n';
     logWindow.scrollTop = logWindow.scrollHeight; // Scoll down as messages are added 
 
+    if(message === "[waypoint_follower] [INFO]: SUCCESS ALL WAYPOINTS REACHED" || message === "[trail_tracer] [INFO]: ENDING CURRENT OPERATION!"){
+        loadTrailBtn.textContent = 'Load Trail';
+        document.getElementById('trail-prompt').style.display = 'none';
+        document.getElementById('end-trace-prompt').style.display = 'none';
+        emergencyMsg.style.display = 'none';
+        toggleModeBtn.disabled = false;
+        plotTrailBtn.disabled = false;
+        plotTrailBtn.style.display = 'block';
+        pauseBtn.style.display = 'none'; 
+        trailLoaded = false;
+        runingTrail = false;
+        trailPaused = false;
+        clearWaypointMarkers();
+        controlRobot('pause-trail');
+    }
     loggCount++; //Increate log count
 }
 // Function to clear log

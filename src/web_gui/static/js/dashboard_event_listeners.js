@@ -197,18 +197,19 @@ document.addEventListener('DOMContentLoaded', () => {
             this.textContent = 'Load Trail';
         } else if(this.textContent == 'End'){
             if(trailPaused){
-                clearWaypointMarkers();
-                this.textContent = 'Load Trail';
-                plotTrailBtn.style.display = 'block';
-                pauseBtn.style.display = 'none';
-                trailPaused = false;
-                trailLoaded = false;
-                controlRobot('pause-trail');
+                loadTrailBtn.textContent = 'Load Trail';
+                document.getElementById('trail-prompt').style.display = 'none';
+                toggleModeBtn.disabled = false;
+                plotTrailBtn.disabled = false;
                 emergencyMsg.style.display = 'none';
-                resetPlottingUI();
+                plotTrailBtn.style.display = 'block';
+                document.getElementById('end-trace-prompt').style.display = 'none';
+                pauseBtn.style.display = 'none'; 
+                trailLoaded = false;
+                runingTrail = false;
+                clearWaypointMarkers();
             }else{
-                alert('Trail Tracing is active, please stop it before exiting');
-                return;
+                document.getElementById("end-trace-prompt").style.display = 'block';
             }
         } else if(!trailLoaded){
             document.getElementById('trail-prompt').style.display = 'block';
@@ -231,25 +232,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Function to remove waypoint markers from map.
-    function clearWaypointMarkers(){
-        waypointMarkers.forEach(function(marker){
-            map.removeLayer(marker);
-        });
-        waypointMarkers = [];
-    }
-
     // Event listner to pause/stop trail tracing
     pauseBtn.addEventListener('click', function() {
         clickSound(); //Play click sound as buton is clicked
         if(!trailPaused){
-            console.log("Paused trail");
-            controlRobot('pause-trail')
+            //console.log("Paused trail");
+            controlRobot('pause-trail');
             this.textContent = "Resume";
             trailPaused = true;
             emergencyMsg.style.display = 'none';
         } else{
-            console.log("trail resumed")          
+            //console.log("trail resumed")          
             controlRobot('resume-trail');
             emergencyMsg.style.display = 'block';
             this.textContent = "Pause";
@@ -260,8 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', function(event){
         if(event.code === "Space" && trailLoaded && !trailPaused){
             event.preventDefault(); // Default is usually a scoll action, this prevents this.
-            console.log("Paused trail");
-            controlRobot('pause-trail')
+            //console.log("Paused trail");
+            controlRobot('pause-trail');
             emergencyMsg.style.display = 'none';
             pauseBtn.textContent = "Resume";
             trailPaused = true;

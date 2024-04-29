@@ -1,0 +1,27 @@
+[35m[1mConsolidate compiler generated dependencies of target polishedCode[0m
+[35m[1mConsolidate compiler generated dependencies of target sparse[0m
+[  9%] Built target nav2
+[ 18%] Built target helloWorld
+[ 36%] Built target waypoint_navigator
+[ 36%] Built target testCode
+[ 45%] Built target trail_tracer
+[ 54%] Built target exampleSubscriber
+[ 63%] Built target examplePublisher
+[ 72%] Built target follower
+[ 77%] [32mBuilding CXX object CMakeFiles/sparse.dir/src/polishedCode.cpp.o[0m
+[ 86%] Built target code_test
+[ 90%] [32mBuilding CXX object CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o[0m
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::log_reader_callback(rcl_interfaces::msg::Log_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:284:9:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+  284 |         [01;31m[K}[m[K
+      |         [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::log_reader_callback(rcl_interfaces::msg::Log_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:284:9:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+  284 |         [01;31m[K}[m[K
+      |         [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/sparse.dir/build.make:76: CMakeFiles/sparse.dir/src/polishedCode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:417: CMakeFiles/sparse.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/polishedCode.dir/build.make:76: CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:391: CMakeFiles/polishedCode.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

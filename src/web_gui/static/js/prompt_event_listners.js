@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeTrailNamePrompt() {
         saveTrailNameBtn.addEventListener('click', async function() { // SaveTrail function can be found in gui_script.js
             const trailNameInput = document.getElementById('trailNameInput');
-            console.log(currentFiles);
+            //console.log(currentFiles); //For debuigging puposes
             const trailName = trailNameInput.value.trim();
 
             noEntryError.style.display = 'none';
@@ -98,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 existingFileError.style.display = 'block';
                 return;
             }
-            // Log sucessful plotting to console and GUI logger
-            console.log('Trail plotted with name:', plotName, coordinatesList);
+            // Log sucessful plotting to GUI logger
+            //console.log('Trail plotted with name:', plotName, coordinatesList); // For debugging puposes
             loggerLog("FILE PLOTTED: " + plotName + " \n   WITH POINTS: " + coordinatesList);
             
             saveTrail(plotName, coordinatesList); // Save trail name and coordinates
@@ -129,11 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('trail-dropdown').addEventListener('change', function(){
         selectedFileOption = this.value;
-        console.log("File Selected: ", selectedFileOption);
+        //console.log("File Selected: ", selectedFileOption); //For debugging purposes
     });
-    
-    //var file;
-    
+        
     startTrailTrace.addEventListener('click', function() {
         if(selectedFileOption == null || selectedFileOption == "Select File"){
             document.getElementById('no-entry-error').style.display = 'block';
@@ -151,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         emergencyMsg.style.display = 'block';
 
         socket.on('waypoint_data', function(data) {
-            console.log('Received waypoint data:', data);
+            //console.log('Received waypoint data:', data); // For debugging purposes
             var waypointMarker = L.marker([data.data.x, data.data.y],{
                 icon: L.divIcon({
                     className: 'waypoint-marker',
@@ -171,6 +169,27 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleModeBtn.disabled = false;
         plotTrailBtn.disabled = false;
         trailLoaded = false;
+    });
+
+
+    document.getElementById("exit-trace-prompt").addEventListener('click', function(){
+        clickSound();
+        document.getElementById("end-trace-prompt").style.display = 'none';
+    });
+
+    document.getElementById("quit-trace-button").addEventListener('click', function(){
+        clickSound();
+        loadTrailBtn.textContent = 'Load Trail';
+        document.getElementById('end-trace-prompt').style.display = 'none';
+        emergencyMsg.style.display = 'none';
+        toggleModeBtn.disabled = false;
+        plotTrailBtn.disabled = false;
+        plotTrailBtn.style.display = 'block';
+        pauseBtn.style.display = 'none'; 
+        controlRobot('pause-trail');
+        trailLoaded = false;
+        runingTrail = false;
+        clearWaypointMarkers();
     });
 
     // Function for when page loads to set up the plot-name saving event listeners

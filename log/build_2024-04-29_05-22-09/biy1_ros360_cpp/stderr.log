@@ -1,0 +1,14 @@
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::log_reader_callback(rcl_interfaces::msg::Log_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:285:9:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+  285 |         [01;31m[K}[m[K
+      |         [01;31m[K^[m[K
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:[m[K In member function ‘[01m[Kvoid TrailTracer::log_reader_callback(rcl_interfaces::msg::Log_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/bilal/trail_tracer/src/biy1_ros360_cpp/src/polishedCode.cpp:285:9:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+  285 |         [01;31m[K}[m[K
+      |         [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/polishedCode.dir/build.make:76: CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:391: CMakeFiles/polishedCode.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/sparse.dir/build.make:76: CMakeFiles/sparse.dir/src/polishedCode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:417: CMakeFiles/sparse.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

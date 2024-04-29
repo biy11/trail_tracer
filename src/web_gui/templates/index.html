@@ -143,7 +143,17 @@
             <button id="savePlotName">Save Trail Name</button>
         </div>
     </div>
-    
+    <!-- Prompt For Ending Trail Tracing -->
+    <div id="end-trace-prompt" style="display: none;"> <!-- Initially hidden -->
+        <div id="prompt-header">
+            <h2>End Trail Tracing</h2>
+            <button id="exit-trace-prompt">Exit</button>
+        </div>
+        <div id="prompt-body">
+            <h5 style="position: relative;text-align: center;">Current trail tracing will be cancelled</h5>
+            <button id="quit-trace-button">Quit</button>
+        </div>
+    </div>
     <!-- sound element is downlaoded from https://mixkit.co/free-sound-effects -->
     <audio id="click" src="{{ url_for('static', filename='util/audio_files/click.mp3')}}" type="audio/mpeg"></audio>
     <audio id="toggle_sound" src="{{ url_for('static', filename='util/audio_files/toggle.mp3')}}" type="audio/mpeg"></audio>
