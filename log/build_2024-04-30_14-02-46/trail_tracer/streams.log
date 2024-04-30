@@ -1,0 +1,25 @@
+[0.039s] Invoking command in '/home/bilal/trail_tracer/build/trail_tracer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/trail_tracer -- -j12 -l12
+[0.142s] [ 50%] [32mBuilding CXX object CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o[0m
+[22.760s] [100%] [32m[1mLinking CXX executable trail_tracer[0m
+[24.287s] [100%] Built target trail_tracer
+[24.305s] Invoked command in '/home/bilal/trail_tracer/build/trail_tracer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/trail_tracer -- -j12 -l12
+[24.358s] Invoking command in '/home/bilal/trail_tracer/build/trail_tracer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/trail_tracer
+[24.373s] -- Install configuration: ""
+[24.373s] -- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer
+[24.397s] -- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer" to ""
+[24.397s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/package_run_dependencies/trail_tracer
+[24.398s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/parent_prefix_path/trail_tracer
+[24.398s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.sh
+[24.398s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.dsv
+[24.398s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.sh
+[24.398s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.dsv
+[24.398s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.bash
+[24.398s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.sh
+[24.398s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.zsh
+[24.398s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.dsv
+[24.398s] -- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.dsv
+[24.402s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/packages/trail_tracer
+[24.402s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig.cmake
+[24.402s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig-version.cmake
+[24.402s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.xml
+[24.405s] Invoked command in '/home/bilal/trail_tracer/build/trail_tracer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/trail_tracer

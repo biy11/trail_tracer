@@ -1,5 +1,5 @@
 /*
-* @(#) map_ui.js 1.5 2024/04/27.
+* @(#) map_ui.js 1.6 2024/04/30.
 * Copyright (c) 2023 Aberystwyth University.
 * All rights reserved.
  */
@@ -19,6 +19,7 @@
  * 0.3 Renamed to map_ui.js
  * 0.4 Added Comments
  * 0.5 Removed auto-marker centering when a plotting is active.
+ * 0.6 Fixed bug in calculateAndDisplayRoute function.
  */
 
 // Function to check internet connectivity more reliably
@@ -135,7 +136,7 @@ function calculateAndDisplayRoute(clickedLatLng) {
     });
 
     directionsSet = true;
-    loadTrailBtn.textContent = 'Cancel Directions';
+    locateMeBtn.textContent = 'Cancel Directions';
 }
 
 // Function to cancel any set directions and resets the map state.

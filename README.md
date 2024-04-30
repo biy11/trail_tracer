@@ -84,10 +84,8 @@ This is a ROS2 workspace for the trail_tracer project.
 ## License
 This project is licensed under the Appache License 2.0. See the LICENSE file for more details.
 
-## Contributions
-Contributions are welcome! Please refer to the [Contribution Guidelines](CONTRIBUTING.md) for more details.
 
 ## Contact
-For any questions or issues, please contact the project maintainers:
-- John Doe (johndoe@example.com)
-- Jane Smith (janesmith@example.com)
+For any questions or issues, please contact me (project maintainer):
+
+Bilal Yousufzai (biy1@aber.ac.uk or bilalyousufzai28@gmail.com)
