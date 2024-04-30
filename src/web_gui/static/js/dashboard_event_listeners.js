@@ -1,4 +1,12 @@
+/*
+* @(#) dashboard_event_listeners.js 1.7 2024/02/27.
+* Copyright (c) 2023 Aberystwyth University.
+* All rights reserved.
+*/
+
 /**
+ * dashboard_event_listeners.js - Dashboard UI handling and robot control.
+ * 
  * This is a JavaScript for handeling interactions, dasboard updates and robot controls.
  * This includes initilising the map, robot and user location markers, routing direction 
  * handeling, and updating telemetray data on the dashboard.
@@ -7,6 +15,7 @@
 // Map and UI Interactions
 
 /**
+ * @author Bilal [biy1]
  * 0.1 initial creation
  * 0.2 set-up for ros2
  * 0.3 comunication with ros2
@@ -24,7 +33,6 @@
  * 1.5 Added sound effects to buttons and toggle.
  * 1.6 Added event listner for "clear-log" button.
  * 1.7 Refactored code - Implemted const variables for DOM elements.
- * 
  */
 
 var map; // Reference to Leaflet map instance.
@@ -45,7 +53,6 @@ var trailPaused = false;
 const plotTrailBtn = document.getElementById('plot-trail-button');
 const pauseBtn = document.getElementById('pause-button');
 const loadTrailBtn = document.getElementById('load-trail-button');
-//const emergencyStopBtn = document.getElementById('emergency-stop-button');
 const toggleModeBtn = document.getElementById('mode-toggle');
 const locateMeBtn = document.getElementById('locate-me-button');
 const manualStartBtn = document.getElementById('manual-start');
@@ -56,9 +63,18 @@ const clearLogBtn = document.getElementById('clear-log');
 
 // Map initialization and event listeners on DOM content load.
 document.addEventListener('DOMContentLoaded', () => {
-
+    // Function to disable the different flags if page is reloaded or closed.
     window.addEventListener('beforeunload', function(e){
-        if (isRecordingActive){
+        if (isRecordingActive || trailPlotting || manualMove || trailLoaded){
+            isRecordingActive  = false;
+            trailPlotting = false;
+            manualMove = false;
+            var wasLoaded = trailLoaded;
+            trailLoaded = false;
+            
+            if(wasLoaded){
+                controlRobot('pause-trail');
+            }
             var message = 'Current trail recording will end if you leave the page. Are you sure you wish to leave?'
             e.returnValue = message;
             return message;

@@ -141,7 +141,7 @@ class ROS2WebConnector(Node):
     def log_message_callback(self, msg):
         self.message_callback({'log_message': msg.data})
 
-
+# Method to publish a load file name to the 'load_file_topic'.
 def publish_load_file(file_name):
     global ros2_web_connector
     if ros2_web_connector is not None:

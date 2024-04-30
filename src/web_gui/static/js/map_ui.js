@@ -1,4 +1,11 @@
+/*
+* @(#) map_ui.js 1.5 2024/02/27.
+* Copyright (c) 2023 Aberystwyth University.
+* All rights reserved.
+ */
+
 /**
+ * map_ui.js -- Map User Interface
  * This is a JavaScript for handeling map interactions. This includes 
  * initilising the map, robot and location markers, routing direction 
  * handeling.

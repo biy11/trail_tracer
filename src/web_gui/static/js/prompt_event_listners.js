@@ -1,12 +1,26 @@
+/*
+* @(#) gui_script.js 0.6 2024/02/27.
+* Copyright (c) 2023 Aberystwyth University.
+* All rights reserved.
+*/
 
 /**
- * 0.1 Initial creation
- * 0.2 Refactored name-saving prompt functions, added const DOM elemets for tider code. 
- * 0.3 bugs fixes
- * 
- */
+* prompt_event_listner.js - Prompt handeling.
+*
+* This JavaScript file manages prompt event listeners for the custom prompts.
+* Operations include saving trail names, plot names, starting trails, and resetting the plotting UI.
+*
+* @author Bilal [biy1]
+* @version 0.1 - Initial creation
+* @version 0.2 - Refactored name-saving prompt functions, added const DOM elemets for tider code. 
+* @version 0.3 - Popluated code from ther files to this and fixed bugs.
+* @version 0.4  - Added event listeners for the 'Load Trail' button and 'Start Trail' button.
+* @version 0.5 - Added event listeners for the 'exit-prompt' button and 'exit-trace-prompt' button.
+* @version 0.6 - Added event listeners for the 'quit-trace-button' button.
+* 
+*/
 
-// ConStants for DOM elements 
+// Constants for DOM elements 
 const plotNamePrompt = document.getElementById('plot-name-prompt');
 const noPlotNameErrorBtn = document.getElementById("no-entry-warning");
 const saveTrailNameBtn = document.getElementById('saveTrailName');
@@ -154,8 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
         var runningTrail = true;
         noEntryError.style.display = 'none';
         loadTrailBtn.textContent = 'End';
-        trailPrompt.style.display = 'none'; // Optionally hide the prompt after starting
-        plotTrailBtn.style.display = 'none'; // Optionally hide the prompt after starting
+        trailPrompt.style.display = 'none'; // Hide the prompt after starting
+        plotTrailBtn.style.display = 'none'; // Hide the prompt after starting
         pauseBtn.style.display = 'block'; 
         emergencyMsg.style.display = 'block';
         // Add waypoints to the map as they are received

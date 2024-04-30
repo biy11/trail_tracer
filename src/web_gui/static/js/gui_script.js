@@ -1,3 +1,9 @@
+/*
+* @(#) gui_script.js 1.5 2024/02/27.
+* Copyright (c) 2023 Aberystwyth University.
+* All rights reserved.
+ */
+
 // WebSocket.js - Handling WebSocket communication
 /**
 * This JavaScript file manages WebSocket communication between the web GUI and my ROS2 system.
@@ -11,18 +17,20 @@
  * @version 0.1 - Initail creation.
  * @version 0.2 - Added sockets for temetry data such as GPS
  * @version 0.3 - Created and added joytsick logic
- * @version 0.4
- * @version 0.5
- * @version 0.6
- *   Added deadzones to joystick
-// Added trail-file selecter logic
-// Added IMU Data socket listener
-// Added systemlog population button
-// Reduced overhead by only getting files from server when needed
-// Added odom socket to update speed and velocity
-// Added soket for logger
-// Updated logger function
+ * @version 0.4 - Added deadzones to joystick.
+ * @version 0.5 - Added trail-file selecter logic.
+ * @version 0.6 - Added IMU Data socket listener.
+ * @version 0.7 - Added systemlog population button.
+ * @version 0.8 - Reduced overhead by only getting files from server when needed.
+ * @version 0.9 - Added odom socket to update speed and velocity.
+ * @version 1.0 - Added socket for logger.
+ * @version 1.1 - Updated logger function.
+ * @version 1.2 - Added trail completion message to logger.
+ * @version 1.3 - Added tab change capability.
+ * @version 1.4 - Added tab change prevention when recording, plotting, or manual move is active. 
+ * @version 1.5 - Added comments and cleaned up code.
 */
+
 // WebSocket connection setup.
 var mode = 'automatic'
 var selectedFileOption = null;
@@ -68,7 +76,7 @@ socket.on('trail_files_data', function(message) {
 
 // Function to update the file names in dropdown menu
 function updateCurrentFiles(fileNames){
-    var trailDropdown = trailPrompt;
+    var trailDropdown = document.getElementById('trail-dropdown');
     // Store current selection for clearing dropdown menu 
     previousSelection = trailDropdown.value; 
     //Update files in dropdown menu
@@ -120,7 +128,7 @@ function createJoystick() {
         color: 'green'
     });
 
-    joystick.on('move', function(data) {
+    joystick.on('move', function(evt, data) {
         var forwardBackward = data.vector.y; // Negative is forward, positive is backward
         var leftRight = data.vector.x; // Negative is left, positive is right
 

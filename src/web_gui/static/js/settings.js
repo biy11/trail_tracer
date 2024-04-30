@@ -1,12 +1,27 @@
+/*
+* @(#) settings.js 0.5 2024/02/27.
+* Copyright (c) 2023 Aberystwyth University.
+* All rights reserved.
+ */
 
-// @version - initial cretaion 
-// @version - added sound functions
-// @version - Refactored code
-// @version - Added event liteners for sound-toggle 
+/**
+* settings.js - JavaScript file for handling settings and sound functions
+* 
+* This is a JavaScript for handling settings and sound functions. This includes 
+* handling the settings menu, sound toggling, and playing sound effects.
+*
+* @author Bilal [biy1]
+* @version 1.0 - initial cretaion 
+* @version 0.2 - added sound functions
+* @version 0.3- Refactored code
+* @version 0.4 - Added event liteners for sound-toggle 
+* @version 0.5 - cleaned up code and added comments.
+*/
 
 
-var soundOnOff = false;
-const settingsButton = document.getElementById('settings-button');
+var soundOnOff = false; // Variable to store the sound state
+// Constants for the settings button, settings menu, and sound toggle...
+const settingsButton = document.getElementById('settings-button'); 
 const settingsMenu = document.getElementById('settings-menu');
 const soundToggle = document.getElementById('sound-toggle');
 const audio = document.getElementById('click');

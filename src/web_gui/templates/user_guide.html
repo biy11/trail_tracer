@@ -1,8 +1,15 @@
 <!-- 
-  - @author Bilal Yousufzai [biy1]   
-  - @version 0.1 initial creation
-  - @version
- -->
+  - @(#) user_guide.html 0.4 29/04/2024 
+  - Copyright (c) 2024 Aberystwyth Univeristy
+  - All rights reserved
+-->
+
+<!-- 
+  - @author Bilal Yousufzai [biy1]
+  - This HTML file is a user guide for the Trail Tracer GUI. It provides information on how to use the GUI. 
+-->
+
+ 
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -98,6 +105,22 @@
                 </video>
             </div>
         </article>  
+        <article  class="article-class">
+            <button class="dropdown-toggle">How To Manually Move Robot Without Recording A Trail</button>
+            <div class="dropdown-content" style="display: none;">
+                <p>To Manually move robot without creating a trail follow these steps: <br>
+                    <ol>
+                        <li>Click the "Switch to Manual Navigation" button.</li>
+                        <li>Click the "Manually Move Robot" Button.</li>
+                        <li>Use the joystick to navigate</li>
+                        <li>When done navigating, click the "Stop" button.</li>
+                    </ol> 
+                </p>
+                <video width="896" height="964" controls>
+                    <source src="{{ url_for('static', filename='util/how_to_videos/how_to_record_a_trail.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+        </article> 
      </div>
    
      <!-- Link to JavaScript files -->
