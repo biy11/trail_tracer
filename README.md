@@ -6,48 +6,55 @@ This is a ROS2 workspace for the trail_tracer project.
 ## Prerequisites
 - ROS2: Make sure you have ROS2 installed on your system. You can find installation instructions [here](https://docs.ros.org/en/humble/Installation.html).
 - python3: Make sure you have Python 3 installed on your system. You can find installation instructions [here](https://www.python.org/downloads/).
+- Flask: Make sure you have Flask installed on your system. You can install it using pip:
+
+   - pip install flask
+
+- GeographicLib: Make sure you have GeographicLib installed on your system. You can install it using pip:
+    
+    - pip install GeographicLib
 
 1. Clone this repository:
-    git clone https://github.com/biy11/trail_tracer.git
+   - git clone https://github.com/biy11/trail_tracer.git
     
 
 2. Build the workspace:
     
-    cd trail_tracer
+    - cd trail_tracer
 
-    colcon build
+    - colcon build
     
 
 ## Usage
 1. Source the ROS2 environment:
 
-    source /opt/ros/humble/setup.bash
+    - source /opt/ros/humble/setup.bash
     
 
-2. Launch required nodes and gazebo:
+2. Launch required files and gazebo:
     
-    ros2 launch argo_sim gazebo.launch.py
+    - ros2 launch argo_sim gazebo.launch.py
     
-    ros2 launch argo_nav nav.launch.py use_sime_time:=true static_transform:=true
+    - ros2 launch argo_nav nav.launch.py use_sime_time:=true static_transform:=true
 
 3. Run required nodes:
     
-    ros2 run trail_tracer trail_tracer
+    - ros2 run trail_tracer trail_tracer
     
-    ros2 run gps_to_utm_converter_cpp converter_node
+    - ros2 run gps_to_utm_converter_cpp converter_node
 
 4. Run Rviz for data visualisation (optional):
 
-    rviz2 -d rviz/argo_sim.rviz use_sim_time:=true 
+    - rviz2 -d rviz/argo_sim.rviz use_sim_time:=true 
 
 ## Launch Web GUI:
 1. Navigate to web_gui package:
 
-    cd src/web_gui
+    - cd src/web_gui
 
 2. Launch web_gui application:
 
-    python3 app.py
+    - python3 app.py
 
 
 ## File modifications:

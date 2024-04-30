@@ -1,5 +1,5 @@
 /*
-* @(#) gui_script.js 1.5 2024/04/27.
+* @(#) gui_script.js 1.6 2024/04/30.
 * Copyright (c) 2023 Aberystwyth University.
 * All rights reserved.
  */
@@ -29,14 +29,15 @@
  * @version 1.3 - Added tab change capability.
  * @version 1.4 - Added tab change prevention when recording, plotting, or manual move is active. 
  * @version 1.5 - Added comments and cleaned up code.
+ * @version 1.6 - Fixed joystick getting hung-up bug.
 */
 
 // WebSocket connection setup.
 var mode = 'automatic'
 var selectedFileOption = null;
-var file
+var file 
 var socket = io.connect('http://' + document.domain + ':' + location.port);
-var loggCount = 1;
+var loggCount = 1; // Counter for log messages
 var currentFiles = []; // Temp stoarge for file names.
 var latestFiles = []; // Latest files for comparison reasons.
 let previousSelection = null; // Null seclection for trail names
@@ -133,7 +134,7 @@ function createJoystick() {
         var leftRight = data.vector.x; // Negative is left, positive is right
 
         var deadZone = 0.1
-        var leftRight = Math.abs(data.vector.x) < deadZone ? 0: data.vector.x;
+        leftRight = Math.abs(leftRight) < deadZone ? 0: data.vector.x; // Deadzone for leftRight
 
         // Print joystick state to the console for debugging purposes
         //console.log('Joystick Move:', 'Forward/Backward:', forwardBackward, 'Left/Right:', leftRight);

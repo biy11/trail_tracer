@@ -1,5 +1,6 @@
 /* gui_css.css */
-/* 
+/* This is a .css file for styles for the GUI.
+* @aouthor Bilal [biy1]
 * @version 0.1 - iniial creation 
 * @version 0.2 - Added dasboard styles
 * @version 0.3 - Added map, header and footer style
@@ -114,7 +115,7 @@ button:focus {
 /*/////////////// DASHBOARD PANNEL STYLES //////////////*/
 /*//////////////////////////////////////////////////////*/
 #manual-controls {
-    display: none; /* hidden by default, will be toggled by JavaScript */
+    display: none; /* hidden by default, will be toggled by JavaScript file */
 }
 
 #dashboard-controls, #manual-controls {
@@ -172,7 +173,7 @@ button:focus {
 
 .log-header{
     display: flex;
-    justify-content: space-between; /* sets items at oposite side of each other. */
+    justify-content: space-between; 
     align-items: center; 
 }
 
