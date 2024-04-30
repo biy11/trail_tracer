@@ -1,6 +1,4 @@
 /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer
-/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/nav2
-/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/polishedCode
 /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/package_run_dependencies/trail_tracer
 /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/parent_prefix_path/trail_tracer
 /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.sh

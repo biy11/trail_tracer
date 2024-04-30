@@ -198,19 +198,6 @@ trail_tracer_uninstall/fast:
 .PHONY : trail_tracer_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named nav2
-
-# Build rule for target.
-nav2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nav2
-.PHONY : nav2
-
-# fast build rule for target.
-nav2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2.dir/build.make CMakeFiles/nav2.dir/build
-.PHONY : nav2/fast
-
-#=============================================================================
 # Target rules for targets named trail_tracer
 
 # Build rule for target.
@@ -222,67 +209,6 @@ trail_tracer: cmake_check_build_system
 trail_tracer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trail_tracer.dir/build.make CMakeFiles/trail_tracer.dir/build
 .PHONY : trail_tracer/fast
-
-#=============================================================================
-# Target rules for targets named polishedCode
-
-# Build rule for target.
-polishedCode: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 polishedCode
-.PHONY : polishedCode
-
-# fast build rule for target.
-polishedCode/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/build
-.PHONY : polishedCode/fast
-
-src/nav2.o: src/nav2.cpp.o
-.PHONY : src/nav2.o
-
-# target to build an object file
-src/nav2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2.dir/build.make CMakeFiles/nav2.dir/src/nav2.cpp.o
-.PHONY : src/nav2.cpp.o
-
-src/nav2.i: src/nav2.cpp.i
-.PHONY : src/nav2.i
-
-# target to preprocess a source file
-src/nav2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2.dir/build.make CMakeFiles/nav2.dir/src/nav2.cpp.i
-.PHONY : src/nav2.cpp.i
-
-src/nav2.s: src/nav2.cpp.s
-.PHONY : src/nav2.s
-
-# target to generate assembly for a file
-src/nav2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2.dir/build.make CMakeFiles/nav2.dir/src/nav2.cpp.s
-.PHONY : src/nav2.cpp.s
-
-src/polishedCode.o: src/polishedCode.cpp.o
-.PHONY : src/polishedCode.o
-
-# target to build an object file
-src/polishedCode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o
-.PHONY : src/polishedCode.cpp.o
-
-src/polishedCode.i: src/polishedCode.cpp.i
-.PHONY : src/polishedCode.i
-
-# target to preprocess a source file
-src/polishedCode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/src/polishedCode.cpp.i
-.PHONY : src/polishedCode.cpp.i
-
-src/polishedCode.s: src/polishedCode.cpp.s
-.PHONY : src/polishedCode.s
-
-# target to generate assembly for a file
-src/polishedCode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/src/polishedCode.cpp.s
-.PHONY : src/polishedCode.cpp.s
 
 src/trail_tracer.o: src/trail_tracer.cpp.o
 .PHONY : src/trail_tracer.o
@@ -323,15 +249,7 @@ help:
 	@echo "... test"
 	@echo "... trail_tracer_uninstall"
 	@echo "... uninstall"
-	@echo "... nav2"
-	@echo "... polishedCode"
 	@echo "... trail_tracer"
-	@echo "... src/nav2.o"
-	@echo "... src/nav2.i"
-	@echo "... src/nav2.s"
-	@echo "... src/polishedCode.o"
-	@echo "... src/polishedCode.i"
-	@echo "... src/polishedCode.s"
 	@echo "... src/trail_tracer.o"
 	@echo "... src/trail_tracer.i"
 	@echo "... src/trail_tracer.s"

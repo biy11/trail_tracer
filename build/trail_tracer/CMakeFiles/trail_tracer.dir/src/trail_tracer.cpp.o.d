@@ -640,4 +640,108 @@ CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o: \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/rclcpp_action.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/client.hpp \
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h \
+ /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/action_type_support.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/client_goal_handle.hpp \
+ /opt/ros/humble/include/rcl_action/rcl_action/action_client.h \
+ /opt/ros/humble/include/rcl_action/rcl_action/types.h \
+ /opt/ros/humble/include/rcl_action/rcl_action/visibility_control.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/goal_info.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_info__struct.h \
+ /opt/ros/humble/include/unique_identifier_msgs/unique_identifier_msgs/msg/detail/uuid__struct.h \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_info__functions.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/rosidl_generator_c__visibility_control.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_info__type_support.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/goal_status.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status__struct.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status__functions.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status__type_support.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/goal_status_array.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status_array__struct.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status_array__functions.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status_array__type_support.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/srv/cancel_goal.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/srv/detail/cancel_goal__struct.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/srv/detail/cancel_goal__functions.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/srv/detail/cancel_goal__type_support.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/goal_status.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status__struct.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_info__struct.hpp \
+ /opt/ros/humble/include/unique_identifier_msgs/unique_identifier_msgs/msg/detail/uuid__struct.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status__builder.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status__traits.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_info__traits.hpp \
+ /opt/ros/humble/include/unique_identifier_msgs/unique_identifier_msgs/msg/detail/uuid__traits.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/exceptions.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/types.hpp \
+ /usr/include/c++/11/climits \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/goal_info.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_info__builder.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/visibility_control.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/client_goal_handle_impl.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/create_server.hpp \
+ /opt/ros/humble/include/rcl_action/rcl_action/action_server.h \
+ /opt/ros/humble/include/rcl_action/rcl_action/goal_handle.h \
+ /opt/ros/humble/include/rcl_action/rcl_action/goal_state_machine.h \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/server.hpp \
+ /opt/ros/humble/include/rclcpp_action/rclcpp_action/server_goal_handle.hpp \
+ /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp \
+ /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__struct.hpp \
+ /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__builder.hpp \
+ /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__traits.hpp \
+ /home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/follow_waypoints.hpp \
+ /home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__struct.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/srv/cancel_goal.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/srv/detail/cancel_goal__struct.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/srv/detail/cancel_goal__builder.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/srv/detail/cancel_goal__traits.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/goal_status_array.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status_array__struct.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status_array__builder.hpp \
+ /opt/ros/humble/include/action_msgs/action_msgs/msg/detail/goal_status_array__traits.hpp \
+ /home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__builder.hpp \
+ /home/bilal/learn_ros2_ws/install/nav2_msgs/include/nav2_msgs/nav2_msgs/action/detail/follow_waypoints__traits.hpp \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.h \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.h \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/Scalar.h \
+ /usr/include/c++/11/math.h /usr/include/c++/11/cfloat \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/MinMax.h \
+ /opt/ros/humble/include/tf2/tf2/visibility_control.h \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/QuadWord.h \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/log.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/log__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/log__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/log__traits.hpp \
+ /usr/include/c++/11/regex /usr/include/c++/11/bitset \
+ /usr/include/c++/11/stack /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_stack.h \
+ /usr/include/c++/11/bits/regex_constants.h \
+ /usr/include/c++/11/bits/regex_error.h \
+ /usr/include/c++/11/bits/regex_automaton.h \
+ /usr/include/c++/11/bits/regex_automaton.tcc \
+ /usr/include/c++/11/bits/regex_scanner.h \
+ /usr/include/c++/11/bits/regex_scanner.tcc \
+ /usr/include/c++/11/bits/regex_compiler.h \
+ /usr/include/c++/11/bits/regex_compiler.tcc \
+ /usr/include/c++/11/bits/regex.h /usr/include/c++/11/bits/regex.tcc \
+ /usr/include/c++/11/bits/regex_executor.h \
+ /usr/include/c++/11/bits/regex_executor.tcc

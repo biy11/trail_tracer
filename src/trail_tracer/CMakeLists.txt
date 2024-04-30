@@ -21,9 +21,7 @@ find_package(tf2_ros REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(nav2 src/nav2.cpp)
 add_executable(trail_tracer src/trail_tracer.cpp)
-add_executable(polishedCode src/polishedCode.cpp)
 
 
 
@@ -33,12 +31,9 @@ target_include_directories(trail_tracer PUBLIC
   $<INSTALL_INTERFACE:include>)
 target_compile_features(trail_tracer PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
-ament_target_dependencies(nav2 rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
-ament_target_dependencies(trail_tracer rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs)
-ament_target_dependencies(polishedCode rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs nav2_msgs tf2 tf2_ros)
+ament_target_dependencies(trail_tracer rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs nav2_msgs tf2 tf2_ros)
 
-
-install(TARGETS trail_tracer nav2 polishedCode
+install(TARGETS trail_tracer
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
