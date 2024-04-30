@@ -1,5 +1,5 @@
 /*
-* @(#) map_ui.js 1.5 2024/02/27.
+* @(#) map_ui.js 1.5 2024/04/27.
 * Copyright (c) 2023 Aberystwyth University.
 * All rights reserved.
  */

@@ -1,5 +1,5 @@
 /*
-* @(#) dashboard_event_listeners.js 1.7 2024/02/27.
+* @(#) dashboard_event_listeners.js 1.8 2024/04/30.
 * Copyright (c) 2023 Aberystwyth University.
 * All rights reserved.
 */
@@ -33,6 +33,7 @@
  * 1.5 Added sound effects to buttons and toggle.
  * 1.6 Added event listner for "clear-log" button.
  * 1.7 Refactored code - Implemted const variables for DOM elements.
+ * 1.8 Added loggerLog() function to log messages to the logger.
  */
 
 var map; // Reference to Leaflet map instance.
@@ -120,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
             manualMoveBtn.style.display = 'block'; // Re-appear the 'manual-move' button
             toggleModeBtn.disabled = false;
             manualMoveBtn.disabled = false;
+            loggerLog("[Web GUI] [INFO]: MANUAL TRACE RECORDING ENDED");
         }
     });
     
@@ -134,6 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Disable other buttons
             toggleModeBtn.disabled = true;
             manualStartBtn.style.display = 'none';
+            // Log to logger
+            loggerLog("[Web GUI] [INFO]: MANUAL MOVE STARTED");
         } else {
             controlRobot('manual-stop'); // Sends message to back-end, function can be found in gui_script.js
             this.textContent = "Manualy Move Robot";
@@ -141,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleModeBtn.disabled = false;
             manualStartBtn.style.display = 'block';
             manualMove = false;
+            loggerLog("[Web GUI] [INFO]: MANUAL MOVE ENDED");
         }
     });
 
@@ -216,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // If the button is in "End" mode and trail is not running, revert the 'plot-trail-button' text and state
             if(trailPaused){
                 loadTrailBtn.textContent = 'Load Trail';
+                pauseBtn.textContent = 'Pause';
                 toggleModeBtn.disabled = false;
                 plotTrailBtn.disabled = false;
                 emergencyMsg.style.display = 'none';
@@ -226,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 runingTrail = false;
                 trailPaused = false;
                 clearWaypointMarkers();
+                loggerLog("[Web GUI] [INFO]: TRAIL TRACE QUIT");
             }else{
                 endTracePrompt.style.display = 'block'; // Display prompt to either confirm or ending the trail or cancel.
             }
@@ -279,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
             emergencyMsg.style.display = 'none';
             pauseBtn.textContent = "Resume";
             trailPaused = true;
+            loggerLog("[Web GUI] [INFO]: EMERGENCY STOP"); 
         }   
     });
     // Event listener for the clear-log button.

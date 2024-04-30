@@ -1,5 +1,5 @@
 /*
-* @(#) gui_script.js 1.5 2024/02/27.
+* @(#) gui_script.js 1.5 2024/04/27.
 * Copyright (c) 2023 Aberystwyth University.
 * All rights reserved.
  */

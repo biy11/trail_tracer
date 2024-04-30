@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='bilal',
     maintainer_email='bilalyousufzai28@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='Web GUI for Trail Tracer',
+    license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

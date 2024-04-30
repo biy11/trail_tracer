@@ -1,0 +1,101 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found GeographicLib: /usr/lib/x86_64-linux-gnu  
+-- Found nav2_msgs: 1.1.13 (/home/bilal/learn_ros2_ws/install/nav2_msgs/share/nav2_msgs/cmake)
+-- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/bilal/trail_tracer/src/trail_tracer/include>
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/bilal/trail_tracer/build/trail_tracer
+[  7%] [32mBuilding CXX object CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o[0m
+[ 21%] [32mBuilding CXX object CMakeFiles/follower.dir/src/follower.cpp.o[0m
+[ 28%] [32mBuilding CXX object CMakeFiles/code_test.dir/src/code_test.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/sparse.dir/src/polishedCode.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/nav2.dir/src/nav2.cpp.o[0m
+[ 57%] [32m[1mLinking CXX executable nav2[0m
+[ 57%] Built target nav2
+[ 64%] [32m[1mLinking CXX executable code_test[0m
+[ 64%] Built target code_test
+[ 71%] [32m[1mLinking CXX executable waypoint_navigator[0m
+[ 71%] Built target waypoint_navigator
+[ 78%] [32m[1mLinking CXX executable trail_tracer[0m
+[ 85%] [32m[1mLinking CXX executable follower[0m
+[ 85%] Built target trail_tracer
+[ 85%] Built target follower
+[ 92%] [32m[1mLinking CXX executable sparse[0m
+[ 92%] Built target sparse
+[100%] [32m[1mLinking CXX executable polishedCode[0m
+[100%] Built target polishedCode
+-- Install configuration: ""
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer
+-- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer" to ""
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/nav2
+-- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/nav2" to ""
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/waypoint_navigator
+-- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/waypoint_navigator" to ""
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/follower
+-- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/follower" to ""
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/code_test
+-- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/code_test" to ""
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/polishedCode
+-- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/polishedCode" to ""
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/sparse
+-- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/sparse" to ""
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/package_run_dependencies/trail_tracer
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/parent_prefix_path/trail_tracer
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.sh
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.dsv
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.sh
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.dsv
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.bash
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.sh
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.zsh
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.dsv
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.dsv
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/packages/trail_tracer
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig.cmake
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig-version.cmake
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.xml

@@ -14,6 +14,7 @@ This is a ROS2 workspace for the trail_tracer project.
 2. Build the workspace:
     
     cd trail_tracer
+
     colcon build
     
 
@@ -47,6 +48,31 @@ This is a ROS2 workspace for the trail_tracer project.
 2. Launch web_gui application:
 
     python3 app.py
+
+
+## File modifications:
+
+1. nav2_no_map_params.yaml file:
+
+    - Uncomment/add the following to conifg file:
+
+        waypoint_follower:
+
+            ros__parameters:
+
+                loop_rate: 20
+
+                stop_on_failure: false
+
+                waypoint_task_executor_plugin: "wait_at_waypoint"
+
+                wait_at_waypoint:
+
+                plugin: "nav2_waypoint_follower::WaitAtWaypoint"
+
+                enabled: True
+
+                waypoint_pause_duration: 0
 
 ## License
 This project is licensed under the Appache License 2.0. See the LICENSE file for more details.

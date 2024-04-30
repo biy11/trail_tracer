@@ -1,5 +1,5 @@
 /*
-* @(#) gui_script.js 0.6 2024/02/27.
+* @(#) gui_script.js 0.7 2024/04/30.
 * Copyright (c) 2023 Aberystwyth University.
 * All rights reserved.
 */
@@ -17,6 +17,7 @@
 * @version 0.4  - Added event listeners for the 'Load Trail' button and 'Start Trail' button.
 * @version 0.5 - Added event listeners for the 'exit-prompt' button and 'exit-trace-prompt' button.
 * @version 0.6 - Added event listeners for the 'quit-trace-button' button.
+* @version 0.7 Added loggerLog() function to log messages to the logger.
 * 
 */
 
@@ -70,7 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
             controlRobot('manual-start'); // Sends message to back-end to signal start recording, function can be found in gui_script.js
             trail_name_emitter(trailName);
             isRecordingActive = true; // Update recording state
-    
+
+            // Log the start of the recording to the GUI logger
+            loggerLog("[Web GUI] [INFO]: MANUAL TRACE RECORDING STARTED");
+
             // Update UI components
             manualStartBtn.textContent = 'End'; // Change the button to 'End'
             manualMoveBtn.style.display = 'none'; // Hide the 'manual-move' button during recording
@@ -120,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             // Log sucessful plotting to GUI logger
             //console.log('Trail plotted with name:', plotName, coordinatesList); // For debugging puposes
-            loggerLog("FILE PLOTTED: " + plotName + " \n   WITH POINTS: " + coordinatesList);
+            loggerLog("[Web GUI] [INFO]: FILE PLOTTED: " + plotName + " \n   WITH POINTS: " + coordinatesList);
             
             saveTrail(plotName, coordinatesList); // Save trail name and coordinates
 
@@ -164,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // Load the selected file and start the trail trace
         socket.emit('load_file', {data: selectedFileOption})
-        loggerLog("FILE LOAD:" + selectedFileOption);
+        loggerLog("[Web GUI] [INFO]: FILE LOAD: " + selectedFileOption);
         var runningTrail = true;
         noEntryError.style.display = 'none';
         loadTrailBtn.textContent = 'End';
@@ -215,9 +219,11 @@ document.addEventListener('DOMContentLoaded', () => {
         plotTrailBtn.style.display = 'block';
         pauseBtn.style.display = 'none'; 
         controlRobot('pause-trail');
+        pauseBtn.textContent = 'Pause';
         trailLoaded = false;
         runingTrail = false;
         clearWaypointMarkers();
+        loggerLog("[Web GUI] [INFO]: TRAIL TRACE QUIT");
     });
 
     // Function for when page loads to set up the plot-name saving event listeners

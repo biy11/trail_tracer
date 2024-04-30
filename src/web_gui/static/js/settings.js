@@ -1,5 +1,5 @@
 /*
-* @(#) settings.js 0.5 2024/02/27.
+* @(#) settings.js 0.5 2024/05/27.
 * Copyright (c) 2023 Aberystwyth University.
 * All rights reserved.
  */

@@ -1,0 +1,4 @@
+source;share/trail_tracer/local_setup.bash
+source;share/trail_tracer/local_setup.dsv
+source;share/trail_tracer/local_setup.sh
+source;share/trail_tracer/local_setup.zsh

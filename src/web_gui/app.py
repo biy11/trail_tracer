@@ -1,4 +1,4 @@
-# @(#) app.py 1.0 2024/02/27.
+# @(#) app.py 1.0 2024/04/27.
 # Copyright (c) 2023 Aberystwyth University.
 # All rights reserved.
 
@@ -44,11 +44,11 @@ global_ros_node = None
 def index():
     # Serve the main page if the web GUI.
     return render_template('index.html')
-
+# Route to the about page.
 @app.route('/user_guide')
 def user_guide():
     return render_template('user_guide.html')
-
+# Route to the 'original' traethlin page.
 @app.route('/traethlin')
 def traethlin():
     return render_template('traethlin.html')
