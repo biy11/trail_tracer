@@ -1,5 +1,5 @@
 
-# @(#) ros2_communication.py 1.3 2024/02/26.
+# @(#) ros2_communication.py 1.3 2024/04/26.
 # Copyright (c) 2023 Aberystwyth University.
 # All rights reserved.
 
@@ -14,12 +14,17 @@ import threading # For running thr ROS2 nodes in sperate thread.
 import os
 from pathlib import Path
 import time
-from geometry_msgs.msg import Point #Import tthe POint message type
+from geometry_msgs.msg import Point #Import tthe Point message type
 import threading
 
 ##############################################################################
 ########## A .py file for the creation of publishers an subscribers.##########
 ##############################################################################
+
+# @(#) ros2_communication.py 1.8 2024/04/26.
+# This is a ROS2 node for a web interface for ROS2-based robotic systems. It integrates with ROS2 through a 
+# custom communication module to accommodate real-time interactions and data exchange between the GUI and ROS2 application.
+#
 
 # @author Bilal [biy1]
 # @version 0.1 - Initial development.

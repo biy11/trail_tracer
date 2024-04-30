@@ -1,5 +1,5 @@
 /*
- * @(#) trail_tracer.cpp 1.7 29/04/2021 
+ * @(#) trail_tracer.cpp 1.7 2024/04/29 
  * 
  * Copyright (c) 2024 Aberystwth University
  * All rights reserved.

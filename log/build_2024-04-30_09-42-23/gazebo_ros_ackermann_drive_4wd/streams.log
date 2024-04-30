@@ -1,0 +1,143 @@
+[0.043s] Invoking command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake /home/bilal/trail_tracer/src/gazebo_ros_ackermann_drive_4wd -DCMAKE_INSTALL_PREFIX=/home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd
+[0.144s] -- The C compiler identification is GNU 11.4.0
+[0.216s] -- The CXX compiler identification is GNU 11.4.0
+[0.226s] -- Detecting C compiler ABI info
+[0.354s] -- Detecting C compiler ABI info - done
+[0.364s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.364s] -- Detecting C compile features
+[0.364s] -- Detecting C compile features - done
+[0.368s] -- Detecting CXX compiler ABI info
+[0.539s] -- Detecting CXX compiler ABI info - done
+[0.547s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.548s] -- Detecting CXX compile features
+[0.548s] -- Detecting CXX compile features - done
+[0.562s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.821s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.072s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[1.210s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.232s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.256s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.289s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.333s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.518s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.535s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.766s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.809s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.878s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.907s] -- Looking for pthread.h
+[2.008s] -- Looking for pthread.h - found
+[2.008s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.102s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.102s] -- Found Threads: TRUE  
+[2.276s] -- Found tf2: 0.25.6 (/opt/ros/humble/share/tf2/cmake)
+[2.347s] -- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[2.391s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[2.392s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.392s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.732s] -- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+[2.804s] -- Found gazebo_dev: 3.7.0 (/opt/ros/humble/share/gazebo_dev/cmake)
+[2.818s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[2.819s] -- Checking for module 'bullet>=2.82'
+[2.842s] --   Found bullet, version 3.05
+[3.024s] -- Found fcl: /usr/include (found suitable version "0.7.0", minimum required is "0.5.0") 
+[3.110s] -- Found assimp: /usr/include (found version "5.2.0") 
+[3.169s] -- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+[3.241s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.40.0") found components: thread system filesystem program_options regex iostreams date_time 
+[3.268s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[3.288s] -- Looking for ignition-math6 -- found version 6.15.1
+[3.303s] -- Searching for dependencies of ignition-math6
+[3.305s] -- Looking for OGRE...
+[3.305s] -- OGRE_PREFIX_WATCH changed.
+[3.315s] -- Checking for module 'OGRE'
+[3.345s] --   Found OGRE, version 1.9.0
+[3.407s] -- Found Ogre Ghadamon (1.9.0)
+[3.426s] -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+[3.436s] -- Looking for OGRE_Paging...
+[3.455s] -- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+[3.456s] -- Looking for OGRE_Terrain...
+[3.470s] -- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+[3.470s] -- Looking for OGRE_Property...
+[3.485s] -- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+[3.485s] -- Looking for OGRE_RTShaderSystem...
+[3.497s] -- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+[3.497s] -- Looking for OGRE_Volume...
+[3.508s] -- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+[3.508s] -- Looking for OGRE_Overlay...
+[3.523s] -- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+[3.834s] -- Looking for ignition-math6 -- found version 6.15.1
+[3.848s] -- Looking for ignition-transport8 -- found version 8.2.1
+[3.849s] -- Searching for dependencies of ignition-transport8
+[3.881s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[3.911s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[3.919s] -- Checking for module 'libzmq >= 4'
+[3.946s] --   Found libzmq , version 4.3.4
+[4.015s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[4.026s] -- Checking for module 'uuid'
+[4.053s] --   Found uuid, version 2.37.2
+[4.113s] -- Found UUID: TRUE  
+[4.123s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[4.124s] -- Searching for dependencies of ignition-msgs5
+[4.156s] -- Looking for ignition-math6 -- found version 6.15.1
+[4.163s] -- Checking for module 'tinyxml2'
+[4.189s] --   Found tinyxml2, version 9.0.0
+[4.259s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[4.270s] -- Looking for ignition-common3 -- found version 3.14.0
+[4.271s] -- Searching for dependencies of ignition-common3
+[4.272s] -- Looking for dlfcn.h - found
+[4.274s] -- Looking for libdl - found
+[4.276s] -- Found DL: TRUE  
+[4.298s] -- Found tinyobjloader: /usr/lib/x86_64-linux-gnu/cmake/tinyobjloader/tinyobjloader-config.cmake (found version "2.0.0") 
+[4.299s] -- Searching for <ignition-common3> component [graphics]
+[4.308s] -- Looking for ignition-common3-graphics -- found version 3.14.0
+[4.309s] -- Searching for dependencies of ignition-common3-graphics
+[4.309s] -- Looking for ignition-math6 -- found version 6.15.1
+[4.321s] -- Looking for ignition-fuel_tools4 -- found version 4.4.0
+[4.321s] -- Searching for dependencies of ignition-fuel_tools4
+[4.490s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[4.520s] -- Checking for module 'jsoncpp'
+[4.550s] --   Found jsoncpp, version 1.9.5
+[4.625s] -- Found JSONCPP: TRUE  
+[4.642s] -- Checking for module 'libzip'
+[4.680s] --   Found libzip, version 1.7.3
+[4.744s] -- Found ZIP: TRUE  
+[4.744s] -- Looking for ignition-common3 -- found version 3.14.0
+[4.745s] -- Looking for ignition-math6 -- found version 6.15.1
+[4.745s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[4.762s] -- Gazebo version: 11.10
+[4.763s] -- Checking for module 'tbb'
+[4.796s] --   Found tbb, version 2021.5.0
+[4.946s] -- Configuring done
+[4.969s] -- Generating done
+[4.971s] -- Build files have been written to: /home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd
+[4.988s] Invoked command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake /home/bilal/trail_tracer/src/gazebo_ros_ackermann_drive_4wd -DCMAKE_INSTALL_PREFIX=/home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd
+[4.991s] Invoking command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd -- -j12 -l12
+[5.094s] [ 50%] [32mBuilding CXX object CMakeFiles/gazebo_ros_ackermann_drive_4wd.dir/src/gazebo_ros_ackermann_drive_4wd.cpp.o[0m
+[21.133s] [100%] [32m[1mLinking CXX shared library libgazebo_ros_ackermann_drive_4wd.so[0m
+[22.007s] [100%] Built target gazebo_ros_ackermann_drive_4wd
+[22.023s] Invoked command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd -- -j12 -l12
+[22.075s] Invoking command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd
+[22.087s] -- Install configuration: ""
+[22.087s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/library_path.sh
+[22.087s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/library_path.dsv
+[22.087s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/include
+[22.087s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/lib/libgazebo_ros_ackermann_drive_4wd.so
+[22.102s] -- Set runtime path of "/home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/lib/libgazebo_ros_ackermann_drive_4wd.so" to ""
+[22.102s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/ament_index/resource_index/package_run_dependencies/gazebo_ros_ackermann_drive_4wd
+[22.102s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/ament_index/resource_index/parent_prefix_path/gazebo_ros_ackermann_drive_4wd
+[22.102s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/ament_prefix_path.sh
+[22.102s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/ament_prefix_path.dsv
+[22.102s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/path.sh
+[22.102s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/environment/path.dsv
+[22.103s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/local_setup.bash
+[22.103s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/local_setup.sh
+[22.103s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/local_setup.zsh
+[22.103s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/local_setup.dsv
+[22.103s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/package.dsv
+[22.103s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/ament_index/resource_index/packages/gazebo_ros_ackermann_drive_4wd
+[22.103s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/ament_cmake_export_libraries-extras.cmake
+[22.104s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/ament_cmake_export_dependencies-extras.cmake
+[22.104s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/ament_cmake_export_include_directories-extras.cmake
+[22.104s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/gazebo_ros_ackermann_drive_4wdConfig.cmake
+[22.104s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/cmake/gazebo_ros_ackermann_drive_4wdConfig-version.cmake
+[22.104s] -- Installing: /home/bilal/trail_tracer/install/gazebo_ros_ackermann_drive_4wd/share/gazebo_ros_ackermann_drive_4wd/package.xml
+[22.106s] Invoked command in '/home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/gazebo_ros_ackermann_drive_4wd

@@ -2,11 +2,7 @@
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/trail_tracer_uninstall.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/nav2.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/trail_tracer.dir
-/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/waypoint_navigator.dir
-/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/follower.dir
-/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/code_test.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/polishedCode.dir
-/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/sparse.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/test.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/edit_cache.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/rebuild_cache.dir

@@ -65,11 +65,7 @@ CMAKE_BINARY_DIR = /home/bilal/trail_tracer/build/trail_tracer
 # The main recursive "all" target.
 all: CMakeFiles/nav2.dir/all
 all: CMakeFiles/trail_tracer.dir/all
-all: CMakeFiles/waypoint_navigator.dir/all
-all: CMakeFiles/follower.dir/all
-all: CMakeFiles/code_test.dir/all
 all: CMakeFiles/polishedCode.dir/all
-all: CMakeFiles/sparse.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -81,11 +77,7 @@ clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/trail_tracer_uninstall.dir/clean
 clean: CMakeFiles/nav2.dir/clean
 clean: CMakeFiles/trail_tracer.dir/clean
-clean: CMakeFiles/waypoint_navigator.dir/clean
-clean: CMakeFiles/follower.dir/clean
-clean: CMakeFiles/code_test.dir/clean
 clean: CMakeFiles/polishedCode.dir/clean
-clean: CMakeFiles/sparse.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -147,7 +139,7 @@ CMakeFiles/trail_tracer_uninstall.dir/clean:
 CMakeFiles/nav2.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2.dir/build.make CMakeFiles/nav2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav2.dir/build.make CMakeFiles/nav2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=5,6 "Built target nav2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=1,2 "Built target nav2"
 .PHONY : CMakeFiles/nav2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -173,7 +165,7 @@ CMakeFiles/nav2.dir/clean:
 CMakeFiles/trail_tracer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trail_tracer.dir/build.make CMakeFiles/trail_tracer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trail_tracer.dir/build.make CMakeFiles/trail_tracer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=11,12 "Built target trail_tracer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=5,6 "Built target trail_tracer"
 .PHONY : CMakeFiles/trail_tracer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -193,91 +185,13 @@ CMakeFiles/trail_tracer.dir/clean:
 .PHONY : CMakeFiles/trail_tracer.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/waypoint_navigator.dir
-
-# All Build rule for target.
-CMakeFiles/waypoint_navigator.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=13,14 "Built target waypoint_navigator"
-.PHONY : CMakeFiles/waypoint_navigator.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/waypoint_navigator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/waypoint_navigator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles 0
-.PHONY : CMakeFiles/waypoint_navigator.dir/rule
-
-# Convenience name for target.
-waypoint_navigator: CMakeFiles/waypoint_navigator.dir/rule
-.PHONY : waypoint_navigator
-
-# clean rule for target.
-CMakeFiles/waypoint_navigator.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/clean
-.PHONY : CMakeFiles/waypoint_navigator.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/follower.dir
-
-# All Build rule for target.
-CMakeFiles/follower.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=3,4 "Built target follower"
-.PHONY : CMakeFiles/follower.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/follower.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/follower.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles 0
-.PHONY : CMakeFiles/follower.dir/rule
-
-# Convenience name for target.
-follower: CMakeFiles/follower.dir/rule
-.PHONY : follower
-
-# clean rule for target.
-CMakeFiles/follower.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/clean
-.PHONY : CMakeFiles/follower.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/code_test.dir
-
-# All Build rule for target.
-CMakeFiles/code_test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=1,2 "Built target code_test"
-.PHONY : CMakeFiles/code_test.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/code_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/code_test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles 0
-.PHONY : CMakeFiles/code_test.dir/rule
-
-# Convenience name for target.
-code_test: CMakeFiles/code_test.dir/rule
-.PHONY : code_test
-
-# clean rule for target.
-CMakeFiles/code_test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/clean
-.PHONY : CMakeFiles/code_test.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/polishedCode.dir
 
 # All Build rule for target.
 CMakeFiles/polishedCode.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=7,8 "Built target polishedCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=3,4 "Built target polishedCode"
 .PHONY : CMakeFiles/polishedCode.dir/all
 
 # Build rule for subdir invocation for target.
@@ -295,32 +209,6 @@ polishedCode: CMakeFiles/polishedCode.dir/rule
 CMakeFiles/polishedCode.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/clean
 .PHONY : CMakeFiles/polishedCode.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/sparse.dir
-
-# All Build rule for target.
-CMakeFiles/sparse.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles --progress-num=9,10 "Built target sparse"
-.PHONY : CMakeFiles/sparse.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/sparse.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sparse.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles 0
-.PHONY : CMakeFiles/sparse.dir/rule
-
-# Convenience name for target.
-sparse: CMakeFiles/sparse.dir/rule
-.PHONY : sparse
-
-# clean rule for target.
-CMakeFiles/sparse.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/clean
-.PHONY : CMakeFiles/sparse.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

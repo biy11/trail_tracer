@@ -224,45 +224,6 @@ trail_tracer/fast:
 .PHONY : trail_tracer/fast
 
 #=============================================================================
-# Target rules for targets named waypoint_navigator
-
-# Build rule for target.
-waypoint_navigator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 waypoint_navigator
-.PHONY : waypoint_navigator
-
-# fast build rule for target.
-waypoint_navigator/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/build
-.PHONY : waypoint_navigator/fast
-
-#=============================================================================
-# Target rules for targets named follower
-
-# Build rule for target.
-follower: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 follower
-.PHONY : follower
-
-# fast build rule for target.
-follower/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/build
-.PHONY : follower/fast
-
-#=============================================================================
-# Target rules for targets named code_test
-
-# Build rule for target.
-code_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 code_test
-.PHONY : code_test
-
-# fast build rule for target.
-code_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/build
-.PHONY : code_test/fast
-
-#=============================================================================
 # Target rules for targets named polishedCode
 
 # Build rule for target.
@@ -274,67 +235,6 @@ polishedCode: cmake_check_build_system
 polishedCode/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/build
 .PHONY : polishedCode/fast
-
-#=============================================================================
-# Target rules for targets named sparse
-
-# Build rule for target.
-sparse: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sparse
-.PHONY : sparse
-
-# fast build rule for target.
-sparse/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/build
-.PHONY : sparse/fast
-
-src/code_test.o: src/code_test.cpp.o
-.PHONY : src/code_test.o
-
-# target to build an object file
-src/code_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/src/code_test.cpp.o
-.PHONY : src/code_test.cpp.o
-
-src/code_test.i: src/code_test.cpp.i
-.PHONY : src/code_test.i
-
-# target to preprocess a source file
-src/code_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/src/code_test.cpp.i
-.PHONY : src/code_test.cpp.i
-
-src/code_test.s: src/code_test.cpp.s
-.PHONY : src/code_test.s
-
-# target to generate assembly for a file
-src/code_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_test.dir/build.make CMakeFiles/code_test.dir/src/code_test.cpp.s
-.PHONY : src/code_test.cpp.s
-
-src/follower.o: src/follower.cpp.o
-.PHONY : src/follower.o
-
-# target to build an object file
-src/follower.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/src/follower.cpp.o
-.PHONY : src/follower.cpp.o
-
-src/follower.i: src/follower.cpp.i
-.PHONY : src/follower.i
-
-# target to preprocess a source file
-src/follower.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/src/follower.cpp.i
-.PHONY : src/follower.cpp.i
-
-src/follower.s: src/follower.cpp.s
-.PHONY : src/follower.s
-
-# target to generate assembly for a file
-src/follower.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/follower.dir/build.make CMakeFiles/follower.dir/src/follower.cpp.s
-.PHONY : src/follower.cpp.s
 
 src/nav2.o: src/nav2.cpp.o
 .PHONY : src/nav2.o
@@ -366,7 +266,6 @@ src/polishedCode.o: src/polishedCode.cpp.o
 # target to build an object file
 src/polishedCode.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/src/polishedCode.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/src/polishedCode.cpp.o
 .PHONY : src/polishedCode.cpp.o
 
 src/polishedCode.i: src/polishedCode.cpp.i
@@ -375,7 +274,6 @@ src/polishedCode.i: src/polishedCode.cpp.i
 # target to preprocess a source file
 src/polishedCode.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/src/polishedCode.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/src/polishedCode.cpp.i
 .PHONY : src/polishedCode.cpp.i
 
 src/polishedCode.s: src/polishedCode.cpp.s
@@ -384,7 +282,6 @@ src/polishedCode.s: src/polishedCode.cpp.s
 # target to generate assembly for a file
 src/polishedCode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/polishedCode.dir/build.make CMakeFiles/polishedCode.dir/src/polishedCode.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sparse.dir/build.make CMakeFiles/sparse.dir/src/polishedCode.cpp.s
 .PHONY : src/polishedCode.cpp.s
 
 src/trail_tracer.o: src/trail_tracer.cpp.o
@@ -411,30 +308,6 @@ src/trail_tracer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trail_tracer.dir/build.make CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.s
 .PHONY : src/trail_tracer.cpp.s
 
-src/waypoint_navigator.o: src/waypoint_navigator.cpp.o
-.PHONY : src/waypoint_navigator.o
-
-# target to build an object file
-src/waypoint_navigator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.o
-.PHONY : src/waypoint_navigator.cpp.o
-
-src/waypoint_navigator.i: src/waypoint_navigator.cpp.i
-.PHONY : src/waypoint_navigator.i
-
-# target to preprocess a source file
-src/waypoint_navigator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.i
-.PHONY : src/waypoint_navigator.cpp.i
-
-src/waypoint_navigator.s: src/waypoint_navigator.cpp.s
-.PHONY : src/waypoint_navigator.s
-
-# target to generate assembly for a file
-src/waypoint_navigator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_navigator.cpp.s
-.PHONY : src/waypoint_navigator.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -450,19 +323,9 @@ help:
 	@echo "... test"
 	@echo "... trail_tracer_uninstall"
 	@echo "... uninstall"
-	@echo "... code_test"
-	@echo "... follower"
 	@echo "... nav2"
 	@echo "... polishedCode"
-	@echo "... sparse"
 	@echo "... trail_tracer"
-	@echo "... waypoint_navigator"
-	@echo "... src/code_test.o"
-	@echo "... src/code_test.i"
-	@echo "... src/code_test.s"
-	@echo "... src/follower.o"
-	@echo "... src/follower.i"
-	@echo "... src/follower.s"
 	@echo "... src/nav2.o"
 	@echo "... src/nav2.i"
 	@echo "... src/nav2.s"
@@ -472,9 +335,6 @@ help:
 	@echo "... src/trail_tracer.o"
 	@echo "... src/trail_tracer.i"
 	@echo "... src/trail_tracer.s"
-	@echo "... src/waypoint_navigator.o"
-	@echo "... src/waypoint_navigator.i"
-	@echo "... src/waypoint_navigator.s"
 .PHONY : help
 
 
