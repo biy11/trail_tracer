@@ -1,0 +1,30 @@
+[0.015s] Invoking command in '/home/bilal/trail_tracer/build/trail_tracer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/trail_tracer -- -j12 -l12
+[0.134s] [ 25%] [32mBuilding CXX object CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o[0m
+[19.118s] [ 50%] [32m[1mLinking CXX executable trail_tracer[0m
+[20.259s] [ 50%] Built target trail_tracer
+[20.291s] [ 75%] [32mBuilding CXX object CMakeFiles/refactor.dir/src/refactor.cpp.o[0m
+[38.947s] [100%] [32m[1mLinking CXX executable refactor[0m
+[40.037s] [100%] Built target refactor
+[40.051s] Invoked command in '/home/bilal/trail_tracer/build/trail_tracer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --build /home/bilal/trail_tracer/build/trail_tracer -- -j12 -l12
+[40.116s] Invoking command in '/home/bilal/trail_tracer/build/trail_tracer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/trail_tracer
+[40.127s] -- Install configuration: ""
+[40.128s] -- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer
+[40.151s] -- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer" to ""
+[40.151s] -- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/refactor
+[40.169s] -- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/refactor" to ""
+[40.169s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/package_run_dependencies/trail_tracer
+[40.170s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/parent_prefix_path/trail_tracer
+[40.170s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.sh
+[40.170s] -- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.dsv
+[40.170s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.sh
+[40.170s] -- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.dsv
+[40.170s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.bash
+[40.170s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.sh
+[40.170s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.zsh
+[40.170s] -- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.dsv
+[40.170s] -- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.dsv
+[40.171s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/packages/trail_tracer
+[40.171s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig.cmake
+[40.171s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig-version.cmake
+[40.171s] -- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.xml
+[40.173s] Invoked command in '/home/bilal/trail_tracer/build/trail_tracer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bilal/trail_tracer/install/web_gui:/home/bilal/learn_ros2_ws/install/web_gui:/home/bilal/learn_ros2_ws/install/nav2_simple_commander:/home/bilal/ros2_ws/install/web_gui:/home/bilal/ros2_ws/install/opencv_tools:/home/bilal/ros2_ws/install/biy1_ros360_py:/opt/ros/humble /usr/bin/cmake --install /home/bilal/trail_tracer/build/trail_tracer

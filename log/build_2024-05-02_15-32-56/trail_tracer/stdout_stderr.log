@@ -1,0 +1,20 @@
+[ 50%] Built target refactor
+[100%] Built target trail_tracer
+-- Install configuration: ""
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/refactor
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/package_run_dependencies/trail_tracer
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/parent_prefix_path/trail_tracer
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.sh
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.sh
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.dsv
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.bash
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.sh
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.zsh
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.dsv
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.dsv
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/packages/trail_tracer
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig.cmake
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig-version.cmake
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.xml

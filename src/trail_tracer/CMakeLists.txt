@@ -22,6 +22,7 @@ find_package(tf2_ros REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 add_executable(trail_tracer src/trail_tracer.cpp)
+add_executable(refactor src/refactor.cpp)
 
 
 
@@ -32,8 +33,9 @@ target_include_directories(trail_tracer PUBLIC
 target_compile_features(trail_tracer PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
 ament_target_dependencies(trail_tracer rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs nav2_msgs tf2 tf2_ros)
+ament_target_dependencies(refactor rclcpp std_msgs geometry_msgs sensor_msgs GeographicLib tf2_geometry_msgs nav2_msgs tf2 tf2_ros)
 
-install(TARGETS trail_tracer
+install(TARGETS trail_tracer refactor
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

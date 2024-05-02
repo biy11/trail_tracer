@@ -210,6 +210,43 @@ trail_tracer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/trail_tracer.dir/build.make CMakeFiles/trail_tracer.dir/build
 .PHONY : trail_tracer/fast
 
+#=============================================================================
+# Target rules for targets named refactor
+
+# Build rule for target.
+refactor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 refactor
+.PHONY : refactor
+
+# fast build rule for target.
+refactor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/refactor.dir/build.make CMakeFiles/refactor.dir/build
+.PHONY : refactor/fast
+
+src/refactor.o: src/refactor.cpp.o
+.PHONY : src/refactor.o
+
+# target to build an object file
+src/refactor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/refactor.dir/build.make CMakeFiles/refactor.dir/src/refactor.cpp.o
+.PHONY : src/refactor.cpp.o
+
+src/refactor.i: src/refactor.cpp.i
+.PHONY : src/refactor.i
+
+# target to preprocess a source file
+src/refactor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/refactor.dir/build.make CMakeFiles/refactor.dir/src/refactor.cpp.i
+.PHONY : src/refactor.cpp.i
+
+src/refactor.s: src/refactor.cpp.s
+.PHONY : src/refactor.s
+
+# target to generate assembly for a file
+src/refactor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/refactor.dir/build.make CMakeFiles/refactor.dir/src/refactor.cpp.s
+.PHONY : src/refactor.cpp.s
+
 src/trail_tracer.o: src/trail_tracer.cpp.o
 .PHONY : src/trail_tracer.o
 
@@ -249,7 +286,11 @@ help:
 	@echo "... test"
 	@echo "... trail_tracer_uninstall"
 	@echo "... uninstall"
+	@echo "... refactor"
 	@echo "... trail_tracer"
+	@echo "... src/refactor.o"
+	@echo "... src/refactor.i"
+	@echo "... src/refactor.s"
 	@echo "... src/trail_tracer.o"
 	@echo "... src/trail_tracer.i"
 	@echo "... src/trail_tracer.s"

@@ -1,0 +1,26 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o[0m
+[ 50%] [32m[1mLinking CXX executable trail_tracer[0m
+[ 50%] Built target trail_tracer
+[ 75%] [32mBuilding CXX object CMakeFiles/refactor.dir/src/refactor.cpp.o[0m
+[100%] [32m[1mLinking CXX executable refactor[0m
+[100%] Built target refactor
+-- Install configuration: ""
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer
+-- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/trail_tracer" to ""
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/refactor
+-- Set runtime path of "/home/bilal/trail_tracer/install/trail_tracer/lib/trail_tracer/refactor" to ""
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/package_run_dependencies/trail_tracer
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/parent_prefix_path/trail_tracer
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.sh
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.sh
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/environment/path.dsv
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.bash
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.sh
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.zsh
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/local_setup.dsv
+-- Installing: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.dsv
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/ament_index/resource_index/packages/trail_tracer
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig.cmake
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/cmake/trail_tracerConfig-version.cmake
+-- Up-to-date: /home/bilal/trail_tracer/install/trail_tracer/share/trail_tracer/package.xml

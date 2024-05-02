@@ -1,6 +1,7 @@
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/uninstall.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/trail_tracer_uninstall.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/trail_tracer.dir
+/home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/refactor.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/test.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/edit_cache.dir
 /home/bilal/trail_tracer/build/trail_tracer/CMakeFiles/rebuild_cache.dir

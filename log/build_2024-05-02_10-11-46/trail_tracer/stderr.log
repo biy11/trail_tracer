@@ -1,0 +1,5 @@
+gmake[2]: *** [CMakeFiles/trail_tracer.dir/build.make:76: CMakeFiles/trail_tracer.dir/src/trail_tracer.cpp.o] Interrupt
+gmake[2]: *** [CMakeFiles/refactor.dir/build.make:76: CMakeFiles/refactor.dir/src/refactor.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/refactor.dir/all] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/trail_tracer.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

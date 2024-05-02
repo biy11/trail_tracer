@@ -30,6 +30,7 @@
  * @version 1.4 - Added tab change prevention when recording, plotting, or manual move is active. 
  * @version 1.5 - Added comments and cleaned up code.
  * @version 1.6 - Fixed joystick getting hung-up bug.
+ * @version 1.7 - Refactored code.
 */
 
 // WebSocket connection setup.
@@ -257,8 +258,12 @@ function loggerLog(message){
     //Add message to the logg window
     logWindow.value += loggCount + ". "+ message + '\n';
     logWindow.scrollTop = logWindow.scrollHeight; // Scoll down as messages are added 
+    // Check if the message is a trail completion message or trail out of bound error
+    var sucessMsgs = "[waypoint_follower] [INFO]: SUCCESS ALL WAYPOINTS REACHED";
+    var endMsgs = "[trail_tracer] [INFO]: ENDING CURRENT OPERATION!";
+
     // Check if the message is a trail completion message
-    if(message === "[waypoint_follower] [INFO]: SUCCESS ALL WAYPOINTS REACHED" || message === "[trail_tracer] [INFO]: ENDING CURRENT OPERATION!"){
+    if(message === sucessMsgs || message === endMsgs){
         loadTrailBtn.textContent = 'Load Trail';
         trailPrompt.style.display = 'none';
         endTracePrompt.style.display = 'none';
