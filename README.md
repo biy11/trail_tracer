@@ -64,7 +64,7 @@ This is a ROS2 workspace for the trail_tracer project.
     NOTE: THIS FILE MAY NOT BE UP TO DATE, BUT HAS BEEN USED AND ADAPTED FOR THIS PROJECT. BELOW ARE SOME CHANGES MADE TO THIS FILE FROM ITS ORIGINAL FORM.
 
     - Uncomment/add the following to conifg file:
-
+        # Change from "navigate_to_pose" to "navigate_through_poses" as well as tweak parameteres 
         bt_navigator:
 
             ros__parameters:
@@ -83,7 +83,7 @@ This is a ROS2 workspace for the trail_tracer project.
                 navigate_through_poses:
                  plugin: "nav2_bt_navigator/NavigateThroughPosesNavigator"
 
-        # Uncomment and change parameteres for waypoint_follower.
+        # Uncomment/add and change parameteres for waypoint_follower.
         waypoint_follower:
 
             ros__parameters:
@@ -96,6 +96,7 @@ This is a ROS2 workspace for the trail_tracer project.
                 enabled: True
                 waypoint_pause_duration: 0
 
+        # Tweak cinfigrations of controller_server
         controller_server:
 
             ros__parameters:
@@ -108,7 +109,8 @@ This is a ROS2 workspace for the trail_tracer project.
                 general_goal_checker:
                     xy_goal_tolerance: 1.0 
                     yaw_goal_tolerance: 3.14 #180 degrees
-                    
+
+        # Increase map height and width            
         global_costmap:
 
             global_costmap:
@@ -129,7 +131,8 @@ This is a ROS2 workspace for the trail_tracer project.
         parameters=[{'use_sim_time': use_sim_time_}],
     )
 
-    # Add to the end of Node(), 
+    # Add to the end of Node()
+
     Node(
 
         package='gazebo_ros',
@@ -141,7 +144,6 @@ This is a ROS2 workspace for the trail_tracer project.
                     "-topic", [namespace_, "/robot_description"],
                     "-entity", "argo_sim"]
     ),
-
     gps_to_utm_converter_node, # Addition of node.
     
 
